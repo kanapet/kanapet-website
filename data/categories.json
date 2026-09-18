@@ -1,0 +1,42 @@
+{
+  "bird-cages": {
+    "name": "Bird Cages",
+    "desc": "Premium bird cages in transparent, wire and stainless steel options — 650, 490, 470 and 400 series.",
+    "icon": "bird"
+  },
+  "bird-accessories": {
+    "name": "Bird Cage Accessories",
+    "desc": "Bathrooms, nesting boxes, feeders, water bottles, perches and more.",
+    "icon": "feather"
+  },
+  "bird-travel": {
+    "name": "Travel Carriers",
+    "desc": "Compact travel cages for birds — 23cm to 42cm, multi-color options.",
+    "icon": "carrier"
+  },
+  "hamster-cages": {
+    "name": "Hamster Cages",
+    "desc": "Transparent acrylic hamster cages and folding cages — 43cm to 75cm.",
+    "icon": "hamster"
+  },
+  "hamster-accessories": {
+    "name": "Hamster Accessories",
+    "desc": "Running wheels, tunnels, sand baths, platforms and feeding cups.",
+    "icon": "wheel"
+  },
+  "rabbit": {
+    "name": "Rabbit",
+    "desc": "Spacious rabbit cages and enclosures for comfortable housing.",
+    "icon": "rabbit"
+  },
+  "cat": {
+    "name": "Cat",
+    "desc": "Cat litter boxes, automatic feeders and water dispensers.",
+    "icon": "cat"
+  },
+  "other-small-pets": {
+    "name": "Other Small Pets",
+    "desc": "Turtle tanks and supplies for other small animals.",
+    "icon": "turtle"
+  }
+}

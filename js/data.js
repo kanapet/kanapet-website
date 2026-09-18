@@ -1,0 +1,2431 @@
+// Kanapet Product Data (auto-generated)
+window.KANAPET_PRODUCTS = [
+  {
+    "id": "bird-travel-23",
+    "slug": "bird-travel-23",
+    "name": "23 External Travel Cage",
+    "category": "bird-travel",
+    "series": "bird-travel-cage",
+    "size": "23*16.5*16.5",
+    "moq": 100,
+    "colors": [
+      "Green"
+    ],
+    "image": "images/products/bird-travel-cage-23.jpg",
+    "net_weight": "7.6",
+    "gross_weight": "8.6",
+    "cbm": "0.09",
+    "material": "Iron Wire / 304 Stainless Steel (optional)",
+    "type": "",
+    "meas": "49*36*51.5",
+    "pcs_per_ctn": "20",
+    "color": "",
+    "accessories": "",
+    "notes": "Iron wire construction. MOQ: 100 pcs per color. Sold by full carton only.",
+    "gallery": [
+      "images/products/gallery/23-travel-ss-1.jpg",
+      "images/products/gallery/23-travel-ss-2.jpg",
+      "images/products/gallery/23-travel-ss-3.jpg"
+    ],
+    "moq_unit": "pcs",
+    "material_options": [
+      {
+        "name": "Iron Wire",
+        "image": "images/products/bird-travel-cage-23.jpg"
+      },
+      {
+        "name": "Stainless Steel",
+        "image": "images/products/gallery/23-travel-ss-1.jpg"
+      }
+    ]
+  },
+  {
+    "id": "bird-travel-26",
+    "slug": "bird-travel-26",
+    "name": "26 External Travel Cage",
+    "category": "bird-travel",
+    "series": "bird-travel-cage",
+    "size": "26*20*17",
+    "moq": 100,
+    "colors": [
+      "Green"
+    ],
+    "image": "images/products/bird-travel-cage-26.jpg",
+    "net_weight": "9",
+    "gross_weight": "10.5",
+    "cbm": "0.14",
+    "material": "Iron Wire / 304 Stainless Steel (optional)",
+    "type": "",
+    "meas": "70*55*36.5",
+    "pcs_per_ctn": "20",
+    "color": "",
+    "accessories": "",
+    "notes": "Iron wire construction. MOQ: 100 pcs per color. Sold by full carton only.",
+    "gallery": [
+      "images/products/gallery/26-travel-ss-1.jpg",
+      "images/products/gallery/26-travel-ss-2.jpg",
+      "images/products/gallery/26-travel-ss-3.jpg"
+    ],
+    "moq_unit": "pcs",
+    "material_options": [
+      {
+        "name": "Iron Wire",
+        "image": "images/products/bird-travel-cage-26.jpg"
+      },
+      {
+        "name": "Stainless Steel",
+        "image": "images/products/gallery/26-travel-ss-1.jpg"
+      }
+    ]
+  },
+  {
+    "id": "bird-travel-30",
+    "slug": "bird-travel-26",
+    "name": "30 External Travel Cage",
+    "category": "bird-travel",
+    "series": "bird-travel-cage",
+    "size": "26*20*17",
+    "moq": 100,
+    "colors": [
+      "Green",
+      "Blue",
+      "Yellow"
+    ],
+    "image": "images/products/bird-travel-cage-30.jpg",
+    "net_weight": "9",
+    "gross_weight": "10.5",
+    "cbm": "0.14",
+    "material": "Iron Wire / 304 Stainless Steel (optional)",
+    "type": "",
+    "meas": "70*55*36.5",
+    "pcs_per_ctn": "20",
+    "color": "",
+    "accessories": "",
+    "notes": "Iron wire construction. MOQ: 100 pcs per color. Sold by full carton only.",
+    "gallery": [
+      "images/products/gallery/26-travel-ss-1.jpg",
+      "images/products/gallery/26-travel-ss-2.jpg",
+      "images/products/gallery/26-travel-ss-3.jpg"
+    ],
+    "moq_unit": "pcs",
+    "material_options": [
+      {
+        "name": "Iron Wire",
+        "image": "images/products/bird-travel-cage-26.jpg"
+      },
+      {
+        "name": "Stainless Steel",
+        "image": "images/products/gallery/26-travel-ss-1.jpg"
+      }
+    ]
+  },
+  {
+    "id": "bird-travel-42",
+    "slug": "bird-travel-23",
+    "name": "42 External Travel Cage",
+    "category": "bird-travel",
+    "series": "bird-travel-cage",
+    "size": "23*16.5*16.5",
+    "moq": 100,
+    "colors": [
+      "Green",
+      "Blue",
+      "Yellow"
+    ],
+    "image": "images/products/bird-travel-cage-42.jpg",
+    "net_weight": "7.6",
+    "gross_weight": "8.6",
+    "cbm": "0.09",
+    "material": "Iron Wire / 304 Stainless Steel (optional)",
+    "type": "",
+    "meas": "49*36*51.5",
+    "pcs_per_ctn": "20",
+    "color": "",
+    "accessories": "",
+    "notes": "Iron wire construction. MOQ: 100 pcs per color. Sold by full carton only.",
+    "gallery": [
+      "images/products/gallery/42-travel-scene-1.jpg",
+      "images/products/gallery/42-travel-scene-2.jpg",
+      "images/products/gallery/42-travel-ss-1.jpg",
+      "images/products/gallery/42-travel-ss-2.jpg"
+    ],
+    "moq_unit": "pcs",
+    "material_options": [
+      {
+        "name": "Iron Wire",
+        "image": "images/products/bird-travel-cage-23.jpg"
+      },
+      {
+        "name": "Stainless Steel",
+        "image": "images/products/gallery/23-travel-ss-1.jpg"
+      }
+    ]
+  },
+  {
+    "id": "bird-feeder-cup-no1",
+    "name": "Bird Feeding Cup No.1",
+    "size": "6*6*3.4",
+    "image": "images/products/feeder-cup-no1.jpg",
+    "category": "bird-accessories",
+    "moq": "300",
+    "colors": [
+      "White"
+    ],
+    "gallery": [
+      "images/products/gallery/no-mess-feeder-transparent.jpg"
+    ],
+    "description": "",
+    "features": [],
+    "carton_size": "56.5*37*35",
+    "net_weight": "0.011",
+    "gross_weight": "11",
+    "material": "ABS+PET",
+    "cup_size": "5*5*3.5",
+    "notes": "300 pcs per carton. Sold by full carton only.",
+    "color_options": [
+      {
+        "name": "Transparent Cup",
+        "image": "images/products/feeder-cup-no1.jpg"
+      },
+      {
+        "name": "White Collar Cup",
+        "image": "images/products/feeder-cup-no1-white-collar.jpg"
+      }
+    ],
+    "slug": "bird-feeder-cup-no1"
+  },
+  {
+    "id": "bird-feeder-cup-no3-white",
+    "name": "Bird Feeding Cup No.3 (White & Transparent)",
+    "size": "11*10*9",
+    "image": "images/products/feeder-cup-no3-white.jpg",
+    "category": "bird-accessories",
+    "moq": "175",
+    "colors": [
+      "White",
+      "Transparent"
+    ],
+    "gallery": [],
+    "description": "",
+    "features": [],
+    "material": "ABS",
+    "carton_size": "69*47*30",
+    "net_weight": "0.051",
+    "gross_weight": "11",
+    "cup_size": "7.7*6.5*4.5",
+    "notes": "175 pcs per carton. Sold by full carton only.",
+    "color_options": [
+      {
+        "name": "White",
+        "image": "images/products/feeder-cup-no3-white.jpg"
+      },
+      {
+        "name": "Transparent",
+        "image": "images/products/feeder-cup-no3-transparent.jpg"
+      }
+    ],
+    "slug": "bird-feeder-cup-no3-white",
+    "color_images": {
+      "White": "images/products/feeder-cup-no3-white.jpg",
+      "Transparent": "images/products/feeder-cup-no3-transparent.jpg"
+    }
+  },
+  {
+    "id": "bird-feeder-cup-no3-transparent-hook",
+    "name": "Bird Feeding Cup with Universal Hook",
+    "size": "11*10*9",
+    "cup_size": "7.7*6.5*4.5",
+    "carton_size": "69*45*30",
+    "net_weight": "0.06",
+    "gross_weight": "12",
+    "material": "PET",
+    "image": "images/products/feeder-cup-no3-transparent.jpg",
+    "category": "bird-accessories",
+    "moq": "175",
+    "colors": [
+      "Transparent"
+    ],
+    "color_options": [
+      {
+        "name": "Transparent",
+        "image": "images/products/feeder-cup-no3-transparent.jpg"
+      }
+    ],
+    "gallery": [],
+    "notes": "175 pcs per carton. Sold by full carton only.",
+    "description": "",
+    "features": [],
+    "slug": "bird-feeder-cup-no3-transparent-hook"
+  },
+  {
+    "id": "bird-feeder-cup-no4",
+    "name": "Bird Feeding Cup No.4 (White & Transparent)",
+    "size": "8*10.5*5",
+    "image": "images/products/feeder-cup-no4-white.jpg",
+    "category": "bird-accessories",
+    "moq": "245",
+    "colors": [
+      "White",
+      "Transparent"
+    ],
+    "gallery": [],
+    "description": "",
+    "features": [],
+    "carton_size": "69*47*30",
+    "net_weight": "0.038",
+    "gross_weight": "12",
+    "material": "PET",
+    "cup_size": "10.5*7.5*5",
+    "notes": "245 pcs per carton. Sold by full carton only.",
+    "color_options": [
+      {
+        "name": "White",
+        "image": "images/products/feeder-cup-no4-white.jpg"
+      },
+      {
+        "name": "Transparent",
+        "image": "images/products/feeder-cup-no4.jpg"
+      }
+    ],
+    "slug": "bird-feeder-cup-no4",
+    "color_images": {
+      "White": "images/products/feeder-cup-no4-white.jpg",
+      "Transparent": "images/products/feeder-cup-no4.jpg"
+    }
+  },
+  {
+    "id": "bird-feeder-cup-no10",
+    "name": "Bird Feeding Cup No.10 (White & Transparent)",
+    "size": "9*10.5*5.5",
+    "image": "images/products/feeder-cup-no10-white.jpg",
+    "category": "bird-accessories",
+    "moq": "156",
+    "colors": [
+      "White",
+      "Transparent"
+    ],
+    "gallery": [
+      "images/products/gallery/feeder-cup-no10-dimension.png"
+    ],
+    "description": "",
+    "features": [],
+    "material": "PET",
+    "carton_size": "69*47*30",
+    "net_weight": "0.038",
+    "gross_weight": "12",
+    "cup_size": "11.5*8.5*5.5",
+    "notes": "156 pcs per carton. Sold by full carton only.",
+    "color_options": [
+      {
+        "name": "White",
+        "image": "images/products/feeder-cup-no10-white.jpg"
+      },
+      {
+        "name": "Transparent",
+        "image": "images/products/feeder-cup-no10.jpg"
+      }
+    ],
+    "slug": "bird-feeder-cup-no10",
+    "color_images": {
+      "White": "images/products/feeder-cup-no10-white.jpg",
+      "Transparent": "images/products/feeder-cup-no10.jpg"
+    }
+  },
+  {
+    "id": "bird-feeding-cup-spring-door",
+    "name": "Bird Feeding Cup for Spring Door Cage",
+    "size": "8.4*7*4",
+    "carton_size": "69*45*30",
+    "net_weight": "0.0275",
+    "gross_weight": "9.5",
+    "material": "PET",
+    "image": "images/products/feeder-cup-spring-door.jpg",
+    "category": "bird-accessories",
+    "moq": "256",
+    "colors": [
+      "Transparent"
+    ],
+    "color_options": [
+      {
+        "name": "Transparent",
+        "image": "images/products/feeder-cup-spring-door.jpg"
+      }
+    ],
+    "gallery": [],
+    "notes": "256 pcs per carton. Sold by full carton only.",
+    "description": "",
+    "features": [],
+    "slug": "bird-feeding-cup-spring-door"
+  },
+  {
+    "id": "bird-feeder-cup-anti-spill",
+    "name": "Bird Feeding Cup No.5",
+    "size": "9.2*12.7*9.9",
+    "image": "images/products/feeder-cup-no5.jpg",
+    "category": "bird-accessories",
+    "moq": "120",
+    "colors": [
+      "Transparent"
+    ],
+    "gallery": [],
+    "description": "",
+    "features": [],
+    "carton_size": "69*47*30",
+    "net_weight": "0.069",
+    "gross_weight": "10.5",
+    "material": "PET",
+    "cup_size": "9.2*12.7*9.9",
+    "notes": "120 pcs per carton. Sold by full carton only.",
+    "color_options": [
+      {
+        "name": "Transparent",
+        "image": "images/products/feeder-cup-no5.jpg"
+      }
+    ],
+    "slug": "bird-feeder-cup-anti-spill"
+  },
+  {
+    "id": "bird-smart-feeder",
+    "slug": "bird-smart-feeder",
+    "name": "Smart Feeder",
+    "category": "bird-accessories",
+    "series": "bird-smart-feeder",
+    "size": "",
+    "moq": 1,
+    "colors": [
+      "White"
+    ],
+    "image": "images/products/bird-smart-feeder.jpg",
+    "net_weight": "",
+    "gross_weight": "",
+    "cbm": "",
+    "material": "",
+    "type": "",
+    "meas": "",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "",
+    "gallery": [],
+    "accessory_type": "universal",
+    "moq_unit": "carton"
+  },
+  {
+    "id": "bird-smart-water-dispenser",
+    "slug": "bird-smart-water-dispenser",
+    "name": "Smart Water Dispenser",
+    "category": "bird-accessories",
+    "series": "bird-smart-water-dispenser",
+    "size": "",
+    "moq": 1,
+    "colors": [
+      "White"
+    ],
+    "image": "images/products/bird-smart-water-dispenser.jpg",
+    "net_weight": "",
+    "gross_weight": "",
+    "cbm": "",
+    "material": "",
+    "type": "",
+    "meas": "",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "",
+    "gallery": [],
+    "accessory_type": "universal",
+    "moq_unit": "carton"
+  },
+  {
+    "id": "bird-650-pet-door",
+    "slug": "bird-650-pet-door",
+    "name": "650 Transparent PET Door Birdcage",
+    "category": "bird-cages",
+    "series": "bird-650-cage",
+    "size": "65*46*62",
+    "moq": 100,
+    "colors": [
+      "White"
+    ],
+    "image": "images/products/bird-650-pet-door.jpg",
+    "net_weight": "7.92",
+    "gross_weight": "10",
+    "cbm": "",
+    "material": "ABS+PET+304 Stainless Steel+Iron Wire",
+    "type": "",
+    "meas": "70.5*51.5*22.5",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "Food cups*2, Water bottle*2, Wooden perches*2",
+    "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
+    "gallery": [
+      "images/products/gallery/650-pet-scene-1.jpg",
+      "images/products/gallery/650-pet-scene-2.jpg",
+      "images/products/gallery/650-pet-scene-4.jpg"
+    ],
+    "moq_unit": "pcs"
+  },
+  {
+    "id": "bird-650-glass-door",
+    "slug": "bird-650-glass-door",
+    "name": "650 Transparent Glass Door Birdcage",
+    "category": "bird-cages",
+    "series": "bird-650-cage",
+    "size": "65*46*62",
+    "moq": 100,
+    "colors": [
+      "White"
+    ],
+    "image": "images/products/bird-650-glass-door.jpg",
+    "net_weight": "8.92",
+    "gross_weight": "11",
+    "cbm": "",
+    "material": "ABS+PET+304 Stainless Steel+Iron Wire",
+    "type": "",
+    "meas": "70.5*51.5*22.5",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "Food cups*2, Water bottle*2, Wooden perches*2",
+    "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
+    "gallery": [],
+    "moq_unit": "pcs"
+  },
+  {
+    "id": "bird-490-iron-wire-single",
+    "slug": "bird-490-iron-wire-single",
+    "name": "490 Four Sided Iron Wire Single Layer Bird Cage",
+    "category": "bird-cages",
+    "series": "bird-490-cage",
+    "size": "46*46*58",
+    "moq": 100,
+    "colors": [
+      "White"
+    ],
+    "image": "images/products/490-iron-wire-single.jpg",
+    "net_weight": "5.38",
+    "gross_weight": "6.23",
+    "cbm": "",
+    "material": "ABS+PVC+Plastic+Iron Wire",
+    "type": "",
+    "meas": "47*47*17.5",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "Food cups*2, Water bottle*2, Wooden perches*2",
+    "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
+    "moq_unit": "pcs",
+    "gallery": [
+      "images/products/gallery/490-wheel-detail.jpg"
+    ]
+  },
+  {
+    "id": "bird-490-iron-wire-upgraded",
+    "slug": "bird-490-iron-wire-upgraded",
+    "name": "490 Four Sided Upgraded Single Layer Bird Cage",
+    "category": "bird-cages",
+    "series": "bird-490-cage",
+    "size": "46*46*58",
+    "moq": 100,
+    "colors": [
+      "White"
+    ],
+    "image": "images/products/490-iron-wire-upgraded.jpg",
+    "net_weight": "5.49",
+    "gross_weight": "6.55",
+    "cbm": "",
+    "material": "ABS+PVC+Plastic+Iron Wire/Stainless Steel",
+    "type": "",
+    "meas": "47*47*18.5",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "Food cups*2, Water bottle*2, Wooden perches*2",
+    "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
+    "moq_unit": "pcs",
+    "gallery": [
+      "images/products/gallery/490-wheel-detail.jpg"
+    ],
+    "material_options": [
+      {
+        "name": "Iron Wire",
+        "image": "images/products/490-iron-wire-upgraded.jpg",
+        "size": "46*46*58"
+      },
+      {
+        "name": "Stainless Steel",
+        "image": "images/products/490-iron-wire-upgraded.jpg",
+        "size": "46*46*58"
+      }
+    ]
+  },
+  {
+    "id": "bird-490-transparent-door-single",
+    "slug": "bird-490-transparent-door-single",
+    "name": "490 Transparent Door Single Layer Bird Cage",
+    "category": "bird-cages",
+    "series": "bird-490-cage",
+    "size": "46*46*58",
+    "moq": 100,
+    "colors": [
+      "White"
+    ],
+    "image": "images/products/490-transparent-door-single.jpg",
+    "net_weight": "5.49",
+    "gross_weight": "6.55",
+    "cbm": "",
+    "material": "ABS+PVC+Plastic+Stainless Steel",
+    "type": "",
+    "meas": "51*51*22.5",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "Food cups*2, Water bottle*2, Wooden perches*2",
+    "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
+    "moq_unit": "pcs",
+    "gallery": [
+      "images/products/gallery/490-wheel-detail.jpg"
+    ],
+    "material_options": [
+      {
+        "name": "Iron Wire",
+        "image": "images/products/490-transparent-door-single.jpg",
+        "size": "46*46*58"
+      },
+      {
+        "name": "Stainless Steel",
+        "image": "images/products/490-transparent-door-single.jpg",
+        "size": "46*46*58"
+      }
+    ]
+  },
+  {
+    "id": "bird-490-transparent-door-splash",
+    "slug": "bird-490-transparent-door-splash",
+    "name": "490 Transparent Door Splash Proof Single Layer Bird Cage",
+    "category": "bird-cages",
+    "series": "bird-490-cage",
+    "size": "46*46*57.5",
+    "moq": 100,
+    "colors": [
+      "White"
+    ],
+    "image": "images/products/490-transparent-door-splash.jpg",
+    "net_weight": "5.49",
+    "gross_weight": "6.55",
+    "cbm": "",
+    "material": "ABS+PVC+Plastic+Stainless Steel",
+    "type": "",
+    "meas": "51*51*22.5",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "Food cups*2, Water bottle*2, Wooden perches*2",
+    "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
+    "moq_unit": "pcs",
+    "gallery": [
+      "images/products/gallery/490-splash-scene-1.jpg",
+      "images/products/gallery/490-splash-scene-2.jpg",
+      "images/products/gallery/490-splash-scene-3.jpg",
+      "images/products/gallery/490-splash-detail.jpg",
+      "images/products/gallery/490-wheel-detail.jpg"
+    ],
+    "material_options": [
+      {
+        "name": "Iron Wire",
+        "image": "images/products/490-transparent-door-splash.jpg",
+        "size": "46*46*57.5"
+      },
+      {
+        "name": "Stainless Steel",
+        "image": "images/products/490-transparent-door-splash.jpg",
+        "size": "46*46*57.5"
+      }
+    ]
+  },
+  {
+    "id": "bird-490-double-transparent-door",
+    "slug": "bird-490-double-transparent-door",
+    "name": "490 Transparent Door Double Layer Bird Cage",
+    "category": "bird-cages",
+    "series": "bird-490-double-cage",
+    "size": "46*46*99",
+    "moq": 100,
+    "colors": [
+      "White"
+    ],
+    "image": "images/products/bird-490-double-201.jpg",
+    "net_weight": "8.35",
+    "gross_weight": "9.4",
+    "cbm": "",
+    "material": "ABS+PVC+Plastic+Iron Wire/Stainless Steel",
+    "type": "",
+    "meas": "51*51*27",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "Food cups*2, Water bottle*2, Wooden perches*2",
+    "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
+    "gallery": [
+      "images/products/gallery/490-double-scene-1.jpg",
+      "images/products/gallery/490-double-scene-2.jpg",
+      "images/products/gallery/490-double-scene-4.jpg",
+      "images/products/gallery/490-double-detail-1.jpg",
+      "images/products/gallery/490-double-detail-2.jpg"
+    ],
+    "moq_unit": "pcs",
+    "material_options": [
+      {
+        "name": "Iron Wire",
+        "image": "images/products/bird-490-double-201.jpg",
+        "size": "46*46*99"
+      },
+      {
+        "name": "Stainless Steel",
+        "image": "images/products/bird-490-double-201.jpg",
+        "size": "46*46*99"
+      }
+    ]
+  },
+  {
+    "id": "bird-490-double-splash-proof",
+    "slug": "bird-490-double-splash-proof",
+    "name": "490 Transparent Door Splash Proof Double Layer Bird Cage",
+    "category": "bird-cages",
+    "series": "bird-490-double-cage",
+    "size": "46*46*99",
+    "moq": 100,
+    "colors": [
+      "White"
+    ],
+    "image": "images/products/bird-490-double-iron.jpg",
+    "net_weight": "8.35",
+    "gross_weight": "9.4",
+    "cbm": "",
+    "material": "ABS+PVC+Plastic+Stainless Steel",
+    "type": "",
+    "meas": "51*51*27",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "Food cups*2, Water bottle*2, Wooden perches*2",
+    "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
+    "gallery": [
+      "images/products/gallery/490-double-splash-scene-1.jpg",
+      "images/products/gallery/490-double-splash-detail-1.jpg",
+      "images/products/gallery/490-double-splash-scene-3.jpg",
+      "images/products/gallery/490-double-splash-detail-2.jpg"
+    ],
+    "moq_unit": "pcs",
+    "material_options": [
+      {
+        "name": "Iron Wire",
+        "image": "images/products/bird-490-double-iron.jpg",
+        "size": "46*46*99"
+      },
+      {
+        "name": "Stainless Steel",
+        "image": "images/products/bird-490-double-iron.jpg",
+        "size": "46*46*99"
+      }
+    ]
+  },
+  {
+    "id": "bird-490-triple-splash-proof",
+    "slug": "bird-490-triple-splash-proof",
+    "name": "490 Transparent Door Splash Proof Three Layer Bird Cage",
+    "category": "bird-cages",
+    "series": "bird-490-cage",
+    "size": "46*46*145",
+    "moq": 100,
+    "colors": [
+      "White"
+    ],
+    "image": "images/products/490-triple-splash.jpg",
+    "net_weight": "",
+    "gross_weight": "",
+    "cbm": "",
+    "material": "ABS+PVC+Plastic+Stainless Steel",
+    "type": "",
+    "meas": "",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "Food cups*2, Water bottle*2, Wooden perches*2",
+    "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
+    "moq_unit": "pcs",
+    "gallery": [
+      "images/products/gallery/490-triple-splash-scene-1.jpg",
+      "images/products/gallery/490-triple-splash-scene-2.jpg",
+      "images/products/gallery/490-triple-splash-scene-3.jpg",
+      "images/products/gallery/490-triple-splash-detail-1.jpg",
+      "images/products/gallery/490-triple-splash-scene-4.jpg",
+      "images/products/gallery/490-triple-splash-scene-5.jpg"
+    ],
+    "material_options": [
+      {
+        "name": "Iron Wire",
+        "image": "images/products/490-triple-splash.jpg",
+        "size": "46*46*145"
+      },
+      {
+        "name": "Stainless Steel",
+        "image": "images/products/490-triple-splash.jpg",
+        "size": "46*46*145"
+      }
+    ]
+  },
+  {
+    "id": "bird-490-triple-standard",
+    "slug": "bird-490-triple-standard",
+    "name": "490 Transparent Door Three Layer Bird Cage",
+    "category": "bird-cages",
+    "series": "bird-490-cage",
+    "size": "46*46*142",
+    "moq": 100,
+    "colors": [
+      "White"
+    ],
+    "image": "images/products/490-triple-standard.jpg",
+    "net_weight": "",
+    "gross_weight": "",
+    "cbm": "",
+    "material": "ABS+PVC+Plastic+Iron Wire/Stainless Steel",
+    "type": "",
+    "meas": "",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "Food cups*2, Water bottle*2, Wooden perches*2",
+    "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
+    "moq_unit": "pcs",
+    "gallery": [
+      "images/products/gallery/490-triple-standard-scene-1.jpg",
+      "images/products/gallery/490-triple-standard-scene-2.jpg",
+      "images/products/gallery/490-triple-standard-scene-3.jpg",
+      "images/products/gallery/490-triple-standard-detail-1.jpg",
+      "images/products/gallery/490-triple-standard-scene-5.jpg"
+    ],
+    "material_options": [
+      {
+        "name": "Iron Wire",
+        "image": "images/products/490-triple-standard.jpg",
+        "size": "46*46*142"
+      },
+      {
+        "name": "Stainless Steel",
+        "image": "images/products/490-triple-standard.jpg",
+        "size": "46*46*142"
+      }
+    ]
+  },
+  {
+    "id": "bird-470-wire",
+    "slug": "bird-470-wire",
+    "name": "470 Bird Cage",
+    "category": "bird-cages",
+    "series": "bird-470-cage",
+    "size": "45*45*54",
+    "moq": 100,
+    "colors": [
+      "White"
+    ],
+    "image": "images/products/bird-470-main-v2.jpg",
+    "net_weight": "4.75",
+    "gross_weight": "5.75",
+    "cbm": "",
+    "material": "Low carbon steel + spray coating / Stainless Steel",
+    "type": "",
+    "meas": "52*52*19",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "Food cups*2, Water bottle*1, Wooden perches*2",
+    "notes": "MOQ may vary based on destination region and total order quantity. Contact us for details.",
+    "gallery": [
+      "images/products/gallery/470-scene-1.jpg",
+      "images/products/gallery/470-scene-2.jpg",
+      "images/products/gallery/470-scene-3.jpg",
+      "images/products/gallery/470-scene-4.jpg",
+      "images/products/gallery/470-scene-5.jpg"
+    ],
+    "moq_unit": "pcs",
+    "material_options": [
+      {
+        "name": "Iron Wire",
+        "image": "images/products/bird-470-main-v2.jpg",
+        "size": "45*45*54"
+      },
+      {
+        "name": "Stainless Steel",
+        "image": "images/products/bird-470-main-v2.jpg",
+        "size": "45*45*54"
+      }
+    ],
+    "related_products": [
+      "bird-470-frame",
+      "bird-perch-stick",
+      "bird-parrot-nest",
+      "bird-windmill-toy"
+    ]
+  },
+  {
+    "id": "bird-400-wire",
+    "slug": "bird-400-wire",
+    "name": "400 Bird Cage (Wire)",
+    "category": "bird-cages",
+    "series": "bird-400-cage",
+    "size": "38*34*51",
+    "moq": 100,
+    "colors": [
+      "White",
+      "Black"
+    ],
+    "image": "images/products/bird-400-wire-v2.jpg",
+    "net_weight": "3.3",
+    "gross_weight": "3.95",
+    "cbm": "",
+    "material": "Iron Wire + ABS+PVC Plastic + Solid Wood Perch",
+    "type": "",
+    "meas": "39.5*35*17",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "Food cup*1, Water bottle*1, Wooden perch*1",
+    "notes": "MOQ may vary based on destination region and total order quantity. Contact us for details.",
+    "gallery": [
+      "images/products/gallery/400-scene-1.jpg",
+      "images/products/gallery/400-scene-2.jpg"
+    ],
+    "moq_unit": "pcs",
+    "color_options": [
+      {
+        "name": "White",
+        "image": "images/products/bird-400-wire-v2.jpg"
+      },
+      {
+        "name": "Black",
+        "image": "images/products/bird-400-wire-v2.jpg"
+      }
+    ]
+  },
+  {
+    "id": "bird-400-frame",
+    "slug": "bird-400-frame",
+    "name": "400 Rolling Bird Cage Stand",
+    "category": "bird-cages",
+    "series": "bird-stand",
+    "size": "35.5*35*68.38",
+    "moq": 100,
+    "colors": [
+      "White"
+    ],
+    "image": "images/products/bird-400-stand-main.jpg",
+    "net_weight": "1.85",
+    "gross_weight": "2.36",
+    "cbm": "0.17",
+    "material": "Iron Wire",
+    "type": "",
+    "meas": "43*60*65",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
+    "gallery": [
+      "images/products/gallery/400-stand-scene-1.jpg",
+      "images/products/gallery/400-stand-scene-2.jpg",
+      "images/products/gallery/400-stand-scene-3.jpg"
+    ],
+    "moq_unit": "pcs"
+  },
+  {
+    "id": "bird-470-frame",
+    "slug": "bird-470-frame",
+    "name": "470 Rolling Bird Cage Stand",
+    "category": "bird-cages",
+    "series": "bird-stand",
+    "size": "46*46*71.2",
+    "moq": 100,
+    "colors": [
+      "White"
+    ],
+    "image": "images/products/bird-470-stand-main.jpg",
+    "net_weight": "2.54",
+    "gross_weight": "3.18",
+    "cbm": "0.29",
+    "material": "Iron Wire",
+    "type": "",
+    "meas": "48*90*68",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
+    "gallery": [
+      "images/products/gallery/470-stand-scene-1.jpg",
+      "images/products/gallery/470-stand-scene-2.jpg"
+    ],
+    "moq_unit": "pcs"
+  },
+  {
+    "id": "bird-490-climbing-rack",
+    "slug": "bird-490-climbing-rack",
+    "name": "490 Rolling Bird Cage Climbing Stand",
+    "category": "bird-cages",
+    "series": "bird-stand",
+    "size": "50*53*166",
+    "moq": 100,
+    "colors": [
+      "White"
+    ],
+    "image": "images/products/bird-490-climbing-rack.jpg",
+    "net_weight": "5.84",
+    "gross_weight": "6.64",
+    "cbm": "0.04",
+    "material": "Iron Wire",
+    "type": "",
+    "meas": "69*54*12",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
+    "gallery": [
+      "images/products/gallery/490-climbing-scene-1.jpg",
+      "images/products/gallery/490-climbing-scene-2.jpg",
+      "images/products/gallery/490-climbing-lineart.jpg",
+      "images/products/gallery/490-rack-scene-1.jpg",
+      "images/products/gallery/490-rack-scene-2.jpg",
+      "images/products/gallery/490-rack-scene-3.jpg"
+    ],
+    "moq_unit": "pcs"
+  },
+  {
+    "id": "bird-bathroom-small",
+    "slug": "bird-bathroom-small",
+    "name": "4.7\" Hanging Bird Bath",
+    "category": "bird-accessories",
+    "series": "bird-bathroom",
+    "size": "13*12*13",
+    "moq": "180 sets per color",
+    "colors": [
+      "White",
+      "Green",
+      "Blue",
+      "Yellow",
+      "Pink"
+    ],
+    "image": "images/products/bird-bath-47-main.jpg",
+    "net_weight": "0.122",
+    "gross_weight": "0.122",
+    "cbm": "",
+    "material": "ABS+PET",
+    "type": "",
+    "meas": "69*47*30",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "For 180 sets of a single color, 2 cartons are required — one carton for top lids, one carton for bottom bases.",
+    "gallery": [
+      "images/products/gallery/bird-bath-47-scene-1.jpg",
+      "images/products/gallery/bird-bath-47-scene-2.jpg",
+      "images/products/gallery/bird-bath-47-scene-3.jpg",
+      "images/products/gallery/bird-bath-47-scene-4.jpg"
+    ],
+    "accessory_type": "universal",
+    "moq_unit": "carton",
+    "color_images": {
+      "White": "images/products/bird-bathroom-small.jpg",
+      "Pink": "images/products/color/bird-bathroom-small_pink.jpg",
+      "Yellow": "images/products/color/bird-bathroom-small_yellow.jpg",
+      "Green": "images/products/color/bird-bathroom-small_green.jpg",
+      "Blue": "images/products/color/bird-bathroom-small_blue.jpg"
+    },
+    "color_options": [
+      {
+        "name": "Green",
+        "image": "images/products/bird-bath-47-green.jpg"
+      },
+      {
+        "name": "Blue",
+        "image": "images/products/bird-bath-47-blue.jpg"
+      },
+      {
+        "name": "Yellow",
+        "image": "images/products/bird-bath-47-yellow.jpg"
+      },
+      {
+        "name": "Pink",
+        "image": "images/products/bird-bath-47-pink.jpg"
+      }
+    ]
+  },
+  {
+    "id": "bird-space-bathroom-regular",
+    "slug": "bird-space-bathroom-regular",
+    "name": "7.7\" Hanging Bird Bath with Drawer",
+    "category": "bird-accessories",
+    "series": "bird-space-bathroom",
+    "size": "18*18*18",
+    "moq": "100",
+    "colors": [
+      "White"
+    ],
+    "image": "images/products/bird-bathroom-space.jpg",
+    "net_weight": "0.39",
+    "gross_weight": "0.55",
+    "cbm": "",
+    "material": "ABS+PET",
+    "type": "",
+    "meas": "22*18.5*20.5",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "Each product is individually packaged in a carton.",
+    "gallery": [],
+    "accessory_type": "universal",
+    "moq_unit": "carton",
+    "material_options": [
+      {
+        "name": "With Drawer",
+        "image": "images/products/bird-bathroom-space.jpg"
+      },
+      {
+        "name": "With Grate",
+        "image": "images/products/bird-bathroom-space-grate.jpg"
+      }
+    ]
+  },
+  {
+    "id": "bird-space-bathroom-grate",
+    "slug": "bird-space-bathroom-grate",
+    "name": "Hanging Bird Bathroom & Feeder",
+    "category": "bird-accessories",
+    "series": "bird-space-bathroom",
+    "size": "17.7*19.5*19.5",
+    "moq": "100",
+    "colors": [
+      "White"
+    ],
+    "image": "images/products/bird-bathroom-space-grate.jpg",
+    "net_weight": "0.39",
+    "gross_weight": "0.55",
+    "cbm": "",
+    "material": "ABS+PET",
+    "type": "",
+    "meas": "22*18.5*20.5",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "Each product is individually packaged in a carton.",
+    "gallery": [
+      "images/products/gallery/bathroom-feeder-scene-1.jpg",
+      "images/products/gallery/bathroom-feeder-scene-2.jpg",
+      "images/products/gallery/bathroom-feeder-scene-3.jpg"
+    ],
+    "accessory_type": "dedicated",
+    "moq_unit": "carton"
+  },
+  {
+    "id": "bird-parrot-nest-old",
+    "slug": "bird-parrot-nest-old",
+    "name": "7.7\" No-mess Hanging Parrot Feeder",
+    "category": "bird-accessories",
+    "series": "bird-parrot-nest",
+    "size": "18*18*18",
+    "moq": "100",
+    "colors": [
+      "White",
+      "Transparent"
+    ],
+    "image": "images/products/bird-parrot-nest-old.jpg",
+    "net_weight": "0.28",
+    "gross_weight": "0.55",
+    "cbm": "",
+    "material": "PET",
+    "type": "",
+    "meas": "18.5*16*16.5",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "Each product is individually packaged in a carton.",
+    "gallery": [
+      "images/products/gallery/no-mess-feeder-scene-1.jpg",
+      "images/products/gallery/no-mess-feeder-scene-2.jpg",
+      "images/products/gallery/no-mess-feeder-scene-3.jpg",
+      "images/products/gallery/no-mess-feeder-scene-4.jpg",
+      "images/products/gallery/no-mess-feeder-transparent.jpg"
+    ],
+    "accessory_type": "universal",
+    "moq_unit": "carton",
+    "color_options": [
+      {
+        "name": "White",
+        "image": "images/products/bird-parrot-nest-old.jpg"
+      },
+      {
+        "name": "Transparent",
+        "image": "images/products/bird-parrot-nest-old.jpg"
+      }
+    ]
+  },
+  {
+    "id": "bird-parrot-nest-small",
+    "slug": "bird-parrot-nest",
+    "name": "Small Transparent Parrot Nest",
+    "category": "bird-accessories",
+    "series": "bird-parrot-nest",
+    "size": {
+      "w": 15,
+      "d": 15,
+      "h": 14
+    },
+    "moq": "48",
+    "colors": [
+      "Transparent"
+    ],
+    "image": "images/products/parrot-nest-small-main.png",
+    "net_weight": "0.142",
+    "gross_weight": "8.5",
+    "cbm": "",
+    "material": "PET",
+    "type": "",
+    "meas": "69*47*30",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "Custom packaging is available.",
+    "gallery": [
+      "images/products/parrot-nest-small-main.png"
+    ],
+    "accessory_type": "universal",
+    "moq_unit": "carton",
+    "carton_size": {
+      "w": 69,
+      "d": 47,
+      "h": 30
+    },
+    "sku": "PARROT-NEST-S"
+  },
+  {
+    "id": "bird-parrot-nest-large",
+    "slug": "bird-parrot-nest",
+    "name": "Large Transparent Parrot Nest",
+    "category": "bird-accessories",
+    "series": "bird-parrot-nest",
+    "size": {
+      "w": 15,
+      "d": 18,
+      "h": 16
+    },
+    "moq": "48",
+    "colors": [
+      "Transparent"
+    ],
+    "image": "images/products/bird-parrot-nest.jpg",
+    "net_weight": "0.28",
+    "gross_weight": "1.5",
+    "cbm": "",
+    "material": "PET",
+    "type": "",
+    "meas": "69*47*30",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "Custom packaging is available.",
+    "gallery": [],
+    "accessory_type": "universal",
+    "moq_unit": "carton",
+    "carton_size": {
+      "w": 18.5,
+      "d": 16,
+      "h": 16.5
+    },
+    "sku": "PARROT-NEST-L",
+    "description": "Transparent parrot nest that can be hung or mounted anywhere in the bird cage. Made of durable PET material, easy to clean and provides a safe, comfortable resting space for small birds."
+  },
+  {
+    "id": "bird-windmill-toy",
+    "slug": "bird-windmill-toy",
+    "name": "Bird Spinning Windmill Toy",
+    "category": "bird-accessories",
+    "series": "bird-toy",
+    "size": "16*16*20",
+    "moq": "216",
+    "colors": [
+      "Multi-color"
+    ],
+    "image": "images/products/bird-windmill-toy.jpg",
+    "net_weight": "0.092",
+    "gross_weight": "19.8",
+    "cbm": "",
+    "material": "ABS",
+    "type": "",
+    "meas": "69*47*30",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "216 sets per carton. No individual packaging. Custom packaging available upon request. Gross weight 19.8kg per carton.",
+    "gallery": [
+      "images/products/gallery/windmill-toy-scene-1.jpg",
+      "images/products/gallery/windmill-toy-scene-2.jpg",
+      "images/products/gallery/windmill-toy-scene-3.jpg",
+      "images/products/gallery/windmill-toy-scene-4.jpg",
+      "images/products/gallery/windmill-toy-scene-5.jpg",
+      "images/products/gallery/windmill-toy-scene-6.jpg"
+    ],
+    "accessory_type": "universal",
+    "moq_unit": "carton"
+  },
+  {
+    "id": "bird-perch-stick",
+    "slug": "bird-perch-stick",
+    "name": "Bird Perch Stick-Plastic",
+    "category": "bird-accessories",
+    "series": "bird-perch",
+    "size": "18.5*4.5*4.5",
+    "moq": "200",
+    "colors": [
+      "Blue",
+      "Green",
+      "Yellow",
+      "Pink"
+    ],
+    "image": "images/products/bird-perch-stick.jpg",
+    "net_weight": "0.03",
+    "gross_weight": "6.5",
+    "cbm": "",
+    "material": "ABS",
+    "type": "",
+    "meas": "18.5*18*7.8",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "200 pcs per carton. No individual packaging. Gross weight 6.5kg per carton.",
+    "gallery": [],
+    "accessory_type": "universal",
+    "moq_unit": "carton",
+    "color_images": {
+      "Blue": "images/products/bird-perch-stick.jpg",
+      "Green": "images/products/bird-perch-stick.jpg",
+      "Yellow": "images/products/bird-perch-stick.jpg",
+      "Pink": "images/products/bird-perch-stick.jpg"
+    },
+    "color_options": [
+      {
+        "name": "Blue",
+        "image": "images/products/bird-perch-stick.jpg"
+      },
+      {
+        "name": "Green",
+        "image": "images/products/bird-perch-stick.jpg"
+      },
+      {
+        "name": "Yellow",
+        "image": "images/products/bird-perch-stick.jpg"
+      },
+      {
+        "name": "Pink",
+        "image": "images/products/bird-perch-stick.jpg"
+      }
+    ],
+    "carton_size": "69*47*30"
+  },
+  {
+    "id": "bird-breeding-box",
+    "slug": "bird-breeding-box",
+    "name": "Transparent Breeding Box",
+    "category": "bird-accessories",
+    "series": "bird-breeding",
+    "size": "24.5*13*13",
+    "moq": "60",
+    "colors": [
+      "Transparent"
+    ],
+    "image": "images/products/bird-transparent-breeding-box.jpg",
+    "net_weight": "0.499",
+    "gross_weight": "0.6",
+    "cbm": "",
+    "material": "ABS+PET",
+    "type": "",
+    "meas": "26*14.5*15.5",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "30 inner boxes per master carton. Each product is individually packaged in an inner box. Master carton size: 78.5×53.5×52.5 cm.",
+    "gallery": [],
+    "accessory_type": "universal",
+    "moq_unit": "carton",
+    "carton_size": "78.5*53.5*52.5"
+  },
+  {
+    "id": "bird-130ml-kettle",
+    "slug": "bird-130ml-kettle",
+    "name": "130ml 2-in-1 Bird Feeder & Water Bottle",
+    "category": "bird-accessories",
+    "series": "bird-kettle",
+    "size": "8*4.5*11",
+    "moq": "312",
+    "colors": [
+      "White"
+    ],
+    "image": "images/products/bird-130ml-kettle.jpg",
+    "net_weight": "0.036",
+    "gross_weight": "12",
+    "cbm": "",
+    "material": "ABS+PET",
+    "type": "",
+    "meas": "69*47*30",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "312 pcs per carton. Sold by full carton only.",
+    "gallery": [],
+    "accessory_type": "universal",
+    "moq_unit": "carton",
+    "description": "Dual-purpose bird feeder and water bottle. Can be hung on both horizontal and vertical wire cages. Perfect for seeds, water, and other bird treats.",
+    "features": [
+      "2-in-1 design: works as both feeder and water bottle",
+      "Universal hook fits both horizontal and vertical wire cages",
+      "130ml capacity for seeds, water, or treats",
+      "Transparent body lets you monitor food/water level",
+      "Easy to install and clean"
+    ],
+    "carton_size": "69*47*30"
+  },
+  {
+    "id": "bird-200ml-kettle",
+    "slug": "bird-200ml-kettle",
+    "name": "220ml 2-in-1 Bird Feeder & Water Bottle",
+    "category": "bird-accessories",
+    "series": "bird-kettle",
+    "size": "8*4.5*16",
+    "moq": "234",
+    "colors": [
+      "White"
+    ],
+    "image": "images/products/bird-200ml-kettle.jpg",
+    "net_weight": "0.046",
+    "gross_weight": "12",
+    "cbm": "",
+    "material": "ABS+PET",
+    "type": "",
+    "meas": "69*47*30",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "234 pcs per carton. Sold by full carton only.",
+    "gallery": [],
+    "accessory_type": "universal",
+    "moq_unit": "carton",
+    "description": "Dual-purpose bird feeder and water bottle. Can be hung on both horizontal and vertical wire cages. Perfect for seeds, water, and other bird treats.",
+    "features": [
+      "2-in-1 design: works as both feeder and water bottle",
+      "Universal hook fits both horizontal and vertical wire cages",
+      "200ml capacity for seeds, water, or treats",
+      "Transparent body lets you monitor food/water level",
+      "Easy to install and clean"
+    ],
+    "carton_size": "69*47*30"
+  },
+  {
+    "id": "hamster-43-cage",
+    "slug": "hamster-43-cage",
+    "name": "43 Hamster Transparent Cage",
+    "category": "hamster-cages",
+    "series": "hamster-transparent-cage",
+    "size": "43.5*35.4*30",
+    "moq": "100",
+    "colors": [
+      "White"
+    ],
+    "image": "images/products/hamster-43-cage-main.jpg",
+    "net_weight": "2.13",
+    "gross_weight": "2.86",
+    "cbm": "",
+    "material": "ABS + PET",
+    "type": "",
+    "meas": "47*37.5*21.5",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "Each unit is individually packed in a carton. Custom packaging and printing available for OEM/ODM orders.",
+    "gallery": [
+      "images/products/hamster-43-cage-white.jpg",
+      "images/products/hamster-43-cage-main.jpg",
+      "images/products/gallery/43-hamster-scene.jpg",
+      "images/products/gallery/43-hamster-scene-2.jpg",
+      "images/products/gallery/43-hamster-scene-3.jpg"
+    ],
+    "moq_unit": "pcs"
+  },
+  {
+    "id": "hamster-62-cage",
+    "slug": "hamster-62-cage",
+    "name": "62 Hamster Transparent Cage",
+    "category": "hamster-cages",
+    "series": "hamster-transparent-cage",
+    "size": "62*46*33.5",
+    "moq": "100",
+    "colors": [
+      "White"
+    ],
+    "image": "images/products/hamster-62-cage-main.jpg",
+    "net_weight": "4",
+    "gross_weight": "5",
+    "cbm": "",
+    "material": "ABS + PET",
+    "type": "",
+    "meas": "65*49*22",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "Each unit is individually packed in a carton. Custom packaging and printing available for OEM/ODM orders.",
+    "gallery": [
+      "images/products/hamster-62-cage-white.jpg",
+      "images/products/hamster-62-cage-main.jpg",
+      "images/products/gallery/62-hamster-scene.jpg",
+      "images/products/gallery/62-hamster-scene-2.jpg",
+      "images/products/gallery/62-hamster-scene-3.jpg",
+      "images/products/gallery/62-hamster-scene-4.jpg"
+    ],
+    "moq_unit": "pcs"
+  },
+  {
+    "id": "hamster-75-cage",
+    "slug": "hamster-75-cage",
+    "name": "75 Hamster Transparent Cage",
+    "category": "hamster-cages",
+    "series": "hamster-transparent-cage",
+    "size": "75*47*43",
+    "moq": "100",
+    "colors": [
+      "White"
+    ],
+    "image": "images/products/hamster-75-cage-main.jpg",
+    "net_weight": "5.8",
+    "gross_weight": "7.7",
+    "cbm": "",
+    "material": "ABS + PET",
+    "type": "",
+    "meas": "82*51*30",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "Each unit is individually packed in a carton. Custom packaging and printing available for OEM/ODM orders.",
+    "gallery": [
+      "images/products/hamster-75-cage-white.jpg",
+      "images/products/hamster-75-cage-main.jpg",
+      "images/products/gallery/75-hamster-scene.jpg",
+      "images/products/gallery/75-hamster-scene-2.jpg"
+    ],
+    "moq_unit": "pcs"
+  },
+  {
+    "id": "hamster-external-enclosure",
+    "slug": "hamster-external-enclosure",
+    "name": "External Hamster Enclosure",
+    "category": "hamster-cages",
+    "series": "hamster-external-cage",
+    "size": "",
+    "moq": 100,
+    "colors": [
+      "Green"
+    ],
+    "image": "images/products/gallery/external-hamster-scene.jpg",
+    "net_weight": "",
+    "gross_weight": "",
+    "cbm": "",
+    "material": "ABS+PET",
+    "type": "",
+    "meas": "",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "Each unit is individually packed in a carton. Custom packaging and printing available for OEM/ODM orders.",
+    "gallery": [
+      "images/products/gallery/external-hamster-scene.jpg",
+      "images/products/hamster-external-enclosure.jpg"
+    ],
+    "moq_unit": "pcs"
+  },
+  {
+    "id": "hamster-70-folding-low",
+    "slug": "hamster-70-folding-low",
+    "name": "70 Folding Cage Standard Model",
+    "category": "hamster-cages",
+    "series": "hamster-70-folding",
+    "size": {
+      "w": 70,
+      "d": 43,
+      "h": 34
+    },
+    "moq": "3",
+    "colors": [
+      "White"
+    ],
+    "image": "images/products/gallery/70-folding-low-scene.jpg",
+    "net_weight": "",
+    "gross_weight": "5",
+    "cbm": "",
+    "material": "PET + ABS",
+    "type": "",
+    "meas": "75*49*12",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "Wholesale starts at 3 sets. Prices for over 30 sets can be negotiated separately.",
+    "gallery": [
+      "images/products/gallery/70-folding-low-scene.jpg",
+      "images/products/hamster-70-folding-low.jpg"
+    ],
+    "moq_unit": "pcs",
+    "carton_size": {
+      "w": 75,
+      "d": 49,
+      "h": 12
+    }
+  },
+  {
+    "id": "hamster-70-folding-high",
+    "slug": "hamster-70-folding-high",
+    "name": "70 Foldable Cage Extended Height Version",
+    "category": "hamster-cages",
+    "series": "hamster-70-folding",
+    "size": {
+      "w": 70,
+      "d": 43,
+      "h": 39.5
+    },
+    "moq": "3",
+    "colors": [
+      "White"
+    ],
+    "image": "images/products/gallery/70-folding-high-scene.jpg",
+    "net_weight": "",
+    "gross_weight": "6.17",
+    "cbm": "",
+    "material": "PET + ABS",
+    "type": "",
+    "meas": "75*49*12",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "Wholesale starts at 3 sets. Prices for over 30 sets can be negotiated separately.",
+    "gallery": [
+      "images/products/gallery/70-folding-high-scene.jpg",
+      "images/products/hamster-70-folding-high.jpg"
+    ],
+    "moq_unit": "pcs",
+    "carton_size": {
+      "w": 75,
+      "d": 49,
+      "h": 12
+    }
+  },
+  {
+    "id": "hamster-bite-guard",
+    "slug": "hamster-bite-guard",
+    "name": "Bite Guard (Pipe Connector)",
+    "category": "hamster-accessories",
+    "series": "hamster-pipe",
+    "size": "",
+    "moq": "100",
+    "colors": [
+      "Transparent",
+      "Blue",
+      "Green",
+      "Pink"
+    ],
+    "image": "images/products/hamster-bite-guard-v3.jpg",
+    "net_weight": "",
+    "gross_weight": "",
+    "cbm": "",
+    "material": "PET",
+    "type": "",
+    "meas": "69*47*30",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "Default color is transparent. Custom colors available for bulk orders. Sold by full carton only.",
+    "gallery": [],
+    "accessory_type": "universal",
+    "moq_unit": "carton"
+  },
+  {
+    "id": "hamster-pipe-short",
+    "slug": "hamster-pipe-short",
+    "name": "Short Straight Pipe",
+    "category": "hamster-accessories",
+    "series": "hamster-pipe",
+    "size": "9.5*5.5",
+    "moq": "100",
+    "colors": [
+      "Transparent",
+      "Blue",
+      "Green",
+      "Pink"
+    ],
+    "image": "images/products/hamster-pipe-long.jpg",
+    "net_weight": "0.032",
+    "gross_weight": "30",
+    "cbm": "",
+    "material": "PET",
+    "type": "",
+    "meas": "69*47*30",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "Default color is transparent. Custom colors available for bulk orders. Sold by full carton only.",
+    "gallery": [],
+    "accessory_type": "universal",
+    "moq_unit": "carton",
+    "color_images": {
+      "Transparent": "images/products/hamster-pipe-long.jpg",
+      "Pink": "images/products/color/hamster-pipe-short_pink.jpg",
+      "Blue": "images/products/color/hamster-pipe-short_blue.jpg",
+      "Green": "images/products/color/hamster-pipe-short_green.jpg"
+    }
+  },
+  {
+    "id": "hamster-pipe-long",
+    "slug": "hamster-pipe-long",
+    "name": "Long Straight Pipe",
+    "category": "hamster-accessories",
+    "series": "hamster-pipe",
+    "size": "11*8.5",
+    "moq": "100",
+    "colors": [
+      "Transparent",
+      "Blue",
+      "Green",
+      "Pink"
+    ],
+    "image": "images/products/hamster-pipe-short.jpg",
+    "net_weight": "0.023",
+    "gross_weight": "18",
+    "cbm": "",
+    "material": "PET",
+    "type": "",
+    "meas": "69*47*30",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "Default color is transparent. Custom colors available for bulk orders. Sold by full carton only.",
+    "gallery": [],
+    "accessory_type": "universal",
+    "moq_unit": "carton",
+    "color_images": {
+      "Transparent": "images/products/hamster-pipe-short.jpg",
+      "Pink": "images/products/color/hamster-pipe-long_pink.jpg",
+      "Blue": "images/products/color/hamster-pipe-long_blue.jpg",
+      "Green": "images/products/color/hamster-pipe-long_green.jpg"
+    }
+  },
+  {
+    "id": "hamster-pipe-bent",
+    "slug": "hamster-pipe-bent",
+    "name": "Bent Pipe",
+    "category": "hamster-accessories",
+    "series": "hamster-pipe",
+    "size": "10.5*5.5*6",
+    "moq": "100",
+    "colors": [
+      "Transparent",
+      "Blue",
+      "Green",
+      "Pink"
+    ],
+    "image": "images/products/hamster-pipe-bent.jpg",
+    "net_weight": "0.026",
+    "gross_weight": "30",
+    "cbm": "",
+    "material": "PET",
+    "type": "",
+    "meas": "69*47*30",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "Default color is transparent. Custom colors available for bulk orders. Sold by full carton only.",
+    "gallery": [],
+    "accessory_type": "universal",
+    "moq_unit": "carton",
+    "color_images": {
+      "Transparent": "images/products/hamster-pipe-bent.jpg",
+      "Pink": "images/products/color/hamster-pipe-bent_pink.jpg",
+      "Blue": "images/products/color/hamster-pipe-bent_blue.jpg",
+      "Green": "images/products/color/hamster-pipe-bent_green.jpg"
+    }
+  },
+  {
+    "id": "hamster-pipe-3way",
+    "slug": "hamster-pipe-3way",
+    "name": "Three-Way Pipe",
+    "category": "hamster-accessories",
+    "series": "hamster-pipe",
+    "size": "9*8.5",
+    "moq": "100",
+    "colors": [
+      "Transparent",
+      "Blue",
+      "Green",
+      "Pink"
+    ],
+    "image": "images/products/hamster-pipe-3way.jpg",
+    "net_weight": "0.038",
+    "gross_weight": "28",
+    "cbm": "",
+    "material": "PET",
+    "type": "",
+    "meas": "69*47*30",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "Default color is transparent. Custom colors available for bulk orders. Sold by full carton only.",
+    "gallery": [],
+    "accessory_type": "universal",
+    "moq_unit": "carton",
+    "color_images": {
+      "Transparent": "images/products/hamster-pipe-3way.jpg",
+      "Pink": "images/products/color/hamster-pipe-3way_pink.jpg",
+      "Blue": "images/products/color/hamster-pipe-3way_blue.jpg",
+      "Green": "images/products/color/hamster-pipe-3way_green.jpg"
+    }
+  },
+  {
+    "id": "hamster-pipe-joint",
+    "slug": "hamster-pipe-joint",
+    "name": "Hamster Tube Connector",
+    "category": "hamster-accessories",
+    "series": "hamster-pipe",
+    "size": "6.5*6.5*1.7",
+    "moq": "100",
+    "colors": [
+      "White"
+    ],
+    "image": "images/products/hamster-pipe-joint.jpg",
+    "net_weight": "0.005",
+    "gross_weight": "10",
+    "cbm": "",
+    "material": "PET",
+    "type": "",
+    "meas": "69*47*30",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "Default color is transparent. Custom colors available for bulk orders. Sold by full carton only.",
+    "gallery": [
+      "images/products/gallery/hamster-pipe-joint-scene.jpg"
+    ],
+    "accessory_type": "universal",
+    "moq_unit": "carton"
+  },
+  {
+    "id": "hamster-wheel-17cm",
+    "slug": "hamster-wheel-17cm",
+    "name": "6.7\" Running Wheel + Hanging Bracket",
+    "category": "hamster-accessories",
+    "series": "hamster-wheel",
+    "size": "16*16*7",
+    "moq": "100",
+    "colors": [
+      "White",
+      "Blue",
+      "Pink",
+      "Purple"
+    ],
+    "image": "images/products/hamster-wheel-17cm.jpg",
+    "net_weight": "0.138",
+    "gross_weight": "2",
+    "cbm": "",
+    "material": "ABS + Phenol-modified + Bearing Steel",
+    "type": "",
+    "meas": "20*20*10",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "Default color is white. Custom colors available for bulk orders. Includes hanging bracket.",
+    "gallery": [],
+    "accessory_type": "universal",
+    "moq_unit": "carton",
+    "color_images": {
+      "White": "images/products/color/hamster-wheel-17cm_white.jpg",
+      "Blue": "images/products/color/hamster-wheel-17cm_blue.jpg",
+      "Pink": "images/products/color/hamster-wheel-17cm_pink.jpg",
+      "Purple": "images/products/color/hamster-wheel-17cm_purple.jpg"
+    }
+  },
+  {
+    "id": "hamster-wheel-21cm",
+    "slug": "hamster-wheel-21cm",
+    "name": "8.3\" Running Wheel + Hanging Bracket",
+    "category": "hamster-accessories",
+    "series": "hamster-wheel",
+    "size": "20*20*9",
+    "moq": "100",
+    "colors": [
+      "White",
+      "Blue",
+      "Pink",
+      "Purple"
+    ],
+    "image": "images/products/color/hamster-wheel-21cm_white.jpg",
+    "net_weight": "0.233",
+    "gross_weight": "2",
+    "cbm": "",
+    "material": "ABS + Phenol-modified + Bearing Steel",
+    "type": "",
+    "meas": "26*15*17",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "Default color is white. Custom colors available for bulk orders. Includes hanging bracket.",
+    "gallery": [],
+    "accessory_type": "universal",
+    "moq_unit": "carton",
+    "color_images": {
+      "White": "images/products/color/hamster-wheel-21cm_white.jpg",
+      "Blue": "images/products/color/hamster-wheel-21cm_blue.jpg",
+      "Pink": "images/products/color/hamster-wheel-21cm_pink.jpg",
+      "Purple": "images/products/color/hamster-wheel-21cm_purple.jpg"
+    }
+  },
+  {
+    "id": "hamster-wheel-24cm",
+    "slug": "hamster-wheel-24cm",
+    "name": "9.4\" Running Wheel with Transparent Base",
+    "category": "hamster-accessories",
+    "series": "hamster-wheel-large",
+    "size": "16*24*30",
+    "moq": "100",
+    "colors": [
+      "Transparent"
+    ],
+    "image": "images/products/hamster-wheel-24cm-v3.jpg",
+    "net_weight": "0.9",
+    "gross_weight": "1.25",
+    "cbm": "",
+    "material": "PC + ABS + Acrylic + Bearing Steel",
+    "type": "",
+    "meas": "29.5*27*18",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "Multiple colors available. Sold by full carton only.",
+    "gallery": [],
+    "accessory_type": "universal",
+    "moq_unit": "carton"
+  },
+  {
+    "id": "hamster-wheel-27cm",
+    "slug": "hamster-wheel-27cm",
+    "name": "10.6\" Running Wheel with Transparent Base",
+    "category": "hamster-accessories",
+    "series": "hamster-wheel-large",
+    "size": "26*10*22.5",
+    "moq": "100",
+    "colors": [
+      "Transparent"
+    ],
+    "image": "images/products/hamster-wheel-27cm-v3.jpg",
+    "net_weight": "0.95",
+    "gross_weight": "10",
+    "cbm": "",
+    "material": "PC + ABS + Acrylic + Bearing Steel",
+    "type": "",
+    "meas": "32*30*18",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "Multiple colors available. Sold by full carton only.",
+    "gallery": [],
+    "accessory_type": "universal",
+    "moq_unit": "carton"
+  },
+  {
+    "id": "hamster-running-disc",
+    "slug": "hamster-running-disc",
+    "name": "Silent Hamster Exercise Disc",
+    "category": "hamster-accessories",
+    "series": "hamster-running-disc",
+    "size": "18*18*12",
+    "moq": "100",
+    "colors": [
+      "White",
+      "Pink",
+      "Purple",
+      "Green",
+      "Sky Blue",
+      "Dark Blue",
+      "Black"
+    ],
+    "image": "images/products/hamster-running-disc-v4.jpg",
+    "net_weight": "0.09",
+    "gross_weight": "3.5",
+    "cbm": "",
+    "material": "PC + ABS + Bearing Steel",
+    "type": "",
+    "meas": "69*45*30",
+    "pcs_per_ctn": "100",
+    "color": "",
+    "accessories": "",
+    "notes": "Sold by full carton only, 100pcs per color. No individual packaging. Custom packaging available upon request.",
+    "gallery": [],
+    "accessory_type": "universal",
+    "moq_unit": "carton",
+    "color_images": {
+      "White": "images/products/color/hamster-running-disc_white.jpg",
+      "Pink": "images/products/color/hamster-running-disc_pink.jpg",
+      "Purple": "images/products/color/hamster-running-disc_purple.jpg",
+      "Green": "images/products/color/hamster-running-disc_green.jpg",
+      "Light Blue": "images/products/color/hamster-running-disc_light-blue.jpg",
+      "Dark Blue": "images/products/color/hamster-running-disc_dark-blue.jpg",
+      "Black": "images/products/color/hamster-running-disc_black.jpg"
+    }
+  },
+  {
+    "id": "hamster-ball-180",
+    "slug": "hamster-ball-180",
+    "name": "180 Running Ball",
+    "category": "hamster-accessories",
+    "series": "hamster-ball",
+    "size": "17*17*17.5",
+    "moq": "100",
+    "colors": [
+      "Transparent"
+    ],
+    "image": "images/products/hamster-ball-180-v3.jpg",
+    "net_weight": "0.222",
+    "gross_weight": "15",
+    "cbm": "",
+    "material": "PET",
+    "type": "",
+    "meas": "69*47*30",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "Screw accessory pack",
+    "notes": "Comes with screw accessory pack. Sold by full carton only.",
+    "gallery": [],
+    "accessory_type": "universal",
+    "moq_unit": "carton"
+  },
+  {
+    "id": "hamster-ball-270",
+    "slug": "hamster-ball-270",
+    "name": "270 Running Ball",
+    "category": "hamster-accessories",
+    "series": "hamster-ball",
+    "size": "27*27*27",
+    "moq": "100",
+    "colors": [
+      "Transparent"
+    ],
+    "image": "images/products/hamster-ball-270-v3.jpg",
+    "net_weight": "0.698",
+    "gross_weight": "1.2",
+    "cbm": "",
+    "material": "PET",
+    "type": "",
+    "meas": "29*29*18",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "Screw accessory pack",
+    "notes": "Comes with screw accessory pack. Sold by full carton only.",
+    "gallery": [],
+    "accessory_type": "universal",
+    "moq_unit": "carton"
+  },
+  {
+    "id": "hamster-bathroom-18cm",
+    "slug": "hamster-bathroom-18cm",
+    "name": "7\" Transparent Bathroom",
+    "category": "hamster-accessories",
+    "series": "hamster-bathroom",
+    "size": "17.5*13*11",
+    "moq": "100",
+    "colors": [
+      "Transparent",
+      "Blue",
+      "Green",
+      "Pink"
+    ],
+    "image": "images/products/hamster-bathroom-18cm-v3.jpg",
+    "net_weight": "0.154",
+    "gross_weight": "2",
+    "cbm": "",
+    "material": "PET",
+    "type": "",
+    "meas": "30*23*23",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "Multiple colors available. Sold by full carton only.",
+    "gallery": [],
+    "accessory_type": "universal",
+    "moq_unit": "carton"
+  },
+  {
+    "id": "hamster-external-bathroom",
+    "slug": "hamster-external-bathroom",
+    "name": "External Bathroom",
+    "category": "hamster-accessories",
+    "series": "hamster-bathroom",
+    "size": "16*13*11",
+    "moq": "100",
+    "colors": [
+      "Transparent",
+      "Blue",
+      "Green",
+      "Pink"
+    ],
+    "image": "images/products/hamster-external-bathroom-v3.jpg",
+    "net_weight": "0.118",
+    "gross_weight": "2",
+    "cbm": "",
+    "material": "PET",
+    "type": "",
+    "meas": "15.5*13*8",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "Multiple colors available. Sold by full carton only.",
+    "gallery": [],
+    "accessory_type": "universal",
+    "moq_unit": "carton"
+  },
+  {
+    "id": "hamster-shelf-43",
+    "slug": "hamster-shelf-43",
+    "name": "Shelf & Ladder Set for 43 Hamster Cage",
+    "category": "hamster-accessories",
+    "series": "hamster-shelf",
+    "size": "Shelf: 34*18.5; Ladder: 23.8*16.7*17",
+    "moq": "100",
+    "colors": [
+      "Blue"
+    ],
+    "image": "images/products/hamster-shelf-43-v4.jpg",
+    "net_weight": "0.042",
+    "gross_weight": "23",
+    "cbm": "",
+    "material": "ABS + PET",
+    "type": "",
+    "meas": "69*47*30",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "Shelf and ladder sold as one set, not separated. Compatible with 43 Hamster Cage only.",
+    "gallery": [
+      "images/products/gallery/shelf-43-detail.jpg"
+    ],
+    "accessory_type": "universal",
+    "compatible_with": [
+      "hamster-43-cage"
+    ],
+    "moq_unit": "carton",
+    "color_images": {
+      "White": "images/products/hamster-shelf-43-v4.jpg",
+      "Blue": "images/products/color/hamster-shelf-43_blue.jpg"
+    }
+  },
+  {
+    "id": "hamster-shelf-62",
+    "slug": "hamster-shelf-62",
+    "name": "Shelf & Ladder Set for 62 Hamster Cage",
+    "category": "hamster-accessories",
+    "series": "hamster-shelf",
+    "size": {
+      "w": 44,
+      "d": 22,
+      "h": 0
+    },
+    "moq": "50",
+    "colors": [
+      "Blue"
+    ],
+    "image": "images/products/hamster-shelf-62-v2.jpg",
+    "net_weight": "0.26",
+    "gross_weight": "",
+    "cbm": "",
+    "material": "ABS + PET",
+    "type": "",
+    "meas": "69*47*30",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "MOQ is 50 pcs. Custom packaging is available.",
+    "gallery": [
+      "images/products/gallery/shelf-62-detail.jpg"
+    ],
+    "accessory_type": "universal",
+    "compatible_with": [
+      "hamster-62-cage"
+    ],
+    "moq_unit": "carton",
+    "color_images": {
+      "White": "images/products/hamster-shelf-62-v2.jpg",
+      "Blue": "images/products/color/hamster-shelf-62_blue.jpg"
+    }
+  },
+  {
+    "id": "hamster-shelf-75",
+    "slug": "hamster-shelf-75",
+    "name": "Shelf & Ladder Set for 75 Hamster Cage",
+    "category": "hamster-accessories",
+    "series": "hamster-shelf",
+    "size": {
+      "w": 45,
+      "d": 25,
+      "h": 2
+    },
+    "moq": "100",
+    "colors": [
+      "Blue"
+    ],
+    "image": "images/products/hamster-shelf-75-v2.jpg",
+    "net_weight": "",
+    "gross_weight": "",
+    "cbm": "",
+    "material": "ABS + PET",
+    "type": "",
+    "meas": "69*47*30",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "Shelf and ladder sold as one set, not separated. Compatible with 75 Hamster Cage only. Dimensions pending confirmation.",
+    "gallery": [
+      "images/products/gallery/shelf-75-detail.jpg"
+    ],
+    "accessory_type": "universal",
+    "compatible_with": [
+      "hamster-75-cage"
+    ],
+    "moq_unit": "carton",
+    "color_images": {
+      "White": "images/products/hamster-shelf-75-v2.jpg",
+      "Blue": "images/products/color/hamster-shelf-75_blue.jpg"
+    }
+  },
+  {
+    "id": "hamster-universal-wheel",
+    "slug": "hamster-universal-wheel",
+    "name": "Universal Wheel (4pcs)",
+    "category": "hamster-accessories",
+    "series": "hamster-wheel-accessory",
+    "size": "5.5*3.7*6.7",
+    "moq": "100",
+    "colors": [
+      "White"
+    ],
+    "image": "images/products/hamster-universal-wheel-v3.jpg",
+    "net_weight": "0.042",
+    "gross_weight": "",
+    "cbm": "",
+    "material": "ABS",
+    "type": "",
+    "meas": "69*47*30",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "2 with brakes, 2 without brakes",
+    "notes": "This is a cage accessory for hamster cages, not sold separately. 2 wheels with brakes + 2 wheels without brakes per set.",
+    "gallery": [],
+    "accessory_type": "universal",
+    "moq_unit": "carton"
+  },
+  {
+    "id": "hamster-transparent-food-cup",
+    "slug": "hamster-transparent-food-cup",
+    "name": "Transparent Circular Food Cup",
+    "category": "hamster-accessories",
+    "series": "hamster-food-cup",
+    "size": "10*10*4",
+    "moq": 1,
+    "colors": [
+      "Transparent"
+    ],
+    "image": "images/products/hamster-transparent-food-cup-v3.jpg",
+    "net_weight": "0.045",
+    "gross_weight": "16",
+    "cbm": "",
+    "material": "PET",
+    "type": "",
+    "meas": "69*47*30",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "Minimum order of 3 sets, larger quantities negotiable",
+    "gallery": [],
+    "accessory_type": "universal",
+    "moq_unit": "carton"
+  },
+  {
+    "id": "hamster-heat-lamp",
+    "slug": "hamster-heat-lamp",
+    "name": "Hamster Heat Lamp",
+    "category": "hamster-accessories",
+    "series": "hamster-heat-lamp",
+    "size": "",
+    "moq": 1,
+    "colors": [
+      "White"
+    ],
+    "image": "images/products/hamster-heat-lamp-v3.jpg",
+    "net_weight": "",
+    "gross_weight": "",
+    "cbm": "",
+    "material": "PET",
+    "type": "",
+    "meas": "",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "",
+    "gallery": [],
+    "accessory_type": "universal",
+    "moq_unit": "carton"
+  },
+  {
+    "id": "rabbit-650-cage",
+    "slug": "rabbit-650-cage",
+    "name": "650 Rabbit Cage",
+    "category": "rabbit",
+    "series": "rabbit-cage",
+    "size": "65*46*62",
+    "moq": 100,
+    "colors": [
+      "White"
+    ],
+    "image": "images/products/test-page36-img2.jpg",
+    "net_weight": "7.065",
+    "gross_weight": "9.08",
+    "cbm": "",
+    "material": "",
+    "type": "",
+    "meas": "",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "Wholesale starts at 3 sets, price for over 30 sets negotiable separately",
+    "gallery": [],
+    "moq_unit": "pcs",
+    "materials": [
+      "PET",
+      "ABS",
+      "Aluminum Alloy",
+      "Iron Wire"
+    ]
+  },
+  {
+    "id": "cat-litter-box-75",
+    "slug": "cat-litter-box-75",
+    "name": "29.1\" Cat Litter Box",
+    "category": "cat",
+    "series": "cat-litter-box",
+    "size": "74*47*41",
+    "moq": "50",
+    "colors": [
+      "White"
+    ],
+    "image": "images/products/small-pet-cat-litter-box.jpg",
+    "net_weight": "3.777",
+    "gross_weight": "6.5",
+    "cbm": "",
+    "material": "ABS",
+    "type": "",
+    "meas": "82.5*51.5*31.5",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "Each product is individually packed in a carton. Custom packaging is available.",
+    "gallery": [],
+    "moq_unit": "carton"
+  },
+  {
+    "id": "cat-feeder-automatic",
+    "slug": "cat-feeder-automatic",
+    "name": "Automatic Cat Feeder & Water Dispenser",
+    "category": "cat",
+    "series": "cat-feeder",
+    "size": "37*45*32",
+    "moq": "50 per color",
+    "colors": [
+      "White",
+      "Pink",
+      "Gray"
+    ],
+    "image": "images/products/cat-feeder-automatic.jpg",
+    "net_weight": "0.872",
+    "gross_weight": "2",
+    "cbm": "",
+    "material": "",
+    "type": "",
+    "meas": "",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "MOQ is 50 pieces per color. Each product is individually packed in a carton. Custom packaging is available.",
+    "gallery": [],
+    "moq_unit": "carton",
+    "color_images": {
+      "Blue": "images/products/small-pet-cat-feeder.jpg",
+      "White": "images/products/small-pet-cat-feeder.jpg",
+      "Pink": "images/products/small-pet-cat-feeder.jpg",
+      "Gray": "images/products/small-pet-cat-feeder.jpg"
+    }
+  },
+  {
+    "id": "turtle-tank",
+    "slug": "turtle-tank",
+    "name": "Turtle Tank",
+    "category": "other-small-pets",
+    "series": "turtle-tank",
+    "size": "36*25*15.5",
+    "moq": 1,
+    "colors": [
+      "Transparent"
+    ],
+    "image": "images/products/turtle-tank-v4.jpg",
+    "net_weight": "",
+    "gross_weight": "",
+    "cbm": "",
+    "material": "PET",
+    "type": "",
+    "meas": "",
+    "pcs_per_ctn": "",
+    "color": "",
+    "accessories": "",
+    "notes": "Wholesale starts at 3 sets, price for over 30 sets negotiable separately",
+    "gallery": [],
+    "moq_unit": "carton"
+  }
+];
+
+window.KANAPET_CATEGORIES = {
+  "bird-cages": {
+    "name": "Bird Cages",
+    "desc": "Premium bird cages in transparent, wire and stainless steel options — 650, 490, 470 and 400 series.",
+    "icon": "bird"
+  },
+  "bird-accessories": {
+    "name": "Bird Cage Accessories",
+    "desc": "Bathrooms, nesting boxes, feeders, water bottles, perches and more.",
+    "icon": "feather"
+  },
+  "bird-travel": {
+    "name": "Travel Carriers",
+    "desc": "Compact travel cages for birds — 23cm to 42cm, multi-color options.",
+    "icon": "carrier"
+  },
+  "hamster-cages": {
+    "name": "Hamster Cages",
+    "desc": "Transparent acrylic hamster cages and folding cages — 43cm to 75cm.",
+    "icon": "hamster"
+  },
+  "hamster-accessories": {
+    "name": "Hamster Accessories",
+    "desc": "Running wheels, tunnels, sand baths, platforms and feeding cups.",
+    "icon": "wheel"
+  },
+  "rabbit": {
+    "name": "Rabbit",
+    "desc": "Spacious rabbit cages and enclosures for comfortable housing.",
+    "icon": "rabbit"
+  },
+  "cat": {
+    "name": "Cat",
+    "desc": "Cat litter boxes, automatic feeders and water dispensers.",
+    "icon": "cat"
+  },
+  "other-small-pets": {
+    "name": "Other Small Pets",
+    "desc": "Turtle tanks and supplies for other small animals.",
+    "icon": "turtle"
+  }
+};
