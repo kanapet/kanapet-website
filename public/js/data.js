@@ -389,7 +389,7 @@ window.KANAPET_PRODUCTS = [
     "category": "bird-accessories",
     "series": "bird-smart-feeder",
     "size": "",
-    "moq": 1,
+    "moq": 50,
     "colors": [
       "White"
     ],
@@ -415,7 +415,7 @@ window.KANAPET_PRODUCTS = [
     "category": "bird-accessories",
     "series": "bird-smart-water-dispenser",
     "size": "",
-    "moq": 1,
+    "moq": 50,
     "colors": [
       "White"
     ],
@@ -2224,7 +2224,7 @@ window.KANAPET_PRODUCTS = [
     "category": "hamster-accessories",
     "series": "hamster-food-cup",
     "size": "10*10*4",
-    "moq": 1,
+    "moq": 50,
     "colors": [
       "Transparent"
     ],
@@ -2238,7 +2238,7 @@ window.KANAPET_PRODUCTS = [
     "pcs_per_ctn": "",
     "color": "",
     "accessories": "",
-    "notes": "Minimum order of 3 sets, larger quantities negotiable",
+    "notes": "MOQ is 50 pcs. Larger quantities negotiable",
     "gallery": [],
     "accessory_type": "universal",
     "moq_unit": "carton"
@@ -2250,7 +2250,7 @@ window.KANAPET_PRODUCTS = [
     "category": "hamster-accessories",
     "series": "hamster-heat-lamp",
     "size": "",
-    "moq": 1,
+    "moq": 50,
     "colors": [
       "White"
     ],
@@ -2367,7 +2367,7 @@ window.KANAPET_PRODUCTS = [
     "category": "other-small-pets",
     "series": "turtle-tank",
     "size": "36*25*15.5",
-    "moq": 1,
+    "moq": 50,
     "colors": [
       "Transparent"
     ],
@@ -2381,7 +2381,7 @@ window.KANAPET_PRODUCTS = [
     "pcs_per_ctn": "",
     "color": "",
     "accessories": "",
-    "notes": "Wholesale starts at 3 sets, price for over 30 sets negotiable separately",
+    "notes": "Wholesale starts at 50 pcs, larger quantities negotiable",
     "gallery": [],
     "moq_unit": "carton"
   }
