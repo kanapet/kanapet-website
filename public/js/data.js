@@ -2337,6 +2337,7 @@ window.KANAPET_PRODUCTS = [
     "moq": "50 per color",
     "colors": [
       "White",
+      "Blue",
       "Pink",
       "Gray"
     ],
@@ -2355,6 +2356,7 @@ window.KANAPET_PRODUCTS = [
     "moq_unit": "carton",
     "color_images": {
       "White": "images/products/cat-feeder-automatic-white.jpg",
+      "Blue": "images/products/cat-feeder-automatic-blue.jpg",
       "Pink": "images/products/cat-feeder-automatic-pink.jpg",
       "Gray": "images/products/cat-feeder-automatic-gray.jpg"
     }
