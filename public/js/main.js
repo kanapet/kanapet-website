@@ -705,10 +705,25 @@ function setupContactForm() {
     if (productField) productField.value = decodeURIComponent(product);
   }
 
-  // 飞书机器人Webhook地址 — 这里留占位符，后面填实际地址
-  const FEISHU_WEBHOOK_URL = 'YOUR_FEISHU_WEBHOOK_URL_HERE';
+  // 飞书机器人Webhook（安全设置：签名校验）
+  const FEISHU_WEBHOOK_URL = 'https://open.feishu.cn/open-apis/bot/v2/hook/dff1917e-a319-4331-88b1-8b4074071c3d';
+  const FEISHU_SECRET = 'E9nzLCx2VyL5Dd13luiqmb';
 
-  form.addEventListener('submit', (e) => {
+  // 飞书签名算法：以 "timestamp\nsecret" 为密钥对空串做 HMAC-SHA256，再 base64 编码
+  async function feishuSign(timestamp, secret) {
+    const encoder = new TextEncoder();
+    const key = await crypto.subtle.importKey(
+      'raw',
+      encoder.encode(timestamp + '\n' + secret),
+      { name: 'HMAC', hash: 'SHA-256' },
+      false,
+      ['sign']
+    );
+    const sig = await crypto.subtle.sign('HMAC', key, new Uint8Array(0));
+    return btoa(String.fromCharCode.apply(null, new Uint8Array(sig)));
+  }
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = form.querySelector('button[type="submit"]');
     btn.textContent = 'Sending...';
@@ -756,11 +771,13 @@ function setupContactForm() {
       }
     };
 
-    // 提交到飞书
+    // 提交到飞书（签名校验模式：需附带 timestamp 和 sign）
+    const timestamp = Math.floor(Date.now() / 1000).toString();
+    const sign = await feishuSign(timestamp, FEISHU_SECRET);
     fetch(FEISHU_WEBHOOK_URL, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(feishuMsg)
+      body: JSON.stringify(Object.assign({}, feishuMsg, { timestamp: timestamp, sign: sign }))
     })
     .then(() => {
       form.innerHTML = `
