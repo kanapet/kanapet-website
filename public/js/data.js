@@ -80,7 +80,7 @@ window.KANAPET_PRODUCTS = [
   },
   {
     "id": "bird-travel-30",
-    "slug": "bird-travel-26",
+    "slug": "bird-travel-30",
     "name": "30 External Travel Cage",
     "category": "bird-travel",
     "series": "bird-travel-cage",
@@ -121,7 +121,7 @@ window.KANAPET_PRODUCTS = [
   },
   {
     "id": "bird-travel-42",
-    "slug": "bird-travel-23",
+    "slug": "bird-travel-42",
     "name": "42 External Travel Cage",
     "category": "bird-travel",
     "series": "bird-travel-cage",
@@ -1196,7 +1196,7 @@ window.KANAPET_PRODUCTS = [
   },
   {
     "id": "bird-parrot-nest-large",
-    "slug": "bird-parrot-nest",
+    "slug": "bird-parrot-nest-large",
     "name": "Large Transparent Parrot Nest",
     "category": "bird-accessories",
     "series": "bird-parrot-nest",
