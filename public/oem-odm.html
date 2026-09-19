@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OEM & ODM Pet Cage Manufacturing Services — Custom Bird Cages | Kanapet</title>
-  <meta name="description" content="Full OEM/ODM pet cage manufacturing services. From product design and mold making to mass production. Custom colors, customer logos, blister packaging and product modifications. 30-45 day mold lead time. Trusted by brands in 30+ countries.">
+  <meta name="description" content="Full OEM/ODM pet cage manufacturing services since 1991 — 35 years of expertise. From product design and mold making to mass production. Custom colors, customer logos, blister packaging and product modifications. 30-45 day mold lead time. Trusted by brands in 30+ countries.">
   <meta name="keywords" content="OEM pet cage manufacturer, ODM bird cage, custom pet products China, private label pet cages, custom bird cage manufacturer, hamster cage OEM, custom packaging pet products">
   <meta property="og:title" content="OEM & ODM Pet Cage Manufacturing Services — Kanapet">
   <meta property="og:description" content="Custom pet cage manufacturing from design to mass production. OEM/ODM services since 1991.">
@@ -96,7 +96,7 @@
 <section class="page-header">
   <div class="container">
     <h1>OEM & ODM Services</h1>
-    <p>From concept to mass production — we turn your ideas into market-ready pet products.</p>
+    <p><strong id="hero-years" style="color:var(--accent);">35+ years of manufacturing expertise</strong> — from concept to mass production, we turn your ideas into market-ready pet products. Since 1991.</p>
   </div>
 </section>
 
@@ -131,7 +131,7 @@
 <!-- Stats Bar -->
 <div style="background:var(--primary);color:#fff;">
   <div class="container" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;text-align:center;padding:26px 20px;">
-    <div><div style="font-size:26px;font-weight:700;">1991</div><div style="font-size:13px;opacity:.85;">Manufacturing since</div></div>
+    <div><div style="font-size:26px;font-weight:700;"><span id="stat-years">35+</span></div><div style="font-size:13px;opacity:.85;">Years of manufacturing · since 1991</div></div>
     <div><div style="font-size:26px;font-weight:700;">3</div><div style="font-size:13px;opacity:.85;">Dedicated plants</div></div>
     <div><div style="font-size:26px;font-weight:700;">30+</div><div style="font-size:13px;opacity:.85;">Export countries</div></div>
     <div><div style="font-size:26px;font-weight:700;">30–45</div><div style="font-size:13px;opacity:.85;">Days mold lead time</div></div>
@@ -441,5 +441,15 @@
 
 <script src="js/data.js?v=13"></script>
   <script src="js/main.js"></script>
+  <script>
+    // Auto-compute years of experience from founding year — never goes stale
+    (function () {
+      var y = (new Date().getFullYear() - 1991) + '+';
+      var stat = document.getElementById('stat-years');
+      if (stat) stat.textContent = y;
+      var hero = document.getElementById('hero-years');
+      if (hero) hero.textContent = y + ' years of manufacturing expertise';
+    })();
+  </script>
 </body>
 </html>
