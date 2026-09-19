@@ -103,9 +103,9 @@ window.KANAPET_PRODUCTS = [
     "accessories": "",
     "notes": "Iron wire construction. MOQ: 100 pcs per color. Sold by full carton only.",
     "gallery": [
-      "images/products/gallery/26-travel-ss-1.jpg",
-      "images/products/gallery/26-travel-ss-2.jpg",
-      "images/products/gallery/26-travel-ss-3.jpg"
+      "images/products/gallery/30-travel-scene-1.jpg",
+      "images/products/gallery/30-travel-scene-2.jpg",
+      "images/products/gallery/30-travel-scene-3.jpg"
     ],
     "moq_unit": "pcs",
     "material_options": [
@@ -115,7 +115,7 @@ window.KANAPET_PRODUCTS = [
       },
       {
         "name": "Stainless Steel",
-        "image": "images/products/gallery/26-travel-ss-1.jpg"
+        "image": "images/products/gallery/30-travel-ss-1.jpg"
       }
     ]
   },
