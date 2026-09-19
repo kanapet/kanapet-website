@@ -2335,6 +2335,7 @@ window.KANAPET_PRODUCTS = [
     "series": "cat-feeder",
     "size": "37*45*32",
     "moq": "50 per color",
+    "color_options": [{"name": "White", "image": "images/products/cat-feeder-automatic-white.jpg"}, {"name": "Blue", "image": "images/products/cat-feeder-automatic-blue.jpg"}, {"name": "Pink", "image": "images/products/cat-feeder-automatic-pink.jpg"}, {"name": "Gray", "image": "images/products/cat-feeder-automatic-gray.jpg"}],
     "colors": [
       "White",
       "Blue",
