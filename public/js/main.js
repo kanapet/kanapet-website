@@ -468,7 +468,7 @@ function renderProductDetail() {
       ${variantsTable}
       <div class="inquiry-box">
         <h3>Interested in this product?</h3>
-        <p>Send us your quantity and requirements — we'll reply within 3.5 hours with a wholesale quote.</p>
+        <p>Send us your quantity and requirements — we'll reply within one business day with a wholesale quote.</p>
         <a href="contact.html?product=${encodeURIComponent(p.name)}" class="btn btn-primary" style="width:100%;">Request a Quote</a>
         <div style="margin-top:12px;text-align:center;">
           <a href="https://wa.me/8615221878306?text=${encodeURIComponent('Hi Kanapet, I am interested in ' + p.name)}" target="_blank" rel="noopener" style="font-size:14px;font-weight:600;">💬 Or chat on WhatsApp</a>
@@ -785,7 +785,7 @@ function setupContactForm() {
           <div style="font-size:48px;margin-bottom:16px;">✅</div>
           <h3 style="font-size:22px;margin-bottom:10px;">Thank You!</h3>
           <p style="color:var(--text-light);margin-bottom:8px;">Your inquiry has been received.</p>
-          <p style="color:var(--text-light);margin-bottom:20px;">We'll get back to you within 3.5 hours.</p>
+          <p style="color:var(--text-light);margin-bottom:20px;">We'll get back to you within one business day.</p>
           <a href="products.html" class="btn btn-ghost">Browse More Products</a>
         </div>
       `;
