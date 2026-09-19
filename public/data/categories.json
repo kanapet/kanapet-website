@@ -24,9 +24,9 @@
     "desc": "Running wheels, tunnels, sand baths, platforms and feeding cups.",
     "icon": "wheel"
   },
-  "other-pets": {
-    "name": "Rabbits, Cats and other pets",
-    "desc": "Rabbit cages, cat litter boxes, automatic feeders and supplies for other small animals.",
-    "icon": "paw"
+  "other-small-pets": {
+    "name": "Other Small Pets",
+    "desc": "Rabbit cages, cat litter boxes and feeders, turtle tanks and supplies for other small animals.",
+    "icon": "turtle"
   }
 }

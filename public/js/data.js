@@ -2275,7 +2275,7 @@ window.KANAPET_PRODUCTS = [
     "id": "rabbit-650-cage",
     "slug": "rabbit-650-cage",
     "name": "650 Rabbit Cage",
-    "category": "rabbit",
+    "category": "other-small-pets",
     "series": "rabbit-cage",
     "size": "65*46*62",
     "moq": 100,
@@ -2306,7 +2306,7 @@ window.KANAPET_PRODUCTS = [
     "id": "cat-litter-box-75",
     "slug": "cat-litter-box-75",
     "name": "29.1\" Cat Litter Box",
-    "category": "cat",
+    "category": "other-small-pets",
     "series": "cat-litter-box",
     "size": "74*47*41",
     "moq": "50",
@@ -2331,7 +2331,7 @@ window.KANAPET_PRODUCTS = [
     "id": "cat-feeder-automatic",
     "slug": "cat-feeder-automatic",
     "name": "Automatic Cat Feeder & Water Dispenser",
-    "category": "cat",
+    "category": "other-small-pets",
     "series": "cat-feeder",
     "size": "37*45*32",
     "moq": "50 per color",
@@ -2413,19 +2413,9 @@ window.KANAPET_CATEGORIES = {
     "desc": "Running wheels, tunnels, sand baths, platforms and feeding cups.",
     "icon": "wheel"
   },
-  "rabbit": {
-    "name": "Rabbit",
-    "desc": "Spacious rabbit cages and enclosures for comfortable housing.",
-    "icon": "rabbit"
-  },
-  "cat": {
-    "name": "Cat",
-    "desc": "Cat litter boxes, automatic feeders and water dispensers.",
-    "icon": "cat"
-  },
   "other-small-pets": {
     "name": "Other Small Pets",
-    "desc": "Turtle tanks and supplies for other small animals.",
+    "desc": "Rabbit cages, cat litter boxes and feeders, turtle tanks and supplies for other small animals.",
     "icon": "turtle"
   }
 };
