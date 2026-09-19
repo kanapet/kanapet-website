@@ -96,7 +96,7 @@
 <section class="page-header">
   <div class="container">
     <h1>OEM & ODM Services</h1>
-    <p><strong id="hero-years" style="color:var(--accent);">35+ years of manufacturing expertise</strong> — from concept to mass production, we turn your ideas into market-ready pet products. Since 1991.</p>
+    <p><strong class="auto-years" data-suffix="+ years of manufacturing expertise" style="color:var(--accent);">35+ years of manufacturing expertise</strong> — from concept to mass production, we turn your ideas into market-ready pet products. Since 1991.</p>
   </div>
 </section>
 
@@ -131,7 +131,7 @@
 <!-- Stats Bar -->
 <div style="background:var(--primary);color:#fff;">
   <div class="container" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;text-align:center;padding:26px 20px;">
-    <div><div style="font-size:26px;font-weight:700;"><span id="stat-years">35+</span></div><div style="font-size:13px;opacity:.85;">Years of manufacturing · since 1991</div></div>
+    <div><div style="font-size:26px;font-weight:700;"><span class="auto-years" data-suffix="+">35+</span></div><div style="font-size:13px;opacity:.85;">Years of manufacturing · since 1991</div></div>
     <div><div style="font-size:26px;font-weight:700;">3</div><div style="font-size:13px;opacity:.85;">Dedicated plants</div></div>
     <div><div style="font-size:26px;font-weight:700;">30+</div><div style="font-size:13px;opacity:.85;">Export countries</div></div>
     <div><div style="font-size:26px;font-weight:700;">30–45</div><div style="font-size:13px;opacity:.85;">Days mold lead time</div></div>
@@ -441,15 +441,5 @@
 
 <script src="js/data.js?v=13"></script>
   <script src="js/main.js"></script>
-  <script>
-    // Auto-compute years of experience from founding year — never goes stale
-    (function () {
-      var y = (new Date().getFullYear() - 1991) + '+';
-      var stat = document.getElementById('stat-years');
-      if (stat) stat.textContent = y;
-      var hero = document.getElementById('hero-years');
-      if (hero) hero.textContent = y + ' years of manufacturing expertise';
-    })();
-  </script>
 </body>
 </html>

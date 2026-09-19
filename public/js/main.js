@@ -801,6 +801,16 @@ function setupContactForm() {
 
 // Init
 document.addEventListener('DOMContentLoaded', async () => {
+  // Auto-update "years since 1991" figures so they never go stale.
+  // Usage: <span class="auto-years">35</span> → 35
+  //        <span class="auto-years" data-suffix="+">35+</span> → 35+
+  const yearsSinceFounding = new Date().getFullYear() - 1991;
+  document.querySelectorAll('.auto-years').forEach(el => {
+    el.textContent = el.dataset.suffix !== undefined
+      ? yearsSinceFounding + el.dataset.suffix
+      : String(yearsSinceFounding);
+  });
+
   await loadData();
   renderFeatured('featured-products', 8);
   setupFilters();
