@@ -1,0 +1,11 @@
+{
+  // KANAPET B2B website - Cloudflare Workers static asset hosting
+  // This file pins the deployment config to the code, so the dashboard
+  // settings and the repo can never drift apart again.
+  "name": "kanapet-website",
+  "compatibility_date": "2025-04-01",
+  "assets": {
+    // All site files (HTML/CSS/JS/images) live in the public/ folder.
+    "directory": "./public"
+  }
+}
