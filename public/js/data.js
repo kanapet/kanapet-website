@@ -2414,7 +2414,7 @@ window.KANAPET_CATEGORIES = {
     "icon": "wheel"
   },
   "other-small-pets": {
-    "name": "Other Small Pets",
+    "name": "Cats, Rabbits & Other Animals",
     "desc": "Rabbit cages, cat litter boxes and feeders, turtle tanks and supplies for other small animals.",
     "icon": "turtle"
   }
