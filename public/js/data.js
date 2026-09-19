@@ -2089,7 +2089,7 @@ window.KANAPET_PRODUCTS = [
     "colors": [
       "Blue"
     ],
-    "image": "images/products/hamster-shelf-43-v4.jpg",
+    "image": "images/products/hamster-shelf-43-v3.jpg",
     "net_weight": "0.042",
     "gross_weight": "23",
     "cbm": "",
@@ -2101,7 +2101,7 @@ window.KANAPET_PRODUCTS = [
     "accessories": "",
     "notes": "Shelf and ladder sold as one set, not separated. Compatible with 43 Hamster Cage only.",
     "gallery": [
-      "images/products/gallery/shelf-43-detail.jpg"
+      "images/products/hamster-shelf-43-v3.jpg"
     ],
     "accessory_type": "universal",
     "compatible_with": [
@@ -2109,7 +2109,7 @@ window.KANAPET_PRODUCTS = [
     ],
     "moq_unit": "carton",
     "color_images": {
-      "White": "images/products/hamster-shelf-43-v4.jpg",
+      "White": "images/products/hamster-shelf-43-v3.jpg",
       "Blue": "images/products/color/hamster-shelf-43_blue.jpg"
     }
   },
@@ -2128,7 +2128,7 @@ window.KANAPET_PRODUCTS = [
     "colors": [
       "Blue"
     ],
-    "image": "images/products/hamster-shelf-62-v2.jpg",
+    "image": "images/products/hamster-shelf-62-v3.jpg",
     "net_weight": "0.26",
     "gross_weight": "",
     "cbm": "",
@@ -2140,7 +2140,7 @@ window.KANAPET_PRODUCTS = [
     "accessories": "",
     "notes": "MOQ is 50 pcs. Custom packaging is available.",
     "gallery": [
-      "images/products/gallery/shelf-62-detail.jpg"
+      "images/products/hamster-shelf-62-v3.jpg"
     ],
     "accessory_type": "universal",
     "compatible_with": [
@@ -2148,7 +2148,7 @@ window.KANAPET_PRODUCTS = [
     ],
     "moq_unit": "carton",
     "color_images": {
-      "White": "images/products/hamster-shelf-62-v2.jpg",
+      "White": "images/products/hamster-shelf-62-v3.jpg",
       "Blue": "images/products/color/hamster-shelf-62_blue.jpg"
     }
   },
@@ -2167,7 +2167,7 @@ window.KANAPET_PRODUCTS = [
     "colors": [
       "Blue"
     ],
-    "image": "images/products/hamster-shelf-75-v2.jpg",
+    "image": "images/products/hamster-shelf-75-v3.jpg",
     "net_weight": "",
     "gross_weight": "",
     "cbm": "",
@@ -2179,7 +2179,7 @@ window.KANAPET_PRODUCTS = [
     "accessories": "",
     "notes": "Shelf and ladder sold as one set, not separated. Compatible with 75 Hamster Cage only. Dimensions pending confirmation.",
     "gallery": [
-      "images/products/gallery/shelf-75-detail.jpg"
+      "images/products/hamster-shelf-75-v3.jpg"
     ],
     "accessory_type": "universal",
     "compatible_with": [
@@ -2187,7 +2187,7 @@ window.KANAPET_PRODUCTS = [
     ],
     "moq_unit": "carton",
     "color_images": {
-      "White": "images/products/hamster-shelf-75-v2.jpg",
+      "White": "images/products/hamster-shelf-75-v3.jpg",
       "Blue": "images/products/color/hamster-shelf-75_blue.jpg"
     }
   },
