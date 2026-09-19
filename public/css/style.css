@@ -832,6 +832,27 @@ footer {
   .factory-images img:first-child { height: 180px; }
   .factory-images img { height: 140px; }
   .page-header h1 { font-size: 28px; }
+
+  /* 手机端：页脚为 WhatsApp 悬浮按钮让位（按钮 56px + 24px 边距） */
+  footer { padding-bottom: 96px; }
+
+  /* 手机端：hero 标题的 "Since 1991" 独占一行 */
+  .hero-since { display: block; margin-top: 6px; }
+
+  /* 手机端：筛选器单行横滑，不再换行堆叠 */
+  .filter-bar,
+  .color-filter-bar {
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+  }
+  .filter-bar::-webkit-scrollbar,
+  .color-filter-bar::-webkit-scrollbar { display: none; }
+  .filter-btn,
+  .color-filter-btn { flex: 0 0 auto; white-space: nowrap; }
 }
 
 /* ===== Lightbox ===== */
