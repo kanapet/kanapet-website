@@ -87,9 +87,7 @@ window.KANAPET_PRODUCTS = [
     "size": "26*20*17",
     "moq": 100,
     "colors": [
-      "Green",
-      "Blue",
-      "Yellow"
+      "Green"
     ],
     "image": "images/products/bird-travel-cage-30.jpg",
     "net_weight": "9",
