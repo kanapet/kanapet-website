@@ -2354,10 +2354,9 @@ window.KANAPET_PRODUCTS = [
     "gallery": [],
     "moq_unit": "carton",
     "color_images": {
-      "Blue": "images/products/small-pet-cat-feeder.jpg",
-      "White": "images/products/small-pet-cat-feeder.jpg",
-      "Pink": "images/products/small-pet-cat-feeder.jpg",
-      "Gray": "images/products/small-pet-cat-feeder.jpg"
+      "White": "images/products/cat-feeder-automatic-white.jpg",
+      "Pink": "images/products/cat-feeder-automatic-pink.jpg",
+      "Gray": "images/products/cat-feeder-automatic-gray.jpg"
     }
   },
   {
