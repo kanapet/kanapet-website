@@ -1,0 +1,7 @@
+# Cloudflare Workers static assets: files listed here are NOT uploaded.
+# images/products_raw/ holds editable SVG layer sources and catalog cut-outs
+# (523 files, ~90 MB) used only for internal production. Shipping them publicly
+# wasted ~58% of every deployment bundle and leaked editable design files.
+# Keep them in git, drop them from the edge.
+images/products_raw/
+images/products_raw/**

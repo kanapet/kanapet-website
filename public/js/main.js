@@ -185,12 +185,12 @@ function productCard(p, variantCount = 1) {
     <div class="product-card" data-cat="${p.category}">
       <a href="product.html?slug=${p.slug}" class="product-img-link">
         <div class="product-img">
-          <img src="${p.image}" alt="${p.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <img src="${p.image}" alt="${p.name}" width="800" height="800" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="placeholder" style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:48px;color:var(--primary-light);opacity:0.3;">📦</div>
         </div>
       </a>
       <div class="product-info">
-        <a href="product.html?slug=${p.slug}" class="product-name-link"><h4>${p.name}</h4></a>
+        <a href="product.html?slug=${p.slug}" class="product-name-link"><h3>${p.name}</h3></a>
         <div class="product-meta">${formatSize(p.size)}</div>
         <div class="product-meta">${catName}</div>
         ${renderSwatches(p.colors)}
@@ -464,12 +464,12 @@ function renderProductDetail() {
       <div class="product-sku">SKU: ${p.id.toUpperCase()} | OEM/ODM Available</div>
       ${p.colors && p.colors.length > 1 ? `
       <div class="product-colors">
-        <h4>Available Colors</h4>
+        <h3>Available Colors</h3>
         ${renderSwatches(p.colors, 'large', p.colors[0], p.id)}
       </div>` : ''}
       ${p.material_options && p.material_options.length > 1 ? `
       <div class="product-colors">
-        <h4>Material / Configuration</h4>
+        <h3>Material / Configuration</h3>
         <div class="material-options">
           ${p.material_options.map((m, i) => `
             <button class="material-btn ${i === 0 ? 'active' : ''}" onclick="switchProductMaterial('${p.id}', ${i})">${m.name}</button>
@@ -560,7 +560,7 @@ function renderRelatedProducts(product) {
         <img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\\'placeholder\\'>📦</div>'">
       </div>
       <div class="related-product-info">
-        <h4>${p.name}</h4>
+        <h3>${p.name}</h3>
         ${p.size ? `<p class="related-product-size">${formatSize(p.size)}</p>` : ''}
         <span class="related-product-link">View Details →</span>
       </div>
@@ -603,7 +603,7 @@ function renderCompatibleAccessories(product) {
               <img src="${acc.image}" alt="${acc.name}" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\\'placeholder\\'>📦</div>'">
             </div>
             <div class="accessory-info">
-              <h4>${acc.name}</h4>
+              <h3>${acc.name}</h3>
               ${acc.size ? `<p class="accessory-size">${formatSize(acc.size)}</p>` : ''}
               <span class="dedicated-badge">Dedicated Fit</span>
             </div>
@@ -623,7 +623,7 @@ function renderCompatibleAccessories(product) {
               <img src="${acc.image}" alt="${acc.name}" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\\'placeholder\\'>📦</div>'">
             </div>
             <div class="accessory-info">
-              <h4>${acc.name}</h4>
+              <h3>${acc.name}</h3>
               ${acc.size ? `<p class="accessory-size">${formatSize(acc.size)}</p>` : ''}
               <span class="universal-badge">Universal Fit</span>
             </div>
