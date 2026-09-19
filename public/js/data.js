@@ -1564,7 +1564,7 @@ window.KANAPET_PRODUCTS = [
       "images/products/gallery/70-folding-low-scene.jpg",
       "images/products/hamster-70-folding-low.jpg"
     ],
-    "moq_unit": "pcs",
+    "moq_unit": "sets",
     "carton_size": {
       "w": 75,
       "d": 49,
@@ -1601,7 +1601,7 @@ window.KANAPET_PRODUCTS = [
       "images/products/gallery/70-folding-high-scene.jpg",
       "images/products/hamster-70-folding-high.jpg"
     ],
-    "moq_unit": "pcs",
+    "moq_unit": "sets",
     "carton_size": {
       "w": 75,
       "d": 49,
