@@ -114,8 +114,23 @@ async function loadData() {
 // Format size: cm primary + inch conversion
 function formatSize(size) {
   if (!size) return '';
-  let s = size.trim();
-  
+  // Normalize non-string sizes: {w,d,h} objects (cm) -> "w*d*h cm", numbers -> string
+  let s;
+  if (typeof size === 'string') {
+    s = size;
+  } else if (typeof size === 'object') {
+    const dims = ['w', 'd', 'h'].map(k => size[k]).filter(v => v !== undefined && v !== null && v !== '');
+    if (dims.length) {
+      s = dims.join('*') + ' cm';
+    } else {
+      const kv = Object.entries(size).filter(([, v]) => v !== undefined && v !== null && v !== '');
+      if (!kv.length) return '';
+      s = kv.map(([k, v]) => `${k}: ${v}`).join(', ');
+    }
+  } else {
+    s = String(size);
+  }
+
   // 替换分隔符 * 和 x 为 ×
   s = s.replace(/\*/g, ' × ').replace(/(\d)x(\d)/gi, '$1 × $2');
   
