@@ -109,7 +109,7 @@ window.KANAPET_PRODUCTS = [
     "material_options": [
       {
         "name": "Iron Wire",
-        "image": "images/products/bird-travel-cage-26.jpg"
+        "image": "images/products/bird-travel-cage-30.jpg"
       },
       {
         "name": "Stainless Steel",
@@ -151,11 +151,11 @@ window.KANAPET_PRODUCTS = [
     "material_options": [
       {
         "name": "Iron Wire",
-        "image": "images/products/bird-travel-cage-23.jpg"
+        "image": "images/products/bird-travel-cage-42.jpg"
       },
       {
         "name": "Stainless Steel",
-        "image": "images/products/gallery/23-travel-ss-1.jpg"
+        "image": "images/products/gallery/42-travel-ss-1.jpg"
       }
     ]
   },
