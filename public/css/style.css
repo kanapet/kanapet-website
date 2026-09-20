@@ -529,7 +529,6 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #fafafa;
   border-radius: 8px;
 }
 .product-main-image-wrap img { max-height: 400px; max-width: 100%; object-fit: contain; flex-shrink: 0; }
