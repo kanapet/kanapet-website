@@ -4,3 +4,5 @@ videos/factory-tour.mp4
 videos/*
 videos/*
 .git
+.dev.vars
+.wrangler/

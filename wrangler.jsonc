@@ -1,11 +1,20 @@
 {
-  // KANAPET B2B website - Cloudflare Workers static asset hosting
+  // KANAPET B2B website - Cloudflare Workers hosting
   // This file pins the deployment config to the code, so the dashboard
   // settings and the repo can never drift apart again.
+  //
+  // Routing: requests are matched against public/ first; anything that is
+  // not a static file (e.g. POST /api/inquiry) runs worker/index.js, which
+  // forwards inquiries to Feishu using secrets configured in the dashboard
+  // (FEISHU_WEBHOOK_URL, optional FEISHU_SECRET). Never hardcode them here.
   "name": "kanapet-website",
+  "main": "worker/index.js",
   "compatibility_date": "2025-04-01",
   "assets": {
     // All site files (HTML/CSS/JS/images) live in the public/ folder.
-    "directory": "./public"
+    // .assetsignore keeps internal source imagery (images/products_raw/)
+    // out of deployments while it stays in git.
+    "directory": "./public",
+    "binding": "ASSETS"
   }
 }

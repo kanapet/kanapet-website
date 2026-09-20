@@ -720,24 +720,8 @@ function setupContactForm() {
     if (productField) productField.value = decodeURIComponent(product);
   }
 
-  // 飞书机器人Webhook（安全设置：签名校验）
-  const FEISHU_WEBHOOK_URL = 'https://open.feishu.cn/open-apis/bot/v2/hook/dff1917e-a319-4331-88b1-8b4074071c3d';
-  const FEISHU_SECRET = 'E9nzLCx2VyL5Dd13luiqmb';
-
-  // 飞书签名算法：以 "timestamp\nsecret" 为密钥对空串做 HMAC-SHA256，再 base64 编码
-  async function feishuSign(timestamp, secret) {
-    const encoder = new TextEncoder();
-    const key = await crypto.subtle.importKey(
-      'raw',
-      encoder.encode(timestamp + '\n' + secret),
-      { name: 'HMAC', hash: 'SHA-256' },
-      false,
-      ['sign']
-    );
-    const sig = await crypto.subtle.sign('HMAC', key, new Uint8Array(0));
-    return btoa(String.fromCharCode.apply(null, new Uint8Array(sig)));
-  }
-
+  // 询盘提交走站内 API（Cloudflare Worker 服务端转发到飞书）。
+  // webhook 与签名密钥保存在 Cloudflare 环境变量中，绝不下发到浏览器。
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = form.querySelector('button[type="submit"]');
@@ -752,49 +736,17 @@ function setupContactForm() {
       email: formData.get('email'),
       country: formData.get('country'),
       product: formData.get('product') || '-',
-      message: formData.get('message'),
-      time: new Date().toLocaleString('en-US', {timeZone: 'Asia/Shanghai'})
+      message: formData.get('message')
     };
 
-    // 构建飞书消息内容
-    const feishuMsg = {
-      msg_type: 'interactive',
-      card: {
-        header: {
-          title: {
-            tag: 'plain_text',
-            content: '🔔 新询盘 — Kanapet独立站'
-          },
-          template: 'blue'
-        },
-        elements: [
-          {
-            tag: 'div',
-            text: {
-              tag: 'lark_md',
-              content:
-                `**👤 姓名：** ${data.name}\n` +
-                `**🏢 公司：** ${data.company}\n` +
-                `**📧 邮箱：** ${data.email}\n` +
-                `**🌍 国家：** ${data.country}\n` +
-                `**📦 产品：** ${data.product}\n` +
-                `**💬 留言：** ${data.message}\n` +
-                `**⏰ 时间：** ${data.time}`
-            }
-          }
-        ]
-      }
-    };
-
-    // 提交到飞书（签名校验模式：需附带 timestamp 和 sign）
-    const timestamp = Math.floor(Date.now() / 1000).toString();
-    const sign = await feishuSign(timestamp, FEISHU_SECRET);
-    fetch(FEISHU_WEBHOOK_URL, {
+    fetch('/api/inquiry', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(Object.assign({}, feishuMsg, { timestamp: timestamp, sign: sign }))
+      body: JSON.stringify(data)
     })
-    .then(() => {
+    .then(async (resp) => {
+      const out = await resp.json().catch(() => ({}));
+      if (!resp.ok || !out.ok) throw new Error(out.error || ('HTTP ' + resp.status));
       form.innerHTML = `
         <div style="text-align:center;padding:40px 20px;">
           <div style="font-size:48px;margin-bottom:16px;">✅</div>
