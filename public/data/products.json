@@ -1616,10 +1616,7 @@
     "size": "",
     "moq": "100",
     "colors": [
-      "Transparent",
-      "Blue",
-      "Green",
-      "Pink"
+      "Transparent"
     ],
     "image": "images/products/hamster-bite-guard-v3.jpg",
     "net_weight": "",
@@ -1650,7 +1647,7 @@
       "Green",
       "Pink"
     ],
-    "image": "images/products/hamster-pipe-long.jpg",
+    "image": "images/products/hamster-pipe-short.jpg",
     "net_weight": "0.032",
     "gross_weight": "30",
     "cbm": "",
@@ -1665,7 +1662,7 @@
     "accessory_type": "universal",
     "moq_unit": "carton",
     "color_images": {
-      "Transparent": "images/products/hamster-pipe-long.jpg",
+      "Transparent": "images/products/hamster-pipe-short.jpg",
       "Pink": "images/products/color/hamster-pipe-short_pink.jpg",
       "Blue": "images/products/color/hamster-pipe-short_blue.jpg",
       "Green": "images/products/color/hamster-pipe-short_green.jpg"

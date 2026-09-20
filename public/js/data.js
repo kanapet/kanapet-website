@@ -1617,10 +1617,7 @@ window.KANAPET_PRODUCTS = [
     "size": "",
     "moq": "100",
     "colors": [
-      "Transparent",
-      "Blue",
-      "Green",
-      "Pink"
+      "Transparent"
     ],
     "image": "images/products/hamster-bite-guard-v3.jpg",
     "net_weight": "",
@@ -1651,7 +1648,7 @@ window.KANAPET_PRODUCTS = [
       "Green",
       "Pink"
     ],
-    "image": "images/products/hamster-pipe-long.jpg",
+    "image": "images/products/hamster-pipe-short.jpg",
     "net_weight": "0.032",
     "gross_weight": "30",
     "cbm": "",
@@ -1666,7 +1663,7 @@ window.KANAPET_PRODUCTS = [
     "accessory_type": "universal",
     "moq_unit": "carton",
     "color_images": {
-      "Transparent": "images/products/hamster-pipe-long.jpg",
+      "Transparent": "images/products/hamster-pipe-short.jpg",
       "Pink": "images/products/color/hamster-pipe-short_pink.jpg",
       "Blue": "images/products/color/hamster-pipe-short_blue.jpg",
       "Green": "images/products/color/hamster-pipe-short_green.jpg"
@@ -2333,7 +2330,6 @@ window.KANAPET_PRODUCTS = [
     "series": "cat-feeder",
     "size": "37*45*32",
     "moq": "50 per color",
-    "color_options": [{"name": "White", "image": "images/products/cat-feeder-automatic-white.jpg"}, {"name": "Blue", "image": "images/products/cat-feeder-automatic-blue.jpg"}, {"name": "Pink", "image": "images/products/cat-feeder-automatic-pink.jpg"}, {"name": "Gray", "image": "images/products/cat-feeder-automatic-gray.jpg"}],
     "colors": [
       "White",
       "Blue",
@@ -2358,7 +2354,25 @@ window.KANAPET_PRODUCTS = [
       "Blue": "images/products/cat-feeder-automatic-blue.jpg",
       "Pink": "images/products/cat-feeder-automatic-pink.jpg",
       "Gray": "images/products/cat-feeder-automatic-gray.jpg"
-    }
+    },
+    "color_options": [
+      {
+        "name": "White",
+        "image": "images/products/cat-feeder-automatic-white.jpg"
+      },
+      {
+        "name": "Blue",
+        "image": "images/products/cat-feeder-automatic-blue.jpg"
+      },
+      {
+        "name": "Pink",
+        "image": "images/products/cat-feeder-automatic-pink.jpg"
+      },
+      {
+        "name": "Gray",
+        "image": "images/products/cat-feeder-automatic-gray.jpg"
+      }
+    ]
   },
   {
     "id": "turtle-tank",

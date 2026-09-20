@@ -21,6 +21,13 @@ const COLOR_MAP = {
   'White/Pink': '#f8b4c4',
 };
 
+// Normalize data-layer image paths to site-absolute paths.
+// 详情页现位于 /product/<slug>.html 子目录，data 里的相对路径（如 images/...）
+// 会被浏览器解析成 /product/images/... 导致 404（表现为切换颜色后图片消失）。
+function absImg(src) {
+  return src && !/^(?:[a-z]+:)?\//i.test(src) ? '/' + src : src;
+}
+
 // Render color swatches HTML
 function renderSwatches(colors, size = 'small', activeColor = null, productId = null) {
   if (!colors || colors.length === 0) return '';
@@ -50,7 +57,7 @@ function switchProductColor(productId, colorName) {
   // Update main image
   const mainImg = document.getElementById('product-main-image');
   if (mainImg) {
-    mainImg.src = colorImg;
+    mainImg.src = absImg(colorImg);
     mainImg.alt = `${product.name} - ${colorName}`;
   }
   
@@ -75,7 +82,7 @@ function switchProductMaterial(productId, materialIndex) {
   // Update main image
   const mainImg = document.getElementById('product-main-image');
   if (mainImg) {
-    mainImg.src = material.image;
+    mainImg.src = absImg(material.image);
     mainImg.alt = `${product.name} - ${material.name}`;
   }
   
@@ -432,10 +439,11 @@ function renderProductDetail() {
   } else if (p.color_images && p.colors && p.colors.length > 0) {
     defaultMainImage = p.color_images[p.colors[0]] || p.image;
   }
-  const galleryImages = [defaultMainImage];
+  const galleryImages = [absImg(defaultMainImage)];
   if (p.gallery && Array.isArray(p.gallery)) {
     p.gallery.forEach(g => {
-      if (g && !galleryImages.includes(g)) galleryImages.push(g);
+      const gAbs = absImg(g);
+      if (gAbs && !galleryImages.includes(gAbs)) galleryImages.push(gAbs);
     });
   }
   
@@ -795,7 +803,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 function switchProductImage(thumbEl, imgSrc) {
   const mainImg = document.getElementById('product-main-image');
   if (mainImg) {
-    mainImg.src = imgSrc;
+    mainImg.src = absImg(imgSrc);
   }
   // Update active thumbnail
   document.querySelectorAll('.product-thumb').forEach(t => t.classList.remove('active'));
