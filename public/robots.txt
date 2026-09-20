@@ -1,4 +1,58 @@
+# Kanapet robots.txt
+# AI crawlers are explicitly ALLOWED: we want our catalog to be discoverable
+# and citable in AI search answers (GEO).
+#
+# 注：Cloudflare 侧的 AI bot policies 需同步放行，详见交接文件。
+
 User-agent: *
 Allow: /
+
+User-agent: GPTBot
+Allow: /  # OpenAI
+
+User-agent: OAI-SearchBot
+Allow: /  # OpenAI Search
+
+User-agent: ChatGPT-User
+Allow: /  # ChatGPT user-triggered fetch
+
+User-agent: ClaudeBot
+Allow: /  # Anthropic
+
+User-agent: anthropic-ai
+Allow: /  # Anthropic
+
+User-agent: Claude-User
+Allow: /  # Anthropic user-triggered
+
+User-agent: PerplexityBot
+Allow: /  # Perplexity
+
+User-agent: Google-Extended
+Allow: /  # Google Gemini / AI training
+
+User-agent: Applebot-Extended
+Allow: /  # Apple AI
+
+User-agent: Bytespider
+Allow: /  # ByteDance
+
+User-agent: CCBot
+Allow: /  # Common Crawl
+
+User-agent: Amazonbot
+Allow: /  # Amazon
+
+User-agent: meta-externalagent
+Allow: /  # Meta AI
+
+User-agent: cohere-ai
+Allow: /  # Cohere
+
+User-agent: YouBot
+Allow: /  # You.com
+
+User-agent: Diffbot
+Allow: /  # Diffbot
 
 Sitemap: https://www.kanapet.com/sitemap.xml

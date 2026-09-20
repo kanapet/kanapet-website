@@ -1,8 +1,11 @@
 // Cloudflare Worker for kanapet-website.
 //
-// Two jobs:
+// Three jobs:
 //   1. Serve the static site from public/ (via the ASSETS binding).
-//   2. Proxy inquiry form submissions to the Feishu bot webhook so the
+//   2. Content negotiation: if the browser sends `Accept: image/webp` and a
+//      WebP twin of the requested JPEG/PNG exists, serve that instead.
+//      Same URL, no HTML/data changes, automatic fallback for old clients.
+//   3. Proxy inquiry form submissions to the Feishu bot webhook so the
 //      webhook URL and signing secret NEVER ship to browsers.
 //      (main.js used to embed both in client-side JS — anyone could forge
 //      inquiries; see the P0 in the 2026-09-20 site audit.)
@@ -181,13 +184,100 @@ async function handleInquiry(request, env) {
   }
 }
 
+// ---------------------------------------------------------------------------
+// Image content negotiation
+// ---------------------------------------------------------------------------
+// public/images/** now ships a .webp twin next to every .jpg/.png (generated
+// 2026-09-20; total image payload 62.6 MB -> 19.1 MB at q80, visually
+// indistinguishable). Rather than rewriting every reference in
+// data/products.json + js/data.js (two sources that must stay in sync), we
+// keep the URLs as they are and swap the file at the edge:
+//
+//   GET /images/products/foo.jpg  +  Accept: image/webp
+//     -> serve /images/products/foo.webp
+//     -> otherwise (old client, missing twin) serve the original
+//
+// `Vary: Accept` is mandatory: without it a shared cache could hand a WebP
+// to a client that cannot decode it.
+
+const NEGOTIABLE = /\.(jpe?g|png)$/i;
+
+function webpPath(pathname) {
+  return pathname.replace(NEGOTIABLE, '.webp');
+}
+
+async function serveAsset(request, env) {
+  const url = new URL(request.url);
+
+  // html_handling is "none" so that ".html" URLs are never rewritten. The
+  // trade-off: the asset layer also stops resolving directories to
+  // index.html, so do that ourselves ("/" -> "/index.html").
+  if (url.pathname.endsWith('/')) {
+    const indexUrl = new URL(request.url);
+    indexUrl.pathname = url.pathname + 'index.html';
+    const indexRes = await env.ASSETS.fetch(new Request(indexUrl.toString(), request));
+    if (indexRes.ok) return indexRes;
+  }
+
+  // Extension-less URLs keep working. The asset layer used to run with the
+  // default html_handling, which 301'd /products.html -> /products; search
+  // engines may already have the bare form indexed. With html_handling:"none"
+  // that form would 404, so resolve it explicitly.
+  if (!url.pathname.endsWith('/') && !/\.[A-Za-z0-9]{1,8}$/.test(url.pathname)) {
+    const htmlUrl = new URL(request.url);
+    htmlUrl.pathname = url.pathname + '.html';
+    const htmlRes = await env.ASSETS.fetch(new Request(htmlUrl.toString(), request));
+    if (htmlRes.ok) return htmlRes;
+  }
+
+  const accept = request.headers.get('Accept') || '';
+
+  const canNegotiate =
+    request.method === 'GET' &&
+    NEGOTIABLE.test(url.pathname) &&
+    accept.includes('image/webp');
+
+  if (!canNegotiate) {
+    return env.ASSETS.fetch(request);
+  }
+
+  const twin = new URL(request.url);
+  twin.pathname = webpPath(url.pathname);
+
+  const res = await env.ASSETS.fetch(new Request(twin.toString(), request));
+  if (!res.ok || !res.body) {
+    // No twin (or a 304 with no body) — fall back to the original untouched.
+    return env.ASSETS.fetch(request);
+  }
+
+  const headers = new Headers(res.headers);
+  headers.set('Content-Type', 'image/webp');
+  headers.set('Vary', 'Accept');
+  headers.set('X-Content-Type-Options', 'nosniff');
+  return new Response(res.body, { status: res.status, statusText: res.statusText, headers });
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (url.pathname === '/api/inquiry') {
       return handleInquiry(request, env);
     }
+
+    // Legacy product URLs (product.html?slug=X) -> canonical prerendered page.
+    // 301 (not 302) so ranking signals consolidate on the static page, which is
+    // the only version AI crawlers that skip JavaScript can actually read.
+    if (url.pathname === '/product.html') {
+      const slug = url.searchParams.get('slug');
+      // Whitelist the slug: this value lands in the redirect target, so never
+      // let arbitrary input through (open-redirect / cache-poisoning guard).
+      if (slug && /^[A-Za-z0-9][A-Za-z0-9-]{0,80}$/.test(slug)) {
+        const target = new URL('/product/' + slug.toLowerCase() + '.html', url.origin);
+        return Response.redirect(target.href, 301);
+      }
+    }
+
     // Everything else: static assets (404s handled by the assets layer).
-    return env.ASSETS.fetch(request);
+    return serveAsset(request, env);
   }
 };

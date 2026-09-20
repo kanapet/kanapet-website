@@ -183,19 +183,19 @@ function productCard(p, variantCount = 1) {
   const catName = categories[p.category]?.name || p.category;
   return `
     <div class="product-card" data-cat="${p.category}">
-      <a href="product.html?slug=${p.slug}" class="product-img-link">
+      <a href="/product/${p.slug}.html" class="product-img-link">
         <div class="product-img">
           <img src="${p.image}" alt="${p.name}" width="800" height="800" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="placeholder" style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:48px;color:var(--primary-light);opacity:0.3;">📦</div>
         </div>
       </a>
       <div class="product-info">
-        <a href="product.html?slug=${p.slug}" class="product-name-link"><h3>${p.name}</h3></a>
+        <a href="/product/${p.slug}.html" class="product-name-link"><h3>${p.name}</h3></a>
         <div class="product-meta">${formatSize(p.size)}</div>
         <div class="product-meta">${catName}</div>
         ${renderSwatches(p.colors)}
         <div class="product-moq">${p.moq ? `MOQ: ${p.moq} pcs` : 'Contact for MOQ'}</div>
-        <a href="product.html?slug=${p.slug}" class="btn btn-primary">Request Quote</a>
+        <a href="/product/${p.slug}.html" class="btn btn-primary">Request Quote</a>
       </div>
     </div>
   `;
@@ -289,7 +289,7 @@ function renderProductDetail() {
     canonical.rel = 'canonical';
     document.head.appendChild(canonical);
   }
-  canonical.href = `https://www.kanapet.com/product.html?slug=${p.slug}`;
+  canonical.href = `https://www.kanapet.com/product/${p.slug}.html`;
   
   // Add Product JSON-LD structured data
   let jsonLd = document.getElementById('product-jsonld');
@@ -415,7 +415,7 @@ function renderProductDetail() {
                 <td>${v.name}</td>
                 <td>${formatSize(v.size) || '-'}</td>
                 <td>${v.moq || 'Contact'}</td>
-                <td><a href="product.html?slug=${v.slug}" style="color:var(--primary);font-size:12px;white-space:nowrap;">${v.id === p.id ? 'Current' : 'View'}</a></td>
+                <td><a href="/product/${v.slug}.html" style="color:var(--primary);font-size:12px;white-space:nowrap;">${v.id === p.id ? 'Current' : 'View'}</a></td>
               </tr>
             `).join('')}
           </table>
@@ -555,7 +555,7 @@ function renderRelatedProducts(product) {
   selected = selected.slice(0, showCount);
   
   grid.innerHTML = selected.map(p => `
-    <div class="related-product-card" onclick="window.location.href='product.html?slug=${p.slug}'">
+    <div class="related-product-card" onclick="window.location.href='/product/${p.slug}.html'">
       <div class="related-product-image">
         <img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\\'placeholder\\'>📦</div>'">
       </div>
@@ -598,7 +598,7 @@ function renderCompatibleAccessories(product) {
       <h3 style="margin-bottom:16px;color:var(--primary);">🔧 Compatible Accessories for This Cage</h3>
       <div class="accessory-grid">
         ${compatible.map(acc => `
-          <div class="accessory-card" onclick="window.location.href='product.html?slug=${acc.slug}'">
+          <div class="accessory-card" onclick="window.location.href='/product/${acc.slug}.html'">
             <div class="accessory-image">
               <img src="${acc.image}" alt="${acc.name}" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\\'placeholder\\'>📦</div>'">
             </div>
@@ -618,7 +618,7 @@ function renderCompatibleAccessories(product) {
       <h3 style="margin:32px 0 16px;color:var(--primary);">⭐ Recommended Universal Accessories</h3>
       <div class="accessory-grid">
         ${recommended.map(acc => `
-          <div class="accessory-card" onclick="window.location.href='product.html?slug=${acc.slug}'">
+          <div class="accessory-card" onclick="window.location.href='/product/${acc.slug}.html'">
             <div class="accessory-image">
               <img src="${acc.image}" alt="${acc.name}" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\\'placeholder\\'>📦</div>'">
             </div>
@@ -706,7 +706,13 @@ function setupFilters() {
       history.replaceState(null, '', url);
     });
   });
-  renderProducts('all-products', activeCat || null, activeColor);
+  // 若列表已由构建期预渲染（data-prerendered），且当前无筛选条件，
+  // 则保留静态内容——避免重绘，也让不执行 JS 的爬虫读到完整目录。
+  const grid = document.getElementById('all-products');
+  const prerendered = grid && grid.dataset.prerendered === '1';
+  if (!prerendered || activeCat || activeColor) {
+    renderProducts('all-products', activeCat || null, activeColor);
+  }
 }
 
 // Contact form — prefill product if coming from product page
