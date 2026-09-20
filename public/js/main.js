@@ -28,6 +28,16 @@ function absImg(src) {
   return src && !/^(?:[a-z]+:)?\//i.test(src) ? '/' + src : src;
 }
 
+// 换主图前先恢复显示：图片加载失败的 onerror 会隐藏 <img> 并显示占位盒，
+// 若不恢复，之后即使换成正常 URL 也永远停在占位状态，直到刷新页面。
+function setMainImage(img, src, alt) {
+  img.style.display = '';
+  const ph = img.nextElementSibling;
+  if (ph && ph.classList.contains('placeholder')) ph.style.display = 'none';
+  if (alt) img.alt = alt;
+  img.src = src;
+}
+
 // Render color swatches HTML
 function renderSwatches(colors, size = 'small', activeColor = null, productId = null) {
   if (!colors || colors.length === 0) return '';
@@ -57,8 +67,7 @@ function switchProductColor(productId, colorName) {
   // Update main image
   const mainImg = document.getElementById('product-main-image');
   if (mainImg) {
-    mainImg.src = absImg(colorImg);
-    mainImg.alt = `${product.name} - ${colorName}`;
+    setMainImage(mainImg, absImg(colorImg), `${product.name} - ${colorName}`);
   }
   
   // Update active swatch
@@ -82,8 +91,7 @@ function switchProductMaterial(productId, materialIndex) {
   // Update main image
   const mainImg = document.getElementById('product-main-image');
   if (mainImg) {
-    mainImg.src = absImg(material.image);
-    mainImg.alt = `${product.name} - ${material.name}`;
+    setMainImage(mainImg, absImg(material.image), `${product.name} - ${material.name}`);
   }
   
   // Update active material button
@@ -803,7 +811,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 function switchProductImage(thumbEl, imgSrc) {
   const mainImg = document.getElementById('product-main-image');
   if (mainImg) {
-    mainImg.src = absImg(imgSrc);
+    setMainImage(mainImg, absImg(imgSrc));
   }
   // Update active thumbnail
   document.querySelectorAll('.product-thumb').forEach(t => t.classList.remove('active'));
