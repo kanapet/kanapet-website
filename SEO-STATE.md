@@ -16,11 +16,12 @@
 
 ## 进行中
 
-- [ ] **仓库瘦身**（2026-09-20 整理任务）：移出 products_raw 源文件、压缩大图
+- [x] **仓库瘦身阶段1**（2026-09-20 完成）：products_raw 源文件 88.6MB 移出仓库（提交 c02baf6），仓库 172.5MB → 83.9MB；push 改走 SSH 通道（沙箱公钥已绑定）
 
 ## 待办池（按优先级）
 
-1. [ ] 关键词研究：B2B 宠物笼具采购词（wholesale/manufacturer/OEM 类意图）建立关键词表
+1. [ ] **图片压缩**（21 张 >500KB 的产品图，共 23.8MB）：受沙箱网关限速（22KB/s）暂缓，需分批下载压缩；优先处理 2 张 4MB+ 大图（hamster-pipe-joint-scene.jpg、bird-650-glass-door.jpg）
+2. [ ] 关键词研究：B2B 宠物笼具采购词（wholesale/manufacturer/OEM 类意图）建立关键词表
 2. [ ] 每个产品页的 title/meta description 按关键词规范重写（60/155 字符限制）
 3. [ ] FAQ 内容扩充（每类产品 3-5 条真实采购问题，配合 FAQPage schema）
 4. [ ] GEO 强化：让 ChatGPT/Perplexity 能引用——产品页增加规格对比表、明确的工厂能力描述
