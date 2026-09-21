@@ -136,7 +136,7 @@ function formatSize(size) {
   } else if (typeof size === 'object') {
     const dims = ['w', 'd', 'h'].map(k => size[k]).filter(v => v !== undefined && v !== null && v !== '');
     if (dims.length) {
-      s = dims.join('*') + ' cm';
+      s = dims.join('*');
     } else {
       const kv = Object.entries(size).filter(([, v]) => v !== undefined && v !== null && v !== '');
       if (!kv.length) return '';
@@ -193,6 +193,14 @@ function formatSize(size) {
   return s;
 }
 
+// MOQ values may already include a unit or condition. Append "pcs" only to
+// bare numeric values so output never becomes "sets per color pcs".
+function formatMoq(moq) {
+  if (moq === undefined || moq === null || moq === '') return '';
+  const value = String(moq).trim();
+  return /^\d+(?:\.\d+)?$/.test(value) ? `${value} pcs` : value;
+}
+
 // Product card HTML
 function productCard(p, variantCount = 1) {
   const catName = categories[p.category]?.name || p.category;
@@ -209,7 +217,7 @@ function productCard(p, variantCount = 1) {
         <div class="product-meta">${formatSize(p.size)}</div>
         <div class="product-meta">${catName}</div>
         ${renderSwatches(p.colors)}
-        <div class="product-moq">${p.moq ? `MOQ: ${p.moq} pcs` : 'Contact for MOQ'}</div>
+        <div class="product-moq">${p.moq ? `MOQ: ${formatMoq(p.moq)}` : 'Contact for MOQ'}</div>
         <a href="/product/${p.slug}.html" class="btn btn-primary">Request Quote</a>
       </div>
     </div>
@@ -283,7 +291,7 @@ function renderProductDetail() {
   const descParts = [
     `Buy ${p.name} wholesale from Kanapet — leading ${catName.toLowerCase()} manufacturer since 1991.`,
     p.size ? ` Product size: ${formatSize(p.size)}.` : '',
-    p.moq ? ` MOQ from ${p.moq} pcs.` : '',
+    p.moq ? ` MOQ from ${formatMoq(p.moq)}.` : '',
     ' OEM/ODM available, custom colors, logos and packaging. 20,000㎡ factory in Foshan, China. Request a quote today.'
   ];
   document.querySelector('meta[name="description"]')?.setAttribute('content', descParts.join(''));
@@ -324,14 +332,7 @@ function renderProductDetail() {
       "@type": "Brand",
       "name": "Kanapet"
     },
-    "category": catName,
-    "offers": {
-      "@type": "AggregateOffer",
-      "availability": "https://schema.org/InStock",
-      "priceCurrency": "USD",
-      "lowPrice": "Contact for pricing",
-      "offerCount": "1"
-    }
+    "category": catName
   };
   jsonLd.textContent = JSON.stringify(productJsonLd);
   
@@ -525,15 +526,7 @@ function renderProductDetail() {
     "image": window.location.origin + '/' + p.image,
     "description": `${p.name} — ${catName}. ${p.size ? 'Size: ' + formatSize(p.size) + '. ' : ''}MOQ: ${p.moq || 'contact us'}. OEM/ODM available from Kanapet, manufacturer since 1991.`,
     "brand": { "@type": "Brand", "name": "Kanapet" },
-    "manufacturer": { "@type": "Organization", "name": "Kanapet" },
-    "offers": {
-      "@type": "Offer",
-      "availability": "https://schema.org/InStock",
-      "priceCurrency": "USD",
-      "price": "0",
-      "priceValidUntil": "2027-12-31",
-      "url": window.location.href
-    }
+    "manufacturer": { "@type": "Organization", "name": "Kanapet" }
   });
   document.head.appendChild(schema);
 }
@@ -742,6 +735,16 @@ function setupContactForm() {
     if (productField) productField.value = decodeURIComponent(product);
   }
 
+  let status = form.querySelector('[data-inquiry-status]');
+  if (!status) {
+    status = document.createElement('p');
+    status.dataset.inquiryStatus = '';
+    status.setAttribute('role', 'status');
+    status.setAttribute('aria-live', 'polite');
+    status.style.marginTop = '12px';
+    form.appendChild(status);
+  }
+
   // 询盘提交走站内 API（Cloudflare Worker 服务端转发到飞书）。
   // webhook 与签名密钥保存在 Cloudflare 环境变量中，绝不下发到浏览器。
   form.addEventListener('submit', async (e) => {
@@ -749,6 +752,7 @@ function setupContactForm() {
     const btn = form.querySelector('button[type="submit"]');
     btn.textContent = 'Sending...';
     btn.disabled = true;
+    status.textContent = 'Sending your inquiry securely…';
 
     // 获取表单数据
     const formData = new FormData(form);
@@ -761,30 +765,41 @@ function setupContactForm() {
       message: formData.get('message')
     };
 
-    fetch('/api/inquiry', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(data)
-    })
-    .then(async (resp) => {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 15000);
+
+    try {
+      const resp = await fetch('/api/inquiry', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data),
+        signal: controller.signal
+      });
       const out = await resp.json().catch(() => ({}));
-      if (!resp.ok || !out.ok) throw new Error(out.error || ('HTTP ' + resp.status));
+      if (!resp.ok || !out.ok) {
+        const error = new Error(out.error || ('HTTP ' + resp.status));
+        error.deliveryUnknown = resp.status === 504 || out.error === 'Delivery status unknown';
+        throw error;
+      }
       form.innerHTML = `
         <div style="text-align:center;padding:40px 20px;">
           <div style="font-size:48px;margin-bottom:16px;">✅</div>
           <h3 style="font-size:22px;margin-bottom:10px;">Thank You!</h3>
-          <p style="color:var(--text-light);margin-bottom:8px;">Your inquiry has been received.</p>
+          <p style="color:var(--text-light);margin-bottom:8px;">Your inquiry was accepted for delivery.</p>
+          ${out.requestId ? `<p style="color:var(--text-light);font-size:13px;margin-bottom:8px;">Reference: ${out.requestId}</p>` : ''}
           <p style="color:var(--text-light);margin-bottom:20px;">We'll get back to you within one business day.</p>
           <a href="products.html" class="btn btn-ghost">Browse More Products</a>
         </div>
       `;
-    })
-    .catch((err) => {
-      console.error('Error:', err);
+    } catch (err) {
       btn.textContent = 'Send Inquiry';
       btn.disabled = false;
-      alert('Sorry, there was an error sending your inquiry. Please try again or email us directly at lena@kanapet.com');
-    });
+      status.textContent = err && (err.name === 'AbortError' || err.deliveryUnknown)
+        ? 'Delivery could not be confirmed in time. Your details are still here; please do not resend automatically. You can wait and try once, or email lena@kanapet.com with the same inquiry.'
+        : 'We could not confirm delivery. Your details are still here; please try again or email lena@kanapet.com.';
+    } finally {
+      clearTimeout(timeout);
+    }
   });
 }
 
