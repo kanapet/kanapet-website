@@ -17,6 +17,8 @@ import json
 import os
 import re
 import sys
+import xml.etree.ElementTree as ET
+from urllib.parse import urlparse
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PUB = os.path.join(ROOT, "public")
@@ -84,14 +86,38 @@ if js_prods is not None and js_prods != prods:
                 break
 
 # ---- 4. sitemap sync ----
-sm = open(os.path.join(PUB, "sitemap.xml"), encoding="utf-8").read()
-sm_slugs = re.findall(r"product\.html\?slug=([\w-]+)", sm)
+sitemap_path = os.path.join(PUB, "sitemap.xml")
+sm = open(sitemap_path, encoding="utf-8").read()
+try:
+    root = ET.fromstring(sm)
+    locs = [node.text.strip() for node in root.findall("{*}url/{*}loc") if node.text]
+except ET.ParseError as e:
+    err(f"sitemap.xml is not valid XML: {e}")
+    locs = []
+
+# Canonical product URLs use /product/<slug>.html. Accept the legacy query
+# form too so a partially migrated sitemap still gets a useful diagnosis.
+sm_slugs = []
+for loc in locs:
+    parsed = urlparse(loc)
+    match = re.fullmatch(r"/product/([a-z0-9]+(?:-[a-z0-9]+)*)\.html", parsed.path)
+    if match:
+        sm_slugs.append(match.group(1))
+        continue
+    if parsed.path == "/product.html":
+        legacy = re.search(r"(?:^|&)slug=([a-z0-9-]+)(?:&|$)", parsed.query)
+        if legacy:
+            sm_slugs.append(legacy.group(1))
 if sorted(sm_slugs) != sorted(set(slugs)) or len(sm_slugs) != len(slugs):
     err(f"sitemap.xml product URLs ({len(sm_slugs)}) do not match products.json "
         f"({len(set(slugs))} unique). missing={sorted(set(slugs)-set(sm_slugs))} "
         f"extra={sorted(set(sm_slugs)-set(slugs))}")
-for loc in re.findall(r"<loc>(https://www\.kanapet\.com/[^?<]*?)</loc>", sm):
-    path = loc.replace("https://www.kanapet.com/", "").strip("/")
+for loc in locs:
+    parsed = urlparse(loc)
+    if parsed.scheme != "https" or parsed.netloc != "www.kanapet.com":
+        err(f"sitemap.xml URL is not on the canonical HTTPS host: {loc}")
+        continue
+    path = parsed.path.lstrip("/")
     if path and not os.path.exists(os.path.join(PUB, path)):
         err(f"sitemap.xml references missing static page: {path}")
 
