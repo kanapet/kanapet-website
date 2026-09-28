@@ -502,7 +502,7 @@ function renderProductDetail() {
         <p>Send us your quantity and requirements — we'll reply within one business day with a wholesale quote.</p>
         <a href="contact.html?product=${encodeURIComponent(p.name)}" class="btn btn-primary" style="width:100%;">Request a Quote</a>
         <div style="margin-top:12px;text-align:center;">
-          <a href="https://wa.me/8615221878306?text=${encodeURIComponent('Hi Kanapet, I am interested in ' + p.name)}" target="_blank" rel="noopener" style="font-size:14px;font-weight:600;">💬 Or chat on WhatsApp</a>
+          <a href="https://wa.me/8615625986407?text=${encodeURIComponent('Hi Kanapet, I am interested in ' + p.name)}" target="_blank" rel="noopener" style="font-size:14px;font-weight:600;">💬 Or chat on WhatsApp</a>
         </div>
       </div>
     </div>

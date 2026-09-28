@@ -34,3 +34,11 @@
 
 - `public/images/products/490-page7-full.png`（918KB）：全站 0 引用的死文件，下次整理时删除
 - 早期 90MB 源文件仍在 git 历史中（仓库整体偏大，方案 B 可选处理）
+
+
+## 2026-09-28 社交联系方式更新
+
+- 全站 Facebook 入口链接至 https://www.facebook.com/kanapetglobal/。
+- WhatsApp 商家号码更新为 +86 15625986407；页脚、悬浮按钮和产品询盘入口同步更新。
+- 联系页面增加 Facebook 入口，原电话和 KakaoTalk 号码保留。
+- 用户已批准上线；本次发布仅包含社交联系方式修改。下一步：核验线上页面。
