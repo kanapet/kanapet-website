@@ -1,0 +1,30 @@
+name: Validate site
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate product data and sitemap
+        run: python3 tools/validate_data.py
+      - name: Verify generated product facts are stable
+        run: |
+          python3 tools/normalize_product_output.py
+          git diff --exit-code
+      - name: Check JavaScript syntax
+        run: |
+          node --check public/js/main.js
+          node --check worker/index.js
+      - name: Test Worker routing
+        run: node tools/test_worker.mjs

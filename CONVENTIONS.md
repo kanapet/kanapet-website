@@ -5,7 +5,7 @@
 ## 仓库与部署
 
 - **仓库**：https://github.com/kanapet/kanapet-website （公开仓库）
-- **分支策略**：单分支 main——push 到 main 即自动部署上线（Cloudflare 绑定）
+- **分支策略**：日常修改使用独立分支并提交审查；只有经用户明确批准后才合并/推送 main。push 到 main 即自动部署上线（Cloudflare 绑定）
 - **部署配置**：`wrangler.jsonc`（固定在仓库里，与 Cloudflare 后台设置绑定，防漂移）
 - **部署内容**：`public/` 静态资产 + `worker/index.js`（`.assetsignore` 排除内部源图）
 
@@ -28,6 +28,7 @@ sitemap.xml        站点地图（改产品后需重新生成）
 3. **图片规范**：新图放 `public/images/products/`，单张 ≤500KB，主图统一 82% 内容占比；设计源文件一律不放仓库
 4. **URL 稳定**：不改已有页面 URL 结构（.html 后缀保持），改 slug 前必须设置重定向
 5. **提交信息**：格式 `类型: 描述`，类型用 fix/feat/perf/docs/security/chore
+6. **发布边界**：保存分支、提交审查、批准上线是三个独立阶段；任务结束不得自动推送或合并 main
 
 ## git 环境注意（沙箱）
 
