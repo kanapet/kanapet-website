@@ -26,7 +26,7 @@
       "images/products/gallery/23-travel-ss-2.jpg",
       "images/products/gallery/23-travel-ss-3.jpg"
     ],
-    "moq_unit": "pcs",
+    "moq_unit": "pc",
     "material_options": [
       {
         "name": "Iron Wire",
@@ -65,7 +65,7 @@
       "images/products/gallery/26-travel-ss-2.jpg",
       "images/products/gallery/26-travel-ss-3.jpg"
     ],
-    "moq_unit": "pcs",
+    "moq_unit": "pc",
     "material_options": [
       {
         "name": "Iron Wire",
@@ -104,7 +104,7 @@
       "images/products/gallery/30-travel-scene-2.jpg",
       "images/products/gallery/30-travel-scene-3.jpg"
     ],
-    "moq_unit": "pcs",
+    "moq_unit": "pc",
     "material_options": [
       {
         "name": "Iron Wire",
@@ -123,7 +123,7 @@
     "category": "bird-travel",
     "series": "bird-travel-cage",
     "size": "23*16.5*16.5",
-    "moq": 100,
+    "moq": "50 pcs per color",
     "colors": [
       "Green",
       "Blue",
@@ -136,17 +136,17 @@
     "material": "Iron Wire / 304 Stainless Steel (optional)",
     "type": "",
     "meas": "49*36*51.5",
-    "pcs_per_ctn": "20",
+    "pcs_per_ctn": "1",
     "color": "",
     "accessories": "",
-    "notes": "Iron wire construction. MOQ: 100 pcs per color. Sold by full carton only.",
+    "notes": "Iron wire construction. Each product is individually packed in one carton. MOQ: 50 pcs per color.",
     "gallery": [
       "images/products/gallery/42-travel-scene-1.jpg",
       "images/products/gallery/42-travel-scene-2.jpg",
       "images/products/gallery/42-travel-ss-1.jpg",
       "images/products/gallery/42-travel-ss-2.jpg"
     ],
-    "moq_unit": "pcs",
+    "moq_unit": "pc",
     "material_options": [
       {
         "name": "Iron Wire",
@@ -164,7 +164,7 @@
     "size": "6*6*3.4",
     "image": "images/products/feeder-cup-no1.jpg",
     "category": "bird-accessories",
-    "moq": "300",
+    "moq": 300,
     "colors": [
       "White"
     ],
@@ -189,7 +189,9 @@
         "image": "images/products/feeder-cup-no1-white-collar.jpg"
       }
     ],
-    "slug": "bird-feeder-cup-no1"
+    "slug": "bird-feeder-cup-no1",
+    "moq_unit": "pc",
+    "pcs_per_ctn": "300"
   },
   {
     "id": "bird-feeder-cup-no3-white",
@@ -197,7 +199,7 @@
     "size": "11*10*9",
     "image": "images/products/feeder-cup-no3-white.jpg",
     "category": "bird-accessories",
-    "moq": "175",
+    "moq": 175,
     "colors": [
       "White",
       "Transparent"
@@ -225,7 +227,9 @@
     "color_images": {
       "White": "images/products/feeder-cup-no3-white.jpg",
       "Transparent": "images/products/feeder-cup-no3-transparent.jpg"
-    }
+    },
+    "moq_unit": "pc",
+    "pcs_per_ctn": "175"
   },
   {
     "id": "bird-feeder-cup-no3-transparent-hook",
@@ -238,7 +242,7 @@
     "material": "PET",
     "image": "images/products/feeder-cup-no3-transparent.jpg",
     "category": "bird-accessories",
-    "moq": "175",
+    "moq": 175,
     "colors": [
       "Transparent"
     ],
@@ -252,15 +256,17 @@
     "notes": "175 pcs per carton. Sold by full carton only.",
     "description": "",
     "features": [],
-    "slug": "bird-feeder-cup-no3-transparent-hook"
+    "slug": "bird-feeder-cup-no3-transparent-hook",
+    "moq_unit": "pc",
+    "pcs_per_ctn": "175"
   },
   {
     "id": "bird-feeder-cup-no4",
     "name": "Bird Feeding Cup No.4 (White & Transparent)",
     "size": "8*10.5*5",
-    "image": "images/products/feeder-cup-no4-white.jpg",
+    "image": "images/products/feeder-cup-no4-white-main.jpg",
     "category": "bird-accessories",
-    "moq": "245",
+    "moq": 245,
     "colors": [
       "White",
       "Transparent"
@@ -277,26 +283,28 @@
     "color_options": [
       {
         "name": "White",
-        "image": "images/products/feeder-cup-no4-white.jpg"
+      "image": "images/products/feeder-cup-no4-white-main.jpg"
       },
       {
         "name": "Transparent",
-        "image": "images/products/feeder-cup-no4.jpg"
+      "image": "images/products/feeder-cup-no4-transparent-main.jpg"
       }
     ],
     "slug": "bird-feeder-cup-no4",
     "color_images": {
-      "White": "images/products/feeder-cup-no4-white.jpg",
-      "Transparent": "images/products/feeder-cup-no4.jpg"
-    }
+    "White": "images/products/feeder-cup-no4-white-main.jpg",
+    "Transparent": "images/products/feeder-cup-no4-transparent-main.jpg"
+    },
+    "moq_unit": "pc",
+    "pcs_per_ctn": "245"
   },
   {
     "id": "bird-feeder-cup-no10",
     "name": "Bird Feeding Cup No.10 (White & Transparent)",
     "size": "9*10.5*5.5",
-    "image": "images/products/feeder-cup-no10-white.jpg",
+    "image": "images/products/feeder-cup-no10-white-main.png",
     "category": "bird-accessories",
-    "moq": "156",
+    "moq": 156,
     "colors": [
       "White",
       "Transparent"
@@ -315,18 +323,20 @@
     "color_options": [
       {
         "name": "White",
-        "image": "images/products/feeder-cup-no10-white.jpg"
+      "image": "images/products/feeder-cup-no10-white-main.png"
       },
       {
         "name": "Transparent",
-        "image": "images/products/feeder-cup-no10.jpg"
+      "image": "images/products/feeder-cup-no10-transparent-main.png"
       }
     ],
     "slug": "bird-feeder-cup-no10",
     "color_images": {
-      "White": "images/products/feeder-cup-no10-white.jpg",
-      "Transparent": "images/products/feeder-cup-no10.jpg"
-    }
+    "White": "images/products/feeder-cup-no10-white-main.png",
+    "Transparent": "images/products/feeder-cup-no10-transparent-main.png"
+    },
+    "moq_unit": "pc",
+    "pcs_per_ctn": "156"
   },
   {
     "id": "bird-feeding-cup-spring-door",
@@ -338,7 +348,7 @@
     "material": "PET",
     "image": "images/products/feeder-cup-spring-door.jpg",
     "category": "bird-accessories",
-    "moq": "256",
+    "moq": 256,
     "colors": [
       "Transparent"
     ],
@@ -352,7 +362,9 @@
     "notes": "256 pcs per carton. Sold by full carton only.",
     "description": "",
     "features": [],
-    "slug": "bird-feeding-cup-spring-door"
+    "slug": "bird-feeding-cup-spring-door",
+    "moq_unit": "pc",
+    "pcs_per_ctn": "256"
   },
   {
     "id": "bird-feeder-cup-anti-spill",
@@ -360,7 +372,7 @@
     "size": "9.2*12.7*9.9",
     "image": "images/products/feeder-cup-no5.jpg",
     "category": "bird-accessories",
-    "moq": "120",
+    "moq": 120,
     "colors": [
       "Transparent"
     ],
@@ -379,7 +391,9 @@
         "image": "images/products/feeder-cup-no5.jpg"
       }
     ],
-    "slug": "bird-feeder-cup-anti-spill"
+    "slug": "bird-feeder-cup-anti-spill",
+    "moq_unit": "pc",
+    "pcs_per_ctn": "120"
   },
   {
     "id": "bird-smart-feeder",
@@ -388,7 +402,7 @@
     "category": "bird-accessories",
     "series": "bird-smart-feeder",
     "size": "",
-    "moq": 50,
+    "moq": 200,
     "colors": [
       "White"
     ],
@@ -399,13 +413,13 @@
     "material": "",
     "type": "",
     "meas": "",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "20",
     "color": "",
     "accessories": "",
-    "notes": "",
+    "notes": "Each product is individually packed. Shipping carton: 20 pcs. MOQ: 200 pcs per model, equivalent to 10 shipping cartons.",
     "gallery": [],
     "accessory_type": "universal",
-    "moq_unit": "carton"
+    "moq_unit": "pc"
   },
   {
     "id": "bird-smart-water-dispenser",
@@ -414,7 +428,7 @@
     "category": "bird-accessories",
     "series": "bird-smart-water-dispenser",
     "size": "",
-    "moq": 50,
+    "moq": 200,
     "colors": [
       "White"
     ],
@@ -425,13 +439,13 @@
     "material": "",
     "type": "",
     "meas": "",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "20",
     "color": "",
     "accessories": "",
-    "notes": "",
+    "notes": "Each product is individually packed. Shipping carton: 20 pcs. MOQ: 200 pcs per model, equivalent to 10 shipping cartons.",
     "gallery": [],
     "accessory_type": "universal",
-    "moq_unit": "carton"
+    "moq_unit": "pc"
   },
   {
     "id": "bird-650-pet-door",
@@ -451,7 +465,7 @@
     "material": "ABS+PET+304 Stainless Steel+Iron Wire",
     "type": "",
     "meas": "70.5*51.5*22.5",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "1",
     "color": "",
     "accessories": "Food cups*2, Water bottle*2, Wooden perches*2",
     "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
@@ -460,7 +474,7 @@
       "images/products/gallery/650-pet-scene-2.jpg",
       "images/products/gallery/650-pet-scene-4.jpg"
     ],
-    "moq_unit": "pcs"
+    "moq_unit": "pc"
   },
   {
     "id": "bird-650-glass-door",
@@ -480,12 +494,12 @@
     "material": "ABS+PET+304 Stainless Steel+Iron Wire",
     "type": "",
     "meas": "70.5*51.5*22.5",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "1",
     "color": "",
     "accessories": "Food cups*2, Water bottle*2, Wooden perches*2",
     "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
     "gallery": [],
-    "moq_unit": "pcs"
+    "moq_unit": "pc"
   },
   {
     "id": "bird-490-iron-wire-single",
@@ -505,11 +519,11 @@
     "material": "ABS+PVC+Plastic+Iron Wire",
     "type": "",
     "meas": "47*47*17.5",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "1",
     "color": "",
     "accessories": "Food cups*2, Water bottle*2, Wooden perches*2",
     "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
-    "moq_unit": "pcs",
+    "moq_unit": "pc",
     "gallery": [
       "images/products/gallery/490-wheel-detail.jpg"
     ]
@@ -525,18 +539,18 @@
     "colors": [
       "White"
     ],
-    "image": "images/products/490-iron-wire-upgraded.jpg",
+    "image": "images/products/bird-490-iron-wire-upgraded-main.png",
     "net_weight": "5.49",
     "gross_weight": "6.55",
     "cbm": "",
     "material": "ABS+PVC+Plastic+Iron Wire/Stainless Steel",
     "type": "",
     "meas": "47*47*18.5",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "1",
     "color": "",
     "accessories": "Food cups*2, Water bottle*2, Wooden perches*2",
     "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
-    "moq_unit": "pcs",
+    "moq_unit": "pc",
     "gallery": [
       "images/products/gallery/490-wheel-detail.jpg"
     ],
@@ -571,11 +585,11 @@
     "material": "ABS+PVC+Plastic+Stainless Steel",
     "type": "",
     "meas": "51*51*22.5",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "1",
     "color": "",
     "accessories": "Food cups*2, Water bottle*2, Wooden perches*2",
     "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
-    "moq_unit": "pcs",
+    "moq_unit": "pc",
     "gallery": [
       "images/products/gallery/490-wheel-detail.jpg"
     ],
@@ -610,11 +624,11 @@
     "material": "ABS+PVC+Plastic+Stainless Steel",
     "type": "",
     "meas": "51*51*22.5",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "1",
     "color": "",
     "accessories": "Food cups*2, Water bottle*2, Wooden perches*2",
     "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
-    "moq_unit": "pcs",
+    "moq_unit": "pc",
     "gallery": [
       "images/products/gallery/490-splash-scene-1.jpg",
       "images/products/gallery/490-splash-scene-2.jpg",
@@ -653,7 +667,7 @@
     "material": "ABS+PVC+Plastic+Iron Wire/Stainless Steel",
     "type": "",
     "meas": "51*51*27",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "1",
     "color": "",
     "accessories": "Food cups*2, Water bottle*2, Wooden perches*2",
     "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
@@ -664,7 +678,7 @@
       "images/products/gallery/490-double-detail-1.jpg",
       "images/products/gallery/490-double-detail-2.jpg"
     ],
-    "moq_unit": "pcs",
+    "moq_unit": "pc",
     "material_options": [
       {
         "name": "Iron Wire",
@@ -696,7 +710,7 @@
     "material": "ABS+PVC+Plastic+Stainless Steel",
     "type": "",
     "meas": "51*51*27",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "1",
     "color": "",
     "accessories": "Food cups*2, Water bottle*2, Wooden perches*2",
     "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
@@ -706,7 +720,7 @@
       "images/products/gallery/490-double-splash-scene-3.jpg",
       "images/products/gallery/490-double-splash-detail-2.jpg"
     ],
-    "moq_unit": "pcs",
+    "moq_unit": "pc",
     "material_options": [
       {
         "name": "Iron Wire",
@@ -738,11 +752,11 @@
     "material": "ABS+PVC+Plastic+Stainless Steel",
     "type": "",
     "meas": "",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "1",
     "color": "",
     "accessories": "Food cups*2, Water bottle*2, Wooden perches*2",
     "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
-    "moq_unit": "pcs",
+    "moq_unit": "pc",
     "gallery": [
       "images/products/gallery/490-triple-splash-scene-1.jpg",
       "images/products/gallery/490-triple-splash-scene-2.jpg",
@@ -782,11 +796,11 @@
     "material": "ABS+PVC+Plastic+Iron Wire/Stainless Steel",
     "type": "",
     "meas": "",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "1",
     "color": "",
     "accessories": "Food cups*2, Water bottle*2, Wooden perches*2",
     "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
-    "moq_unit": "pcs",
+    "moq_unit": "pc",
     "gallery": [
       "images/products/gallery/490-triple-standard-scene-1.jpg",
       "images/products/gallery/490-triple-standard-scene-2.jpg",
@@ -818,14 +832,14 @@
     "colors": [
       "White"
     ],
-    "image": "images/products/bird-470-main-v2.jpg",
+    "image": "images/products/bird-470-cage-main.png",
     "net_weight": "4.75",
     "gross_weight": "5.75",
     "cbm": "",
     "material": "Low carbon steel + spray coating / Stainless Steel",
     "type": "",
     "meas": "52*52*19",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "1",
     "color": "",
     "accessories": "Food cups*2, Water bottle*1, Wooden perches*2",
     "notes": "MOQ may vary based on destination region and total order quantity. Contact us for details.",
@@ -836,7 +850,7 @@
       "images/products/gallery/470-scene-4.jpg",
       "images/products/gallery/470-scene-5.jpg"
     ],
-    "moq_unit": "pcs",
+    "moq_unit": "pc",
     "material_options": [
       {
         "name": "Iron Wire",
@@ -868,14 +882,14 @@
       "White",
       "Black"
     ],
-    "image": "images/products/bird-400-wire-v2.jpg",
+    "image": "images/products/bird-400-cage-main.png",
     "net_weight": "3.3",
     "gross_weight": "3.95",
     "cbm": "",
     "material": "Iron Wire + ABS+PVC Plastic + Solid Wood Perch",
     "type": "",
     "meas": "39.5*35*17",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "1",
     "color": "",
     "accessories": "Food cup*1, Water bottle*1, Wooden perch*1",
     "notes": "MOQ may vary based on destination region and total order quantity. Contact us for details.",
@@ -883,7 +897,7 @@
       "images/products/gallery/400-scene-1.jpg",
       "images/products/gallery/400-scene-2.jpg"
     ],
-    "moq_unit": "pcs",
+    "moq_unit": "pc",
     "color_options": [
       {
         "name": "White",
@@ -906,14 +920,14 @@
     "colors": [
       "White"
     ],
-    "image": "images/products/bird-400-stand-main.jpg",
+    "image": "images/products/bird-400-rolling-stand-main.png",
     "net_weight": "1.85",
     "gross_weight": "2.36",
     "cbm": "0.17",
     "material": "Iron Wire",
     "type": "",
     "meas": "43*60*65",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "1",
     "color": "",
     "accessories": "",
     "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
@@ -922,7 +936,7 @@
       "images/products/gallery/400-stand-scene-2.jpg",
       "images/products/gallery/400-stand-scene-3.jpg"
     ],
-    "moq_unit": "pcs"
+    "moq_unit": "pc"
   },
   {
     "id": "bird-470-frame",
@@ -942,7 +956,7 @@
     "material": "Iron Wire",
     "type": "",
     "meas": "48*90*68",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "1",
     "color": "",
     "accessories": "",
     "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
@@ -950,7 +964,7 @@
       "images/products/gallery/470-stand-scene-1.jpg",
       "images/products/gallery/470-stand-scene-2.jpg"
     ],
-    "moq_unit": "pcs"
+    "moq_unit": "pc"
   },
   {
     "id": "bird-490-climbing-rack",
@@ -970,7 +984,7 @@
     "material": "Iron Wire",
     "type": "",
     "meas": "69*54*12",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "1",
     "color": "",
     "accessories": "",
     "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
@@ -982,7 +996,7 @@
       "images/products/gallery/490-rack-scene-2.jpg",
       "images/products/gallery/490-rack-scene-3.jpg"
     ],
-    "moq_unit": "pcs"
+    "moq_unit": "pc"
   },
   {
     "id": "bird-bathroom-small",
@@ -991,7 +1005,7 @@
     "category": "bird-accessories",
     "series": "bird-bathroom",
     "size": "13*12*13",
-    "moq": "180 sets per color",
+    "moq": "180 pcs per color",
     "colors": [
       "White",
       "Green",
@@ -1009,7 +1023,7 @@
     "pcs_per_ctn": "",
     "color": "",
     "accessories": "",
-    "notes": "For 180 sets of a single color, 2 cartons are required — one carton for top lids, one carton for bottom bases.",
+    "notes": "MOQ: 180 pcs per color. One complete batch is packed in 2 cartons: Carton A contains 180 top lids and Carton B contains 180 bottom bases. Complete batches only.",
     "gallery": [
       "images/products/gallery/bird-bath-47-scene-1.jpg",
       "images/products/gallery/bird-bath-47-scene-2.jpg",
@@ -1017,7 +1031,7 @@
       "images/products/gallery/bird-bath-47-scene-4.jpg"
     ],
     "accessory_type": "universal",
-    "moq_unit": "carton",
+    "moq_unit": "pc",
     "color_images": {
       "White": "images/products/bird-bathroom-small.jpg",
       "Pink": "images/products/color/bird-bathroom-small_pink.jpg",
@@ -1051,7 +1065,7 @@
     "category": "bird-accessories",
     "series": "bird-space-bathroom",
     "size": "18*18*18",
-    "moq": "100",
+    "moq": 100,
     "colors": [
       "White"
     ],
@@ -1062,13 +1076,13 @@
     "material": "ABS+PET",
     "type": "",
     "meas": "22*18.5*20.5",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "1",
     "color": "",
     "accessories": "",
     "notes": "Each product is individually packaged in a carton.",
     "gallery": [],
     "accessory_type": "universal",
-    "moq_unit": "carton",
+    "moq_unit": "pc",
     "material_options": [
       {
         "name": "With Drawer",
@@ -1087,7 +1101,7 @@
     "category": "bird-accessories",
     "series": "bird-space-bathroom",
     "size": "17.7*19.5*19.5",
-    "moq": "100",
+    "moq": 100,
     "colors": [
       "White"
     ],
@@ -1098,7 +1112,7 @@
     "material": "ABS+PET",
     "type": "",
     "meas": "22*18.5*20.5",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "1",
     "color": "",
     "accessories": "",
     "notes": "Each product is individually packaged in a carton.",
@@ -1108,28 +1122,28 @@
       "images/products/gallery/bathroom-feeder-scene-3.jpg"
     ],
     "accessory_type": "dedicated",
-    "moq_unit": "carton"
+    "moq_unit": "pc"
   },
   {
-    "id": "bird-parrot-nest-old",
-    "slug": "bird-parrot-nest-old",
+    "id": "bird-no-mess-parrot-feeder",
+    "slug": "bird-no-mess-parrot-feeder",
     "name": "7.7\" No-mess Hanging Parrot Feeder",
     "category": "bird-accessories",
     "series": "bird-parrot-nest",
     "size": "18*18*18",
-    "moq": "100",
+    "moq": 100,
     "colors": [
       "White",
       "Transparent"
     ],
-    "image": "images/products/bird-parrot-nest-old.jpg",
+    "image": "images/products/bird-no-mess-parrot-feeder.jpg",
     "net_weight": "0.28",
     "gross_weight": "0.55",
     "cbm": "",
     "material": "PET",
     "type": "",
     "meas": "18.5*16*16.5",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "1",
     "color": "",
     "accessories": "",
     "notes": "Each product is individually packaged in a carton.",
@@ -1141,15 +1155,15 @@
       "images/products/gallery/no-mess-feeder-transparent.jpg"
     ],
     "accessory_type": "universal",
-    "moq_unit": "carton",
+    "moq_unit": "pc",
     "color_options": [
       {
         "name": "White",
-        "image": "images/products/bird-parrot-nest-old.jpg"
+        "image": "images/products/bird-no-mess-parrot-feeder.jpg"
       },
       {
         "name": "Transparent",
-        "image": "images/products/bird-parrot-nest-old.jpg"
+        "image": "images/products/bird-no-mess-parrot-feeder.jpg"
       }
     ]
   },
@@ -1164,7 +1178,7 @@
       "d": 15,
       "h": 14
     },
-    "moq": "48",
+    "moq": 96,
     "colors": [
       "Transparent"
     ],
@@ -1175,15 +1189,15 @@
     "material": "PET",
     "type": "",
     "meas": "69*47*30",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "48",
     "color": "",
     "accessories": "",
-    "notes": "Custom packaging is available.",
+    "notes": "Custom packaging is available. Packed 48 pcs per master carton. MOQ: 96 pcs per model, equivalent to 2 full cartons.",
     "gallery": [
       "images/products/parrot-nest-small-main.png"
     ],
     "accessory_type": "universal",
-    "moq_unit": "carton",
+    "moq_unit": "pc",
     "carton_size": {
       "w": 69,
       "d": 47,
@@ -1202,7 +1216,7 @@
       "d": 18,
       "h": 16
     },
-    "moq": "48",
+    "moq": 200,
     "colors": [
       "Transparent"
     ],
@@ -1216,14 +1230,14 @@
     "pcs_per_ctn": "",
     "color": "",
     "accessories": "",
-    "notes": "Custom packaging is available.",
+    "notes": "Individual package size: 18.5×16×16.5 cm. Master carton size: 69×47×30 cm. Packing quantity per master carton is to be confirmed. Custom packaging is available. MOQ: 200 pcs per model. Full-carton ordering is not required.",
     "gallery": [],
     "accessory_type": "universal",
-    "moq_unit": "carton",
+    "moq_unit": "pc",
     "carton_size": {
-      "w": 18.5,
-      "d": 16,
-      "h": 16.5
+      "w": 69,
+      "d": 47,
+      "h": 30
     },
     "sku": "PARROT-NEST-L",
     "description": "Transparent parrot nest that can be hung or mounted anywhere in the bird cage. Made of durable PET material, easy to clean and provides a safe, comfortable resting space for small birds."
@@ -1235,7 +1249,7 @@
     "category": "bird-accessories",
     "series": "bird-toy",
     "size": "16*16*20",
-    "moq": "216",
+    "moq": 216,
     "colors": [
       "Multi-color"
     ],
@@ -1246,7 +1260,7 @@
     "material": "ABS",
     "type": "",
     "meas": "69*47*30",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "216",
     "color": "",
     "accessories": "",
     "notes": "216 sets per carton. No individual packaging. Custom packaging available upon request. Gross weight 19.8kg per carton.",
@@ -1259,7 +1273,7 @@
       "images/products/gallery/windmill-toy-scene-6.jpg"
     ],
     "accessory_type": "universal",
-    "moq_unit": "carton"
+    "moq_unit": "pc"
   },
   {
     "id": "bird-perch-stick",
@@ -1268,7 +1282,7 @@
     "category": "bird-accessories",
     "series": "bird-perch",
     "size": "18.5*4.5*4.5",
-    "moq": "200",
+    "moq": 200,
     "colors": [
       "Blue",
       "Green",
@@ -1281,14 +1295,14 @@
     "cbm": "",
     "material": "ABS",
     "type": "",
-    "meas": "18.5*18*7.8",
-    "pcs_per_ctn": "",
+    "meas": "69*47*30",
+    "pcs_per_ctn": "200",
     "color": "",
     "accessories": "",
     "notes": "200 pcs per carton. No individual packaging. Gross weight 6.5kg per carton.",
     "gallery": [],
     "accessory_type": "universal",
-    "moq_unit": "carton",
+    "moq_unit": "pc",
     "color_images": {
       "Blue": "images/products/bird-perch-stick.jpg",
       "Green": "images/products/bird-perch-stick.jpg",
@@ -1322,7 +1336,7 @@
     "category": "bird-accessories",
     "series": "bird-breeding",
     "size": "24.5*13*13",
-    "moq": "60",
+    "moq": 90,
     "colors": [
       "Transparent"
     ],
@@ -1333,13 +1347,13 @@
     "material": "ABS+PET",
     "type": "",
     "meas": "26*14.5*15.5",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "30",
     "color": "",
     "accessories": "",
-    "notes": "30 inner boxes per master carton. Each product is individually packaged in an inner box. Master carton size: 78.5×53.5×52.5 cm.",
+    "notes": "Individual inner box size: 26×14.5×15.5 cm. Packed 30 pcs per master carton. Master carton size: 78.5×53.5×52.5 cm. MOQ: 90 pcs per model, equivalent to 3 full cartons.",
     "gallery": [],
     "accessory_type": "universal",
-    "moq_unit": "carton",
+    "moq_unit": "pc",
     "carton_size": "78.5*53.5*52.5"
   },
   {
@@ -1349,7 +1363,7 @@
     "category": "bird-accessories",
     "series": "bird-kettle",
     "size": "8*4.5*11",
-    "moq": "312",
+    "moq": 312,
     "colors": [
       "White"
     ],
@@ -1360,13 +1374,13 @@
     "material": "ABS+PET",
     "type": "",
     "meas": "69*47*30",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "312",
     "color": "",
     "accessories": "",
     "notes": "312 pcs per carton. Sold by full carton only.",
     "gallery": [],
     "accessory_type": "universal",
-    "moq_unit": "carton",
+    "moq_unit": "pc",
     "description": "Dual-purpose bird feeder and water bottle. Can be hung on both horizontal and vertical wire cages. Perfect for seeds, water, and other bird treats.",
     "features": [
       "2-in-1 design: works as both feeder and water bottle",
@@ -1384,7 +1398,7 @@
     "category": "bird-accessories",
     "series": "bird-kettle",
     "size": "8*4.5*16",
-    "moq": "234",
+    "moq": 234,
     "colors": [
       "White"
     ],
@@ -1395,13 +1409,13 @@
     "material": "ABS+PET",
     "type": "",
     "meas": "69*47*30",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "234",
     "color": "",
     "accessories": "",
     "notes": "234 pcs per carton. Sold by full carton only.",
     "gallery": [],
     "accessory_type": "universal",
-    "moq_unit": "carton",
+    "moq_unit": "pc",
     "description": "Dual-purpose bird feeder and water bottle. Can be hung on both horizontal and vertical wire cages. Perfect for seeds, water, and other bird treats.",
     "features": [
       "2-in-1 design: works as both feeder and water bottle",
@@ -1419,7 +1433,7 @@
     "category": "hamster-cages",
     "series": "hamster-transparent-cage",
     "size": "43.5*35.4*30",
-    "moq": "100",
+    "moq": 100,
     "colors": [
       "White"
     ],
@@ -1430,7 +1444,7 @@
     "material": "ABS + PET",
     "type": "",
     "meas": "47*37.5*21.5",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "1",
     "color": "",
     "accessories": "",
     "notes": "Each unit is individually packed in a carton. Custom packaging and printing available for OEM/ODM orders.",
@@ -1441,7 +1455,7 @@
       "images/products/gallery/43-hamster-scene-2.jpg",
       "images/products/gallery/43-hamster-scene-3.jpg"
     ],
-    "moq_unit": "pcs"
+    "moq_unit": "pc"
   },
   {
     "id": "hamster-62-cage",
@@ -1450,7 +1464,7 @@
     "category": "hamster-cages",
     "series": "hamster-transparent-cage",
     "size": "62*46*33.5",
-    "moq": "100",
+    "moq": 100,
     "colors": [
       "White"
     ],
@@ -1461,7 +1475,7 @@
     "material": "ABS + PET",
     "type": "",
     "meas": "65*49*22",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "1",
     "color": "",
     "accessories": "",
     "notes": "Each unit is individually packed in a carton. Custom packaging and printing available for OEM/ODM orders.",
@@ -1473,7 +1487,7 @@
       "images/products/gallery/62-hamster-scene-3.jpg",
       "images/products/gallery/62-hamster-scene-4.jpg"
     ],
-    "moq_unit": "pcs"
+    "moq_unit": "pc"
   },
   {
     "id": "hamster-75-cage",
@@ -1482,7 +1496,7 @@
     "category": "hamster-cages",
     "series": "hamster-transparent-cage",
     "size": "75*47*43",
-    "moq": "100",
+    "moq": 100,
     "colors": [
       "White"
     ],
@@ -1493,7 +1507,7 @@
     "material": "ABS + PET",
     "type": "",
     "meas": "82*51*30",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "1",
     "color": "",
     "accessories": "",
     "notes": "Each unit is individually packed in a carton. Custom packaging and printing available for OEM/ODM orders.",
@@ -1503,7 +1517,7 @@
       "images/products/gallery/75-hamster-scene.jpg",
       "images/products/gallery/75-hamster-scene-2.jpg"
     ],
-    "moq_unit": "pcs"
+    "moq_unit": "pc"
   },
   {
     "id": "hamster-external-enclosure",
@@ -1523,7 +1537,7 @@
     "material": "ABS+PET",
     "type": "",
     "meas": "",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "1",
     "color": "",
     "accessories": "",
     "notes": "Each unit is individually packed in a carton. Custom packaging and printing available for OEM/ODM orders.",
@@ -1531,7 +1545,7 @@
       "images/products/gallery/external-hamster-scene.jpg",
       "images/products/hamster-external-enclosure.jpg"
     ],
-    "moq_unit": "pcs"
+    "moq_unit": "pc"
   },
   {
     "id": "hamster-70-folding-low",
@@ -1544,7 +1558,7 @@
       "d": 43,
       "h": 34
     },
-    "moq": "3",
+    "moq": 100,
     "colors": [
       "White"
     ],
@@ -1555,15 +1569,15 @@
     "material": "PET + ABS",
     "type": "",
     "meas": "75*49*12",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "1",
     "color": "",
     "accessories": "",
-    "notes": "Wholesale starts at 3 sets. Prices for over 30 sets can be negotiated separately.",
+    "notes": "Each product is individually packed in one carton. MOQ: 100 pcs per model.",
     "gallery": [
       "images/products/gallery/70-folding-low-scene.jpg",
       "images/products/hamster-70-folding-low.jpg"
     ],
-    "moq_unit": "sets",
+    "moq_unit": "pc",
     "carton_size": {
       "w": 75,
       "d": 49,
@@ -1581,7 +1595,7 @@
       "d": 43,
       "h": 39.5
     },
-    "moq": "3",
+    "moq": 100,
     "colors": [
       "White"
     ],
@@ -1592,15 +1606,15 @@
     "material": "PET + ABS",
     "type": "",
     "meas": "75*49*12",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "1",
     "color": "",
     "accessories": "",
-    "notes": "Wholesale starts at 3 sets. Prices for over 30 sets can be negotiated separately.",
+    "notes": "Each product is individually packed in one carton. MOQ: 100 pcs per model.",
     "gallery": [
       "images/products/gallery/70-folding-high-scene.jpg",
       "images/products/hamster-70-folding-high.jpg"
     ],
-    "moq_unit": "sets",
+    "moq_unit": "pc",
     "carton_size": {
       "w": 75,
       "d": 49,
@@ -1608,30 +1622,30 @@
     }
   },
   {
-    "id": "hamster-bite-guard",
-    "slug": "hamster-bite-guard",
-    "name": "Bite Guard (Pipe Connector)",
+    "id": "hamster-tube-anti-chew-ring",
+    "slug": "hamster-tube-anti-chew-ring",
+    "name": "Hamster Tube Anti-Chew Ring",
     "category": "hamster-accessories",
     "series": "hamster-pipe",
     "size": "",
-    "moq": "100",
+    "moq": null,
     "colors": [
       "Transparent"
     ],
-    "image": "images/products/hamster-bite-guard-v3.jpg",
+    "image": "images/products/hamster-tube-anti-chew-ring.jpg",
     "net_weight": "",
     "gross_weight": "",
     "cbm": "",
     "material": "PET",
     "type": "",
     "meas": "69*47*30",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "1400",
     "color": "",
     "accessories": "",
-    "notes": "Default color is transparent. Custom colors available for bulk orders. Sold by full carton only.",
+    "notes": "Packed 1,400 pcs per master carton. Full-carton ordering is not required. Order quantity is determined by the compatible hamster tube order.",
     "gallery": [],
     "accessory_type": "universal",
-    "moq_unit": "carton"
+    "moq_unit": "pc"
   },
   {
     "id": "hamster-pipe-short",
@@ -1639,30 +1653,30 @@
     "name": "Short Straight Pipe",
     "category": "hamster-accessories",
     "series": "hamster-pipe",
-    "size": "9.5*5.5",
-    "moq": "100",
+    "size": "Length 9.5 cm; diameter 5.5 cm",
+    "moq": 440,
     "colors": [
       "Transparent",
       "Blue",
       "Green",
       "Pink"
     ],
-    "image": "images/products/hamster-pipe-short.jpg",
+    "image": "images/products/hamster-pipe-short-transparent.png",
     "net_weight": "0.032",
     "gross_weight": "30",
     "cbm": "",
     "material": "PET",
     "type": "",
     "meas": "69*47*30",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "440",
     "color": "",
     "accessories": "",
-    "notes": "Default color is transparent. Custom colors available for bulk orders. Sold by full carton only.",
+    "notes": "Default color is transparent. Custom colors are available for bulk orders. Packed 440 pcs per master carton. MOQ: 440 pcs per model. Sold by full carton only.",
     "gallery": [],
     "accessory_type": "universal",
-    "moq_unit": "carton",
+    "moq_unit": "pc",
     "color_images": {
-      "Transparent": "images/products/hamster-pipe-short.jpg",
+      "Transparent": "images/products/hamster-pipe-short-transparent.png",
       "Pink": "images/products/color/hamster-pipe-short_pink.jpg",
       "Blue": "images/products/color/hamster-pipe-short_blue.jpg",
       "Green": "images/products/color/hamster-pipe-short_green.jpg"
@@ -1674,30 +1688,30 @@
     "name": "Long Straight Pipe",
     "category": "hamster-accessories",
     "series": "hamster-pipe",
-    "size": "11*8.5",
-    "moq": "100",
+    "size": "Length 11 cm; diameter 8.5 cm",
+    "moq": 341,
     "colors": [
       "Transparent",
       "Blue",
       "Green",
       "Pink"
     ],
-    "image": "images/products/hamster-pipe-short.jpg",
+    "image": "images/products/hamster-pipe-long-transparent.jpg",
     "net_weight": "0.023",
     "gross_weight": "18",
     "cbm": "",
     "material": "PET",
     "type": "",
     "meas": "69*47*30",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "341",
     "color": "",
     "accessories": "",
-    "notes": "Default color is transparent. Custom colors available for bulk orders. Sold by full carton only.",
+    "notes": "Default color is transparent. Custom colors are available for bulk orders. Packed 341 pcs per master carton. MOQ: 341 pcs per model. Sold by full carton only.",
     "gallery": [],
     "accessory_type": "universal",
-    "moq_unit": "carton",
+    "moq_unit": "pc",
     "color_images": {
-      "Transparent": "images/products/hamster-pipe-short.jpg",
+      "Transparent": "images/products/hamster-pipe-long-transparent.jpg",
       "Pink": "images/products/color/hamster-pipe-long_pink.jpg",
       "Blue": "images/products/color/hamster-pipe-long_blue.jpg",
       "Green": "images/products/color/hamster-pipe-long_green.jpg"
@@ -1710,29 +1724,29 @@
     "category": "hamster-accessories",
     "series": "hamster-pipe",
     "size": "10.5*5.5*6",
-    "moq": "100",
+    "moq": 540,
     "colors": [
       "Transparent",
       "Blue",
       "Green",
       "Pink"
     ],
-    "image": "images/products/hamster-pipe-bent.jpg",
+    "image": "images/products/hamster-pipe-bent-transparent.png",
     "net_weight": "0.026",
     "gross_weight": "30",
     "cbm": "",
     "material": "PET",
     "type": "",
     "meas": "69*47*30",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "540",
     "color": "",
     "accessories": "",
-    "notes": "Default color is transparent. Custom colors available for bulk orders. Sold by full carton only.",
+    "notes": "Default color is transparent. Custom colors are available for bulk orders. Packed 540 pcs per master carton. MOQ: 540 pcs per model. Sold by full carton only.",
     "gallery": [],
     "accessory_type": "universal",
-    "moq_unit": "carton",
+    "moq_unit": "pc",
     "color_images": {
-      "Transparent": "images/products/hamster-pipe-bent.jpg",
+      "Transparent": "images/products/hamster-pipe-bent-transparent.png",
       "Pink": "images/products/color/hamster-pipe-bent_pink.jpg",
       "Blue": "images/products/color/hamster-pipe-bent_blue.jpg",
       "Green": "images/products/color/hamster-pipe-bent_green.jpg"
@@ -1744,30 +1758,30 @@
     "name": "Three-Way Pipe",
     "category": "hamster-accessories",
     "series": "hamster-pipe",
-    "size": "9*8.5",
-    "moq": "100",
+    "size": "Length 9 cm; diameter 8.5 cm",
+    "moq": 293,
     "colors": [
       "Transparent",
       "Blue",
       "Green",
       "Pink"
     ],
-    "image": "images/products/hamster-pipe-3way.jpg",
+    "image": "images/products/hamster-pipe-3way-transparent.png",
     "net_weight": "0.038",
     "gross_weight": "28",
     "cbm": "",
     "material": "PET",
     "type": "",
     "meas": "69*47*30",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "293",
     "color": "",
     "accessories": "",
-    "notes": "Default color is transparent. Custom colors available for bulk orders. Sold by full carton only.",
+    "notes": "Default color is transparent. Custom colors are available for bulk orders. Packed 293 pcs per master carton. MOQ: 293 pcs per model. Sold by full carton only.",
     "gallery": [],
     "accessory_type": "universal",
-    "moq_unit": "carton",
+    "moq_unit": "pc",
     "color_images": {
-      "Transparent": "images/products/hamster-pipe-3way.jpg",
+      "Transparent": "images/products/hamster-pipe-3way-transparent.png",
       "Pink": "images/products/color/hamster-pipe-3way_pink.jpg",
       "Blue": "images/products/color/hamster-pipe-3way_blue.jpg",
       "Green": "images/products/color/hamster-pipe-3way_green.jpg"
@@ -1780,7 +1794,7 @@
     "category": "hamster-accessories",
     "series": "hamster-pipe",
     "size": "6.5*6.5*1.7",
-    "moq": "100",
+    "moq": null,
     "colors": [
       "White"
     ],
@@ -1791,84 +1805,112 @@
     "material": "PET",
     "type": "",
     "meas": "69*47*30",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "1400",
     "color": "",
     "accessories": "",
-    "notes": "Default color is transparent. Custom colors available for bulk orders. Sold by full carton only.",
+    "notes": "Packed 1,400 pcs per master carton. Full-carton ordering is not required. Order quantity is determined by the compatible hamster tube order.",
     "gallery": [
       "images/products/gallery/hamster-pipe-joint-scene.jpg"
     ],
     "accessory_type": "universal",
-    "moq_unit": "carton"
+    "moq_unit": "pc"
   },
   {
     "id": "hamster-wheel-17cm",
     "slug": "hamster-wheel-17cm",
-    "name": "6.7\" Running Wheel + Hanging Bracket",
+    "name": "17 cm Hamster Running Wheel",
     "category": "hamster-accessories",
     "series": "hamster-wheel",
     "size": "16*16*7",
-    "moq": "100",
+    "moq": 100,
     "colors": [
       "White",
       "Blue",
       "Pink",
       "Purple"
     ],
-    "image": "images/products/hamster-wheel-17cm.jpg",
+    "image": "images/products/color/hamster-wheel-17cm_white-main.jpg",
     "net_weight": "0.138",
     "gross_weight": "2",
     "cbm": "",
     "material": "ABS + Phenol-modified + Bearing Steel",
     "type": "",
     "meas": "20*20*10",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "1",
     "color": "",
     "accessories": "",
-    "notes": "Default color is white. Custom colors available for bulk orders. Includes hanging bracket.",
-    "gallery": [],
+    "notes": "Default color is white. Custom colors available for bulk orders.",
+    "features": [
+      "Optional universal hanging bracket mounts the wheel to Kanapet hamster cages.",
+      "The hanging bracket is ordered separately and is not included with the running wheel."
+    ],
+    "gallery": [
+      "images/products/color/hamster-wheel-17cm_blue-main.jpg",
+      "images/products/color/hamster-wheel-17cm_pink-main.jpg",
+      "images/products/color/hamster-wheel-17cm_purple-main.jpg",
+      "images/products/gallery/hamster-wheel-17cm-bracket-01.png",
+      "images/products/gallery/hamster-wheel-17cm-bracket-02.jpg",
+      "images/products/gallery/hamster-wheel-17cm-bracket-03.jpg",
+      "images/products/gallery/hamster-wheel-17cm-bracket-04.jpg",
+      "images/products/gallery/hamster-wheel-17cm-bracket-05.jpg",
+      "images/products/gallery/hamster-wheel-17cm-bracket-06.jpg"
+    ],
     "accessory_type": "universal",
-    "moq_unit": "carton",
+    "moq_unit": "pc",
     "color_images": {
-      "White": "images/products/color/hamster-wheel-17cm_white.jpg",
-      "Blue": "images/products/color/hamster-wheel-17cm_blue.jpg",
-      "Pink": "images/products/color/hamster-wheel-17cm_pink.jpg",
-      "Purple": "images/products/color/hamster-wheel-17cm_purple.jpg"
+    "White": "images/products/color/hamster-wheel-17cm_white-main.jpg",
+    "Blue": "images/products/color/hamster-wheel-17cm_blue-main.jpg",
+    "Pink": "images/products/color/hamster-wheel-17cm_pink-main.jpg",
+    "Purple": "images/products/color/hamster-wheel-17cm_purple-main.jpg"
     }
   },
   {
     "id": "hamster-wheel-21cm",
     "slug": "hamster-wheel-21cm",
-    "name": "8.3\" Running Wheel + Hanging Bracket",
+    "name": "21 cm Hamster Running Wheel",
     "category": "hamster-accessories",
     "series": "hamster-wheel",
     "size": "20*20*9",
-    "moq": "100",
+    "moq": "50 pcs per color",
     "colors": [
       "White",
       "Blue",
       "Pink",
       "Purple"
     ],
-    "image": "images/products/color/hamster-wheel-21cm_white.jpg",
+    "image": "images/products/color/hamster-wheel-21cm_white-main.jpg",
     "net_weight": "0.233",
     "gross_weight": "2",
     "cbm": "",
     "material": "ABS + Phenol-modified + Bearing Steel",
     "type": "",
     "meas": "26*15*17",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "50",
     "color": "",
     "accessories": "",
-    "notes": "Default color is white. Custom colors available for bulk orders. Includes hanging bracket.",
-    "gallery": [],
+    "notes": "Default color is white. Custom colors are available for bulk orders. Packed 50 pcs per master carton. MOQ: 50 pcs per color. Sold by full carton only.",
+    "features": [
+      "Optional universal hanging bracket mounts the wheel to Kanapet hamster cages.",
+      "The hanging bracket is ordered separately and is not included with the running wheel."
+    ],
+    "gallery": [
+      "images/products/color/hamster-wheel-21cm_blue-main.jpg",
+      "images/products/color/hamster-wheel-21cm_pink-main.jpg",
+      "images/products/color/hamster-wheel-21cm_purple-main.jpg",
+      "images/products/gallery/hamster-wheel-17cm-bracket-01.png",
+      "images/products/gallery/hamster-wheel-17cm-bracket-02.jpg",
+      "images/products/gallery/hamster-wheel-17cm-bracket-03.jpg",
+      "images/products/gallery/hamster-wheel-17cm-bracket-04.jpg",
+      "images/products/gallery/hamster-wheel-17cm-bracket-05.jpg",
+      "images/products/gallery/hamster-wheel-17cm-bracket-06.jpg"
+    ],
     "accessory_type": "universal",
-    "moq_unit": "carton",
+    "moq_unit": "pc",
     "color_images": {
-      "White": "images/products/color/hamster-wheel-21cm_white.jpg",
-      "Blue": "images/products/color/hamster-wheel-21cm_blue.jpg",
-      "Pink": "images/products/color/hamster-wheel-21cm_pink.jpg",
-      "Purple": "images/products/color/hamster-wheel-21cm_purple.jpg"
+    "White": "images/products/color/hamster-wheel-21cm_white-main.jpg",
+    "Blue": "images/products/color/hamster-wheel-21cm_blue-main.jpg",
+    "Pink": "images/products/color/hamster-wheel-21cm_pink-main.jpg",
+    "Purple": "images/products/color/hamster-wheel-21cm_purple-main.jpg"
     }
   },
   {
@@ -1878,7 +1920,7 @@
     "category": "hamster-accessories",
     "series": "hamster-wheel-large",
     "size": "16*24*30",
-    "moq": "100",
+    "moq": 100,
     "colors": [
       "Transparent"
     ],
@@ -1889,13 +1931,13 @@
     "material": "PC + ABS + Acrylic + Bearing Steel",
     "type": "",
     "meas": "29.5*27*18",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "1",
     "color": "",
     "accessories": "",
     "notes": "Multiple colors available. Sold by full carton only.",
     "gallery": [],
     "accessory_type": "universal",
-    "moq_unit": "carton"
+    "moq_unit": "pc"
   },
   {
     "id": "hamster-wheel-27cm",
@@ -1904,7 +1946,7 @@
     "category": "hamster-accessories",
     "series": "hamster-wheel-large",
     "size": "26*10*22.5",
-    "moq": "100",
+    "moq": 100,
     "colors": [
       "Transparent"
     ],
@@ -1915,13 +1957,18 @@
     "material": "PC + ABS + Acrylic + Bearing Steel",
     "type": "",
     "meas": "32*30*18",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "1",
     "color": "",
     "accessories": "",
     "notes": "Multiple colors available. Sold by full carton only.",
-    "gallery": [],
+    "gallery": [
+      "images/products/gallery/hamster-wheel-27cm-detail-01.jpg",
+      "images/products/gallery/hamster-wheel-27cm-detail-02.jpg",
+      "images/products/gallery/hamster-wheel-27cm-detail-03.jpg",
+      "images/products/gallery/hamster-wheel-27cm-detail-04.jpg"
+    ],
     "accessory_type": "universal",
-    "moq_unit": "carton"
+    "moq_unit": "pc"
   },
   {
     "id": "hamster-running-disc",
@@ -1930,7 +1977,7 @@
     "category": "hamster-accessories",
     "series": "hamster-running-disc",
     "size": "18*18*12",
-    "moq": "100",
+    "moq": "100 pcs per color",
     "colors": [
       "White",
       "Pink",
@@ -1953,7 +2000,7 @@
     "notes": "Sold by full carton only, 100pcs per color. No individual packaging. Custom packaging available upon request.",
     "gallery": [],
     "accessory_type": "universal",
-    "moq_unit": "carton",
+    "moq_unit": "pc",
     "color_images": {
       "White": "images/products/color/hamster-running-disc_white.jpg",
       "Pink": "images/products/color/hamster-running-disc_pink.jpg",
@@ -1971,7 +2018,7 @@
     "category": "hamster-accessories",
     "series": "hamster-ball",
     "size": "17*17*17.5",
-    "moq": "100",
+    "moq": 320,
     "colors": [
       "Transparent"
     ],
@@ -1982,13 +2029,13 @@
     "material": "PET",
     "type": "",
     "meas": "69*47*30",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "32",
     "color": "",
     "accessories": "Screw accessory pack",
-    "notes": "Comes with screw accessory pack. Sold by full carton only.",
+    "notes": "Comes with screw accessory pack. Packed 32 pcs per master carton. MOQ: 320 pcs per model, equivalent to 10 full cartons.",
     "gallery": [],
     "accessory_type": "universal",
-    "moq_unit": "carton"
+    "moq_unit": "pc"
   },
   {
     "id": "hamster-ball-270",
@@ -1997,7 +2044,7 @@
     "category": "hamster-accessories",
     "series": "hamster-ball",
     "size": "27*27*27",
-    "moq": "100",
+    "moq": 100,
     "colors": [
       "Transparent"
     ],
@@ -2008,13 +2055,13 @@
     "material": "PET",
     "type": "",
     "meas": "29*29*18",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "1",
     "color": "",
     "accessories": "Screw accessory pack",
     "notes": "Comes with screw accessory pack. Sold by full carton only.",
     "gallery": [],
     "accessory_type": "universal",
-    "moq_unit": "carton"
+    "moq_unit": "pc"
   },
   {
     "id": "hamster-bathroom-18cm",
@@ -2023,7 +2070,7 @@
     "category": "hamster-accessories",
     "series": "hamster-bathroom",
     "size": "17.5*13*11",
-    "moq": "100",
+    "moq": 250,
     "colors": [
       "Transparent",
       "Blue",
@@ -2037,13 +2084,13 @@
     "material": "PET",
     "type": "",
     "meas": "30*23*23",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "50",
     "color": "",
     "accessories": "",
-    "notes": "Multiple colors available. Sold by full carton only.",
+    "notes": "Multiple colors available. Packed 50 pcs per master carton. MOQ: 250 pcs per model, equivalent to 5 full cartons.",
     "gallery": [],
     "accessory_type": "universal",
-    "moq_unit": "carton"
+    "moq_unit": "pc"
   },
   {
     "id": "hamster-external-bathroom",
@@ -2052,7 +2099,7 @@
     "category": "hamster-accessories",
     "series": "hamster-bathroom",
     "size": "16*13*11",
-    "moq": "100",
+    "moq": 200,
     "colors": [
       "Transparent",
       "Blue",
@@ -2066,13 +2113,13 @@
     "material": "PET",
     "type": "",
     "meas": "15.5*13*8",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "100",
     "color": "",
     "accessories": "",
-    "notes": "Multiple colors available. Sold by full carton only.",
+    "notes": "Multiple colors available. Packed 100 pcs per master carton. MOQ: 200 pcs per model, equivalent to 2 full cartons.",
     "gallery": [],
     "accessory_type": "universal",
-    "moq_unit": "carton"
+    "moq_unit": "pc"
   },
   {
     "id": "hamster-shelf-43",
@@ -2080,8 +2127,8 @@
     "name": "Shelf & Ladder Set for 43 Hamster Cage",
     "category": "hamster-accessories",
     "series": "hamster-shelf",
-    "size": "Shelf: 34*18.5; Ladder: 23.8*16.7*17",
-    "moq": "100",
+    "size": "Length 34 cm; width 18.5 cm",
+    "moq": 100,
     "colors": [
       "Blue"
     ],
@@ -2095,7 +2142,7 @@
     "pcs_per_ctn": "",
     "color": "",
     "accessories": "",
-    "notes": "Shelf and ladder sold as one set, not separated. Compatible with 43 Hamster Cage only.",
+    "notes": "MOQ: 100 pcs per model. Full-carton ordering is not required.",
     "gallery": [
       "images/products/hamster-shelf-43-v3.jpg"
     ],
@@ -2103,7 +2150,7 @@
     "compatible_with": [
       "hamster-43-cage"
     ],
-    "moq_unit": "carton",
+    "moq_unit": "pc",
     "color_images": {
       "White": "images/products/hamster-shelf-43-v3.jpg",
       "Blue": "images/products/color/hamster-shelf-43_blue.jpg"
@@ -2118,9 +2165,9 @@
     "size": {
       "w": 44,
       "d": 22,
-      "h": 0
+      "h": 1.44
     },
-    "moq": "50",
+    "moq": 100,
     "colors": [
       "Blue"
     ],
@@ -2134,7 +2181,7 @@
     "pcs_per_ctn": "",
     "color": "",
     "accessories": "",
-    "notes": "MOQ is 50 pcs. Custom packaging is available.",
+    "notes": "Custom packaging is available. MOQ: 100 pcs per model. Full-carton ordering is not required.",
     "gallery": [
       "images/products/hamster-shelf-62-v3.jpg"
     ],
@@ -2142,7 +2189,7 @@
     "compatible_with": [
       "hamster-62-cage"
     ],
-    "moq_unit": "carton",
+    "moq_unit": "pc",
     "color_images": {
       "White": "images/products/hamster-shelf-62-v3.jpg",
       "Blue": "images/products/color/hamster-shelf-62_blue.jpg"
@@ -2159,7 +2206,7 @@
       "d": 25,
       "h": 2
     },
-    "moq": "100",
+    "moq": 100,
     "colors": [
       "Blue"
     ],
@@ -2173,7 +2220,7 @@
     "pcs_per_ctn": "",
     "color": "",
     "accessories": "",
-    "notes": "Shelf and ladder sold as one set, not separated. Compatible with 75 Hamster Cage only. Dimensions pending confirmation.",
+    "notes": "MOQ: 100 pcs per model. Full-carton ordering is not required.",
     "gallery": [
       "images/products/hamster-shelf-75-v3.jpg"
     ],
@@ -2181,7 +2228,7 @@
     "compatible_with": [
       "hamster-75-cage"
     ],
-    "moq_unit": "carton",
+    "moq_unit": "pc",
     "color_images": {
       "White": "images/products/hamster-shelf-75-v3.jpg",
       "Blue": "images/products/color/hamster-shelf-75_blue.jpg"
@@ -2194,7 +2241,7 @@
     "category": "hamster-accessories",
     "series": "hamster-wheel-accessory",
     "size": "5.5*3.7*6.7",
-    "moq": "100",
+    "moq": 200,
     "colors": [
       "White"
     ],
@@ -2208,10 +2255,10 @@
     "pcs_per_ctn": "",
     "color": "",
     "accessories": "2 with brakes, 2 without brakes",
-    "notes": "This is a cage accessory for hamster cages, not sold separately. 2 wheels with brakes + 2 wheels without brakes per set.",
+    "notes": "This hamster-cage accessory contains 2 wheels with brakes and 2 wheels without brakes per set. MOQ: 200 pcs per model. Full-carton ordering is not required.",
     "gallery": [],
     "accessory_type": "universal",
-    "moq_unit": "carton"
+    "moq_unit": "pc"
   },
   {
     "id": "hamster-transparent-food-cup",
@@ -2220,7 +2267,7 @@
     "category": "hamster-accessories",
     "series": "hamster-food-cup",
     "size": "10*10*4",
-    "moq": 50,
+    "moq": 819,
     "colors": [
       "Transparent"
     ],
@@ -2231,13 +2278,13 @@
     "material": "PET",
     "type": "",
     "meas": "69*47*30",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "273",
     "color": "",
     "accessories": "",
-    "notes": "MOQ is 50 pcs. Larger quantities negotiable",
+    "notes": "Packed 273 pcs per master carton. MOQ: 819 pcs per model, equivalent to 3 full cartons.",
     "gallery": [],
     "accessory_type": "universal",
-    "moq_unit": "carton"
+    "moq_unit": "pc"
   },
   {
     "id": "hamster-heat-lamp",
@@ -2260,10 +2307,10 @@
     "pcs_per_ctn": "",
     "color": "",
     "accessories": "",
-    "notes": "",
+    "notes": "MOQ: 50 pcs per model. Full-carton ordering is not required.",
     "gallery": [],
     "accessory_type": "universal",
-    "moq_unit": "carton"
+    "moq_unit": "pc"
   },
   {
     "id": "rabbit-650-cage",
@@ -2276,24 +2323,24 @@
     "colors": [
       "White"
     ],
-    "image": "images/products/test-page36-img2.jpg",
+    "image": "images/products/rabbit-650-cage.jpg",
     "net_weight": "7.065",
     "gross_weight": "9.08",
     "cbm": "",
-    "material": "",
+    "material": "PET+ABS+Iron Wire+Stainless Steel",
     "type": "",
     "meas": "",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "1",
     "color": "",
     "accessories": "",
-    "notes": "Wholesale starts at 3 sets, price for over 30 sets negotiable separately",
+    "notes": "Each product is individually packed in one carton. MOQ: 100 pcs per model. Orders must be placed in full-carton quantities.",
     "gallery": [],
-    "moq_unit": "pcs",
+    "moq_unit": "pc",
     "materials": [
       "PET",
       "ABS",
-      "Aluminum Alloy",
-      "Iron Wire"
+      "Iron Wire",
+      "Stainless Steel"
     ]
   },
   {
@@ -2303,7 +2350,7 @@
     "category": "other-small-pets",
     "series": "cat-litter-box",
     "size": "74*47*41",
-    "moq": "50",
+    "moq": 50,
     "colors": [
       "White"
     ],
@@ -2314,12 +2361,12 @@
     "material": "ABS",
     "type": "",
     "meas": "82.5*51.5*31.5",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "1",
     "color": "",
     "accessories": "",
     "notes": "Each product is individually packed in a carton. Custom packaging is available.",
     "gallery": [],
-    "moq_unit": "carton"
+    "moq_unit": "pc"
   },
   {
     "id": "cat-feeder-automatic",
@@ -2328,7 +2375,7 @@
     "category": "other-small-pets",
     "series": "cat-feeder",
     "size": "37*45*32",
-    "moq": "50 per color",
+    "moq": "50 pcs per color",
     "colors": [
       "White",
       "Blue",
@@ -2339,15 +2386,15 @@
     "net_weight": "0.872",
     "gross_weight": "2",
     "cbm": "",
-    "material": "",
+    "material": "PP+ABS+PET",
     "type": "",
     "meas": "",
-    "pcs_per_ctn": "",
+    "pcs_per_ctn": "1",
     "color": "",
     "accessories": "",
     "notes": "MOQ is 50 pieces per color. Each product is individually packed in a carton. Custom packaging is available.",
     "gallery": [],
-    "moq_unit": "carton",
+    "moq_unit": "pc",
     "color_images": {
       "White": "images/products/cat-feeder-automatic-white.jpg",
       "Blue": "images/products/cat-feeder-automatic-blue.jpg",
@@ -2380,7 +2427,7 @@
     "category": "other-small-pets",
     "series": "turtle-tank",
     "size": "36*25*15.5",
-    "moq": 50,
+    "moq": 500,
     "colors": [
       "Transparent"
     ],
@@ -2394,8 +2441,8 @@
     "pcs_per_ctn": "",
     "color": "",
     "accessories": "",
-    "notes": "Wholesale starts at 50 pcs, larger quantities negotiable",
+    "notes": "MOQ: 500 pcs per model. Orders must be placed in full-carton quantities; units per carton are not yet confirmed.",
     "gallery": [],
-    "moq_unit": "carton"
+    "moq_unit": "pc"
   }
 ]

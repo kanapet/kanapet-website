@@ -1,6 +1,8 @@
 // Kanapet Website — Main JS
 let products = [];
 let categories = {};
+const KEYBOARD_BUTTON_ATTRS = `role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}"`;
+const KEYBOARD_LINK_ATTRS = `role="link" tabindex="0" onkeydown="if(event.key==='Enter'){event.preventDefault();this.click();}"`;
 
 // Color name to hex mapping
 const COLOR_MAP = {
@@ -50,7 +52,7 @@ function renderSwatches(colors, size = 'small', activeColor = null, productId = 
     const active = activeColor === c ? 'active' : '';
     const bg = isTransparent || isMulti ? '' : `background-color:${colorVal};`;
     const onclick = productId ? `onclick="switchProductColor('${productId}', '${c}')"` : '';
-    return `<span class="${cls} ${active}" style="${bg};cursor:pointer;" title="${c}" data-color="${c}" ${onclick}></span>`;
+    return `<span class="${cls} ${active}" style="${bg};cursor:pointer;" title="${c}" data-color="${c}" ${onclick} ${productId ? KEYBOARD_BUTTON_ATTRS : ''}></span>`;
   }).join('');
   const label = colors.length > 1 ? `<span class="color-swatch-label">${colors.length} colors</span>` : '';
   return `<div class="color-swatches">${swatches}${label}</div>`;
@@ -136,7 +138,7 @@ function formatSize(size) {
   } else if (typeof size === 'object') {
     const dims = ['w', 'd', 'h'].map(k => size[k]).filter(v => v !== undefined && v !== null && v !== '');
     if (dims.length) {
-      s = dims.join('*') + ' cm';
+      s = dims.join('*');
     } else {
       const kv = Object.entries(size).filter(([, v]) => v !== undefined && v !== null && v !== '');
       if (!kv.length) return '';
@@ -193,6 +195,14 @@ function formatSize(size) {
   return s;
 }
 
+// MOQ values may already include a unit or condition. Append "pcs" only to
+// bare numeric values so output never becomes "sets per color pcs".
+function formatMoq(moq) {
+  if (moq === undefined || moq === null || moq === '') return '';
+  const value = String(moq).trim();
+  return /^\d+(?:\.\d+)?$/.test(value) ? `${value} pcs` : value;
+}
+
 // Product card HTML
 function productCard(p, variantCount = 1) {
   const catName = categories[p.category]?.name || p.category;
@@ -209,7 +219,7 @@ function productCard(p, variantCount = 1) {
         <div class="product-meta">${formatSize(p.size)}</div>
         <div class="product-meta">${catName}</div>
         ${renderSwatches(p.colors)}
-        <div class="product-moq">${p.moq ? `MOQ: ${p.moq} pcs` : 'Contact for MOQ'}</div>
+        <div class="product-moq">${p.moq ? `MOQ: ${formatMoq(p.moq)}` : 'Contact for MOQ'}</div>
         <a href="/product/${p.slug}.html" class="btn btn-primary">Request Quote</a>
       </div>
     </div>
@@ -283,7 +293,7 @@ function renderProductDetail() {
   const descParts = [
     `Buy ${p.name} wholesale from Kanapet — leading ${catName.toLowerCase()} manufacturer since 1991.`,
     p.size ? ` Product size: ${formatSize(p.size)}.` : '',
-    p.moq ? ` MOQ from ${p.moq} pcs.` : '',
+    p.moq ? ` MOQ from ${formatMoq(p.moq)}.` : '',
     ' OEM/ODM available, custom colors, logos and packaging. 20,000㎡ factory in Foshan, China. Request a quote today.'
   ];
   document.querySelector('meta[name="description"]')?.setAttribute('content', descParts.join(''));
@@ -318,20 +328,18 @@ function renderProductDetail() {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": p.name,
-    "image": `https://www.kanapet.com/${p.image}`,
-    "description": `${p.name} — ${catName}. OEM/ODM available from Kanapet, pet cage manufacturer since 1991.`,
+    "sku": p.sku || p.id.toUpperCase(),
+    "image": [p.image, ...(Array.isArray(p.gallery) ? p.gallery : [])]
+      .filter((value, index, values) => value && values.indexOf(value) === index)
+      .map(value => `https://www.kanapet.com/${value.replace(/^\//, '')}`),
+    "description": `${p.name} — ${catName}.${p.size ? ` Size: ${formatSize(p.size)}.` : ''} OEM/ODM available from Kanapet, pet cage manufacturer since 1991.`,
+    "url": `https://www.kanapet.com/product/${p.slug}.html`,
     "brand": {
       "@type": "Brand",
       "name": "Kanapet"
     },
     "category": catName,
-    "offers": {
-      "@type": "AggregateOffer",
-      "availability": "https://schema.org/InStock",
-      "priceCurrency": "USD",
-      "lowPrice": "Contact for pricing",
-      "offerCount": "1"
-    }
+    ...(p.material ? { "material": p.material } : {})
   };
   jsonLd.textContent = JSON.stringify(productJsonLd);
   
@@ -373,10 +381,7 @@ function renderProductDetail() {
     ];
   }
   
-  let materials = 'ABS + PET plastic, stainless steel / iron wire options';
-  if (isHamster && isCage) materials = 'High transparency PET + ABS plastic, stainless steel wire';
-  if (isBird && isCage) materials = 'Iron wire / stainless steel + ABS plastic base';
-  if (isAccessory) materials = 'Food-grade ABS + PET plastic, safe for pets';
+  const materials = p.material || 'Material specifications available on request.';
   
   let accessories = 'Contact us for complete accessory list';
   if (isCage) accessories = 'Feeding cups, perches/stands, water bottle (varies by model)';
@@ -404,15 +409,19 @@ function renderProductDetail() {
 
   const specs = [];
   if (p.type) specs.push(['Type', p.type]);
-  if (p.size) specs.push(['Product Size (W×D×H)', formatSize(p.size)]);
-  if (p.meas) specs.push(['Carton Size (W×D×H)', formatSize(p.meas)]);
+  if (p.size) {
+    const semanticSize = typeof p.size === 'string' && /^length\s/i.test(p.size.trim());
+    specs.push([semanticSize ? 'Product Size' : 'Product Size (W×D×H)', formatSize(p.size)]);
+  }
+  const cartonSize = p.carton_size || p.meas;
+  if (cartonSize) specs.push(['Carton Size (W×D×H)', formatSize(cartonSize)]);
   if (p.net_weight) specs.push(['Net Weight', p.net_weight + ' kg']);
   if (p.gross_weight) specs.push(['Gross Weight', p.gross_weight + ' kg']);
   if (p.cbm) specs.push(['CBM', p.cbm + ' m³']);
   if (p.pcs_per_ctn) specs.push(['PCS per Carton', p.pcs_per_ctn]);
   if (p.color) specs.push(['Color', p.color]);
   if (p.accessories) specs.push(['Included Accessories', p.accessories]);
-  if (p.moq) specs.push(['MOQ', p.moq + ' pcs']);
+  specs.push(['MOQ', formatMoq(p.moq) || 'Contact for order-specific MOQ']);
   if (p.notes) specs.push(['Notes', p.notes]);
 
   // Find all variants in same series
@@ -429,7 +438,7 @@ function renderProductDetail() {
               <tr style="${v.id === p.id ? 'background:var(--bg-soft);font-weight:600;' : ''}">
                 <td>${v.name}</td>
                 <td>${formatSize(v.size) || '-'}</td>
-                <td>${v.moq || 'Contact'}</td>
+                <td>${formatMoq(v.moq) || 'Contact'}</td>
                 <td><a href="/product/${v.slug}.html" style="color:var(--primary);font-size:12px;white-space:nowrap;">${v.id === p.id ? 'Current' : 'View'}</a></td>
               </tr>
             `).join('')}
@@ -458,7 +467,7 @@ function renderProductDetail() {
   const thumbnailsHTML = galleryImages.length > 1 ? `
     <div class="product-thumbnails">
       ${galleryImages.map((img, i) => `
-        <div class="product-thumb ${i === 0 ? 'active' : ''}" onclick="switchProductImage(this, '${img}')">
+        <div class="product-thumb ${i === 0 ? 'active' : ''}" onclick="switchProductImage(this, '${img}')" ${KEYBOARD_BUTTON_ATTRS}>
           <img src="${img}" alt="${p.name} view ${i+1}" loading="lazy">
         </div>
       `).join('')}
@@ -468,7 +477,7 @@ function renderProductDetail() {
   el.innerHTML = `
     <div class="product-gallery">
       <div class="product-main-image-wrap">
-        <img id="product-main-image" src="${galleryImages[0]}" alt="${p.name}" class="zoomable" onclick="openLightbox(this.src)" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <img id="product-main-image" src="${galleryImages[0]}" alt="${p.name}" class="zoomable" onclick="openLightbox(this.src)" ${KEYBOARD_BUTTON_ATTRS} onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="placeholder" style="display:none;align-items:center;justify-content:center;width:100%;height:100%;">📦</div>
       </div>
       ${thumbnailsHTML}
@@ -477,7 +486,7 @@ function renderProductDetail() {
     <div class="product-detail-info">
       <div style="font-size:13px;color:var(--primary);font-weight:600;margin-bottom:8px;">${catName}</div>
       <h1>${p.name}</h1>
-      <div class="product-sku">SKU: ${p.id.toUpperCase()} | OEM/ODM Available</div>
+      <div class="product-sku">SKU: ${p.sku || p.id.toUpperCase()} | OEM/ODM Available</div>
       ${p.colors && p.colors.length > 1 ? `
       <div class="product-colors">
         <h3>Available Colors</h3>
@@ -488,7 +497,7 @@ function renderProductDetail() {
         <h3>Material / Configuration</h3>
         <div class="material-options">
           ${p.material_options.map((m, i) => `
-            <button class="material-btn ${i === 0 ? 'active' : ''}" onclick="switchProductMaterial('${p.id}', ${i})">${m.name}</button>
+            <button type="button" class="material-btn ${i === 0 ? 'active' : ''}" onclick="switchProductMaterial('${p.id}', ${i})">${m.name}</button>
           `).join('')}
         </div>
       </div>` : ''}
@@ -522,18 +531,16 @@ function renderProductDetail() {
     "@context": "https://schema.org/",
     "@type": "Product",
     "name": p.name,
-    "image": window.location.origin + '/' + p.image,
-    "description": `${p.name} — ${catName}. ${p.size ? 'Size: ' + formatSize(p.size) + '. ' : ''}MOQ: ${p.moq || 'contact us'}. OEM/ODM available from Kanapet, manufacturer since 1991.`,
+    "sku": p.sku || p.id.toUpperCase(),
+    "image": [p.image, ...(Array.isArray(p.gallery) ? p.gallery : [])]
+      .filter((value, index, values) => value && values.indexOf(value) === index)
+      .map(value => window.location.origin + '/' + value.replace(/^\//, '')),
+    "description": `${p.name} — ${catName}. ${p.size ? 'Size: ' + formatSize(p.size) + '. ' : ''}MOQ: ${formatMoq(p.moq) || 'contact us'}. OEM/ODM available from Kanapet, manufacturer since 1991.`,
+    "url": `https://www.kanapet.com/product/${p.slug}.html`,
     "brand": { "@type": "Brand", "name": "Kanapet" },
     "manufacturer": { "@type": "Organization", "name": "Kanapet" },
-    "offers": {
-      "@type": "Offer",
-      "availability": "https://schema.org/InStock",
-      "priceCurrency": "USD",
-      "price": "0",
-      "priceValidUntil": "2027-12-31",
-      "url": window.location.href
-    }
+    "category": catName,
+    ...(p.material ? { "material": p.material } : {})
   });
   document.head.appendChild(schema);
 }
@@ -571,7 +578,7 @@ function renderRelatedProducts(product) {
   selected = selected.slice(0, showCount);
   
   grid.innerHTML = selected.map(p => `
-    <div class="related-product-card" onclick="window.location.href='/product/${p.slug}.html'">
+    <div class="related-product-card" onclick="window.location.href='/product/${p.slug}.html'" ${KEYBOARD_LINK_ATTRS}>
       <div class="related-product-image">
         <img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\\'placeholder\\'>📦</div>'">
       </div>
@@ -614,7 +621,7 @@ function renderCompatibleAccessories(product) {
       <h3 style="margin-bottom:16px;color:var(--primary);">🔧 Compatible Accessories for This Cage</h3>
       <div class="accessory-grid">
         ${compatible.map(acc => `
-          <div class="accessory-card" onclick="window.location.href='/product/${acc.slug}.html'">
+          <div class="accessory-card" onclick="window.location.href='/product/${acc.slug}.html'" ${KEYBOARD_LINK_ATTRS}>
             <div class="accessory-image">
               <img src="${acc.image}" alt="${acc.name}" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\\'placeholder\\'>📦</div>'">
             </div>
@@ -634,7 +641,7 @@ function renderCompatibleAccessories(product) {
       <h3 style="margin:32px 0 16px;color:var(--primary);">⭐ Recommended Universal Accessories</h3>
       <div class="accessory-grid">
         ${recommended.map(acc => `
-          <div class="accessory-card" onclick="window.location.href='/product/${acc.slug}.html'">
+          <div class="accessory-card" onclick="window.location.href='/product/${acc.slug}.html'" ${KEYBOARD_LINK_ATTRS}>
             <div class="accessory-image">
               <img src="${acc.image}" alt="${acc.name}" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\\'placeholder\\'>📦</div>'">
             </div>
@@ -742,6 +749,16 @@ function setupContactForm() {
     if (productField) productField.value = decodeURIComponent(product);
   }
 
+  let status = form.querySelector('[data-inquiry-status]');
+  if (!status) {
+    status = document.createElement('p');
+    status.dataset.inquiryStatus = '';
+    status.setAttribute('role', 'status');
+    status.setAttribute('aria-live', 'polite');
+    status.style.marginTop = '12px';
+    form.appendChild(status);
+  }
+
   // 询盘提交走站内 API（Cloudflare Worker 服务端转发到飞书）。
   // webhook 与签名密钥保存在 Cloudflare 环境变量中，绝不下发到浏览器。
   form.addEventListener('submit', async (e) => {
@@ -749,6 +766,7 @@ function setupContactForm() {
     const btn = form.querySelector('button[type="submit"]');
     btn.textContent = 'Sending...';
     btn.disabled = true;
+    status.textContent = 'Sending your inquiry securely…';
 
     // 获取表单数据
     const formData = new FormData(form);
@@ -757,34 +775,89 @@ function setupContactForm() {
       company: formData.get('company') || '-',
       email: formData.get('email'),
       country: formData.get('country'),
+      inquiryType: formData.get('inquiryType') || '',
       product: formData.get('product') || '-',
       message: formData.get('message')
     };
 
-    fetch('/api/inquiry', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(data)
-    })
-    .then(async (resp) => {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 15000);
+
+    try {
+      const resp = await fetch('/api/inquiry', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data),
+        signal: controller.signal
+      });
       const out = await resp.json().catch(() => ({}));
-      if (!resp.ok || !out.ok) throw new Error(out.error || ('HTTP ' + resp.status));
+      if (!resp.ok || !out.ok) {
+        const error = new Error(out.error || ('HTTP ' + resp.status));
+        error.deliveryUnknown = resp.status === 504 || out.error === 'Delivery status unknown';
+        throw error;
+      }
       form.innerHTML = `
         <div style="text-align:center;padding:40px 20px;">
           <div style="font-size:48px;margin-bottom:16px;">✅</div>
           <h3 style="font-size:22px;margin-bottom:10px;">Thank You!</h3>
-          <p style="color:var(--text-light);margin-bottom:8px;">Your inquiry has been received.</p>
-          <p style="color:var(--text-light);margin-bottom:20px;">We'll get back to you within one business day.</p>
+          <p style="color:var(--text-light);margin-bottom:8px;">Your inquiry was accepted for delivery.</p>
+          ${out.requestId ? `<p style="color:var(--text-light);font-size:13px;margin-bottom:8px;">Reference: ${out.requestId}</p>` : ''}
+          <p style="color:var(--text-light);margin-bottom:20px;">Thank you for sharing your requirements.</p>
           <a href="products.html" class="btn btn-ghost">Browse More Products</a>
         </div>
       `;
-    })
-    .catch((err) => {
-      console.error('Error:', err);
+    } catch (err) {
       btn.textContent = 'Send Inquiry';
       btn.disabled = false;
-      alert('Sorry, there was an error sending your inquiry. Please try again or email us directly at lena@kanapet.com');
+      status.textContent = err && (err.name === 'AbortError' || err.deliveryUnknown)
+        ? 'Delivery could not be confirmed in time. Your details are still here; please do not resend automatically. You can wait and try once, or email lena@kanapet.com with the same inquiry.'
+        : 'We could not confirm delivery. Your details are still here; please try again or email lena@kanapet.com.';
+    } finally {
+      clearTimeout(timeout);
+    }
+  });
+}
+
+function setupWeChatCopy() {
+  document.querySelectorAll('.wechat-copy').forEach(button => {
+    button.addEventListener('click', async () => {
+      const wechatId = button.dataset.wechatId || '';
+      const status = button.parentElement.querySelector('.wechat-copy-status');
+      try {
+        await navigator.clipboard.writeText(wechatId);
+        status.textContent = 'Copied';
+      } catch {
+        status.textContent = 'Copy failed';
+      }
+      window.setTimeout(() => { status.textContent = ''; }, 2000);
     });
+  });
+}
+
+function setupWeChatQr() {
+  const modal = document.getElementById('wechat-qr-modal');
+  const trigger = document.querySelector('.wechat-qr-trigger');
+  if (!modal || !trigger) return;
+  const closeButton = modal.querySelector('.wechat-qr-close');
+
+  const closeModal = () => {
+    modal.hidden = true;
+    document.body.style.overflow = '';
+    trigger.focus();
+  };
+  const openModal = () => {
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    closeButton.focus();
+  };
+
+  trigger.addEventListener('click', openModal);
+  closeButton.addEventListener('click', closeModal);
+  modal.addEventListener('click', event => {
+    if (event.target === modal) closeModal();
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !modal.hidden) closeModal();
   });
 }
 
@@ -805,6 +878,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   setupFilters();
   renderProductDetail();
   setupContactForm();
+  setupWeChatCopy();
+  setupWeChatQr();
 });
 
 // Product image switch function

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product Detail — Kanapet</title>
   <meta name="description" content="Product details and wholesale quote request for Kanapet pet cages.">
-  <link rel="stylesheet" href="css/style.css?v=15">
+  <link rel="stylesheet" href="css/style.css?v=16">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=20260929">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=20260929">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png?v=20260929">
@@ -15,7 +15,7 @@
 <header>
   <div class="nav-inner">
     <a href="index.html" class="logo">Kana<span>pet</span></a>
-    <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+    <button type="button" class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
@@ -97,10 +97,9 @@
       <div class="footer-col">
         <h2>Contact</h2>
         <ul class="footer-contact">
-          <li>📧 <a href="mailto:lena@kanapet.com">lena@kanapet.com</a></li>
-          <li>📱 WhatsApp: <a href="https://wa.me/8615625986407" target="_blank" rel="noopener noreferrer">+86 15625986407</a></li>
-          <li>💬 WeChat: nana858686</li>
-          <li>📍 Shishan Town, Nanhai District, Foshan, Guangdong, China</li>
+          <li>Email: <a href="mailto:lena@kanapet.com">lena@kanapet.com</a></li>
+          <li>WhatsApp: <a href="https://wa.me/8615625986407" target="_blank" rel="noopener noreferrer">+86 156 2598 6407</a></li>
+          <li>WeChat: nana858686</li>
         </ul>
       </div>
     </div>
@@ -116,12 +115,12 @@
 </a>
 
 <!-- Lightbox -->
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-  <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Product image preview" onclick="if(event.target===this) closeLightbox()">
+  <button type="button" class="lightbox-close" onclick="closeLightbox()" aria-label="Close image preview">&times;</button>
   <img class="lightbox-img" id="lightbox-img" src="" alt="Product detail">
 </div>
 
-<script src="js/data.js?v=16"></script>
-  <script src="js/main.js?v=18"></script>
+<script src="js/data.js?v=17"></script>
+  <script src="js/main.js?v=19"></script>
 </body>
 </html>

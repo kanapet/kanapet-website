@@ -1,0 +1,44 @@
+name: Validate site
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate product data and sitemap
+        run: python3 tools/validate_data.py
+      - name: Check static product output
+        run: python3 tools/sync_product_output.py --check
+      - name: Check accessibility normalization
+        run: python3 tools/normalize_accessibility.py --check
+      - name: Audit static accessibility
+        run: python3 tools/audit_accessibility.py
+      - name: Audit product pages and structured data
+        run: python3 tools/audit_products.py --format json
+      - name: Test product audit rules
+        run: python3 tools/test_audit_products.py
+      - name: Test product rendering
+        run: node tools/test_product_render.mjs
+      - name: Smoke-test publishable site
+        run: node tools/smoke_site.mjs
+      - name: Verify generated product facts are stable
+        run: |
+          python3 tools/normalize_product_output.py
+          git diff --exit-code
+      - name: Check JavaScript syntax
+        run: |
+          node --check public/js/main.js
+          node --check worker/index.js
+      - name: Test Worker routing
+        run: node tools/test_worker.mjs

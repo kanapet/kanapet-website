@@ -884,6 +884,9 @@ footer {
   line-height: 1;
   opacity: 0.8;
   transition: opacity 0.2s;
+  background: none;
+  border: 0;
+  padding: 0;
 }
 .lightbox-close:hover { opacity: 1; }
 .product-gallery img { cursor: zoom-in; }
@@ -1049,4 +1052,114 @@ footer {
   .related-products-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Contact information cleanup */
+.contact-grid > * { min-width: 0; }
+.contact-person {
+  padding: 28px;
+  background: var(--bg-soft);
+  border-radius: var(--radius);
+}
+.contact-person h3 { font-size: 18px; margin-bottom: 4px; }
+.contact-role { margin-bottom: 24px; color: var(--text-light); font-size: 14px; }
+.contact-address h3 { font-size: 16px; margin-bottom: 10px; }
+.contact-details { margin: 0 0 24px; text-align: left; }
+.contact-details > div { margin-bottom: 18px; }
+.contact-details dt { font-size: 13px; color: var(--text-light); margin-bottom: 4px; }
+.contact-details dd { margin: 0; font-size: 16px; color: var(--text); overflow-wrap: anywhere; }
+.contact-details a { color: inherit; }
+.wechat-contact { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.wechat-copy, .wechat-qr-trigger {
+  border: 0;
+  background: transparent;
+  padding: 2px 0;
+  color: var(--primary);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.wechat-copy:hover, .wechat-qr-trigger:hover { text-decoration: underline; }
+.wechat-copy:focus-visible, .wechat-qr-trigger:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 2px; }
+.wechat-copy-status { min-width: 42px; font-size: 12px; color: var(--text-light); }
+.wechat-qr-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(14, 31, 42, 0.58);
+}
+.wechat-qr-modal[hidden] { display: none; }
+.wechat-qr-dialog {
+  position: relative;
+  width: min(100%, 390px);
+  padding: 30px;
+  border-radius: var(--radius);
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 18px 55px rgba(14, 31, 42, 0.22);
+}
+.wechat-qr-dialog h2 { font-size: 22px; margin-bottom: 8px; }
+.wechat-qr-dialog p { margin-bottom: 20px; color: var(--text-light); font-size: 14px; line-height: 1.6; }
+.wechat-qr-dialog img { display: block; width: min(100%, 280px); height: auto; margin: 0 auto 18px; }
+.wechat-qr-id { font-size: 14px; color: var(--text-light); }
+.wechat-qr-id strong { color: var(--text); }
+.wechat-qr-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  background: transparent;
+  color: var(--text-light);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+.wechat-qr-close:focus-visible { outline: 2px solid var(--primary); border-radius: 50%; }
+.contact-facebook {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.contact-facebook h4 { margin-bottom: 6px; font-size: 15px; font-weight: 700; }
+.contact-facebook p { margin-bottom: 8px; color: var(--text-light); font-size: 13px; line-height: 1.6; }
+.contact-facebook a { color: var(--primary); font-size: 14px; font-weight: 600; }
+.contact-facebook a:hover { text-decoration: underline; }
+.contact-address {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.contact-address p { font-size: 14px; line-height: 1.7; color: var(--text-light); }
+.factory-map-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  margin-top: 14px;
+}
+.factory-map-link {
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+}
+.factory-map-link:hover { text-decoration: underline; }
+.factory-map-link-secondary { color: var(--text-light); font-weight: 500; }
+.contact-address .contact-visit {
+  margin-top: 12px;
+  padding-top: 0;
+  border-top: 0;
+  font-size: 13px;
+  color: var(--text-light);
+}
+.contact-form-panel { background: var(--bg-soft); border-radius: var(--radius); padding: 36px; }
+@media (max-width: 600px) {
+  .wechat-qr-dialog { padding: 28px 20px 24px; }
+  .contact-person { padding: 24px 20px; }
+  .contact-form-panel { padding: 24px 18px; }
+  .contact-grid { padding: 24px 0; gap: 32px; }
 }

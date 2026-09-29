@@ -26,12 +26,13 @@ const LIMITS = {
 
 const MAX_BODY_BYTES = 8 * 1024; // a legit inquiry is well under this
 
-function jsonResp(obj, status = 200) {
+function jsonResp(obj, status = 200, extraHeaders = {}) {
   return new Response(JSON.stringify(obj), {
     status,
     headers: {
       'Content-Type': 'application/json; charset=utf-8',
-      'Cache-Control': 'no-store'
+      'Cache-Control': 'no-store',
+      ...extraHeaders
     }
   });
 }
@@ -84,6 +85,7 @@ function escapeLarkMd(s) {
 }
 
 async function handleInquiry(request, env) {
+  const requestId = crypto.randomUUID();
   if (request.method !== 'POST') {
     return jsonResp({ ok: false, error: 'Method not allowed' }, 405);
   }
@@ -115,6 +117,7 @@ async function handleInquiry(request, env) {
     company: clean(body.company, LIMITS.company),
     email: clean(body.email, LIMITS.email),
     country: clean(body.country, LIMITS.country),
+    inquiryType: ['Wholesale', 'Private Label', 'OEM/ODM', 'Other'].includes(body.inquiryType) ? body.inquiryType : '',
     product: clean(body.product, LIMITS.product),
     message: clean(body.message, LIMITS.message)
   };
@@ -150,6 +153,7 @@ async function handleInquiry(request, env) {
               `**🏢 公司：** ${escapeLarkMd(data.company || '-')}\n` +
               `**📧 邮箱：** ${escapeLarkMd(data.email)}\n` +
               `**🌍 国家：** ${escapeLarkMd(data.country)}\n` +
+              `**询盘类型：** ${escapeLarkMd(data.inquiryType || '-')}\n` +
               `**📦 产品：** ${escapeLarkMd(data.product || '-')}\n` +
               `**💬 留言：** ${escapeLarkMd(data.message)}\n` +
               `**⏰ 时间：** ${shanghaiTime()}`
@@ -165,22 +169,32 @@ async function handleInquiry(request, env) {
     card.sign = await feishuSign(ts, env.FEISHU_SECRET);
   }
 
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 10000);
   try {
     const upstream = await fetch(webhook, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(card)
+      body: JSON.stringify(card),
+      signal: controller.signal
     });
     const out = await upstream.json().catch(() => ({}));
     // Feishu v2 webhooks: { code: 0 } — legacy: { StatusCode: 0 }
     const accepted = upstream.ok &&
       (out.code === 0 || out.StatusCode === 0 || out.statusCode === 0);
-    if (accepted) return jsonResp({ ok: true });
-    console.error('Feishu rejected inquiry:', upstream.status, JSON.stringify(out));
-    return jsonResp({ ok: false, error: 'Delivery failed' }, 502);
+    if (accepted) return jsonResp({ ok: true, requestId }, 200, { 'X-Request-ID': requestId });
+    console.error('Feishu rejected inquiry', { requestId, status: upstream.status, code: out.code ?? out.StatusCode ?? out.statusCode ?? null });
+    return jsonResp({ ok: false, error: 'Delivery failed', requestId }, 502, { 'X-Request-ID': requestId });
   } catch (err) {
-    console.error('Upstream fetch failed:', err);
-    return jsonResp({ ok: false, error: 'Delivery failed' }, 502);
+    const timedOut = err && err.name === 'AbortError';
+    console.error('Inquiry upstream error', { requestId, type: timedOut ? 'timeout' : 'fetch_error' });
+    return jsonResp(
+      { ok: false, error: timedOut ? 'Delivery status unknown' : 'Delivery failed', requestId },
+      timedOut ? 504 : 502,
+      { 'X-Request-ID': requestId }
+    );
+  } finally {
+    clearTimeout(timeout);
   }
 }
 
@@ -260,6 +274,41 @@ async function serveAsset(request, env) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    const productionHost = url.hostname === 'kanapet.com' || url.hostname === 'www.kanapet.com';
+    let scheme = url.protocol.replace(':', '');
+    try {
+      scheme = JSON.parse(request.headers.get('CF-Visitor') || '{}').scheme || scheme;
+    } catch {}
+
+    // Canonicalize only production hosts. Preview/local URLs remain isolated.
+    // Reject insecure API writes rather than redirecting with a status that
+    // can change POST to GET and discard the inquiry body.
+    if (productionHost && scheme === 'http') {
+      if (url.pathname === '/api/inquiry' && request.method !== 'GET' && request.method !== 'HEAD') {
+        return jsonResp({ ok: false, error: 'HTTPS required' }, 400);
+      }
+      url.protocol = 'https:';
+      url.hostname = 'www.kanapet.com';
+      return Response.redirect(url.href, 301);
+    }
+    if (url.hostname === 'kanapet.com') {
+      url.hostname = 'www.kanapet.com';
+      const status = request.method === 'GET' || request.method === 'HEAD' ? 301 : 308;
+      return Response.redirect(url.href, status);
+    }
+
+    if (url.pathname === '/product/bird-parrot-nest-old.html' ||
+        url.pathname === '/product/bird-parrot-nest-old') {
+      url.pathname = '/product/bird-no-mess-parrot-feeder.html';
+      return Response.redirect(url.href, 301);
+    }
+
+    if (url.pathname === '/product/hamster-bite-guard.html' ||
+        url.pathname === '/product/hamster-bite-guard') {
+      url.pathname = '/product/hamster-tube-anti-chew-ring.html';
+      return Response.redirect(url.href, 301);
+    }
+
     if (url.pathname === '/api/inquiry') {
       return handleInquiry(request, env);
     }
@@ -272,7 +321,13 @@ export default {
       // Whitelist the slug: this value lands in the redirect target, so never
       // let arbitrary input through (open-redirect / cache-poisoning guard).
       if (slug && /^[A-Za-z0-9][A-Za-z0-9-]{0,80}$/.test(slug)) {
-        const target = new URL('/product/' + slug.toLowerCase() + '.html', url.origin);
+        const legacySlugs = {
+          'bird-parrot-nest-old': 'bird-no-mess-parrot-feeder',
+          'hamster-bite-guard': 'hamster-tube-anti-chew-ring'
+        };
+        const lowerSlug = slug.toLowerCase();
+        const normalizedSlug = legacySlugs[lowerSlug] || lowerSlug;
+        const target = new URL('/product/' + normalizedSlug + '.html', url.origin);
         return Response.redirect(target.href, 301);
       }
     }
