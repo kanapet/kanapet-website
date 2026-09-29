@@ -430,6 +430,7 @@ CATEGORY_INTROS = {
     "bird-cages": "Premium bird cages in transparent, wire and stainless steel options — 650, 490, 470 and 400 series.",
     "bird-accessories": "Bathrooms, nesting boxes, feeders, water bottles, perches and more.",
     "bird-travel": "Compact travel cages for birds — 23cm to 42cm, multi-color options.",
+    "smart-pet-products": "Smart feeders and water dispensers for modern pet care.",
     "hamster-cages": "Transparent acrylic hamster cages and folding cages — 43cm to 75cm.",
     "hamster-accessories": "Running wheels, tunnels, sand baths, platforms and feeding cups.",
     "other-small-pets": "Rabbit cages, cat litter boxes and feeders, turtle tanks and supplies for other small animals.",

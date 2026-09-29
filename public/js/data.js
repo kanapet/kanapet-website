@@ -400,7 +400,7 @@ window.KANAPET_PRODUCTS = [
     "id": "bird-smart-feeder",
     "slug": "bird-smart-feeder",
     "name": "Smart Feeder",
-    "category": "bird-accessories",
+    "category": "smart-pet-products",
     "series": "bird-smart-feeder",
     "size": "",
     "moq": 200,
@@ -426,7 +426,7 @@ window.KANAPET_PRODUCTS = [
     "id": "bird-smart-water-dispenser",
     "slug": "bird-smart-water-dispenser",
     "name": "Smart Water Dispenser",
-    "category": "bird-accessories",
+    "category": "smart-pet-products",
     "series": "bird-smart-water-dispenser",
     "size": "",
     "moq": 200,
@@ -2463,6 +2463,11 @@ window.KANAPET_CATEGORIES = {
     "name": "Travel Carriers",
     "desc": "Compact travel cages for birds — 23cm to 42cm, multi-color options.",
     "icon": "carrier"
+  },
+  "smart-pet-products": {
+    "name": "Smart Pet Products",
+    "desc": "Smart feeders and water dispensers for modern pet care.",
+    "icon": "smart"
   },
   "hamster-cages": {
     "name": "Hamster Cages",
