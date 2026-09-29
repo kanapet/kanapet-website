@@ -168,6 +168,7 @@ def product_schema(product, category):
             "@type": "Organization",
             "name": "Kanapet",
             "url": SITE,
+            "logo": f"{SITE}/favicon-180.png",
             "foundingDate": "1991",
             "address": {
                 "@type": "PostalAddress",

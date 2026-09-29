@@ -538,7 +538,12 @@ function renderProductDetail() {
     "description": `${p.name} — ${catName}. ${p.size ? 'Size: ' + formatSize(p.size) + '. ' : ''}MOQ: ${formatMoq(p.moq) || 'contact us'}. OEM/ODM available from Kanapet, manufacturer since 1991.`,
     "url": `https://www.kanapet.com/product/${p.slug}.html`,
     "brand": { "@type": "Brand", "name": "Kanapet" },
-    "manufacturer": { "@type": "Organization", "name": "Kanapet" },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Kanapet",
+      "url": "https://www.kanapet.com",
+      "logo": "https://www.kanapet.com/favicon-180.png"
+    },
     "category": catName,
     ...(p.material ? { "material": p.material } : {})
   });
