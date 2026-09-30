@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -42,3 +44,14 @@ jobs:
           node --check worker/index.js
       - name: Test Worker routing
         run: node tools/test_worker.mjs
+      - name: Wait for the deployed IndexNow key
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        env:
+          INDEXNOW_KEY: d41942d191a245303c4bc8ed4994d3e8
+        run: test "$(curl --fail --silent --show-error --retry 12 --retry-all-errors --retry-delay 10 "https://www.kanapet.com/${INDEXNOW_KEY}.txt")" = "$INDEXNOW_KEY"
+      - name: Notify IndexNow of changed canonical pages
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        env:
+          INDEXNOW_BASE_SHA: ${{ github.event.before }}
+          INDEXNOW_KEY: d41942d191a245303c4bc8ed4994d3e8
+        run: node tools/notify_indexnow.mjs

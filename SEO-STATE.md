@@ -53,3 +53,9 @@
 - 已更新鸟笼、喂食杯、仓鼠管道和 17/21/27 cm 跑轮的主图、颜色图及细节图。挂架作为 17/21 cm 跑轮的通用选配件，明确为单独订购。
 - 已加入数据、图片、无障碍、静态输出、页面渲染、Worker 路由和本地 smoke 检查，并接入 CI。
 - 上线前验证：70 个产品页 0 error；77 个 HTML 文件无障碍 0 error/0 warning；309 个图片引用 0 缺失；81 个本地 URL smoke checks 通过。保留 7 项已确认未知的产品尺寸/材料提示，待资料可用时补齐。
+
+## 2026-09-30 IndexNow 自动通知（待发布）
+
+- 新增根目录公开验证文件与 GitHub Actions 通知脚本；IndexNow key 按协议公开托管，不是账户密钥，未写入浏览器 JavaScript 或 Cloudflare secret。
+- 每次 `main` 推送且全部站点校验通过后，工作流会先等待 Cloudflare 部署该 key 文件，再只提交本次变更的静态 HTML canonical URL；CSS、图片、JS 等非页面变更不会触发通知。
+- 下一步：发布后确认 Actions 中 IndexNow job 返回 HTTP 200/202，并在 Bing IndexNow 页面查看接收记录。
