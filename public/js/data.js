@@ -2335,7 +2335,9 @@ window.KANAPET_PRODUCTS = [
     "color": "",
     "accessories": "",
     "notes": "Each product is individually packed in one carton. MOQ: 100 pcs per model. Orders must be placed in full-carton quantities.",
-    "gallery": [],
+    "gallery": [
+      "images/products/gallery/rabbit-650-cage-scene-v4.jpg"
+    ],
     "moq_unit": "pc",
     "materials": [
       "PET",
@@ -2366,7 +2368,9 @@ window.KANAPET_PRODUCTS = [
     "color": "",
     "accessories": "",
     "notes": "Each product is individually packed in a carton. Custom packaging is available.",
-    "gallery": [],
+    "gallery": [
+      "images/products/gallery/cat-litter-box-75-scene-v3.jpg"
+    ],
     "moq_unit": "pc"
   },
   {
