@@ -279,30 +279,33 @@ function productCard(p, variantCount = 1, featured = false) {
   `;
 }
 
-// Featured products on homepage (one per series)
+// Transparent enclosure range on homepage
 function renderFeatured(containerId, count = 8) {
   const el = document.getElementById(containerId);
   if (!el || !products.length) return;
-  // Pick representative products across categories, one per series
-  const featured = [];
-  const seenSeries = new Set();
-  const priority = ['650 Standard TI', '490 Standard TI', '75 Hamster Cage', '62 Hamster Cage', '43 Hamster Cage', '70 folding cage', 'WD42 Take out cage', 'Turtle Tank'];
-  for (const name of priority) {
-    const found = products.find(p => p.name.toLowerCase().includes(name.toLowerCase()));
-    if (found && !seenSeries.has(found.series)) {
-      featured.push(found);
-      seenSeries.add(found.series);
-    }
-  }
-  // Fill remaining with one per series
-  for (const p of products) {
-    if (featured.length >= count) break;
-    if (!seenSeries.has(p.series)) {
-      featured.push(p);
-      seenSeries.add(p.series);
-    }
-  }
-  el.innerHTML = featured.slice(0, count).map(p => productCard(p, 1, true)).join('');
+  const transparentEnclosureIds = [
+    'hamster-43-cage',
+    'hamster-62-cage',
+    'hamster-75-cage',
+    'hamster-external-enclosure',
+    'bird-650-glass-door',
+    'bird-490-transparent-door-single',
+    'bird-490-transparent-door-splash',
+    'bird-490-double-transparent-door'
+  ];
+  const enclosures = transparentEnclosureIds
+    .map(id => products.find(product => product.id === id))
+    .filter(Boolean);
+  const sceneImages = {
+    'hamster-43-cage': 'images/products/gallery/43-hamster-scene.jpg',
+    'hamster-62-cage': 'images/products/gallery/62-hamster-scene.jpg',
+    'hamster-75-cage': 'images/products/gallery/75-hamster-scene.jpg',
+    'bird-650-glass-door': 'images/products/gallery/650-glass-door-scene.jpg'
+  };
+  el.innerHTML = enclosures
+    .slice(0, count)
+    .map(product => productCard({ ...product, image: sceneImages[product.id] || product.image }, 1, true))
+    .join('');
 }
 
 // All products on products page (each product shown individually)
