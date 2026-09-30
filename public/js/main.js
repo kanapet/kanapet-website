@@ -203,9 +203,61 @@ function formatMoq(moq) {
   return /^\d+(?:\.\d+)?$/.test(value) ? `${value} pcs` : value;
 }
 
+// Display taxonomy for the catalog. Product data keeps its original category IDs
+// so existing product pages and legacy ?cat= links remain compatible.
+const BIRD_STAND_IDS = new Set(['bird-400-frame', 'bird-470-frame', 'bird-490-climbing-rack']);
+const HAMSTER_EXERCISE_PATTERN = /Running Wheel|Exercise Disc|Running Ball/;
+const CATALOG_GROUPS = [
+  { id: 'all', label: 'All Products', matches: () => true },
+  {
+    id: 'bird', label: 'Bird',
+    matches: p => p.category.startsWith('bird-') || p.category === 'smart-pet-products',
+    subcategories: [
+      { id: 'cages', label: 'Cages', matches: p => p.category === 'bird-cages' && !BIRD_STAND_IDS.has(p.id) },
+      { id: 'stands', label: 'Cage Stands', matches: p => BIRD_STAND_IDS.has(p.id) },
+      { id: 'accessories', label: 'Accessories', matches: p => p.category === 'bird-accessories' },
+      { id: 'travel', label: 'Travel Carriers', matches: p => p.category === 'bird-travel' },
+      { id: 'automatic-feeding', label: 'Automatic Feeders & Waterers', matches: p => p.category === 'smart-pet-products' },
+    ],
+  },
+  {
+    id: 'hamster', label: 'Hamster', matches: p => p.category.startsWith('hamster-'),
+    subcategories: [
+      { id: 'cages', label: 'Cages & Enclosures', matches: p => p.category === 'hamster-cages' },
+      { id: 'habitat', label: 'Habitat Accessories', matches: p => p.category === 'hamster-accessories' && !HAMSTER_EXERCISE_PATTERN.test(p.name) },
+      { id: 'exercise', label: 'Exercise & Play', matches: p => p.category === 'hamster-accessories' && HAMSTER_EXERCISE_PATTERN.test(p.name) },
+    ],
+  },
+  { id: 'rabbits-guinea-pigs', label: 'Rabbits & Guinea Pigs', matches: p => p.id === 'rabbit-650-cage' },
+  { id: 'cat', label: 'Cat', matches: p => p.id === 'cat-litter-box-75' || p.id === 'cat-feeder-automatic' },
+  { id: 'reptile', label: 'Reptile', matches: p => p.id === 'turtle-tank' },
+];
+
+const LEGACY_CATEGORY_TO_CATALOG = {
+  'bird-cages': { group: 'bird' },
+  'bird-accessories': { group: 'bird', subcategory: 'accessories' },
+  'bird-travel': { group: 'bird', subcategory: 'travel' },
+  'smart-pet-products': { group: 'bird', subcategory: 'automatic-feeding' },
+  'hamster-cages': { group: 'hamster', subcategory: 'cages' },
+  'hamster-accessories': { group: 'hamster' },
+  'other-small-pets': { group: 'all' },
+};
+const LEGACY_PRESERVED_CATEGORIES = new Set(['bird-cages', 'hamster-accessories', 'other-small-pets']);
+
+function catalogGroup(id) {
+  return CATALOG_GROUPS.find(group => group.id === id) || CATALOG_GROUPS[0];
+}
+
+function catalogLabel(product) {
+  const group = CATALOG_GROUPS.find(item => item.id !== 'all' && item.matches(product));
+  if (!group) return categories[product.category]?.name || product.category;
+  const subcategory = group.subcategories?.find(item => item.matches(product));
+  return subcategory ? `${group.label} · ${subcategory.label}` : group.label;
+}
+
 // Product card HTML
 function productCard(p, variantCount = 1) {
-  const catName = categories[p.category]?.name || p.category;
+  const catName = catalogLabel(p);
   return `
     <div class="product-card" data-cat="${p.category}">
       <a href="/product/${p.slug}.html" class="product-img-link">
@@ -253,15 +305,17 @@ function renderFeatured(containerId, count = 8) {
 }
 
 // All products on products page (each product shown individually)
-function renderProducts(containerId, filterCat = null, filterColor = null) {
+function renderProducts(containerId, groupId = 'all', subcategoryId = null, filterColor = null, legacyCategory = null) {
   const el = document.getElementById(containerId);
   if (!el || !products.length) return;
   let list = products;
   // Filter out dedicated accessories (only shown on their compatible cage's detail page)
   list = list.filter(p => p.accessory_type !== 'dedicated');
-  if (filterCat) {
-    list = list.filter(p => p.category === filterCat);
-  }
+  const group = catalogGroup(groupId);
+  if (group.id !== 'all') list = list.filter(group.matches);
+  const subcategory = group.subcategories?.find(item => item.id === subcategoryId);
+  if (subcategory) list = list.filter(subcategory.matches);
+  if (legacyCategory) list = list.filter(p => p.category === legacyCategory);
   if (filterColor) {
     list = list.filter(p => p.colors && p.colors.some(c => c.toLowerCase() === filterColor.toLowerCase()));
   }
@@ -665,82 +719,123 @@ function renderCompatibleAccessories(product) {
   return html;
 }
 
-// Category filter buttons on products page
+// Two-level catalog filters: pet type first, product type second, optional color in a compact panel.
 function setupFilters() {
-  const btns = document.querySelectorAll('.filter-btn');
-  if (!btns.length) return;
-  const params = new URLSearchParams(window.location.search);
-  const activeCat = params.get('cat');
-  let activeColor = null;
-  
-  // Build color filter
+  const primaryBar = document.getElementById('primary-filter-bar');
+  if (!primaryBar) return;
+  const secondaryGroup = document.getElementById('secondary-filter-group');
+  const secondaryBar = document.getElementById('secondary-filter-bar');
+  const secondarySelect = document.getElementById('catalog-secondary-select');
   const colorBar = document.getElementById('color-filter-bar');
-  if (colorBar) {
-    colorBar.style.display = 'flex';
-    const allColors = new Set();
-    products.forEach(p => {
-      if (p.colors) p.colors.forEach(c => allColors.add(c));
-    });
-    if (allColors.size > 0) {
-      colorBar.style.display = 'flex';
-      allColors.forEach(color => {
-        const btn = document.createElement('button');
-        btn.className = 'color-filter-btn';
-        btn.dataset.color = color;
-        const colorVal = COLOR_MAP[color] || '#ccc';
-        btn.innerHTML = `<span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:${colorVal};margin-right:6px;vertical-align:middle;border:1px solid #ddd;"></span>${color}`;
-        btn.style.cssText = 'padding:6px 14px;border:1px solid var(--border);border-radius:20px;background:#fff;cursor:pointer;font-size:13px;display:flex;align-items:center;gap:6px;';
-        btn.addEventListener('click', () => {
-          document.querySelectorAll('.color-filter-btn').forEach(b => {
-            b.style.background = '#fff';
-            b.style.color = 'var(--text)';
-          });
-          btn.style.background = 'var(--primary)';
-          btn.style.color = '#fff';
-          activeColor = btn.dataset.color || null;
-          const cat = document.querySelector('.filter-btn.active')?.dataset.cat || '';
-          renderProducts('all-products', cat || null, activeColor);
-        });
-        colorBar.appendChild(btn);
-      });
-      // All colors button
-      const allBtn = colorBar.querySelector('.color-filter-btn[data-color=""]');
-      if (allBtn) {
-        allBtn.addEventListener('click', () => {
-          document.querySelectorAll('.color-filter-btn').forEach(b => {
-            b.style.background = '#fff';
-            b.style.color = 'var(--text)';
-          });
-          allBtn.style.background = 'var(--primary)';
-          allBtn.style.color = '#fff';
-          activeColor = null;
-          const cat = document.querySelector('.filter-btn.active')?.dataset.cat || '';
-          renderProducts('all-products', cat || null, null);
-        });
-      }
+  const summary = document.getElementById('catalog-summary');
+  const filterToggle = document.getElementById('filter-toggle');
+  const filterPanel = document.getElementById('filter-panel');
+  const filterClear = document.getElementById('filter-clear');
+  const filterCount = document.getElementById('active-filter-count');
+  const filterToggleLabel = document.getElementById('filter-toggle-label');
+  const params = new URLSearchParams(window.location.search);
+  const legacy = LEGACY_CATEGORY_TO_CATALOG[params.get('cat')];
+  let activeGroup = params.get('group') || legacy?.group || 'all';
+  let activeSubcategory = params.get('sub') || legacy?.subcategory || null;
+  let activeColor = params.get('color') || null;
+  let legacyCategory = LEGACY_PRESERVED_CATEGORIES.has(params.get('cat')) ? params.get('cat') : null;
+
+  const visibleProducts = () => {
+    let list = products.filter(p => p.accessory_type !== 'dedicated');
+    const group = catalogGroup(activeGroup);
+    if (group.id !== 'all') list = list.filter(group.matches);
+    const subcategory = group.subcategories?.find(item => item.id === activeSubcategory);
+    if (subcategory) list = list.filter(subcategory.matches);
+    if (legacyCategory) list = list.filter(p => p.category === legacyCategory);
+    if (activeColor) list = list.filter(p => p.colors?.some(color => color.toLowerCase() === activeColor.toLowerCase()));
+    return list;
+  };
+
+  const updateUrl = () => {
+    const next = new URLSearchParams();
+    if (legacyCategory) next.set('cat', legacyCategory);
+    else if (activeGroup !== 'all') next.set('group', activeGroup);
+    if (activeSubcategory) next.set('sub', activeSubcategory);
+    if (activeColor) next.set('color', activeColor);
+    const query = next.toString();
+    history.replaceState(null, '', query ? `products.html?${query}` : 'products.html');
+  };
+
+  const renderControls = () => {
+    const group = catalogGroup(activeGroup);
+    primaryBar.innerHTML = CATALOG_GROUPS.map(item => `<button type="button" class="filter-btn ${item.id === group.id ? 'active' : ''}" data-group="${item.id}">${item.label}</button>`).join('');
+    primaryBar.querySelectorAll('[data-group]').forEach(button => button.addEventListener('click', () => {
+      activeGroup = button.dataset.group;
+      activeSubcategory = null;
+      activeColor = null;
+      legacyCategory = null;
+      render();
+    }));
+
+    const subcategories = group.subcategories || [];
+    secondaryGroup.hidden = subcategories.length === 0;
+    secondaryBar.innerHTML = subcategories.map(item => `<button type="button" class="filter-btn ${item.id === activeSubcategory ? 'active' : ''}" data-subcategory="${item.id}">${item.label}</button>`).join('');
+    secondaryBar.querySelectorAll('[data-subcategory]').forEach(button => button.addEventListener('click', () => {
+      activeSubcategory = activeSubcategory === button.dataset.subcategory ? null : button.dataset.subcategory;
+      activeColor = null;
+      legacyCategory = null;
+      render();
+    }));
+    secondarySelect.innerHTML = `<option value="">Product type: All ${group.label} products</option>${subcategories.map(item => `<option value="${item.id}">${item.label}</option>`).join('')}`;
+    secondarySelect.value = activeSubcategory || '';
+    secondarySelect.onchange = () => {
+      activeSubcategory = secondarySelect.value || null;
+      activeColor = null;
+      legacyCategory = null;
+      render();
+    };
+  };
+
+  const renderColors = () => {
+    const group = catalogGroup(activeGroup);
+    const subcategory = group.subcategories?.find(item => item.id === activeSubcategory);
+    let candidates = products.filter(p => p.accessory_type !== 'dedicated' && (group.id === 'all' || group.matches(p)) && (!subcategory || subcategory.matches(p)));
+    if (legacyCategory) candidates = candidates.filter(p => p.category === legacyCategory);
+    const colors = [...new Set(candidates.flatMap(p => p.colors || []))];
+    colorBar.innerHTML = colors.map(color => {
+      const colorValue = COLOR_MAP[color] || '#ccc';
+      const transparent = colorValue === 'transparent';
+      return `<button type="button" class="color-filter-btn ${color === activeColor ? 'active' : ''}" data-color="${color}"><span class="color-dot ${transparent ? 'transparent' : ''}" style="${transparent ? '' : `background:${colorValue}`}"></span>${color}</button>`;
+    }).join('');
+    colorBar.querySelectorAll('[data-color]').forEach(button => button.addEventListener('click', () => {
+      activeColor = activeColor === button.dataset.color ? null : button.dataset.color;
+      render();
+    }));
+  };
+
+  const render = () => {
+    const list = visibleProducts();
+    const group = catalogGroup(activeGroup);
+    const subcategory = group.subcategories?.find(item => item.id === activeSubcategory);
+    renderControls();
+    renderColors();
+    renderProducts('all-products', activeGroup, activeSubcategory, activeColor, legacyCategory);
+    const context = [group.id !== 'all' ? group.label : 'All products', subcategory?.label, activeColor].filter(Boolean).join(' · ');
+    summary.textContent = `${context} — ${list.length} product${list.length === 1 ? '' : 's'}`;
+    filterClear.hidden = !activeColor;
+    filterCount.hidden = !activeColor;
+    filterCount.textContent = activeColor ? '×' : '';
+    filterToggleLabel.textContent = activeColor ? `Color: ${activeColor}` : 'Color: All';
+    updateUrl();
+  };
+
+  filterToggle.addEventListener('click', (event) => {
+    if (activeColor && event.target === filterCount) {
+      activeColor = null;
+      render();
+      return;
     }
-  }
-  
-  btns.forEach(btn => {
-    if (btn.dataset.cat === activeCat) {
-      btn.classList.add('active');
-    }
-    btn.addEventListener('click', () => {
-      btns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const cat = btn.dataset.cat;
-      renderProducts('all-products', cat || null, activeColor);
-      const url = cat ? `products.html?cat=${cat}` : 'products.html';
-      history.replaceState(null, '', url);
-    });
+    const opening = filterPanel.hidden;
+    filterPanel.hidden = !opening;
+    filterToggle.setAttribute('aria-expanded', String(opening));
   });
-  // 若列表已由构建期预渲染（data-prerendered），且当前无筛选条件，
-  // 则保留静态内容——避免重绘，也让不执行 JS 的爬虫读到完整目录。
-  const grid = document.getElementById('all-products');
-  const prerendered = grid && grid.dataset.prerendered === '1';
-  if (!prerendered || activeCat || activeColor) {
-    renderProducts('all-products', activeCat || null, activeColor);
-  }
+  filterClear.addEventListener('click', () => { activeColor = null; render(); });
+  render();
 }
 
 // Contact form — prefill product if coming from product page

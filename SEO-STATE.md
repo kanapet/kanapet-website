@@ -65,3 +65,11 @@
 - 已验证 `sales@kanapet.com` 可用，替换网站所有公开的 `lena@kanapet.com`：Contact、页脚、OEM/ODM、隐私页、产品页、Organization JSON-LD、llms.txt 与表单失败提示。
 - 个人邮箱不再出现在可抓取的静态网站文件中；网站询盘仍经表单提交至飞书，未改变其投递链路。
 - 下一步：Cloudflare 部署后检查 Contact、产品页和 llms.txt 是否均显示 sales@kanapet.com；后续为表单接入 Turnstile，减少机器人询盘。
+
+## 2026-09-30 产品目录分类与移动端筛选优化（待发布）
+
+- 产品目录改为两层采购导航：一级按 Bird、Hamster、Rabbits & Guinea Pigs、Cat、Reptile；Bird 与 Hamster 再显示对应产品类型。
+- 原始产品分类数据、详情页 URL 与旧 `?cat=` 链接保持兼容；新的目录展示层负责将现有产品映射到新分类，不改变产品事实资料。
+- 桌面端采用左对齐文字导航；移动端一级横向浏览、二级使用原生 Product type 下拉选择，避免两行横向滚动。
+- 颜色筛选默认收起，入口明确显示为 `Color: All`；选择后显示具体颜色并可一键清除。
+- 下一步：发布后检查桌面/手机端目录筛选、旧分类链接和线上产品页均正常。

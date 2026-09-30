@@ -21,17 +21,15 @@
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "Kanapet Product Catalog",
-  "description": "Complete range of bird cages, hamster cages, accessories and small pet products from Kanapet manufacturer.",
+  "description": "Wholesale bird, hamster, rabbit, guinea pig, cat and reptile products from Kanapet manufacturer.",
   "url": "https://www.kanapet.com/products.html",
   "numberOfItems": 70,
   "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Bird Cages"},
-    {"@type": "ListItem", "position": 2, "name": "Hamster Cages"},
-    {"@type": "ListItem", "position": 3, "name": "Bird Accessories"},
-    {"@type": "ListItem", "position": 4, "name": "Hamster Accessories"},
-    {"@type": "ListItem", "position": 5, "name": "Travel Carriers"},
-    {"@type": "ListItem", "position": 6, "name": "Smart Pet Products"},
-    {"@type": "ListItem", "position": 7, "name": "Cats, Rabbits & Other Animals"}
+    {"@type": "ListItem", "position": 1, "name": "Bird"},
+    {"@type": "ListItem", "position": 2, "name": "Hamster"},
+    {"@type": "ListItem", "position": 3, "name": "Rabbits & Guinea Pigs"},
+    {"@type": "ListItem", "position": 4, "name": "Cat"},
+    {"@type": "ListItem", "position": 5, "name": "Reptile"}
   ]
 }
 </script>
@@ -58,25 +56,32 @@
 <section class="page-header">
   <div class="container">
     <h1>Our Products</h1>
-    <p>Complete range of bird cages, hamster cages, accessories and small pet products — all manufactured in-house.</p>
+    <p>Browse our wholesale range by pet type, from bird and hamster habitats to small-pet essentials.</p>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <div class="filter-bar">
-      <button type="button" class="filter-btn active" data-cat="">All Products</button>
-      <button type="button" class="filter-btn" data-cat="bird-cages">Bird Cages</button>
-      <button type="button" class="filter-btn" data-cat="bird-accessories">Bird Accessories</button>
-      <button type="button" class="filter-btn" data-cat="bird-travel">Travel Carriers</button>
-      <button type="button" class="filter-btn" data-cat="smart-pet-products">Smart Pet Products</button>
-      <button type="button" class="filter-btn" data-cat="hamster-cages">Hamster Cages</button>
-      <button type="button" class="filter-btn" data-cat="hamster-accessories">Hamster Accessories</button>
-                  <button type="button" class="filter-btn" data-cat="other-small-pets">Cats, Rabbits & Other Animals</button>
-    </div>
-    <div class="color-filter-bar" id="color-filter-bar" style="margin-bottom:20px;flex-wrap:wrap;gap:10px;align-items:center;display:flex;background:#f5f7fa;padding:12px;border-radius:8px;min-height:50px;">
-      <span style="font-size:13px;font-weight:600;color:var(--text);">Filter by Color:</span>
-      <button type="button" class="color-filter-btn active" data-color="" style="padding:6px 14px;border:1px solid var(--border);border-radius:20px;background:#fff;cursor:pointer;font-size:13px;">All Colors</button>
+    <div class="catalog-filters" aria-label="Product catalog filters">
+      <div class="catalog-filter-group">
+        <div class="filter-bar catalog-primary" id="primary-filter-bar" aria-label="Pet type"></div>
+      </div>
+      <div class="catalog-secondary-group" id="secondary-filter-group" hidden>
+        <div class="filter-bar catalog-secondary" id="secondary-filter-bar" aria-label="Product type"></div>
+        <select class="catalog-secondary-select" id="catalog-secondary-select" aria-label="Product type"></select>
+      </div>
+      <div class="catalog-toolbar">
+        <p class="catalog-summary" id="catalog-summary" aria-live="polite">All products</p>
+        <button type="button" class="filter-toggle" id="filter-toggle" aria-expanded="false" aria-controls="filter-panel"><span id="filter-toggle-label">Color: All</span><span id="active-filter-count" aria-label="Clear color filter" hidden>×</span></button>
+      </div>
+      <div class="filter-panel" id="filter-panel" hidden>
+        <div class="filter-panel-heading">
+          <span>Choose a color</span>
+          <button type="button" class="filter-clear" id="filter-clear" hidden>Clear</button>
+        </div>
+        <p class="filter-panel-help">Show products available in one selected color.</p>
+        <div class="color-filter-bar" id="color-filter-bar"></div>
+      </div>
     </div>
     <div class="products-grid" id="all-products" data-prerendered="1">
       <div class="product-card" data-cat="bird-travel">
