@@ -815,8 +815,8 @@ function setupContactForm() {
       btn.textContent = 'Send Inquiry';
       btn.disabled = false;
       status.textContent = err && (err.name === 'AbortError' || err.deliveryUnknown)
-        ? 'Delivery could not be confirmed in time. Your details are still here; please do not resend automatically. You can wait and try once, or email lena@kanapet.com with the same inquiry.'
-        : 'We could not confirm delivery. Your details are still here; please try again or email lena@kanapet.com.';
+        ? 'Delivery could not be confirmed in time. Your details are still here; please do not resend automatically. You can wait and try once, or email sales@kanapet.com with the same inquiry.'
+        : 'We could not confirm delivery. Your details are still here; please try again or email sales@kanapet.com.';
     } finally {
       clearTimeout(timeout);
     }

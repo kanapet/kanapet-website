@@ -59,3 +59,9 @@
 - 新增根目录公开验证文件与 GitHub Actions 通知脚本；IndexNow key 按协议公开托管，不是账户密钥，未写入浏览器 JavaScript 或 Cloudflare secret。
 - 每次 `main` 推送且全部站点校验通过后，工作流会先等待 Cloudflare 部署该 key 文件，再只提交本次变更的静态 HTML canonical URL；CSS、图片、JS 等非页面变更不会触发通知。
 - 下一步：发布后确认 Actions 中 IndexNow job 返回 HTTP 200/202，并在 Bing IndexNow 页面查看接收记录。
+
+## 2026-09-30 公开业务邮箱迁移（待发布）
+
+- 已验证 `sales@kanapet.com` 可用，替换网站所有公开的 `lena@kanapet.com`：Contact、页脚、OEM/ODM、隐私页、产品页、Organization JSON-LD、llms.txt 与表单失败提示。
+- 个人邮箱不再出现在可抓取的静态网站文件中；网站询盘仍经表单提交至飞书，未改变其投递链路。
+- 下一步：Cloudflare 部署后检查 Contact、产品页和 llms.txt 是否均显示 sales@kanapet.com；后续为表单接入 Turnstile，减少机器人询盘。
