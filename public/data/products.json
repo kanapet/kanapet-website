@@ -2442,7 +2442,9 @@
     "color": "",
     "accessories": "",
     "notes": "MOQ: 500 pcs per model. Orders must be placed in full-carton quantities; units per carton are not yet confirmed.",
-    "gallery": [],
+    "gallery": [
+      "images/products/gallery/turtle-tank-scene-v2.jpg"
+    ],
     "moq_unit": "pc"
   }
 ]

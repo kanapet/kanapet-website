@@ -284,17 +284,17 @@ window.KANAPET_PRODUCTS = [
     "color_options": [
       {
         "name": "White",
-      "image": "images/products/feeder-cup-no4-white-main.jpg"
+        "image": "images/products/feeder-cup-no4-white-main.jpg"
       },
       {
         "name": "Transparent",
-      "image": "images/products/feeder-cup-no4-transparent-main.jpg"
+        "image": "images/products/feeder-cup-no4-transparent-main.jpg"
       }
     ],
     "slug": "bird-feeder-cup-no4",
     "color_images": {
-    "White": "images/products/feeder-cup-no4-white-main.jpg",
-    "Transparent": "images/products/feeder-cup-no4-transparent-main.jpg"
+      "White": "images/products/feeder-cup-no4-white-main.jpg",
+      "Transparent": "images/products/feeder-cup-no4-transparent-main.jpg"
     },
     "moq_unit": "pc",
     "pcs_per_ctn": "245"
@@ -324,17 +324,17 @@ window.KANAPET_PRODUCTS = [
     "color_options": [
       {
         "name": "White",
-      "image": "images/products/feeder-cup-no10-white-main.png"
+        "image": "images/products/feeder-cup-no10-white-main.png"
       },
       {
         "name": "Transparent",
-      "image": "images/products/feeder-cup-no10-transparent-main.png"
+        "image": "images/products/feeder-cup-no10-transparent-main.png"
       }
     ],
     "slug": "bird-feeder-cup-no10",
     "color_images": {
-    "White": "images/products/feeder-cup-no10-white-main.png",
-    "Transparent": "images/products/feeder-cup-no10-transparent-main.png"
+      "White": "images/products/feeder-cup-no10-white-main.png",
+      "Transparent": "images/products/feeder-cup-no10-transparent-main.png"
     },
     "moq_unit": "pc",
     "pcs_per_ctn": "156"
@@ -1859,10 +1859,10 @@ window.KANAPET_PRODUCTS = [
     "accessory_type": "universal",
     "moq_unit": "pc",
     "color_images": {
-    "White": "images/products/color/hamster-wheel-17cm_white-main.jpg",
-    "Blue": "images/products/color/hamster-wheel-17cm_blue-main.jpg",
-    "Pink": "images/products/color/hamster-wheel-17cm_pink-main.jpg",
-    "Purple": "images/products/color/hamster-wheel-17cm_purple-main.jpg"
+      "White": "images/products/color/hamster-wheel-17cm_white-main.jpg",
+      "Blue": "images/products/color/hamster-wheel-17cm_blue-main.jpg",
+      "Pink": "images/products/color/hamster-wheel-17cm_pink-main.jpg",
+      "Purple": "images/products/color/hamster-wheel-17cm_purple-main.jpg"
     }
   },
   {
@@ -1908,10 +1908,10 @@ window.KANAPET_PRODUCTS = [
     "accessory_type": "universal",
     "moq_unit": "pc",
     "color_images": {
-    "White": "images/products/color/hamster-wheel-21cm_white-main.jpg",
-    "Blue": "images/products/color/hamster-wheel-21cm_blue-main.jpg",
-    "Pink": "images/products/color/hamster-wheel-21cm_pink-main.jpg",
-    "Purple": "images/products/color/hamster-wheel-21cm_purple-main.jpg"
+      "White": "images/products/color/hamster-wheel-21cm_white-main.jpg",
+      "Blue": "images/products/color/hamster-wheel-21cm_blue-main.jpg",
+      "Pink": "images/products/color/hamster-wheel-21cm_pink-main.jpg",
+      "Purple": "images/products/color/hamster-wheel-21cm_purple-main.jpg"
     }
   },
   {
@@ -2443,11 +2443,12 @@ window.KANAPET_PRODUCTS = [
     "color": "",
     "accessories": "",
     "notes": "MOQ: 500 pcs per model. Orders must be placed in full-carton quantities; units per carton are not yet confirmed.",
-    "gallery": [],
+    "gallery": [
+      "images/products/gallery/turtle-tank-scene-v2.jpg"
+    ],
     "moq_unit": "pc"
   }
 ];
-
 window.KANAPET_CATEGORIES = {
   "bird-cages": {
     "name": "Bird Cages",

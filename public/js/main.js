@@ -256,7 +256,7 @@ function catalogLabel(product) {
 }
 
 // Product card HTML
-function productCard(p, variantCount = 1) {
+function productCard(p, variantCount = 1, featured = false) {
   const catName = catalogLabel(p);
   return `
     <div class="product-card" data-cat="${p.category}">
@@ -270,6 +270,7 @@ function productCard(p, variantCount = 1) {
         <a href="/product/${p.slug}.html" class="product-name-link"><h3>${p.name}</h3></a>
         <div class="product-meta">${formatSize(p.size)}</div>
         <div class="product-meta">${catName}</div>
+        ${featured ? '<div class="product-programs"><span>Wholesale</span><span>Private Label</span></div>' : ''}
         ${renderSwatches(p.colors)}
         <div class="product-moq">${p.moq ? `MOQ: ${formatMoq(p.moq)}` : 'Contact for MOQ'}</div>
         <a href="/product/${p.slug}.html" class="btn btn-primary">Request Quote</a>
@@ -301,7 +302,7 @@ function renderFeatured(containerId, count = 8) {
       seenSeries.add(p.series);
     }
   }
-  el.innerHTML = featured.slice(0, count).map(p => productCard(p, 1)).join('');
+  el.innerHTML = featured.slice(0, count).map(p => productCard(p, 1, true)).join('');
 }
 
 // All products on products page (each product shown individually)
