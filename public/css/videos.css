@@ -10,3 +10,8 @@
 .product-main-image-wrap > a { display: none; }
 .product-main-image-wrap:has(.gallery-video:not([hidden])) > a { display: inline-flex; }
 
+.media-external-link[hidden] { display: none; }
+.media-external-link { font-size: 13px; color: var(--primary); }
+.product-thumb { position: relative; padding: 0; }
+.media-play-badge { position: absolute; inset: 0; display: grid; place-items: center; color: #fff; text-shadow: 0 1px 6px #000; background: rgba(0,0,0,.2); font-size: 22px; }
+.product-video-thumb:not(:has(img)) .media-play-badge { position: static; background: transparent; color: var(--primary); font-size: 14px; text-shadow: none; }

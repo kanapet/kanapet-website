@@ -5,3 +5,7 @@
 # Keep them in git, drop them from the edge.
 images/products_raw/
 images/products_raw/**
+
+# Local internal admin UI is not a public production asset.
+admin/
+admin/**

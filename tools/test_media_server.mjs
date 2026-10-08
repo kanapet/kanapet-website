@@ -1,0 +1,47 @@
+import assert from 'node:assert/strict';
+import {spawn} from 'node:child_process';
+import {mkdtempSync,readFileSync} from 'node:fs';
+import {resolve} from 'node:path';
+import {randomBytes} from 'node:crypto';
+const root=resolve(new URL('../',import.meta.url).pathname.replace(/^\/([A-Za-z]:)/,'$1'));
+const store=mkdtempSync(resolve(root,'outputs/media-test-'));
+const port=18766;const origin=`http://127.0.0.1:${port}`;
+const child=spawn(process.execPath,[resolve(root,'tools/media_server.mjs')],{env:{...process.env,KANAPET_MEDIA_PORT:String(port),KANAPET_MEDIA_STORE:store},stdio:['ignore','pipe','pipe']});
+let cookie='',csrf='';
+const password=randomBytes(24).toString('hex');
+async function request(path,{method='GET',data,raw,headers={},auth=true}={}){
+ const res=await fetch(origin+path,{method,headers:{Origin:origin,...(auth&&cookie?{Cookie:cookie}:{}),...(method!=='GET'&&auth?{'X-CSRF-Token':csrf}:{}),...(data?{'Content-Type':'application/json'}:{}),...headers},body:data?JSON.stringify(data):raw});
+ return res;
+}
+try{
+ await new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(new Error('Server startup timeout')),10000);child.stdout.once('data',()=>{clearTimeout(timer);resolve();});child.once('error',reject);child.once('exit',code=>reject(new Error('Server exited '+code)));});
+ let res=await request('/api/admin/products');assert.equal(res.status,401);
+ res=await request('/api/admin/setup',{method:'POST',data:{email:'test@example.invalid',password}});assert.equal(res.status,201);
+ res=await request('/api/admin/setup',{method:'POST',data:{email:'other@example.invalid',password}});assert.equal(res.status,403);
+ res=await request('/api/admin/login',{method:'POST',data:{email:'test@example.invalid',password:'invalid'}});assert.equal(res.status,401);
+ res=await request('/api/admin/login',{method:'POST',data:{email:'test@example.invalid',password}});assert.equal(res.status,200);cookie=res.headers.get('set-cookie').split(';')[0];csrf=(await res.json()).csrf;
+ res=await request('/api/admin/products');assert.equal((await res.json()).products.length,70);
+ const endpoint='/api/admin/products/bird-650-pet-door';
+ res=await request(endpoint);let record=await res.json();const baseline=record.draft.items;
+ assert.ok(baseline.some(i=>i.type==='video'));
+ res=await request(endpoint,{method:'PUT',headers:{'If-Match':'0','X-CSRF-Token':'invalid'},data:{items:baseline}});assert.equal(res.status,403);
+ res=await request(endpoint,{method:'PUT',headers:{'If-Match':'99'},data:{items:baseline}});assert.equal(res.status,409);
+ res=await request(endpoint,{method:'PUT',headers:{'If-Match':'0'},data:{items:[{id:'x',type:'image',src:'javascript:alert(1)'}]}});assert.equal(res.status,400);
+ res=await request(endpoint+'/upload',{method:'POST',headers:{'If-Match':'0'},raw:Buffer.from('invalid file')});assert.equal(res.status,415);
+ const png=readFileSync(resolve(root,'public/favicon-32.png'));
+ res=await request(endpoint+'/upload?name=phone-photo.png',{method:'POST',headers:{'If-Match':'0'},raw:png});assert.equal(res.status,201);record=await res.json();const item=record.draft.items.at(-1);
+ res=await request(item.src,{auth:false});assert.equal(res.status,404);
+ res=await request(item.src);assert.equal(res.status,200);assert.equal(res.headers.get('content-type'),'image/png');
+ res=await request('/api/media/bird-650-pet-door',{auth:false});assert.ok(!(await res.json()).items.some(i=>i.id===item.id));
+ res=await request(endpoint+'/publish',{method:'POST',headers:{'If-Match':'1'},data:{}});assert.equal(res.status,200);
+ res=await request('/api/media/bird-650-pet-door',{auth:false});assert.ok((await res.json()).items.some(i=>i.id===item.id));
+ res=await request(item.src,{auth:false,headers:{Range:'bytes=0-7'}});assert.equal(res.status,206);assert.equal((await res.arrayBuffer()).byteLength,8);
+ res=await request(endpoint,{method:'PUT',headers:{'If-Match':'1'},data:{items:baseline}});assert.equal(res.status,200);
+ res=await request(item.src,{auth:false});assert.equal(res.status,200,'Saved draft deletion must not remove published media');
+ res=await request(endpoint+'/publish',{method:'POST',headers:{'If-Match':'2'},data:{}});assert.equal(res.status,200);
+ res=await request(item.src,{auth:false});assert.equal(res.status,404,'Removed media must be unavailable after publishing');
+ res=await request(endpoint,{method:'PUT',headers:{'If-Match':'2',Origin:'http://evil.invalid'},data:{items:baseline}});assert.equal(res.status,403);
+ res=await request('/api/admin/logout',{method:'POST',data:{}});assert.equal(res.status,200);
+ res=await request('/api/admin/products');assert.equal(res.status,401);
+ console.log('Media backend checks passed: login, CSRF, product archive, upload, private drafts, publish, ranges, deletion, revisions.');
+}finally{child.kill();}
