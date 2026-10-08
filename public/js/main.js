@@ -155,6 +155,8 @@ function formatSize(size) {
   s = s.replace(/（/g, '(').replace(/）/g, ')');
   
   // 如果是 W×D×H 纯数字格式，添加单位和inch换算
+  if (/\bcm\s*\([^)]*\bin\)/i.test(s)) return s;
+
   const dimMatch = s.match(/^([\d.]+)\s*×\s*([\d.]+)\s*×\s*([\d.]+)/);
   if (dimMatch) {
     const w = parseFloat(dimMatch[1]);
