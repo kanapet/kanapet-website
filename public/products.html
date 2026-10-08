@@ -11,7 +11,7 @@
   <meta property="og:description" content="Full range of bird cages, hamster cages and small pet accessories. OEM/ODM manufacturer since 1991.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.kanapet.com/products.html">
-  <link rel="stylesheet" href="css/style.css?v=16">
+  <link rel="stylesheet" href="css/style.css?v=18">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=20260929">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=20260929">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png?v=20260929">
@@ -53,15 +53,31 @@
   </div>
 </header>
 
-<section class="page-header">
-  <div class="container">
+<section class="catalog-hero">
+  <div class="catalog-hero-image" aria-hidden="true"><img src="images/products-hero-pet-family-v1.png" alt=""></div>
+  <div class="container catalog-hero-inner">
     <h1>Our Products</h1>
-    <p>Browse our wholesale range by pet type, from bird and hamster habitats to small-pet essentials.</p>
+    <p>Explore our wholesale product range by category, from bird cages and hamster habitats to everyday pet essentials.</p>
   </div>
 </section>
 
-<section class="section">
+<section class="catalog-category-section" aria-labelledby="product-category-title">
   <div class="container">
+    <div class="catalog-category-panel">
+      <p class="sr-only" id="product-category-title">Product categories</p>
+      <div class="catalog-sidebar-options" id="catalog-sidebar-options" role="navigation" aria-label="Product categories"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section catalog-page-section">
+  <div class="container">
+    <div class="catalog-list-heading">
+      <h2 id="catalog-page-title">All products <span>— <span id="catalog-count">products</span></span></h2>
+      <label class="catalog-sort">↕ <span>Sort by:</span><select id="catalog-sort-select" aria-label="Sort products"><option value="featured">Featured</option><option value="name">Name A–Z</option></select></label>
+    </div>
+    <div class="catalog-layout">
+      <div class="catalog-content">
     <div class="catalog-filters" aria-label="Product catalog filters">
       <div class="catalog-filter-group">
         <div class="filter-bar catalog-primary" id="primary-filter-bar" aria-label="Pet type"></div>
@@ -71,7 +87,6 @@
         <select class="catalog-secondary-select" id="catalog-secondary-select" aria-label="Product type"></select>
       </div>
       <div class="catalog-toolbar">
-        <p class="catalog-summary" id="catalog-summary" aria-live="polite">All products</p>
         <button type="button" class="filter-toggle" id="filter-toggle" aria-expanded="false" aria-controls="filter-panel"><span id="filter-toggle-label">Color: All</span><span id="active-filter-count" aria-label="Clear color filter" hidden>×</span></button>
       </div>
       <div class="filter-panel" id="filter-panel" hidden>

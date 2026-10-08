@@ -210,7 +210,7 @@ const HAMSTER_EXERCISE_PATTERN = /Running Wheel|Exercise Disc|Running Ball/;
 const CATALOG_GROUPS = [
   { id: 'all', label: 'All Products', matches: () => true },
   {
-    id: 'bird', label: 'Bird',
+    id: 'bird', label: 'Bird Cages & Habitats',
     matches: p => p.category.startsWith('bird-') || p.category === 'smart-pet-products',
     subcategories: [
       { id: 'cages', label: 'Cages', matches: p => p.category === 'bird-cages' && !BIRD_STAND_IDS.has(p.id) },
@@ -221,16 +221,16 @@ const CATALOG_GROUPS = [
     ],
   },
   {
-    id: 'hamster', label: 'Hamster', matches: p => p.category.startsWith('hamster-'),
+    id: 'hamster', label: 'Hamster Habitats', matches: p => p.category.startsWith('hamster-'),
     subcategories: [
       { id: 'cages', label: 'Cages & Enclosures', matches: p => p.category === 'hamster-cages' },
       { id: 'habitat', label: 'Habitat Accessories', matches: p => p.category === 'hamster-accessories' && !HAMSTER_EXERCISE_PATTERN.test(p.name) },
       { id: 'exercise', label: 'Exercise & Play', matches: p => p.category === 'hamster-accessories' && HAMSTER_EXERCISE_PATTERN.test(p.name) },
     ],
   },
-  { id: 'rabbits-guinea-pigs', label: 'Rabbits & Guinea Pigs', matches: p => p.id === 'rabbit-650-cage' },
-  { id: 'cat', label: 'Cat', matches: p => p.id === 'cat-litter-box-75' || p.id === 'cat-feeder-automatic' },
-  { id: 'reptile', label: 'Reptile', matches: p => p.id === 'turtle-tank' },
+  { id: 'rabbits-guinea-pigs', label: 'Rabbit & Small Pet Supplies', matches: p => p.id === 'rabbit-650-cage' },
+  { id: 'cat', label: 'Cat Care Products', matches: p => p.id === 'cat-litter-box-75' || p.id === 'cat-feeder-automatic' },
+  { id: 'reptile', label: 'Reptile Habitats', matches: p => p.id === 'turtle-tank' },
 ];
 
 const LEGACY_CATEGORY_TO_CATALOG = {
@@ -309,7 +309,7 @@ function renderFeatured(containerId, count = 8) {
 }
 
 // All products on products page (each product shown individually)
-function renderProducts(containerId, groupId = 'all', subcategoryId = null, filterColor = null, legacyCategory = null) {
+function renderProducts(containerId, groupId = 'all', subcategoryId = null, filterColor = null, legacyCategory = null, sortBy = 'featured') {
   const el = document.getElementById(containerId);
   if (!el || !products.length) return;
   let list = products;
@@ -323,6 +323,7 @@ function renderProducts(containerId, groupId = 'all', subcategoryId = null, filt
   if (filterColor) {
     list = list.filter(p => p.colors && p.colors.some(c => c.toLowerCase() === filterColor.toLowerCase()));
   }
+  if (sortBy === 'name') list = [...list].sort((a, b) => a.name.localeCompare(b.name));
   if (list.length === 0) {
     el.innerHTML = '<p style="text-align:center;grid-column:1/-1;padding:40px;color:var(--text-light)">No products found.</p>';
     return;
@@ -737,12 +738,17 @@ function setupFilters() {
   const filterClear = document.getElementById('filter-clear');
   const filterCount = document.getElementById('active-filter-count');
   const filterToggleLabel = document.getElementById('filter-toggle-label');
+  const sidebarOptions = document.getElementById('catalog-sidebar-options');
+  const catalogCount = document.getElementById('catalog-count');
+  const catalogPageTitle = document.getElementById('catalog-page-title');
+  const sortSelect = document.getElementById('catalog-sort-select');
   const params = new URLSearchParams(window.location.search);
   const legacy = LEGACY_CATEGORY_TO_CATALOG[params.get('cat')];
   let activeGroup = params.get('group') || legacy?.group || 'all';
   let activeSubcategory = params.get('sub') || legacy?.subcategory || null;
   let activeColor = params.get('color') || null;
   let legacyCategory = LEGACY_PRESERVED_CATEGORIES.has(params.get('cat')) ? params.get('cat') : null;
+  let sortBy = sortSelect?.value || 'featured';
 
   const visibleProducts = () => {
     let list = products.filter(p => p.accessory_type !== 'dedicated');
@@ -767,6 +773,7 @@ function setupFilters() {
 
   const renderControls = () => {
     const group = catalogGroup(activeGroup);
+    const subcategories = group.subcategories || [];
     primaryBar.innerHTML = CATALOG_GROUPS.map(item => `<button type="button" class="filter-btn ${item.id === group.id ? 'active' : ''}" data-group="${item.id}">${item.label}</button>`).join('');
     primaryBar.querySelectorAll('[data-group]').forEach(button => button.addEventListener('click', () => {
       activeGroup = button.dataset.group;
@@ -776,7 +783,31 @@ function setupFilters() {
       render();
     }));
 
-    const subcategories = group.subcategories || [];
+    if (sidebarOptions) {
+      const primaryOptions = CATALOG_GROUPS.map(item => {
+        const selected = item.id === group.id;
+        const chevron = item.subcategories?.length ? `<span class="catalog-sidebar-chevron" aria-hidden="true">${selected ? '⌃' : '›'}</span>` : '';
+        return `<button type="button" class="catalog-sidebar-option ${selected ? 'active' : ''}" data-sidebar-group="${item.id}" aria-pressed="${selected}"><span>${item.label}</span>${chevron}</button>`;
+      }).join('');
+      const secondaryOptions = subcategories.length
+        ? `<div class="catalog-sidebar-suboptions catalog-top-suboptions">${subcategories.map(sub => `<button type="button" class="catalog-sidebar-suboption ${sub.id === activeSubcategory ? 'active' : ''}" data-sidebar-subcategory="${sub.id}" data-sidebar-parent="${group.id}">${sub.label}</button>`).join('')}</div>`
+        : '';
+      sidebarOptions.innerHTML = `<div class="catalog-primary-options">${primaryOptions}</div>${secondaryOptions}`;
+      sidebarOptions.querySelectorAll('[data-sidebar-group]').forEach(button => button.addEventListener('click', () => {
+        activeGroup = button.dataset.sidebarGroup;
+        activeSubcategory = null;
+        activeColor = null;
+        legacyCategory = null;
+        render();
+      }));
+      sidebarOptions.querySelectorAll('[data-sidebar-subcategory]').forEach(button => button.addEventListener('click', () => {
+        activeGroup = button.dataset.sidebarParent;
+        activeSubcategory = button.dataset.sidebarSubcategory;
+        activeColor = null;
+        legacyCategory = null;
+        render();
+      }));
+    }
     secondaryGroup.hidden = subcategories.length === 0;
     secondaryBar.innerHTML = subcategories.map(item => `<button type="button" class="filter-btn ${item.id === activeSubcategory ? 'active' : ''}" data-subcategory="${item.id}">${item.label}</button>`).join('');
     secondaryBar.querySelectorAll('[data-subcategory]').forEach(button => button.addEventListener('click', () => {
@@ -818,9 +849,11 @@ function setupFilters() {
     const subcategory = group.subcategories?.find(item => item.id === activeSubcategory);
     renderControls();
     renderColors();
-    renderProducts('all-products', activeGroup, activeSubcategory, activeColor, legacyCategory);
-    const context = [group.id !== 'all' ? group.label : 'All products', subcategory?.label, activeColor].filter(Boolean).join(' · ');
-    summary.textContent = `${context} — ${list.length} product${list.length === 1 ? '' : 's'}`;
+    renderProducts('all-products', activeGroup, activeSubcategory, activeColor, legacyCategory, sortBy);
+    const displayTitle = subcategory?.label || (group.id !== 'all' ? group.label : 'All products');
+    if (summary) summary.textContent = `${displayTitle} — ${list.length} product${list.length === 1 ? '' : 's'}`;
+    if (catalogCount) catalogCount.textContent = `${list.length} product${list.length === 1 ? '' : 's'}`;
+    if (catalogPageTitle) catalogPageTitle.innerHTML = `${displayTitle} <span>— <span id="catalog-count">${list.length} product${list.length === 1 ? '' : 's'}</span></span>`;
     filterClear.hidden = !activeColor;
     filterCount.hidden = !activeColor;
     filterCount.textContent = activeColor ? '×' : '';
@@ -839,6 +872,7 @@ function setupFilters() {
     filterToggle.setAttribute('aria-expanded', String(opening));
   });
   filterClear.addEventListener('click', () => { activeColor = null; render(); });
+  if (sortSelect) sortSelect.addEventListener('change', () => { sortBy = sortSelect.value; render(); });
   render();
 }
 
