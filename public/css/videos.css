@@ -1,0 +1,12 @@
+/* Shared factory and product video presentation */
+#factory-video-section[hidden] { display: none; }
+.video-showcase { max-width: 960px; margin: 28px auto 0; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 16px; background: #111; box-shadow: 0 8px 28px rgba(0,0,0,.12); }
+.video-showcase video, .video-showcase iframe { display: block; width: 100%; height: 100%; border: 0; object-fit: contain; }
+.video-error { color: #fff; padding: 24px; text-align: center; }
+@media (max-width: 600px) { .video-showcase { border-radius: 10px; } }.gallery-video[hidden] { display: none; }
+.product-main-image-wrap .gallery-video { width: 100%; margin: 0; border-radius: 8px; box-shadow: none; }
+.product-main-image-wrap:has(.gallery-video:not([hidden])) { flex-direction: column; gap: 12px; }
+.product-video-thumb { font: inherit; font-size: 12px; font-weight: 600; color: var(--primary); background: #f5f7fa; }
+.product-main-image-wrap > a { display: none; }
+.product-main-image-wrap:has(.gallery-video:not([hidden])) > a { display: inline-flex; }
+
