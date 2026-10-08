@@ -659,11 +659,16 @@ function renderRelatedProducts(product) {
 // Render compatible accessories section for cage products
 function renderCompatibleAccessories(product) {
   // Only show for cage products
-  if (!product.category || !product.category.includes('cage')) return '';
+  const accessoryCategory = {
+    'bird-cages': 'bird-accessories',
+    'bird-travel': 'bird-accessories',
+    'hamster-cages': 'hamster-accessories'
+  }[product.category];
+  if (!accessoryCategory) return '';
   
   // Find dedicated accessories compatible with this product
   const compatible = products.filter(p => 
-    p.accessory_type === 'dedicated' && 
+    p.category === accessoryCategory && p.accessory_type === 'dedicated' && 
     p.compatible_with && 
     p.compatible_with.includes(product.id)
   );
@@ -671,7 +676,8 @@ function renderCompatibleAccessories(product) {
   // Also find recommended universal accessories (same category)
   const recommended = products.filter(p => 
     p.accessory_type === 'universal' && 
-    p.category === 'hamster-accessories' &&
+    p.category === accessoryCategory &&
+    (!p.compatible_with?.length || p.compatible_with.includes(product.id)) &&
     !p.id.includes('shelf')
   ).slice(0, 4);
   
@@ -686,7 +692,7 @@ function renderCompatibleAccessories(product) {
         ${compatible.map(acc => `
           <div class="accessory-card" onclick="window.location.href='/product/${acc.slug}.html'" ${KEYBOARD_LINK_ATTRS}>
             <div class="accessory-image">
-              <img src="${acc.image}" alt="${acc.name}" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\\'placeholder\\'>📦</div>'">
+              <img src="${absImg(acc.image)}" alt="${acc.name}" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\\'placeholder\\'>📦</div>'">
             </div>
             <div class="accessory-info">
               <h3>${acc.name}</h3>
@@ -706,7 +712,7 @@ function renderCompatibleAccessories(product) {
         ${recommended.map(acc => `
           <div class="accessory-card" onclick="window.location.href='/product/${acc.slug}.html'" ${KEYBOARD_LINK_ATTRS}>
             <div class="accessory-image">
-              <img src="${acc.image}" alt="${acc.name}" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\\'placeholder\\'>📦</div>'">
+              <img src="${absImg(acc.image)}" alt="${acc.name}" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\\'placeholder\\'>📦</div>'">
             </div>
             <div class="accessory-info">
               <h3>${acc.name}</h3>
