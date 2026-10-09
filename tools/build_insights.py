@@ -96,7 +96,7 @@ def build():
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{E(title)} | KANAPET</title><meta name="description" content="{E(desc)}">
 <link rel="canonical" href="{SITE+path}"><meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(desc)}"><meta property="og:url" content="{SITE+path}"><meta property="og:type" content="{'article' if schemas else 'website'}"><meta property="og:image" content="{SITE+cover}"><meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/style.css?v=16"><link rel="stylesheet" href="/css/insights.css">
+<link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/style.css?v=16"><link rel="stylesheet" href="/css/insights.css?v=2">
 <script type="application/ld+json">{json.dumps(graph, ensure_ascii=False).replace('<', chr(92)+'u003c')}</script></head><body class="insights-page">{header}<main id="main-content">{content}</main>{footer}<script src="/js/insights.js" defer></script></body></html>'''
     filters = '<div class="ins-filters" role="group" aria-label="Filter articles by category" hidden>'+''.join(f'<button type="button" data-filter="{E(c)}" aria-pressed="{str(c=="All").lower()}">{E(c)}</button>' for c in CATEGORIES)+'</div>'
     featured = next((a for a in articles if a.get('featured')), articles[0])
