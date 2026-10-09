@@ -6,8 +6,8 @@
   "summary": "KANAPET will attend the 30th China International Pet Show (CIPS 2026) in Guangzhou from November 12 to 15, 2026. Find us in Hall 11.3 at Booth G053 in Area B of the China Import and Export Fair Complex. We welcome buyers and business partners to discuss bird and small pet products, wholesale sourcing and custom manufacturing requirements.",
   "category": "Exhibition",
   "datePublished": "2026-10-09",
-  "coverImage": "/images/factory/factory-1.jpg",
-  "coverAlt": "KANAPET mold manufacturing workshop",
+  "coverImage": "/images/products/gallery/490-double-scene-1.jpg",
+  "coverAlt": "KANAPET white double bird cage with transparent doors and two yellow birds",
   "featured": false,
   "relatedProducts": ["bird-490-double-transparent-door", "hamster-75-cage", "cat-litter-box-75"],
   "relatedArticles": ["custom-pet-product-development-process"],
@@ -67,6 +67,8 @@ We welcome conversations about wholesale sourcing and [OEM / ODM manufacturing](
 - Manufacturing assessment for a custom product supported by 3D drawings or a physical sample.
 
 If you plan to discuss a custom product, prepare your 3D drawings or contact us in advance about a physical sample. Read [our custom product development process](/insights/custom-pet-product-development-process/) for how assessment, quotation, structural optimization, sampling and mold making proceed.
+
+![KANAPET transparent hamster cage with an exercise wheel and water bottle](/images/products/gallery/75-hamster-scene.jpg "KANAPET transparent hamster habitat.")
 
 ## How can you arrange a meeting with KANAPET?
 
