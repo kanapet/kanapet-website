@@ -10,6 +10,9 @@ if os.environ.get('WORKERS_CI_BRANCH') != 'main' or not os.environ.get('WORKERS_
 for script, args in [
     ('build_release.py', []),
     ('check_confirmed_products.py', []),
+    ('test_release_guards.py', []),
+    ('build_insights.py', ['--check']),
+    ('audit_insights.py', []),
     ('validate_data.py', []),
     ('audit_products.py', []),
     ('audit_accessibility.py', []),

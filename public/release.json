@@ -1,10 +1,5 @@
 {
   "files": {
-    ".assetsignore": "852f06b3bccf8fb86b6691c62813626459ae7f7c023dcfbd9aa3da7c424233be",
-    "admin/admin.css": "d9bc5869a257c38407bf64e933c9799797a84aa1a30fb63e5d1e45ca6b39f095",
-    "admin/admin.js": "d934e3aaff36a83a653cc368137514b989b57ea305a518011d28ac8ed96d304e",
-    "admin/image-processing.js": "391ce4f01c13abb150e97686c970519b55be6e239ef5e42c0a7eb91dad442aa3",
-    "admin/index.html": "e5ef1fa6f824ff8c6e85b11f0692dced9ccabfd93f9582b534def94ce8c1d272",
     "contact.html": "69022baf4b4f1f90ac5db11dded8587a0faf8dbdfc3886792bd45d2de86e712d",
     "css/factory.css": "2323798c3a8a5a1463373b5199ee2ed495b56480e52ac1f3cebd0fdc28ce3106",
     "css/insights.css": "e48bada9d9583d6a2148f3425710c43305e506d10d6cdb82c37de311650fc3ab",
@@ -1231,5 +1226,5 @@
     "sitemap.xml": "a584d9ca73b29b40d7df6a11829c3e138abdb8fdfc37b37587d3e92a6f96377c",
     "videos/kanapet-factory-tour.mp4": "a571c81046574ab7a542955ff78e6e5250a1ed7b012e107c10919fdecf67a8a7"
   },
-  "id": "f09d7695aa81675c"
+  "id": "e0563b86b47971e4"
 }

@@ -46,7 +46,7 @@ def build():
     normalize_text()
     files = {}
     for path in sorted(PUBLIC.rglob('*')):
-        if path.is_file() and 'products_raw' not in path.parts and path.name != 'release.json':
+        if path.is_file() and 'products_raw' not in path.parts and 'admin' not in path.parts and path.name not in {'release.json', '.assetsignore'}:
             files[path.relative_to(PUBLIC).as_posix()] = hashlib.sha256(path.read_bytes()).hexdigest()
     release_id = hashlib.sha256(json.dumps(files, sort_keys=True).encode()).hexdigest()[:16]
     (PUBLIC / 'release.json').write_bytes((json.dumps({'id': release_id, 'files': files}, sort_keys=True, indent=2) + '\n').encode('utf-8'))

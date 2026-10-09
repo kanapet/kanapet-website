@@ -26,6 +26,7 @@ jobs:
         run: |
           python3 tools/build_release.py
           python3 tools/check_confirmed_products.py
+          python3 tools/test_release_guards.py
       - name: Build and verify Insights
         run: |
           python3 tools/build_insights.py --check
