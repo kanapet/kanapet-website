@@ -1,3 +1,4 @@
+import {inspectImage,mediaFileName} from '../worker/image-policy.js';
 // Local-only media backend. No dependencies, cloud accounts, or production writes.
 import http from 'node:http';
 import {readFileSync,writeFileSync,existsSync,mkdirSync,renameSync,unlinkSync,statSync,createReadStream} from 'node:fs';
@@ -37,6 +38,7 @@ function validateItems(items){if(!Array.isArray(items)||items.length>80)fail(400
  if(!item||typeof item.id!=='string'||ids.has(item.id)||!['image','video'].includes(item.type)||!validSource(item.src,item.type))fail(400,'素材数据无效');ids.add(item.id);
  if(item.src.startsWith('/media-assets/')&&state.assets[item.src.slice(14)].type!==item.type)fail(400,'素材类型不匹配');
  const result={id:item.id,type:item.type,src:item.src,title:String(item.title||'').slice(0,120)};
+ if(item.src.startsWith('/media-assets/')){const a=state.assets[item.src.slice(14)];if(a.fileName)result.fileName=a.fileName;for(const k of ['width','height'])if(a[k])result[k]=a[k];}
  if(item.poster){if(!validSource(item.poster,'image'))fail(400,'视频封面无效');if(item.poster.startsWith('/media-assets/')&&state.assets[item.poster.slice(14)].type!=='image')fail(400,'封面必须是图片');result.poster=item.poster;}
  if(item.aspectRatio){const dims=String(item.aspectRatio).split('/').map(Number);if(dims.length!==2||!dims.every(n=>Number.isFinite(n)&&n>0&&n<100000))fail(400,'视频比例无效');result.aspectRatio=dims.join(' / ');}
  return result;
@@ -78,12 +80,12 @@ async function handle(req,res){
      if(!action&&req.method==='GET')return json(res,200,r);
      if(!action&&req.method==='PUT'){const data=await payload(req);const latest=record(slug);expectedRevision(req,latest);const items=validateItems(data.items);state.products[slug]={...latest,draft:{revision:latest.draft.revision+1,items}};audit(actor.email,'save-draft',slug);persist();return json(res,200,state.products[slug]);}
      if(action==='upload'&&req.method==='POST'){
-       const bytes=await body(req,100*1024*1024);const detected=sniff(bytes);if(detected.type==='image'&&bytes.length>10*1024*1024)fail(413,'单张图片最多10MB');
+       const bytes=await body(req,100*1024*1024);const detected=sniff(bytes);const dimensions=detected.type==='image'?inspectImage(bytes,detected.mime):{};
        // Check after the upload body is read to avoid concurrent writes losing items.
        const latest=record(slug);expectedRevision(req,latest);if(latest.draft.items.length>=80)fail(400,'每款产品最多80项素材');
-       const id=randomUUID();const file=id+detected.ext;writeFileSync(resolve(STORE,'assets',file),bytes);
-       state.assets[id]={...detected,file,slug,name:String(url.searchParams.get('name')||file).slice(0,120),size:bytes.length};
-       const item={id,type:detected.type,src:'/media-assets/'+id,title:state.assets[id].name};
+       const id=randomUUID();const file=mediaFileName(slug,detected.type,latest.draft.items.filter(i=>i.type===detected.type).length+1,id,detected.mime);writeFileSync(resolve(STORE,'assets',file),bytes);
+       state.assets[id]={...detected,file,slug,name:product(slug).name,size:bytes.length,fileName:file,...dimensions};
+       const item={id,type:detected.type,src:'/media-assets/'+id,title:state.assets[id].name,fileName:file,...dimensions};
        state.products[slug]={...latest,draft:{revision:latest.draft.revision+1,items:[...latest.draft.items,item]}};audit(actor.email,'upload',slug);persist();return json(res,201,state.products[slug]);
      }
      if(action==='publish'&&req.method==='POST'){expectedRevision(req,r);const items=validateItems(r.draft.items);if(!items.some(i=>i.type==='image'))fail(400,'至少保留一张产品图片');state.products[slug]={...r,published:{items,at:new Date().toISOString(),by:actor.email}};audit(actor.email,'publish',slug);cleanup();persist();return json(res,200,state.products[slug]);}
@@ -96,7 +98,7 @@ async function handle(req,res){
  if(asset){if(!['GET','HEAD'].includes(req.method))fail(405,'Method not allowed');const a=state.assets[asset[1]];if(!a||(!referenced(asset[1],true)&&!userSession(req)))fail(404,'素材不存在');
    const file=resolve(STORE,'assets',a.file);const size=statSync(file).size;let start=0,end=size-1;let status=200;
    if(req.headers.range){const m=/^bytes=(\d*)-(\d*)$/.exec(req.headers.range);if(!m||(!m[1]&&!m[2]))fail(416,'Invalid range');if(!m[1])start=Math.max(0,size-Number(m[2]));else {start=Number(m[1]);if(m[2])end=Math.min(end,Number(m[2]));}if(start>end||start>=size)fail(416,'Invalid range');status=206;}
-   const headers={'Content-Type':a.mime,'Content-Length':end-start+1,'Accept-Ranges':'bytes','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'};if(status===206)headers['Content-Range']=`bytes ${start}-${end}/${size}`;res.writeHead(status,headers);if(req.method==='HEAD')return res.end();return createReadStream(file,{start,end}).pipe(res);
+   const headers={'Content-Type':a.mime,'Content-Length':end-start+1,'Accept-Ranges':'bytes','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'};if(a.fileName)headers['Content-Disposition']=`inline; filename="${a.fileName}"`;if(status===206)headers['Content-Range']=`bytes ${start}-${end}/${size}`;res.writeHead(status,headers);if(req.method==='HEAD')return res.end();return createReadStream(file,{start,end}).pipe(res);
  }
  if(!['GET','HEAD'].includes(req.method))fail(405,'Method not allowed');
  let relative;try{relative=decodeURIComponent(path);}catch{fail(400,'Invalid path');}if(relative.endsWith('/'))relative+='index.html';const file=resolve(PUBLIC,'.'+relative);if(!file.startsWith(PUBLIC+sep))fail(403,'Forbidden');if(!existsSync(file)||!statSync(file).isFile())fail(404,'Not found');

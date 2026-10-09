@@ -1,3 +1,4 @@
+import {inspectImage,mediaFileName} from './image-policy.js';
 import catalog from '../public/data/products.json' with { type: 'json' };
 import videos from '../public/data/videos.json' with { type: 'json' };
 const keysCache=new Map();
@@ -40,6 +41,7 @@ async function validate(env,slug,items){if(!Array.isArray(items)||items.length>8
   fail(400,'素材来源无效');
  }
  await source(item.src,item.type);const clean={id:item.id,type:item.type,src:item.src,title:String(item.title||'').slice(0,120)};
+ if(item.src.startsWith('/media-assets/')){const meta=(await env.MEDIA_BUCKET.head('assets/'+item.src.slice(14)))?.customMetadata;if(meta?.fileName)clean.fileName=meta.fileName;for(const k of ['width','height'])if(Number(meta?.[k])>0)clean[k]=Number(meta[k]);}
  if(item.poster){await source(item.poster,'image');clean.poster=item.poster;}
  if(item.aspectRatio){const n=String(item.aspectRatio).split('/').map(Number);if(n.length!==2||!n.every(v=>Number.isFinite(v)&&v>0&&v<100000))fail(400,'比例无效');clean.aspectRatio=n.join(' / ');}
  checked.push(clean);
@@ -55,7 +57,7 @@ export async function handleMedia(request,env){
  if(asset){if(!['GET','HEAD'].includes(request.method))fail(405,'Method not allowed');const meta=await env.MEDIA_BUCKET.head('assets/'+asset[1]);if(!meta)fail(404,'素材不存在');const slug=meta.customMetadata?.slug;if(!slug)fail(404,'素材不存在');const r=await record(env,slug);
   if(!references(r.value.published,'/media-assets/'+asset[1])){await authenticate(request,env);if(!references(r.value.draft,'/media-assets/'+asset[1]))fail(404,'素材不存在');}
   let range;if(request.headers.has('Range')){const m=/^bytes=(\d*)-(\d*)$/.exec(request.headers.get('Range'));if(!m||(!m[1]&&!m[2]))fail(416,'Invalid range');if(!m[1])range={suffix:Number(m[2])};else{const start=Number(m[1]),end=m[2]?Math.min(Number(m[2]),meta.size-1):meta.size-1;if(start>end||start>=meta.size)fail(416,'Invalid range');range={offset:start,length:end-start+1};}}
-  const object=await env.MEDIA_BUCKET.get('assets/'+asset[1],range?{range}:undefined);if(!object)fail(404,'素材不存在');const headers=new Headers({'Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Accept-Ranges':'bytes','Content-Type':meta.httpMetadata?.contentType||'application/octet-stream'});let status=200;
+  const object=await env.MEDIA_BUCKET.get('assets/'+asset[1],range?{range}:undefined);if(!object)fail(404,'素材不存在');const headers=new Headers({'Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Accept-Ranges':'bytes','Content-Type':meta.httpMetadata?.contentType||'application/octet-stream'});if(meta.customMetadata?.fileName)headers.set('Content-Disposition',`inline; filename="${meta.customMetadata.fileName}"`);let status=200;
   if(object.range){const {offset,length}=object.range;headers.set('Content-Range',`bytes ${offset}-${offset+length-1}/${meta.size}`);headers.set('Content-Length',String(length));status=206;}else headers.set('Content-Length',String(meta.size));return new Response(request.method==='HEAD'?null:object.body,{status,headers});
  }
  const actor=await authenticate(request,env);
@@ -70,8 +72,8 @@ export async function handleMedia(request,env){
   if(!action&&request.method==='GET')return response((await record(env,slug)).value);
   if(!action&&request.method==='PUT'){const data=await payload(request);const items=await validate(env,slug,data.items);const r=await record(env,slug);revision(request,r);return response(await store(env,slug,r,{...r.value,draft:{revision:r.value.draft.revision+1,items},updatedBy:actor.email}));}
   if(action==='upload'&&request.method==='POST'){
-   product(slug);const bytes=await body(request,40*1024*1024);const kind=sniff(bytes);if(kind.type==='image'&&bytes.length>10*1024*1024)fail(413,'单张图片最多10MB');const r=await record(env,slug);revision(request,r);if(r.value.draft.items.length>=80)fail(400,'最多80项素材');const id=crypto.randomUUID();const item={id,type:kind.type,src:'/media-assets/'+id,title:String(url.searchParams.get('name')||'Product media').slice(0,120)};
-   await env.MEDIA_BUCKET.put('assets/'+id,bytes,{httpMetadata:{contentType:kind.mime},customMetadata:{slug,type:kind.type,uploadedBy:actor.email}});
+   product(slug);const bytes=await body(request,40*1024*1024);const kind=sniff(bytes);const dimensions=kind.type==='image'?inspectImage(bytes,kind.mime):{};const r=await record(env,slug);revision(request,r);if(r.value.draft.items.length>=80)fail(400,'最多80项素材');const id=crypto.randomUUID();const fileName=mediaFileName(slug,kind.type,r.value.draft.items.filter(i=>i.type===kind.type).length+1,id,kind.mime);const item={id,type:kind.type,src:'/media-assets/'+id,title:product(slug).name,fileName,...dimensions};
+   await env.MEDIA_BUCKET.put('assets/'+id,bytes,{httpMetadata:{contentType:kind.mime},customMetadata:{slug,type:kind.type,uploadedBy:actor.email,fileName,...Object.fromEntries(Object.entries(dimensions).map(([k,v])=>[k,String(v)]))}});
    try{return response(await store(env,slug,r,{...r.value,draft:{revision:r.value.draft.revision+1,items:[...r.value.draft.items,item]},updatedBy:actor.email}),201);}catch(error){await env.MEDIA_BUCKET.delete('assets/'+id);throw error;}
   }
   if(action==='publish'&&request.method==='POST'){const r=await record(env,slug);revision(request,r);const items=await validate(env,slug,r.value.draft.items);if(!items.some(i=>i.type==='image'))fail(400,'请至少保留一张产品图片');return response(await store(env,slug,r,{...r.value,published:{items,at:new Date().toISOString(),by:actor.email},draft:{...r.value.draft,revision:r.value.draft.revision+1}}));}

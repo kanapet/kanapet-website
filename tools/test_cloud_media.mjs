@@ -30,7 +30,11 @@ try{
  const endpoint='/api/admin/products/bird-650-pet-door';
  r=await req(endpoint);let record=await r.json();const baseline=record.draft.items;
  const png=readFileSync(new URL('../public/favicon-32.png',import.meta.url));
- r=await req(endpoint+'/upload?name=phone.png',{method:'POST',headers:{'If-Match':'0'},raw:png});assert.equal(r.status,201);record=await r.json();const item=record.draft.items.at(-1);
+ const oversized=Buffer.from(png);oversized.writeUInt32BE(2000,16);
+ r=await req(endpoint+'/upload',{method:'POST',headers:{'If-Match':'0'},raw:oversized});assert.equal(r.status,413,'Reject unprocessed dimensions');
+ const tooLarge=Buffer.alloc(512001);png.copy(tooLarge);
+ r=await req(endpoint+'/upload',{method:'POST',headers:{'If-Match':'0'},raw:tooLarge});assert.equal(r.status,413,'Reject photos over 500KB');
+ r=await req(endpoint+'/upload?name=phone.png',{method:'POST',headers:{'If-Match':'0'},raw:png});assert.equal(r.status,201);record=await r.json();const item=record.draft.items.at(-1);assert.match(item.fileName,/^bird-650-pet-door-image-\d+-[a-f0-9]+\.png$/);assert.equal(item.width,32);assert.equal(item.height,32);
  r=await req('/api/media/bird-650-pet-door',{auth:false});assert.ok(!(await r.json()).items.some(i=>i.id===item.id),'Unpublished draft must remain private');
  r=await req(item.src,{auth:false});assert.equal(r.status,401);
  r=await req(item.src,{auth:false,headers:{Cookie:'CF_Authorization='+jwt}});assert.equal(r.status,200,'Authenticated cookie must allow draft preview');

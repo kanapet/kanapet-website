@@ -29,7 +29,11 @@ try{
  res=await request(endpoint,{method:'PUT',headers:{'If-Match':'0'},data:{items:[{id:'x',type:'image',src:'javascript:alert(1)'}]}});assert.equal(res.status,400);
  res=await request(endpoint+'/upload',{method:'POST',headers:{'If-Match':'0'},raw:Buffer.from('invalid file')});assert.equal(res.status,415);
  const png=readFileSync(resolve(root,'public/favicon-32.png'));
- res=await request(endpoint+'/upload?name=phone-photo.png',{method:'POST',headers:{'If-Match':'0'},raw:png});assert.equal(res.status,201);record=await res.json();const item=record.draft.items.at(-1);
+ const oversized=Buffer.from(png);oversized.writeUInt32BE(2000,16);
+ res=await request(endpoint+'/upload',{method:'POST',headers:{'If-Match':'0'},raw:oversized});assert.equal(res.status,413,'Reject unprocessed dimensions');
+ const tooLarge=Buffer.alloc(512001);png.copy(tooLarge);
+ res=await request(endpoint+'/upload',{method:'POST',headers:{'If-Match':'0'},raw:tooLarge});assert.equal(res.status,413,'Reject photos over 500KB');
+ res=await request(endpoint+'/upload?name=phone-photo.png',{method:'POST',headers:{'If-Match':'0'},raw:png});assert.equal(res.status,201);record=await res.json();const item=record.draft.items.at(-1);assert.match(item.fileName,/^bird-650-pet-door-image-\d+-[a-f0-9]+\.png$/);assert.equal(item.width,32);assert.equal(item.height,32);
  res=await request(item.src,{auth:false});assert.equal(res.status,404);
  res=await request(item.src);assert.equal(res.status,200);assert.equal(res.headers.get('content-type'),'image/png');
  res=await request('/api/media/bird-650-pet-door',{auth:false});assert.ok(!(await res.json()).items.some(i=>i.id===item.id));
