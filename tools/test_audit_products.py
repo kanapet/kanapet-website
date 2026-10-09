@@ -209,6 +209,14 @@ class ProductAuditTests(unittest.TestCase):
         self.write('sitemap.xml', '<urlset/>')
         self.assertIn('SITEMAP_PRODUCTS', self.codes())
 
+    def test_sitemap_directory_page(self):
+        (self.pub / 'insights').mkdir()
+        self.write('insights/index.html', '<h1>Insights</h1>')
+        self.write('sitemap.xml', f'<urlset><url><loc>{self.url}</loc></url><url><loc>{SITE}/insights/</loc></url></urlset>')
+        self.assertNotIn('SITEMAP_URL', self.codes())
+        (self.pub / 'insights/index.html').unlink()
+        self.assertIn('SITEMAP_URL', self.codes())
+
     def test_catalog_and_llms_drift(self):
         self.write('products.html', '<div></div>')
         self.write('llms.txt', f'- [Wrong]({self.url}) — size wrong, MOQ 100 pcs, ABS')

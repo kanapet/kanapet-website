@@ -1,7 +1,11 @@
 videos/*
+!public/videos/
+!public/videos/kanapet-factory-tour.mp4
 .git
 .dev.vars
 .wrangler/
+outputs/
+__pycache__/
 
 # 设计源文件不入库（2026-09-20 整理移出）
 public/images/products_raw/

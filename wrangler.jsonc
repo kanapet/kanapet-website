@@ -8,6 +8,7 @@
   // forwards inquiries to Feishu using secrets configured in the dashboard
   // (FEISHU_WEBHOOK_URL, optional FEISHU_SECRET). Never hardcode them here.
   "name": "kanapet-website",
+  "build": { "command": "python3 tools/prepare_production.py" },
   "main": "worker/index.js",
   "compatibility_date": "2025-04-01",
   "assets": {

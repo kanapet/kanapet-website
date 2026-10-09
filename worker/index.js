@@ -275,6 +275,16 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     const productionHost = url.hostname === 'kanapet.com' || url.hostname === 'www.kanapet.com';
+    // Insights uses directory URLs while existing pages keep .html URLs.
+    if (['GET', 'HEAD'].includes(request.method) && /^\/insights(?:\/|$)/.test(url.pathname)) {
+      let canonicalPath = url.pathname.replace(/\/index\.html$/, '/');
+      if (!canonicalPath.endsWith('/') && !canonicalPath.split('/').pop().includes('.')) canonicalPath += '/';
+      if (canonicalPath !== url.pathname) {
+        url.pathname = canonicalPath;
+        if (productionHost) { url.protocol = 'https:'; url.hostname = 'www.kanapet.com'; }
+        return Response.redirect(url.href, 301);
+      }
+    }
     let scheme = url.protocol.replace(':', '');
     try {
       scheme = JSON.parse(request.headers.get('CF-Visitor') || '{}').scheme || scheme;
@@ -333,6 +343,13 @@ export default {
     }
 
     // Everything else: static assets (404s handled by the assets layer).
-    return serveAsset(request, env);
+    const response = await serveAsset(request, env);
+    const headers = new Headers(response.headers);
+    const versionedAsset = /\.(?:js|css)$/.test(url.pathname) && /^[a-f0-9]{12}$/.test(url.searchParams.get('v') || '');
+    if (versionedAsset) headers.set('Cache-Control', 'public, max-age=31536000, immutable');
+    else if (/\.(?:html|json|js|css)$/.test(url.pathname) || url.pathname.endsWith('/')) {
+      headers.set('Cache-Control', 'no-cache, must-revalidate');
+    }
+    return new Response(response.body, {status: response.status, statusText: response.statusText, headers});
   }
 };

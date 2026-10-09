@@ -333,6 +333,13 @@ def sync_page(source, product, categories):
         f"{slug} primary spec table",
         re.DOTALL,
     )
+    if product.get('colors'):
+        swatch_html = swatches(product)
+        for index, color in enumerate(product['colors']):
+            marker = 'data-color="' + text(color) + '"'
+            attrs = ' onclick="switchProductColor(\'' + product['id'] + '\', \'' + color + '\')" role="button" tabindex="0" onkeydown="if(event.key===\'Enter\'||event.key===\' \'){event.preventDefault();this.click();}"'
+            swatch_html = swatch_html.replace(marker, marker + attrs, 1)
+        source = re.sub(r'<div class="color-swatches">.*?</div>', lambda m: swatch_html, source, count=1, flags=re.DOTALL)
     material = product.get("material") or "Material specifications available on request."
     source = replace_once(
         source,
@@ -355,13 +362,17 @@ def sync_page(source, product, categories):
         )
 
     for variant in categories["_products"]:
-        variant_slug = re.escape(variant["slug"])
-        value = text(format_moq(variant.get("moq")) or "Contact")
-        pattern = (
-            r'(<tr style="[^"]*">\s*<td>.*?</td>\s*<td>.*?</td>\s*<td>).*?'
-            r'(</td>\s*<td><a href="/product/' + variant_slug + r'\.html")'
-        )
-        source = re.sub(pattern, lambda match: match.group(1) + value + match.group(2), source, flags=re.DOTALL)
+        pattern = r'<tr style="[^"]*">(?:(?!</tr>).)*href="/product/' + re.escape(variant['slug']) + r'\.html"(?:(?!</tr>).)*</tr>'
+        def refresh_variant(match):
+            row = match.group()
+            cells = list(re.finditer(r'<td>.*?</td>', row, re.DOTALL))
+            values = [text(variant['name']), text(format_size(variant.get('size'))), text(format_moq(variant.get('moq')) or 'Contact')]
+            if len(cells) != 4:
+                return row
+            for cell, value in reversed(list(zip(cells[:3], values))):
+                row = row[:cell.start()] + '<td>' + value + '</td>' + row[cell.end():]
+            return row
+        source = re.sub(pattern, refresh_variant, source, flags=re.DOTALL)
 
         # Related-product and accessory cards are prerendered into many pages.
         # Keep their image paths aligned when a product image is replaced or renamed.
@@ -377,6 +388,7 @@ def sync_page(source, product, categories):
 
 
 COLOR_MAP = {
+    'light green': '#9bdcd2', 'light blue': '#79d2e5', 'dark blue': '#2369b5',
     "green": "#7cb342", "blue": "#4a90d9", "yellow": "#ffd54f",
     "white": "#fff", "black": "#222", "pink": "#f48fb1", "grey": "#999",
     "gray": "#999", "purple": "#9c6ade", "orange": "#f5a623", "red": "#e55",
@@ -391,7 +403,7 @@ def swatches(product):
     for color in colors:
         key = color.lower()
         special = " transparent" if key == "transparent" else ""
-        style = "cursor:pointer;" if special else f"background-color:{COLOR_MAP.get(key, '#ddd')};cursor:pointer;"
+        style = "cursor:pointer;" if special else f"background-color:{(product.get('color_swatches') or {}).get(color, COLOR_MAP.get(key, '#ddd'))};cursor:pointer;"
         spans.append(
             f'<span class="color-swatch{special}" style="{style}" title="{text(color)}" data-color="{text(color)}"></span>'
         )
@@ -536,3 +548,4 @@ def main():
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

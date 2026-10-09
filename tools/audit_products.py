@@ -563,6 +563,8 @@ class Audit:
                 for value in locs:
                     parsed = urlparse(value)
                     target = self.public / (parsed.path.lstrip('/') or 'index.html')
+                    if parsed.path.endswith('/'):
+                        target = self.public / parsed.path.lstrip('/') / 'index.html'
                     if parsed.scheme != 'https' or parsed.netloc != 'www.kanapet.com' or parsed.query or parsed.fragment or not target.is_file():
                         self.issue('SITEMAP_URL', sm_path, f'invalid canonical/static URL: {value}')
             except ET.ParseError as exc:

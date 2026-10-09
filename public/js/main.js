@@ -11,6 +11,9 @@ const COLOR_MAP = {
   'Blue': '#4a90d9',
   'Pink': '#f8b4c4',
   'Green': '#7cb342',
+  'Light Green': '#9bdcd2',
+  'Light Blue': '#79d2e5',
+  'Dark Blue': '#2369b5',
   'Yellow': '#ffd54f',
   'Purple': '#9c27b0',
   'Gray': '#9e9e9e',
@@ -41,11 +44,11 @@ function setMainImage(img, src, alt) {
 }
 
 // Render color swatches HTML
-function renderSwatches(colors, size = 'small', activeColor = null, productId = null) {
+function renderSwatches(colors, size = 'small', activeColor = null, productId = null, palette = {}) {
   if (!colors || colors.length === 0) return '';
   const sizeClass = size === 'large' ? '' : '';
   const swatches = colors.map((c, i) => {
-    const colorVal = COLOR_MAP[c] || '#cccccc';
+    const colorVal = palette[c] || COLOR_MAP[c] || '#cccccc';
     const isTransparent = c === 'Transparent' || colorVal === 'transparent';
     const isMulti = c === 'Multi-color' || colorVal === 'multi';
     const cls = isTransparent ? 'color-swatch transparent' : (isMulti ? 'color-swatch multi' : 'color-swatch');
@@ -155,6 +158,8 @@ function formatSize(size) {
   s = s.replace(/（/g, '(').replace(/）/g, ')');
   
   // 如果是 W×D×H 纯数字格式，添加单位和inch换算
+  if (/\bcm\s*\([^)]*\bin\)/i.test(s)) return s;
+
   const dimMatch = s.match(/^([\d.]+)\s*×\s*([\d.]+)\s*×\s*([\d.]+)/);
   if (dimMatch) {
     const w = parseFloat(dimMatch[1]);
@@ -255,6 +260,14 @@ function catalogLabel(product) {
   return subcategory ? `${group.label} · ${subcategory.label}` : group.label;
 }
 
+function updateCatalogCategoryCounts() {
+  document.querySelectorAll('[data-category-count]').forEach(el => {
+    const group = catalogGroup(el.dataset.categoryCount);
+    const count = products.filter(product => product.accessory_type !== 'dedicated' && group.matches(product)).length;
+    el.textContent = `${count} product${count === 1 ? '' : 's'}`;
+  });
+}
+
 // Product card HTML
 function productCard(p, variantCount = 1, featured = false) {
   const catName = catalogLabel(p);
@@ -271,7 +284,7 @@ function productCard(p, variantCount = 1, featured = false) {
         <div class="product-meta">${formatSize(p.size)}</div>
         <div class="product-meta">${catName}</div>
         ${featured ? '<div class="product-programs"><span>Wholesale</span><span>Private Label</span></div>' : ''}
-        ${renderSwatches(p.colors)}
+        ${renderSwatches(p.colors, 'small', null, null, p.color_swatches)}
         <div class="product-moq">${p.moq ? `MOQ: ${formatMoq(p.moq)}` : 'Contact for MOQ'}</div>
         <a href="/product/${p.slug}.html" class="btn btn-primary">Request Quote</a>
       </div>
@@ -549,7 +562,7 @@ function renderProductDetail() {
       ${p.colors && p.colors.length > 1 ? `
       <div class="product-colors">
         <h3>Available Colors</h3>
-        ${renderSwatches(p.colors, 'large', p.colors[0], p.id)}
+        ${renderSwatches(p.colors, 'large', p.colors[0], p.id, p.color_swatches)}
       </div>` : ''}
       ${p.material_options && p.material_options.length > 1 ? `
       <div class="product-colors">
@@ -660,11 +673,16 @@ function renderRelatedProducts(product) {
 // Render compatible accessories section for cage products
 function renderCompatibleAccessories(product) {
   // Only show for cage products
-  if (!product.category || !product.category.includes('cage')) return '';
+  const accessoryCategory = {
+    'bird-cages': 'bird-accessories',
+    'bird-travel': 'bird-accessories',
+    'hamster-cages': 'hamster-accessories'
+  }[product.category];
+  if (!accessoryCategory) return '';
   
   // Find dedicated accessories compatible with this product
   const compatible = products.filter(p => 
-    p.accessory_type === 'dedicated' && 
+    p.category === accessoryCategory && p.accessory_type === 'dedicated' && 
     p.compatible_with && 
     p.compatible_with.includes(product.id)
   );
@@ -672,7 +690,8 @@ function renderCompatibleAccessories(product) {
   // Also find recommended universal accessories (same category)
   const recommended = products.filter(p => 
     p.accessory_type === 'universal' && 
-    p.category === 'hamster-accessories' &&
+    p.category === accessoryCategory &&
+    (!p.compatible_with?.length || p.compatible_with.includes(product.id)) &&
     !p.id.includes('shelf')
   ).slice(0, 4);
   
@@ -687,7 +706,7 @@ function renderCompatibleAccessories(product) {
         ${compatible.map(acc => `
           <div class="accessory-card" onclick="window.location.href='/product/${acc.slug}.html'" ${KEYBOARD_LINK_ATTRS}>
             <div class="accessory-image">
-              <img src="${acc.image}" alt="${acc.name}" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\\'placeholder\\'>📦</div>'">
+              <img src="${absImg(acc.image)}" alt="${acc.name}" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\\'placeholder\\'>📦</div>'">
             </div>
             <div class="accessory-info">
               <h3>${acc.name}</h3>
@@ -707,7 +726,7 @@ function renderCompatibleAccessories(product) {
         ${recommended.map(acc => `
           <div class="accessory-card" onclick="window.location.href='/product/${acc.slug}.html'" ${KEYBOARD_LINK_ATTRS}>
             <div class="accessory-image">
-              <img src="${acc.image}" alt="${acc.name}" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\\'placeholder\\'>📦</div>'">
+              <img src="${absImg(acc.image)}" alt="${acc.name}" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\\'placeholder\\'>📦</div>'">
             </div>
             <div class="accessory-info">
               <h3>${acc.name}</h3>
@@ -1012,6 +1031,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 
   await loadData();
+  updateCatalogCategoryCounts();
   renderFeatured('featured-products', 8);
   setupFilters();
   renderProductDetail();

@@ -41,3 +41,7 @@ push 后等待约 1-2 分钟，然后：
 ```bash
 curl -s -o /dev/null -w "%{http_code}" https://<正式域名>/   # 期望 200
 ```
+
+## Unified publishing
+
+Follow `docs/publishing.md`. Production publishing is Git main -> Cloudflare Git Builds only. Local Wrangler deployment and outputs/ checkouts must never publish. Generate facts with `python tools/build_release.py`; preserve user-confirmed records in `content/confirmed-products.json`.

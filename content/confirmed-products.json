@@ -1,0 +1,366 @@
+{
+  "products": {
+    "bird-travel-23": {
+      "size": "23*16.5*16.5",
+      "meas": "49*36*51.5",
+      "net_weight": "7.6 (20 pcs)",
+      "gross_weight": "8.6 (20 pcs)",
+      "cbm": "0.09",
+      "pcs_per_ctn": "20",
+      "moq": 100,
+      "material": "Iron Wire / 304 Stainless Steel (optional)",
+      "notes": "Iron wire construction. MOQ: 100 pcs per color. Sold by full carton only. Net and gross weights are totals for 20 pieces per carton.",
+      "colors": [
+        "Green"
+      ],
+      "image": "images/products/bird-travel-cage-23.jpg",
+      "gallery": [
+        "images/products/gallery/23-travel-ss-1.jpg",
+        "images/products/gallery/23-travel-ss-2.jpg",
+        "images/products/gallery/23-travel-ss-3.jpg"
+      ]
+    },
+    "bird-travel-26": {
+      "size": "26*20*17",
+      "meas": "70*55*36.5",
+      "net_weight": "9 (20 pcs)",
+      "gross_weight": "10.5 (20 pcs)",
+      "cbm": "0.14",
+      "pcs_per_ctn": "20",
+      "moq": 100,
+      "material": "Iron Wire / 304 Stainless Steel (optional)",
+      "notes": "Iron wire construction. MOQ: 100 pcs per color. Sold by full carton only. Net and gross weights are totals for 20 pieces per carton.",
+      "colors": [
+        "Green"
+      ],
+      "image": "images/products/bird-travel-cage-26.jpg",
+      "gallery": [
+        "images/products/gallery/26-travel-ss-1.jpg",
+        "images/products/gallery/26-travel-ss-2.jpg",
+        "images/products/gallery/26-travel-ss-3.jpg"
+      ]
+    },
+    "bird-travel-30": {
+      "size": "30*20*23",
+      "meas": "73*62*44",
+      "net_weight": "14.1 (20 pcs)",
+      "gross_weight": "14.6 (20 pcs)",
+      "cbm": "0.20",
+      "pcs_per_ctn": "20",
+      "moq": 100,
+      "material": "Iron Wire / 304 Stainless Steel (optional)",
+      "notes": "Iron wire construction. MOQ: 100 pcs per color. Sold by full carton only.",
+      "colors": [
+        "Green"
+      ],
+      "image": "images/products/bird-travel-cage-30.jpg",
+      "gallery": [
+        "images/products/gallery/30-travel-scene-1.jpg",
+        "images/products/gallery/30-travel-scene-2.jpg",
+        "images/products/gallery/30-travel-scene-3.jpg"
+      ]
+    },
+    "bird-travel-42": {
+      "size": "42 × 28 × 37 cm (16.53 × 11.02 × 14.56 in)",
+      "meas": "43 × 31 × 16 cm (16.92 × 12.2 × 6.29 in)",
+      "net_weight": "1.94",
+      "gross_weight": "2.3",
+      "cbm": "0.0213",
+      "pcs_per_ctn": "1",
+      "moq": "50 pcs per color",
+      "material": "HIPS + ABS + plastic-sprayed iron wire / 304 stainless steel option",
+      "notes": "Iron wire construction. Each product is individually packed in one carton. MOQ: 50 pcs per color.",
+      "colors": [
+        "Green",
+        "Blue",
+        "Yellow"
+      ],
+      "image": "images/products/bird-travel-cage-42.jpg",
+      "gallery": [
+        "images/products/gallery/42-travel-scene-1.jpg",
+        "images/products/gallery/42-travel-scene-2.jpg",
+        "images/products/gallery/42-travel-ss-1.jpg",
+        "images/products/gallery/42-travel-ss-2.jpg"
+      ]
+    },
+    "bird-bathroom-small": {
+      "size": "13*12*13",
+      "meas": "69*47*30",
+      "net_weight": "0.122",
+      "gross_weight": "29 (180 sets, 2 cartons total)",
+      "cbm": "",
+      "pcs_per_ctn": "",
+      "moq": "180 pcs per color",
+      "material": "ABS+PET",
+      "notes": "MOQ: 180 pcs per color. One complete batch contains 180 sets packed in 2 cartons: Carton A contains 180 top lids and Carton B contains 180 bottom bases. Combined gross weight for both cartons is 29 kg. Complete batches only.",
+      "colors": [
+        "White",
+        "Green",
+        "Blue",
+        "Yellow",
+        "Pink"
+      ],
+      "color_images": {
+        "White": "images/products/bird-bathroom-small.jpg",
+        "Pink": "images/products/color/bird-bathroom-small_pink.jpg",
+        "Yellow": "images/products/color/bird-bathroom-small_yellow.jpg",
+        "Green": "images/products/color/bird-bathroom-small_green.jpg",
+        "Blue": "images/products/color/bird-bathroom-small_blue.jpg"
+      },
+      "image": "images/products/bird-bath-47-main.jpg",
+      "gallery": [
+        "images/products/gallery/bird-bath-47-scene-1.jpg",
+        "images/products/gallery/bird-bath-47-scene-2.jpg",
+        "images/products/gallery/bird-bath-47-scene-3.jpg",
+        "images/products/gallery/bird-bath-47-scene-4.jpg"
+      ]
+    },
+    "hamster-wheel-17cm": {
+      "size": "16*16*7",
+      "meas": "69*45*30",
+      "net_weight": "0.138",
+      "gross_weight": "7.3",
+      "cbm": "",
+      "pcs_per_ctn": "35",
+      "moq": "105 sets per color (3 cartons)",
+      "material": "ABS + Phenol-modified + Bearing Steel",
+      "notes": "Default color is white. Custom colors available for bulk orders. Packed 35 sets per master carton without individual packaging. Gross weight is for one full master carton. MOQ: 3 cartons per color, equivalent to 105 sets per color. Sold by full carton only.",
+      "colors": [
+        "White",
+        "Blue",
+        "Pink",
+        "Purple"
+      ],
+      "color_images": {
+        "White": "images/products/color/hamster-wheel-17cm_white-main.jpg",
+        "Blue": "images/products/color/hamster-wheel-17cm_blue-main.jpg",
+        "Pink": "images/products/color/hamster-wheel-17cm_pink-main.jpg",
+        "Purple": "images/products/color/hamster-wheel-17cm_purple-main.jpg"
+      },
+      "image": "images/products/color/hamster-wheel-17cm_white-main.jpg",
+      "gallery": [
+        "images/products/color/hamster-wheel-17cm_blue-main.jpg",
+        "images/products/color/hamster-wheel-17cm_pink-main.jpg",
+        "images/products/color/hamster-wheel-17cm_purple-main.jpg",
+        "images/products/gallery/hamster-wheel-17cm-bracket-01.png",
+        "images/products/gallery/hamster-wheel-17cm-bracket-02.jpg",
+        "images/products/gallery/hamster-wheel-17cm-bracket-03.jpg",
+        "images/products/gallery/hamster-wheel-17cm-bracket-04.jpg",
+        "images/products/gallery/hamster-wheel-17cm-bracket-05.jpg",
+        "images/products/gallery/hamster-wheel-17cm-bracket-06.jpg"
+      ]
+    },
+    "hamster-wheel-21cm": {
+      "size": "20*20*9",
+      "meas": "69*45*30",
+      "net_weight": "0.233",
+      "gross_weight": "6.3",
+      "cbm": "",
+      "pcs_per_ctn": "18",
+      "moq": "54 sets per color (3 cartons)",
+      "material": "ABS + Phenol-modified + Bearing Steel",
+      "notes": "Default color is white. Custom colors are available for bulk orders. Packed 18 sets per master carton without individual packaging. Gross weight is for one full master carton. MOQ: 3 cartons per color, equivalent to 54 sets per color. Sold by full carton only.",
+      "colors": [
+        "White",
+        "Blue",
+        "Pink",
+        "Purple"
+      ],
+      "color_images": {
+        "White": "images/products/color/hamster-wheel-21cm_white-main.jpg",
+        "Blue": "images/products/color/hamster-wheel-21cm_blue-main.jpg",
+        "Pink": "images/products/color/hamster-wheel-21cm_pink-main.jpg",
+        "Purple": "images/products/color/hamster-wheel-21cm_purple-main.jpg"
+      },
+      "image": "images/products/color/hamster-wheel-21cm_white-main.jpg",
+      "gallery": [
+        "images/products/color/hamster-wheel-21cm_blue-main.jpg",
+        "images/products/color/hamster-wheel-21cm_pink-main.jpg",
+        "images/products/color/hamster-wheel-21cm_purple-main.jpg",
+        "images/products/gallery/hamster-wheel-17cm-bracket-01.png",
+        "images/products/gallery/hamster-wheel-17cm-bracket-02.jpg",
+        "images/products/gallery/hamster-wheel-17cm-bracket-03.jpg",
+        "images/products/gallery/hamster-wheel-17cm-bracket-04.jpg",
+        "images/products/gallery/hamster-wheel-17cm-bracket-05.jpg",
+        "images/products/gallery/hamster-wheel-17cm-bracket-06.jpg"
+      ]
+    },
+    "hamster-wheel-27cm": {
+      "size": "26*10*22.5",
+      "meas": "33*31*20.5",
+      "net_weight": "0.95",
+      "gross_weight": "1.5",
+      "cbm": "",
+      "pcs_per_ctn": "1",
+      "moq": 100,
+      "material": "PC + ABS + Acrylic + Bearing Steel",
+      "notes": "Multiple colors available. Sold by full carton only.",
+      "colors": [
+        "Transparent"
+      ],
+      "image": "images/products/hamster-wheel-27cm-v3.jpg",
+      "gallery": [
+        "images/products/gallery/hamster-wheel-27cm-detail-01.jpg",
+        "images/products/gallery/hamster-wheel-27cm-detail-02.jpg",
+        "images/products/gallery/hamster-wheel-27cm-detail-03.jpg",
+        "images/products/gallery/hamster-wheel-27cm-detail-04.jpg"
+      ]
+    },
+    "hamster-running-disc": {
+      "size": "18*18*12",
+      "meas": "69*45*30",
+      "net_weight": "10 (100 pcs)",
+      "gross_weight": "12",
+      "cbm": "",
+      "pcs_per_ctn": "100",
+      "moq": "100 pcs per color",
+      "material": "PC + ABS + Bearing Steel",
+      "notes": "Sold by full carton only, 100pcs per color. No individual carton packaging. Net and gross weights are for one full carton of 100 pieces. Custom packaging available upon request.",
+      "colors": [
+        "White",
+        "Pink",
+        "Purple",
+        "Light Green",
+        "Light Blue",
+        "Dark Blue",
+        "Black"
+      ],
+      "color_images": {
+        "White": "images/products/color/hamster-running-disc_white.jpg",
+        "Pink": "images/products/color/hamster-running-disc_pink-v2.jpg",
+        "Purple": "images/products/color/hamster-running-disc_purple-v2.jpg",
+        "Light Blue": "images/products/color/hamster-running-disc_light-blue-v2.jpg",
+        "Dark Blue": "images/products/color/hamster-running-disc_dark-blue-v2.jpg",
+        "Black": "images/products/color/hamster-running-disc_black-v2.jpg",
+        "Light Green": "images/products/color/hamster-running-disc_light-green-v2.jpg"
+      },
+      "color_swatches": {
+        "White": "#ffffff",
+        "Pink": "#f3b5c9",
+        "Purple": "#d69adf",
+        "Light Green": "#9bdcd2",
+        "Light Blue": "#70cbdc",
+        "Dark Blue": "#2676bc",
+        "Black": "#202020"
+      },
+      "image": "images/products/hamster-running-disc-v4.jpg",
+      "gallery": [
+        "images/products/gallery/hamster-running-disc-pink-hamster.jpg",
+        "images/products/gallery/hamster-running-disc-mint-components.jpg",
+        "images/products/gallery/hamster-running-disc-mint-back.jpg",
+        "images/products/gallery/hamster-running-disc-mint-side.jpg"
+      ]
+    },
+    "hamster-ball-180": {
+      "size": "17*17*17.5",
+      "meas": "69*47*30",
+      "net_weight": "0.222",
+      "gross_weight": "15",
+      "cbm": "",
+      "pcs_per_ctn": "32",
+      "moq": 320,
+      "material": "PET",
+      "notes": "Comes with screw accessory pack. Packed 32 pcs per master carton. MOQ: 320 pcs per model, equivalent to 10 full cartons.",
+      "colors": [
+        "Transparent"
+      ],
+      "image": "images/products/hamster-ball-180-v4.jpg",
+      "gallery": [
+        "images/products/hamster-ball-180-v3.jpg"
+      ]
+    },
+    "hamster-ball-270": {
+      "size": "27*27*27",
+      "meas": "29*29*18",
+      "net_weight": "0.698",
+      "gross_weight": "1.2",
+      "cbm": "",
+      "pcs_per_ctn": "1",
+      "moq": 100,
+      "material": "PET",
+      "notes": "Comes with screw accessory pack. Sold by full carton only.",
+      "colors": [
+        "Transparent"
+      ],
+      "image": "images/products/hamster-ball-270-v4.jpg",
+      "gallery": [
+        "images/products/gallery/hamster-ball-270-hamster.jpg",
+        "images/products/gallery/hamster-ball-270-components.jpg"
+      ]
+    },
+    "hamster-bathroom-18cm": {
+      "size": "17.5*13*11",
+      "meas": "30*23*23",
+      "net_weight": "8 (50 pcs)",
+      "gross_weight": "9.5",
+      "cbm": "",
+      "pcs_per_ctn": "50",
+      "moq": 250,
+      "material": "PET",
+      "notes": "Multiple colors available. Packed 50 pcs per master carton. MOQ: 250 pcs per model, equivalent to 5 full cartons. No individual packaging. Net and gross weights are for one full carton of 50 pieces.",
+      "colors": [
+        "Transparent",
+        "Blue",
+        "Green",
+        "Pink"
+      ],
+      "image": "images/products/hamster-bathroom-18cm-v3.jpg",
+      "gallery": []
+    },
+    "hamster-external-bathroom": {
+      "size": "16*13*11",
+      "meas": "15.5*13*8",
+      "net_weight": "0.118",
+      "gross_weight": "13",
+      "cbm": "",
+      "pcs_per_ctn": "100",
+      "moq": 200,
+      "material": "PET",
+      "notes": "Multiple colors available. Packed 100 pcs per master carton. MOQ: 200 pcs per model, equivalent to 2 full cartons. Each piece has an individual carton. The listed carton dimensions are for the individual carton; gross weight is for one master carton of 100 pieces.",
+      "colors": [
+        "Transparent",
+        "Blue",
+        "Green",
+        "Pink"
+      ],
+      "image": "images/products/hamster-external-bathroom-v3.jpg",
+      "gallery": []
+    }
+  },
+  "images": {
+    "images/products/hamster-running-disc-v4.jpg": "03200ce7acee6ca28465c1773fa27cd77b648e3b84cdd8d15668a45b78af83d5",
+    "images/products/hamster-running-disc-v4.webp": "ef12100095f529cfe74505718fed92945b9ef18d62259ffd3934907d1885d0b5",
+    "images/products/gallery/hamster-running-disc-pink-hamster.jpg": "297458c2f66c634ad0a1ff90da5b511ab7b631a6a9b34e0da62a3c2b53188f43",
+    "images/products/gallery/hamster-running-disc-pink-hamster.webp": "54c7fa219e9266c2a54b89675a15d8bcca8883b8af97e7b760d88d959aebcdc1",
+    "images/products/gallery/hamster-running-disc-mint-components.jpg": "d85c58aba2a8cd037d25edcd0a010d6fccd60cad974fafddb92a5a0fa247f15b",
+    "images/products/gallery/hamster-running-disc-mint-components.webp": "8c55764156a0507a8b6f69ace448a106aed956959848c84ef1914376d65ba5bf",
+    "images/products/gallery/hamster-running-disc-mint-back.jpg": "58bccd67d61ae9a63f04b2f11a94a12afe7811d00285fd30c8921aa192f2dac7",
+    "images/products/gallery/hamster-running-disc-mint-back.webp": "48d399c322d35e27357985bd8a752230e1352d66896ce2cb4a610839f160fcaf",
+    "images/products/gallery/hamster-running-disc-mint-side.jpg": "fd8e0e336cce608ea0e2bcad99086d16c17772aafc00a90cfc43fc750664d3b4",
+    "images/products/gallery/hamster-running-disc-mint-side.webp": "2bc9a8272a770b609eadb07932d8939bf19f08abec0f4ab2d11acc013e81f4d7",
+    "images/products/color/hamster-running-disc_white.jpg": "f66dfe760a2362f4b1df0d23732abeb4d12482d8d8829596d66d2493b58debed",
+    "images/products/color/hamster-running-disc_white.webp": "d726f5a9609b38c0ac282bae832eda6afff730d9c9571a5bb8dedc90eb0ebc15",
+    "images/products/color/hamster-running-disc_pink-v2.jpg": "2a293362c958432e12045164eba452b0ccf36876675b89c4380a66cb5284bddb",
+    "images/products/color/hamster-running-disc_pink-v2.webp": "829b437c7625e42a72bf8bc8d65ee02e094cffec03b24f9e19760e870daf4ac6",
+    "images/products/color/hamster-running-disc_purple-v2.jpg": "65abc75abbe8ad75c1a8db80a117bf99b4e6bdd107baf7287c52fa7d0e2b6c50",
+    "images/products/color/hamster-running-disc_purple-v2.webp": "3dbc5040d34777fe35adb023f657f53c8caed43dc7496b2c1d80de02e3fc5ffe",
+    "images/products/color/hamster-running-disc_light-blue-v2.jpg": "fc71fee65b29ee2ad565a4289a6f59dbfe7e1872ff1aa7955bcf4a4a74697c68",
+    "images/products/color/hamster-running-disc_light-blue-v2.webp": "52eb9d354891098cc57261e84d8407b11d5201170845317a19465d16aab383f1",
+    "images/products/color/hamster-running-disc_dark-blue-v2.jpg": "4628d24347b7be6c947de9749b894c44a19f814bea0e043724a6b28a40cf9764",
+    "images/products/color/hamster-running-disc_dark-blue-v2.webp": "f97a1c560d5a98d6d049e7b3264a3dd4384bbc4354ac55056d03dd890a0a234c",
+    "images/products/color/hamster-running-disc_black-v2.jpg": "733659c9f5ffde7fde25de02db4b1dce170fdafc4bf2356be7e4556e32af792f",
+    "images/products/color/hamster-running-disc_black-v2.webp": "78614d44ed4737ad8d368cec4fe3b00740bd1440d3e684cb337903caaa06c5b0",
+    "images/products/color/hamster-running-disc_light-green-v2.jpg": "18c824f0c3f2899fe974c042144abf759f8f8e9ffd92a0e9074b1b8a8a69533f",
+    "images/products/color/hamster-running-disc_light-green-v2.webp": "97dec5b3281d1ab278edf6c74bb7b73e3f074e947c69033372049bdc4ceb0ecf",
+    "images/products/hamster-ball-180-v4.jpg": "b3697ff243bcec8a7f261340dd469cdccc5348d8e0cc78b8a2b4a6ae74a0ab99",
+    "images/products/hamster-ball-180-v4.webp": "228f078f2f77c7768bdcae074b0e9e0c4e1acf456ab2adac3ce6786125b1f89a",
+    "images/products/hamster-ball-180-v3.jpg": "d1946c4383b06e15ba1d1ec634bfbf380cec0d27a3f68f1788cf1b12e850afc2",
+    "images/products/hamster-ball-180-v3.webp": "c534b4411bd5f84cf8c8f00783193bfbb57fbc70e0cff36ade5fe0aba8186fd2",
+    "images/products/hamster-ball-270-v4.jpg": "4a9b5bafd176a6c5cf03f9f2b8998f2ec5620514b57c72369ae15414c257d2cc",
+    "images/products/hamster-ball-270-v4.webp": "d57cc6d0c7756596aca970fa219a5a442a049b6a16ab56e2b43bcef9d50b78ad",
+    "images/products/gallery/hamster-ball-270-hamster.jpg": "4b33a15e604ab039846b1494101fd7e8be531a30f11788c5b6eee3830ebbdc70",
+    "images/products/gallery/hamster-ball-270-hamster.webp": "8f5c600b8837f77cdb3f414a172054fb7ed051a0e4c1b2588d497d76ec086d50",
+    "images/products/gallery/hamster-ball-270-components.jpg": "1f0d0b3f613deaa4a145dbfc18abe49a55971ad957d78ecc996fce27fb4ddf36",
+    "images/products/gallery/hamster-ball-270-components.webp": "c4ebc05cae8491e6da88c2baabdbac0d10c92bf1680768de7f9e081e920c6cd4"
+  }
+}
