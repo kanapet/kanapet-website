@@ -13,6 +13,8 @@ for script, args in [
     ('test_release_guards.py', []),
     ('build_insights.py', ['--check']),
     ('audit_insights.py', []),
+    ('test_insights.py', []),
+    ('test_audit_products.py', []),
     ('validate_data.py', []),
     ('audit_products.py', []),
     ('audit_accessibility.py', []),

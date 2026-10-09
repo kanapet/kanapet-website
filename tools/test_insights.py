@@ -15,6 +15,7 @@ with tempfile.TemporaryDirectory(dir=builder.ROOT, prefix='insights-test-') as d
         article['slug']=f'example-article-{index}'
         article['title']=f'Example article {index}'
         article['featured']=index==0
+        article['relatedArticles']=[f'example-article-{other}' for other in range(4) if other != index]
         article['category']='Manufacturing' if index else 'OEM / ODM'
         (content/(article['slug']+'.md')).write_text('---\n'+json.dumps(article)+'\n---\n'+body,encoding='utf-8')
     with patch.object(builder,'ROOT',Path(directory)):
