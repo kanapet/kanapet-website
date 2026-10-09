@@ -10,7 +10,7 @@ function confirmAction(message){return new Promise(resolve=>{
  actions.append(cancel,accept);dialog.append(text,actions);document.body.appendChild(dialog);dialog.showModal();
 });}
 const $=id=>document.getElementById(id);
-let csrf='',setup=false,products=[],current='',draft=null,busy=false,dirty=false;
+let csrf='',setup=false,cloud=false,products=[],current='',draft=null,busy=false,dirty=false;
 function status(message){$('status').textContent=message;}
 async function api(path,{method='GET',data,headers={},body}={}){
  const response=await fetch(path,{method,headers:{...(data?{'Content-Type':'application/json'}:{}),...(method!=='GET'?{'X-CSRF-Token':csrf}:{}),...headers},body:data?JSON.stringify(data):body});
@@ -53,12 +53,12 @@ for(const id of ['files','camera-photo','camera-video'])$(id).addEventListener('
 });
 $('save').addEventListener('click',async()=>{try{setBusy(true);await save();status('草稿已保存');}catch(error){status(error.message);}finally{setBusy(false);render();}});
 $('preview').addEventListener('click',event=>{if(dirty){event.preventDefault();status('请先保存草稿，再打开预览');}});
-$('publish').addEventListener('click',async()=>{if(!await confirmAction('发布到本地预览？手机与电脑可看到更新，正式官网暂不改变。'))return;try{setBusy(true);if(dirty)await save();await api(`/api/admin/products/${current}/publish`,{method:'POST',headers:{'If-Match':String(draft.revision)},data:{}});$('publish-state').textContent='已发布到本地预览';status('本地发布成功');}catch(error){status(error.message);}finally{setBusy(false);render();}});
+$('publish').addEventListener('click',async()=>{if(!await confirmAction(cloud?'发布到正式官网？访客将看到此产品的最新照片和视频。':'发布到本地预览？手机与电脑可看到更新，正式官网暂不改变。'))return;try{setBusy(true);if(dirty)await save();const published=await api(`/api/admin/products/${current}/publish`,{method:'POST',headers:{'If-Match':String(draft.revision)},data:{}});draft=published.draft;$('publish-state').textContent=cloud?'已发布到正式官网':'已发布到本地预览';status(cloud?'官网发布成功':'本地发布成功');}catch(error){status(error.message);}finally{setBusy(false);render();}});
 $('link-form').addEventListener('submit',async event=>{event.preventDefault();if(!draft)return;draft.items.push({id:crypto.randomUUID?crypto.randomUUID():`link-${Date.now()}-${Math.random().toString(36).slice(2)}`,type:'video',src:$('video-url').value,title:'Product video',aspectRatio:$('video-ratio').value});markDirty();render();try{await save();$('video-url').value='';status('视频链接已加入草稿');}catch(error){status(error.message);}});
 $('user-form').addEventListener('submit',async event=>{event.preventDefault();try{await api('/api/admin/users',{method:'POST',data:{email:$('user-email').value,password:$('user-password').value}});$('user-password').value='';status('内部账号已创建');}catch(error){status(error.message);}});
-$('logout').addEventListener('click',async()=>{try{await api('/api/admin/logout',{method:'POST',data:{}});location.reload();}catch(error){status(error.message);}});
+$('logout').addEventListener('click',async()=>{try{const result=await api('/api/admin/logout',{method:'POST',data:{}});if(result.logout)location.href=result.logout;else location.reload();}catch(error){status(error.message);}});
 window.addEventListener('beforeunload',event=>{if(dirty){event.preventDefault();event.returnValue='';}});
-(async()=>{try{const result=await api('/api/admin/session');if(result.authenticated){csrf=result.csrf;$('account').textContent=result.email;await workspace();}else{setup=result.setup;$('login-panel').hidden=false;if(setup){$('login-title').textContent='创建首个内部账号';$('login-description').textContent='首次请在电脑本机创建管理员，之后可在同 Wi-Fi 手机登录。密码至少12位。';$('password').minLength=12;$('password').autocomplete='new-password';$('login-submit').textContent='创建账号并登录';}}}catch{status('请先启动本地素材后台服务，再打开此页面。');}})();
+(async()=>{try{const result=await api('/api/admin/session');if(result.authenticated){cloud=Boolean(result.cloud);if(cloud){document.getElementById('upload-limits').textContent='云端照片最多10MB，视频最多40MB；请使用 JPG、PNG、WebP、MP4、WebM 或 MOV。';$('publish').textContent='发布到官网';$('publish-note').textContent='上传先保存为内部草稿，点击发布后正式官网同步更新。';$('internal-users').hidden=true;}csrf=result.csrf;$('account').textContent=result.email;await workspace();}else{setup=result.setup;$('login-panel').hidden=false;if(setup){$('login-title').textContent='创建首个内部账号';$('login-description').textContent='首次请在电脑本机创建管理员，之后可在同 Wi-Fi 手机登录。密码至少12位。';$('password').minLength=12;$('password').autocomplete='new-password';$('login-submit').textContent='创建账号并登录';}}}catch{status('请先启动本地素材后台服务，再打开此页面。');}})();
 // File inputs remain native so mobile browsers can offer camera or library.
 document.querySelectorAll('.upload-actions label').forEach(label=>label.addEventListener('keydown',event=>{
  if(event.key==='Enter'||event.key===' '){event.preventDefault();label.querySelector('input').click();}

@@ -1,0 +1,30 @@
+{
+  // KANAPET B2B website - Cloudflare Workers hosting
+  // This file pins the deployment config to the code, so the dashboard
+  // settings and the repo can never drift apart again.
+  //
+  // Routing: requests are matched against public/ first; anything that is
+  // not a static file (e.g. POST /api/inquiry) runs worker/index.js, which
+  // forwards inquiries to Feishu using secrets configured in the dashboard
+  // (FEISHU_WEBHOOK_URL, optional FEISHU_SECRET). Never hardcode them here.
+  "name": "kanapet-website",
+  "main": "worker/index.js",
+  "compatibility_date": "2025-04-01",
+  "r2_buckets": [{ "binding": "MEDIA_BUCKET", "bucket_name": "kanapet-product-media" }],
+  "vars": { "MEDIA_ACCESS_ISSUER": "", "MEDIA_ACCESS_AUD": "" },
+  "assets": {
+    // All site files (HTML/CSS/JS/images) live in the public/ folder.
+    // .assetsignore keeps internal source imagery (images/products_raw/)
+    // out of deployments while it stays in git.
+    "directory": "./public",
+    "binding": "ASSETS",
+    // The Worker must run BEFORE the static-asset layer, otherwise every
+    // request for an existing file is served directly and never reaches our
+    // code — which would silently disable both the WebP content negotiation
+    // and the product.html?slug= -> /product/<slug>.html redirect.
+    "run_worker_first": true,
+    // Keep ".html" URLs exactly as authored: no /products.html -> /products
+    // rewrite, so the URL structure the site has always had stays stable.
+    "html_handling": "none"
+  }
+}

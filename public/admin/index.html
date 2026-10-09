@@ -8,13 +8,13 @@
 <label>选择产品型号<select id="product-select"><option value="">请选择产品</option></select></label>
 <section id="editor" hidden><div class="product-heading"><h2 id="product-title"></h2><span id="publish-state"></span></div>
 <div class="upload-actions"><label class="button primary" role="button" tabindex="0">从相册批量上传<input type="file" id="files" accept="image/jpeg,image/png,image/webp,video/mp4,video/webm,video/quicktime" multiple hidden></label><label class="button" role="button" tabindex="0">拍照片<input type="file" id="camera-photo" accept="image/*" capture="environment" hidden></label><label class="button" role="button" tabindex="0">录视频<input type="file" id="camera-video" accept="video/*" capture="environment" hidden></label></div>
-<p class="note">照片支持 JPG、PNG、WebP（每张最多10MB）；视频支持 MP4、WebM、MOV（每段最多100MB）。MOV 的播放取决于浏览器，建议使用 MP4。</p>
+<p class="note" id="upload-limits">照片支持 JPG、PNG、WebP（每张最多10MB）；视频支持 MP4、WebM、MOV（每段最多100MB）。MOV 的播放取决于浏览器，建议使用 MP4。</p>
 <progress id="progress" value="0" max="100" hidden></progress><p id="upload-status" role="status"></p>
 <details><summary>添加 Facebook / YouTube 视频链接</summary><form id="link-form"><label>视频原始链接<input id="video-url" type="url" placeholder="https://www.facebook.com/reel/..." required></label><label>视频比例<select id="video-ratio"><option value="9 / 16">竖屏 9:16</option><option value="16 / 9">横屏 16:9</option><option value="1 / 1">正方形 1:1</option><option value="4 / 3">横屏 4:3</option></select></label><button type="submit">加入草稿</button></form></details>
 <p class="note">第一项为默认主图。使用上移、下移调整顺序；视频可选择已有照片作为封面。删除先从草稿移除，发布后才从展示中移除。</p>
 <div id="media-list"></div><div id="empty" hidden>还没有素材，请先上传产品照片。</div>
 <div class="publish-bar"><button type="button" id="save">保存草稿</button><a id="preview" class="button" target="_blank" rel="noopener">预览草稿</a><button type="button" id="publish" class="primary">发布到本地预览</button></div>
-<p class="note">本地发布只更新这台电脑及同 Wi-Fi 手机看到的预览，不会改变正式官网。云端上线将单独接入。</p>
+<p class="note" id="publish-note">本地发布只更新这台电脑及同 Wi-Fi 手机看到的预览，不会改变正式官网。云端上线将单独接入。</p>
 </section>
-<details class="panel"><summary>添加内部账号</summary><form id="user-form"><label>内部邮箱<input id="user-email" type="email" required autocomplete="off"></label><label>初始密码（至少12位）<input id="user-password" type="password" required minlength="12" maxlength="128" autocomplete="new-password"></label><button type="submit">创建内部账号</button></form></details>
+<details class="panel" id="internal-users"><summary>添加内部账号</summary><form id="user-form"><label>内部邮箱<input id="user-email" type="email" required autocomplete="off"></label><label>初始密码（至少12位）<input id="user-password" type="password" required minlength="12" maxlength="128" autocomplete="new-password"></label><button type="submit">创建内部账号</button></form></details>
 </section></main><script src="/admin/admin.js"></script></body></html>
