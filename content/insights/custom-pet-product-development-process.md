@@ -5,7 +5,7 @@
   "description": "Learn what KANAPET needs to assess and quote a custom pet product, and how drawing review, structural optimization, 3D sampling and mold trials lead to production.",
   "summary": "KANAPET needs customer-supplied 3D drawings or a physical sample sent to our company to assess a custom pet product; an idea alone is insufficient for evaluation or quotation. We review the available drawings and samples, provide an initial quotation, and then proceed with detailed structural analysis and optimization if the customer accepts it. After 3D sample approval, the project moves through mold making, mold trials, mass production, assembly, packaging and shipment according to the customer's requirements.",
   "category": "OEM / ODM",
-  "datePublished": "2026-10-09",
+  "datePublished": "2026-08-01",
   "dateModified": "2026-10-09",
   "coverImage": "/images/insights/custom-pet-product-injection-mold.webp",
   "coverAlt": "Metal injection mold with machined cavities on a factory workshop floor",
