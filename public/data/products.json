@@ -283,17 +283,17 @@
     "color_options": [
       {
         "name": "White",
-      "image": "images/products/feeder-cup-no4-white-main.jpg"
+        "image": "images/products/feeder-cup-no4-white-main.jpg"
       },
       {
         "name": "Transparent",
-      "image": "images/products/feeder-cup-no4-transparent-main.jpg"
+        "image": "images/products/feeder-cup-no4-transparent-main.jpg"
       }
     ],
     "slug": "bird-feeder-cup-no4",
     "color_images": {
-    "White": "images/products/feeder-cup-no4-white-main.jpg",
-    "Transparent": "images/products/feeder-cup-no4-transparent-main.jpg"
+      "White": "images/products/feeder-cup-no4-white-main.jpg",
+      "Transparent": "images/products/feeder-cup-no4-transparent-main.jpg"
     },
     "moq_unit": "pc",
     "pcs_per_ctn": "245"
@@ -323,17 +323,17 @@
     "color_options": [
       {
         "name": "White",
-      "image": "images/products/feeder-cup-no10-white-main.png"
+        "image": "images/products/feeder-cup-no10-white-main.png"
       },
       {
         "name": "Transparent",
-      "image": "images/products/feeder-cup-no10-transparent-main.png"
+        "image": "images/products/feeder-cup-no10-transparent-main.png"
       }
     ],
     "slug": "bird-feeder-cup-no10",
     "color_images": {
-    "White": "images/products/feeder-cup-no10-white-main.png",
-    "Transparent": "images/products/feeder-cup-no10-transparent-main.png"
+      "White": "images/products/feeder-cup-no10-white-main.png",
+      "Transparent": "images/products/feeder-cup-no10-transparent-main.png"
     },
     "moq_unit": "pc",
     "pcs_per_ctn": "156"

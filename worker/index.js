@@ -1,3 +1,5 @@
+import { handleMedia, authenticate } from './media.js';
+import { adminAssets } from './admin-assets.js';
 // Cloudflare Worker for kanapet-website.
 //
 // Three jobs:
@@ -319,6 +321,17 @@ export default {
       return Response.redirect(url.href, 301);
     }
 
+    if (url.pathname.startsWith('/api/admin/') || url.pathname.startsWith('/api/media/') || url.pathname.startsWith('/media-assets/')) {
+      return handleMedia(request, env);
+    }
+    if (url.pathname === '/admin' || url.pathname.startsWith('/admin/')) {
+      try { await authenticate(request, env); }
+      catch (error) { return jsonResp({ error: error.message }, error.status || 503); }
+      const key = url.pathname === '/admin' || url.pathname === '/admin/' ? '/admin/index.html' : url.pathname;
+      const asset = adminAssets[key];
+      if (!asset) return jsonResp({ error: 'Not found' }, 404);
+      return new Response(asset.body, { headers: { 'Content-Type': asset.type, 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff', 'Content-Security-Policy': "default-src 'self'; img-src 'self' blob:; media-src 'self' blob:; style-src 'self'; script-src 'self'; frame-ancestors 'none'" } });
+    }
     if (url.pathname === '/api/inquiry') {
       return handleInquiry(request, env);
     }

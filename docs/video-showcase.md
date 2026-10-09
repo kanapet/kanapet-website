@@ -4,10 +4,6 @@
 未配置（null）时该区域自动隐藏，不展示空播放器。点击播放，无自动播放。
 
 ## 工厂视频
-factory.html 直接嵌入 videos/kanapet-factory-tour.mp4，使用相对路径，无需读取 JSON，本地直接打开 HTML 也可显示。
-视频为 57 秒、1920×1080 H.264/AAC，约 19.1 MB，带 faststart 和车间封面，点击播放、preload=none。
-首页仍使用 factory 配置，当前保持 null。
-
 将 factory 的 null 替换为：
 
 ```json

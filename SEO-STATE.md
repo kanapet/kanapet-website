@@ -90,3 +90,10 @@
 - 兔笼与猫砂盆新情景图同步进入对应产品详情页图库和 Product JSON-LD，产品数据仍以 products.json 为单一公开数据源。
 - 最终本地预览已完成：桌面、窄屏和手机布局正常；首页与两张产品页图片均成功加载，浏览器控制台无错误。
 - 下一步：发布后核对首页分类卡与兔笼、猫砂盆详情页的 CDN 图片缓存是否更新。
+
+## 2026-10-09 Factory page update
+
+- Added a 57-second 1080p H.264/AAC factory video (19.1 MB), poster and manual playback.
+- Shortened the introduction, highlighted three factory facts, added photo capability cards and six captioned gallery photos.
+- Removed the duplicate factory image section and added an optimized warehouse photo from the supplied 2021 collection.
+- Validated local assets and video decoding. Next: verify deployed page, images and video range requests.

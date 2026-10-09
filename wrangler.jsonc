@@ -11,6 +11,8 @@
   "build": { "command": "python3 tools/prepare_production.py" },
   "main": "worker/index.js",
   "compatibility_date": "2025-04-01",
+  "r2_buckets": [{ "binding": "MEDIA_BUCKET", "bucket_name": "kanapet-product-media" }],
+  "vars": { "MEDIA_ACCESS_ISSUER": "https://steep-hall-d24e.cloudflareaccess.com", "MEDIA_ACCESS_AUD": "71cd0328cd5000b934bc725a4e36437ff88bfab7a2c60a12a85371f910fbdb85" },
   "assets": {
     // All site files (HTML/CSS/JS/images) live in the public/ folder.
     // .assetsignore keeps internal source imagery (images/products_raw/)
