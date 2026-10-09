@@ -15,6 +15,17 @@ let response = await request('http://kanapet.com/contact.html?from=old');
 assert.equal(response.status, 301);
 assert.equal(response.headers.get('location'), 'https://www.kanapet.com/contact.html?from=old');
 
+for (const path of ['/insights', '/insights/index.html', '/insights/custom-pet-product-development-process', '/insights/custom-pet-product-development-process/index.html']) {
+  const result = await request('https://www.kanapet.com' + path);
+  assert.equal(result.status, 301);
+  assert.equal(result.headers.get('location'), 'https://www.kanapet.com' + path.replace(/\/index\.html$/, '/').replace(/\/?$/, '/'));
+}
+const insightsAssets = [];
+const insightsEnv = { ASSETS: { fetch: async req => { insightsAssets.push(new URL(req.url).pathname); return new Response('Insights'); } } };
+response = await worker.fetch(new Request('https://www.kanapet.com/insights/custom-pet-product-development-process/'), insightsEnv);
+assert.equal(response.status, 200);
+assert.equal(insightsAssets[0], '/insights/custom-pet-product-development-process/index.html');
+
 response = await request('http://www.kanapet.com/api/inquiry', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },

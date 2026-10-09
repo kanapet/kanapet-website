@@ -275,6 +275,16 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     const productionHost = url.hostname === 'kanapet.com' || url.hostname === 'www.kanapet.com';
+    // Insights uses directory URLs while existing pages keep .html URLs.
+    if (['GET', 'HEAD'].includes(request.method) && /^\/insights(?:\/|$)/.test(url.pathname)) {
+      let canonicalPath = url.pathname.replace(/\/index\.html$/, '/');
+      if (!canonicalPath.endsWith('/') && !canonicalPath.split('/').pop().includes('.')) canonicalPath += '/';
+      if (canonicalPath !== url.pathname) {
+        url.pathname = canonicalPath;
+        if (productionHost) { url.protocol = 'https:'; url.hostname = 'www.kanapet.com'; }
+        return Response.redirect(url.href, 301);
+      }
+    }
     let scheme = url.protocol.replace(':', '');
     try {
       scheme = JSON.parse(request.headers.get('CF-Visitor') || '{}').scheme || scheme;

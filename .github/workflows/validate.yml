@@ -18,6 +18,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Build and verify Insights
+        run: |
+          python3 tools/build_insights.py --check
+          python3 tools/audit_insights.py
+          python3 tools/test_insights.py
       - name: Validate product data and sitemap
         run: python3 tools/validate_data.py
       - name: Check static product output
