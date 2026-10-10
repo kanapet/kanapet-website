@@ -325,6 +325,12 @@
       ],
       "image": "images/products/hamster-external-bathroom-v3.jpg",
       "gallery": []
+    },
+    "bird-400-wire": {
+      "image": "images/products/bird-400-wire.jpg"
+    },
+    "bird-470-wire": {
+      "image": "images/products/bird-470-cage-main-v3.jpg"
     }
   },
   "images": {
@@ -361,6 +367,10 @@
     "images/products/gallery/hamster-ball-270-hamster.jpg": "4b33a15e604ab039846b1494101fd7e8be531a30f11788c5b6eee3830ebbdc70",
     "images/products/gallery/hamster-ball-270-hamster.webp": "8f5c600b8837f77cdb3f414a172054fb7ed051a0e4c1b2588d497d76ec086d50",
     "images/products/gallery/hamster-ball-270-components.jpg": "1f0d0b3f613deaa4a145dbfc18abe49a55971ad957d78ecc996fce27fb4ddf36",
-    "images/products/gallery/hamster-ball-270-components.webp": "c4ebc05cae8491e6da88c2baabdbac0d10c92bf1680768de7f9e081e920c6cd4"
+    "images/products/gallery/hamster-ball-270-components.webp": "c4ebc05cae8491e6da88c2baabdbac0d10c92bf1680768de7f9e081e920c6cd4",
+    "images/products/bird-400-wire.jpg": "f1251e6648f06009360cb9ff7bf817e08cb82264790b30630b0a39be5737fbfa",
+    "images/products/bird-400-wire.webp": "9f24d5e9588952a12648f198e2a1673ae481971b4bba255689f7da6130ab2e7c",
+    "images/products/bird-470-cage-main-v3.jpg": "308e50a2ba0d6a2e9da8efa4883b9c17e2508488d8ed3de90bbdac179e2fe845",
+    "images/products/bird-470-cage-main-v3.webp": "44c5ce8ca4b4ec561127ae6587e04c69a95f28ea969cd3e4a5d3e77957be1569"
   }
 }

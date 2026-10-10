@@ -833,7 +833,7 @@ window.KANAPET_PRODUCTS = [
     "colors": [
       "White"
     ],
-    "image": "images/products/bird-470-cage-main.png",
+    "image": "images/products/bird-470-cage-main-v3.jpg",
     "net_weight": "4.75",
     "gross_weight": "5.75",
     "cbm": "",
@@ -883,7 +883,7 @@ window.KANAPET_PRODUCTS = [
       "White",
       "Black"
     ],
-    "image": "images/products/bird-400-cage-main.png",
+    "image": "images/products/bird-400-wire.jpg",
     "net_weight": "3.3",
     "gross_weight": "3.95",
     "cbm": "",
