@@ -312,8 +312,7 @@ function renderFeatured(containerId, count = 8) {
   const sceneImages = {
     'hamster-43-cage': 'images/products/gallery/43-hamster-scene.jpg',
     'hamster-62-cage': 'images/products/gallery/62-hamster-scene.jpg',
-    'hamster-75-cage': 'images/products/gallery/75-hamster-scene.jpg',
-    'bird-650-glass-door': 'images/products/gallery/650-glass-door-scene.jpg'
+    'hamster-75-cage': 'images/products/gallery/75-hamster-scene.jpg'
   };
   el.innerHTML = enclosures
     .slice(0, count)
