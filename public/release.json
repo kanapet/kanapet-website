@@ -1,6 +1,6 @@
 {
   "files": {
-    "contact.html": "69022baf4b4f1f90ac5db11dded8587a0faf8dbdfc3886792bd45d2de86e712d",
+    "contact.html": "49a60aff8f80b09f2abeba0aad1fb5fb39efe42dbfb0dce14982c0eb275d7f51",
     "css/factory.css": "2323798c3a8a5a1463373b5199ee2ed495b56480e52ac1f3cebd0fdc28ce3106",
     "css/insights.css": "e48bada9d9583d6a2148f3425710c43305e506d10d6cdb82c37de311650fc3ab",
     "css/style.css": "46a6a00cb929d5c20c540be772f554f89326247bbbe7f87177133be23ea02806",
@@ -9,7 +9,7 @@
     "data/categories.json": "c94ff306c7d751432c5c9a32caad80598e8540fb0b2026a6c2b1d4e07b794c43",
     "data/products.json": "5a86947fe67095de783eaa8dc7188058e37673585a8099f0ed9fabfee2e348e7",
     "data/videos.json": "c33ad72ee212b67fec7d91b0b385ccf6692d5d01833be2ea3856fc0dddca64c8",
-    "factory.html": "f24b1f208392b7a8243669b07fd4a4cfaceef2338f45196ddf1474445a1a54d7",
+    "factory.html": "58643968f0a25b59b8f4ea7776333e210f35d8798fc86a7ba4a90e25af5a0e48",
     "favicon-16.png": "8bdfc75edea7055bc0280ebd54a0083f0c35feeca95dc791fd7f1276e0cdb7c2",
     "favicon-180.png": "8ab3e3132ae37cddd06a0a59dcd61a42fa6d100580ba6a45983c616e62efa8d0",
     "favicon-32.png": "e90f30f7f55db05a289600b6af0fd102928b0557b8f246f65abdb1b4e79bbb8c",
@@ -1126,7 +1126,7 @@
     "images/products_overview_v3.jpg": "006efcb153090a22fd7899ffb5435e5c0ecf2d5ecb31d1ae0540f06fa9189af1",
     "images/products_overview_v3.webp": "ee7e1b545c142f57eb13cfaee9100eb8f99d6b2015df07a0e7d95b0990d75c7f",
     "images/wechat-lena-qr.jpg": "d1529aab263c748634e80a0d1d1feda0e0d342140ea2d9cd372d275731ccfe57",
-    "index.html": "f9cb574b680b5d0ce99fa1b1873d9c2ffe556d409160fb717615f98b04793127",
+    "index.html": "31445df3fefa3275a85e7d7479f8811ffd6c3950aa2a5d8bd1ff7d2ef0c01dc1",
     "insights/custom-pet-product-development-process/index.html": "dbefc3e97dc31780fbf3d45600b755f42887dc9e6c9bea91d1c7b89d2ddba3a6",
     "insights/index.html": "5070e2ccd3093a04b528f5bf9b4c53909fa1691d92b74f95e47c1d2bc966e761",
     "insights/kanapet-cips-2026-guangzhou/index.html": "759443231d0000bf521c759bc26e13ed9a5c4866af8a9e6038e43231d05980c9",
@@ -1136,9 +1136,9 @@
     "js/product-media.js": "62f5a08abf0eb37a877defeaa9767c865833b3d4665a7c82507607564b97ff96",
     "js/videos.js": "c3741c0fbd1efdb3c1de79ed890ce0e43499a5e4ab50b27668e604d29d9c3f24",
     "llms.txt": "adb99b7eedd57e218b25d0a3f8eaf8ce2de57a31ed49d4f7f4189cd5c1ad3bb8",
-    "oem-odm.html": "61653c49bd90bc2c9cb19a4f5ef384c5eead8dd64e7d6b4dc5641b9f91639138",
-    "privacy.html": "edf71711ebea517646aef26f738a86d03d911d7c34e0dfd07fdb9967c28eb6c1",
-    "product.html": "1a89101a3cf19e5a4c8e14459813c9ecadd878d045bd70321fb9d325909322eb",
+    "oem-odm.html": "d7c2121e5898dcfaae9cc2af7926c6d00378adc2a84bdd8dde0f44e8d5f04558",
+    "privacy.html": "a5778c77dbc620632afa2164bb706cdf5e2a99fb11976560e5d2acd063b098a4",
+    "product.html": "5db996f1123311bd7a247de325930935d51bb5baeab7d534b5af76ce444313a7",
     "product/bird-130ml-kettle.html": "418f1ca5241b2d2172438f4f64b7f6b3bfd07886525938f33c717644070ef679",
     "product/bird-200ml-kettle.html": "b450dbab444e664e0964576ae26b7d9c535fb151b102bce1e2fe885fa2351b0b",
     "product/bird-400-frame.html": "fd3fcf61b6439d31876ed95280bd03dbe5f8356f6ed83f09429fb45b3ddb32b3",
@@ -1209,10 +1209,10 @@
     "product/hamster-wheel-27cm.html": "e57e2f1aa42e4bb6b600081ff4f57b3d44f0d78d05a9843b470b030877602469",
     "product/rabbit-650-cage.html": "f95fc31ded2208fe72a735502e593ed8f1c2985c21576884c29e3ac8c4e16b7c",
     "product/turtle-tank.html": "f870006bca34e234324d712633ebb75d1768ed0c6e4e172fe50f9c9990cd92eb",
-    "products.html": "64c024c62397fb6a5fb5806667f174a88e5c140f8129c946da881c7d4ede4267",
+    "products.html": "b3ce6b99da1c35a3dd0dd2f71b98d3292932122e732ef617e91c999a295bd41c",
     "robots.txt": "1eed0c0094b1f273e42d4dcfd95bc076cefe42efe3df799e29e16b46c85afa99",
     "sitemap.xml": "a584d9ca73b29b40d7df6a11829c3e138abdb8fdfc37b37587d3e92a6f96377c",
     "videos/kanapet-factory-tour.mp4": "a571c81046574ab7a542955ff78e6e5250a1ed7b012e107c10919fdecf67a8a7"
   },
-  "id": "edd06ed218025cee"
+  "id": "a5df90c1a101b93c"
 }

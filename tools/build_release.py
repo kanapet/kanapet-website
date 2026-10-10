@@ -40,7 +40,7 @@ def build():
                 raise ValueError(f'Missing asset {asset}')
             digest = hashlib.sha256(asset.read_bytes()).hexdigest()[:12]
             return match.group(1) + match.group(2) + '?v=' + digest + match.group(3)
-        updated = re.sub(r'((?:src|href)=")(/(?:js|css)/[^"?]+\.(?:js|css))(?:\?[^" ]*)?(")', version, source)
+        updated = re.sub(r'((?:src|href)=")(/?(?:js|css)/[^"?]+\.(?:js|css))(?:\?[^" ]*)?(")', version, source)
         if updated != source:
             page.write_text(updated, encoding='utf-8')
     normalize_text()
