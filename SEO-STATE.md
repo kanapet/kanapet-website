@@ -143,3 +143,5 @@
 
 - 用户明确批准上线：两张品类页与入口、sitemap、视觉修复，以及产品目录/OEM 原 H1 恢复，保留优化后的 title/description。
 - 发布前远端无分歧，86 URL smoke 通过。发布编号 93295eaa52699c4f，待线上核验。
+
+- 上线核验通过：11f7f2b，线上 release 93295eaa52699c4f；既有 57 文件检查通过，另用 curl 核对两张新品类页、categories.css、目录/OEM 页、首页与 sitemap 哈希均一致。Python 普通请求品类页哈希未匹配，curl 跟随跳转后验证通过，不能据此认定普通爬虫行为已验证。
