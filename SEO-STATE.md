@@ -123,3 +123,5 @@
 - 已生成 release 268876822f22fdcd。81 HTML 无障碍检查 0 error/0 warning；确认产品检查 15 产品/38 图片通过；70 产品页 0 error、9 条既有资料复核提示；本地 HTTP smoke 84 URL/70 产品通过（首次沙箱请求失败，授权环境重跑通过）。
 - 页面地址和 canonical 保持一致，产品事实未改动。本次未做浏览器视觉检查，标题变长的移动端换行仍待查看。
 - 用户已确认“存吧”，批准提交并推送 main 触发发布；发布前 fetch 确认 HEAD 与 origin/main 无分歧。发布结果以线上 release 与页面哈希核验为准。
+
+- 发布完成：提交 658eb0d 已推送 main；线上 release 为 268876822f22fdcd。tools/verify_release.py 核对 57 个线上文件通过。下一步建设鸟笼/仓鼠笼独立品类页，并取得 GSC 数据基线。
