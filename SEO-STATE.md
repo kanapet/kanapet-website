@@ -125,3 +125,21 @@
 - 用户已确认“存吧”，批准提交并推送 main 触发发布；发布前 fetch 确认 HEAD 与 origin/main 无分歧。发布结果以线上 release 与页面哈希核验为准。
 
 - 发布完成：提交 658eb0d 已推送 main；线上 release 为 268876822f22fdcd。tools/verify_release.py 核对 57 个线上文件通过。下一步建设鸟笼/仓鼠笼独立品类页，并取得 GSC 数据基线。
+
+
+## 2026-10-12 独立品类页（本地待审阅）
+
+- 新增 bird-cages.html（15 个现有型号）与 hamster-cages.html（6 个现有型号），独立 title、description、H1、canonical 和 CollectionPage/ItemList。加入选型说明、3 条采购问答及工厂/OEM/询盘链接。未添加未经确认价格或交期。
+- build_category_pages.py 从已同步总目录抽取对应卡片，并接入 build_release.py，避免尺寸/MOQ 维护分叉。首页和目录提供新品类入口，sitemap 加入两页，旧筛选 URL 保持可用。
+- 构建 release 7c312c20d8ca8607；83 HTML 无障碍 0 error/0 warning；确认产品检查通过；Insights 审计通过；新页本地 href 文件存在、单 H1、div 配对通过；HTTP smoke 86 URL/70 产品通过。尚未进行浏览器视觉核验。
+- 未提交、推送或发布，待用户审阅。下一步视觉核验并在批准后发布，再取得 GSC 查询与收录数据。
+
+- 浏览器视觉核验已完成：两页桌面与 390px 手机视口，菜单展开、鸟笼产品跳转、仓鼠页询盘入口正常。修复蓝色首屏返回目录链接对比度，增加卡片与问答间距；仓鼠页检查无横向溢出或已加载图片缺失。截图 docs/category-desktop-preview.png。更新 release f27a4560718f4453，仍未发布。
+
+- 用户要求恢复目录与 OEM 页原 H1：Our Products / OEM & ODM Services；已在本地恢复，title 与 description 保留优化版本，逐项比对 HEAD 确认一致。83 HTML 无障碍检查通过。此次修正未发布。
+
+
+## 2026-10-13 批准上线
+
+- 用户明确批准上线：两张品类页与入口、sitemap、视觉修复，以及产品目录/OEM 原 H1 恢复，保留优化后的 title/description。
+- 发布前远端无分歧，86 URL smoke 通过。发布编号 93295eaa52699c4f，待线上核验。
