@@ -136,3 +136,10 @@ globalThis.setTimeout = originalSetTimeout;
 globalThis.clearTimeout = originalClearTimeout;
 
 console.log('Worker routing tests passed');
+
+// The unqualified legacy endpoint has no product to display.
+for (const suffix of ['', '?from=legacy']) {
+  const result = await request('https://www.kanapet.com/product.html' + suffix);
+  assert.equal(result.status, 301);
+  assert.equal(result.headers.get('location'), 'https://www.kanapet.com/products.html');
+}

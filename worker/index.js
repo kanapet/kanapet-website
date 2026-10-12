@@ -341,6 +341,9 @@ export default {
     // the only version AI crawlers that skip JavaScript can actually read.
     if (url.pathname === '/product.html') {
       const slug = url.searchParams.get('slug');
+      if (slug === null) {
+        return Response.redirect(new URL('/products.html', url.origin).href, 301);
+      }
       // Whitelist the slug: this value lands in the redirect target, so never
       // let arbitrary input through (open-redirect / cache-poisoning guard).
       if (slug && /^[A-Za-z0-9][A-Za-z0-9-]{0,80}$/.test(slug)) {
