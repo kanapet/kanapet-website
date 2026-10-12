@@ -97,3 +97,29 @@
 - Shortened the introduction, highlighted three factory facts, added photo capability cards and six captioned gallery photos.
 - Removed the duplicate factory image section and added an optimized warehouse photo from the supplied 2021 collection.
 - Validated local assets and video decoding. Next: verify deployed page, images and video range requests.
+
+
+## 2026-10-12 SEO 核验
+
+- 本地 sitemap 含 79 个 URL；对应静态文件全部存在，每页恰有一个 title、description、H1，canonical 与 sitemap URL 一致，无重复标题。明细：docs/seo-local-audit-2026-10-12.json。此检查不代表文案质量、结构化数据完整性或线上收录。
+- 公开网络检查 84 个地址，大量请求收到 403；无法区分环境代理、站点防护或请求来源限制，不能认定搜索引擎被阻止。明细：docs/seo-live-audit-2026-10-12.json。下一步从正常浏览器及可信抓取来源复核响应与跳转，再结合 Cloudflare 日志定位（后台访问需授权）。
+- GSC Wizard list_sites 返回 payment_required：订阅到期/无有效订阅，未取得任何 Google 收录或搜索表现数据。可使用 Search Console 官方后台导出替代，不要求购买订阅。
+- git pull 因 .git/FETCH_HEAD 写入权限失败，因此本次本地结论仅针对当前工作区，未确认与远端最新版本一致。
+- 本次仅增加审计记录，未修改或发布网站。IndexNow 投递、Bing 收录、线上版本一致性仍未确认。
+- 下一步：取得 GSC 页面收录与最近 28 天查询/页面/国家报告，核对 sitemap 提交；复核线上防护响应后，再按实际曝光与采购意图制定重点页优化。
+
+
+### 2026-10-12 线上复核补充
+
+- 使用 curl 浏览器常见 User-Agent 复核，79 个 sitemap 页面及 5 个附加入口最终均为 HTTP 200。HTTP/apex 三个变体各经一次跳转到 https://www.kanapet.com/。这仅验证状态与最终地址，未确认跳转状态码、真实 Googlebot 访问或索引。
+- robots.txt 与 IndexNow key 地址可访问；未核对 key 正文或通知接收记录，不能据此认定 IndexNow 已投递。
+- 此结果修正前次 Python 请求 403 的判断；请求方式差异原因尚未定位，不再将其视为全站故障。结果：docs/seo-live-browser-ua-2026-10-12.json。
+- 已整理下一批关键词与页面方案：docs/SEO-NEXT-BATCH-2026-10-12.md；关键词为采购意图候选，尚无搜索量验证。正式页面未修改或发布。
+
+
+## 2026-10-12 产品目录与 OEM SEO 样本（已批准发布）
+
+- 已按批准方案修改两页 title、meta description、H1 和 OG 分享标题/描述。目录突出鸟笼、仓鼠笼批发；OEM 突出定制笼具制造及设计、模具、装配和量产能力。描述分别 147/148 字符，标题 40/41 字符（按显示文字计）。
+- 已生成 release 268876822f22fdcd。81 HTML 无障碍检查 0 error/0 warning；确认产品检查 15 产品/38 图片通过；70 产品页 0 error、9 条既有资料复核提示；本地 HTTP smoke 84 URL/70 产品通过（首次沙箱请求失败，授权环境重跑通过）。
+- 页面地址和 canonical 保持一致，产品事实未改动。本次未做浏览器视觉检查，标题变长的移动端换行仍待查看。
+- 用户已确认“存吧”，批准提交并推送 main 触发发布；发布前 fetch 确认 HEAD 与 origin/main 无分歧。发布结果以线上 release 与页面哈希核验为准。

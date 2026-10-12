@@ -1,0 +1,422 @@
+[
+  {
+    "url": "https://www.kanapet.com/",
+    "result": "200|https://www.kanapet.com/|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/products.html",
+    "result": "200|https://www.kanapet.com/products.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/factory.html",
+    "result": "200|https://www.kanapet.com/factory.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/oem-odm.html",
+    "result": "200|https://www.kanapet.com/oem-odm.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/contact.html",
+    "result": "200|https://www.kanapet.com/contact.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/privacy.html",
+    "result": "200|https://www.kanapet.com/privacy.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-travel-23.html",
+    "result": "200|https://www.kanapet.com/product/bird-travel-23.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-travel-26.html",
+    "result": "200|https://www.kanapet.com/product/bird-travel-26.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-travel-30.html",
+    "result": "200|https://www.kanapet.com/product/bird-travel-30.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-travel-42.html",
+    "result": "200|https://www.kanapet.com/product/bird-travel-42.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-feeder-cup-no1.html",
+    "result": "200|https://www.kanapet.com/product/bird-feeder-cup-no1.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-feeder-cup-no3-white.html",
+    "result": "200|https://www.kanapet.com/product/bird-feeder-cup-no3-white.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-feeder-cup-no3-transparent-hook.html",
+    "result": "200|https://www.kanapet.com/product/bird-feeder-cup-no3-transparent-hook.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-feeder-cup-no4.html",
+    "result": "200|https://www.kanapet.com/product/bird-feeder-cup-no4.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-feeder-cup-no10.html",
+    "result": "200|https://www.kanapet.com/product/bird-feeder-cup-no10.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-feeding-cup-spring-door.html",
+    "result": "200|https://www.kanapet.com/product/bird-feeding-cup-spring-door.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-feeder-cup-anti-spill.html",
+    "result": "200|https://www.kanapet.com/product/bird-feeder-cup-anti-spill.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-smart-feeder.html",
+    "result": "200|https://www.kanapet.com/product/bird-smart-feeder.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-smart-water-dispenser.html",
+    "result": "200|https://www.kanapet.com/product/bird-smart-water-dispenser.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-650-pet-door.html",
+    "result": "200|https://www.kanapet.com/product/bird-650-pet-door.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-650-glass-door.html",
+    "result": "200|https://www.kanapet.com/product/bird-650-glass-door.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-490-iron-wire-single.html",
+    "result": "200|https://www.kanapet.com/product/bird-490-iron-wire-single.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-490-iron-wire-upgraded.html",
+    "result": "200|https://www.kanapet.com/product/bird-490-iron-wire-upgraded.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-490-transparent-door-single.html",
+    "result": "200|https://www.kanapet.com/product/bird-490-transparent-door-single.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-490-transparent-door-splash.html",
+    "result": "200|https://www.kanapet.com/product/bird-490-transparent-door-splash.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-490-double-transparent-door.html",
+    "result": "200|https://www.kanapet.com/product/bird-490-double-transparent-door.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-490-double-splash-proof.html",
+    "result": "200|https://www.kanapet.com/product/bird-490-double-splash-proof.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-490-triple-splash-proof.html",
+    "result": "200|https://www.kanapet.com/product/bird-490-triple-splash-proof.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-490-triple-standard.html",
+    "result": "200|https://www.kanapet.com/product/bird-490-triple-standard.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-470-wire.html",
+    "result": "200|https://www.kanapet.com/product/bird-470-wire.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-400-wire.html",
+    "result": "200|https://www.kanapet.com/product/bird-400-wire.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-400-frame.html",
+    "result": "200|https://www.kanapet.com/product/bird-400-frame.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-470-frame.html",
+    "result": "200|https://www.kanapet.com/product/bird-470-frame.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-490-climbing-rack.html",
+    "result": "200|https://www.kanapet.com/product/bird-490-climbing-rack.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-bathroom-small.html",
+    "result": "200|https://www.kanapet.com/product/bird-bathroom-small.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-space-bathroom-regular.html",
+    "result": "200|https://www.kanapet.com/product/bird-space-bathroom-regular.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-space-bathroom-grate.html",
+    "result": "200|https://www.kanapet.com/product/bird-space-bathroom-grate.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-no-mess-parrot-feeder.html",
+    "result": "200|https://www.kanapet.com/product/bird-no-mess-parrot-feeder.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-parrot-nest.html",
+    "result": "200|https://www.kanapet.com/product/bird-parrot-nest.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-parrot-nest-large.html",
+    "result": "200|https://www.kanapet.com/product/bird-parrot-nest-large.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-windmill-toy.html",
+    "result": "200|https://www.kanapet.com/product/bird-windmill-toy.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-perch-stick.html",
+    "result": "200|https://www.kanapet.com/product/bird-perch-stick.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-breeding-box.html",
+    "result": "200|https://www.kanapet.com/product/bird-breeding-box.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-130ml-kettle.html",
+    "result": "200|https://www.kanapet.com/product/bird-130ml-kettle.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/bird-200ml-kettle.html",
+    "result": "200|https://www.kanapet.com/product/bird-200ml-kettle.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/hamster-43-cage.html",
+    "result": "200|https://www.kanapet.com/product/hamster-43-cage.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/hamster-62-cage.html",
+    "result": "200|https://www.kanapet.com/product/hamster-62-cage.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/hamster-75-cage.html",
+    "result": "200|https://www.kanapet.com/product/hamster-75-cage.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/hamster-external-enclosure.html",
+    "result": "200|https://www.kanapet.com/product/hamster-external-enclosure.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/hamster-70-folding-low.html",
+    "result": "200|https://www.kanapet.com/product/hamster-70-folding-low.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/hamster-70-folding-high.html",
+    "result": "200|https://www.kanapet.com/product/hamster-70-folding-high.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/hamster-tube-anti-chew-ring.html",
+    "result": "200|https://www.kanapet.com/product/hamster-tube-anti-chew-ring.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/hamster-pipe-short.html",
+    "result": "200|https://www.kanapet.com/product/hamster-pipe-short.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/hamster-pipe-long.html",
+    "result": "200|https://www.kanapet.com/product/hamster-pipe-long.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/hamster-pipe-bent.html",
+    "result": "200|https://www.kanapet.com/product/hamster-pipe-bent.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/hamster-pipe-3way.html",
+    "result": "200|https://www.kanapet.com/product/hamster-pipe-3way.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/hamster-pipe-joint.html",
+    "result": "200|https://www.kanapet.com/product/hamster-pipe-joint.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/hamster-wheel-17cm.html",
+    "result": "200|https://www.kanapet.com/product/hamster-wheel-17cm.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/hamster-wheel-21cm.html",
+    "result": "200|https://www.kanapet.com/product/hamster-wheel-21cm.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/hamster-wheel-24cm.html",
+    "result": "200|https://www.kanapet.com/product/hamster-wheel-24cm.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/hamster-wheel-27cm.html",
+    "result": "200|https://www.kanapet.com/product/hamster-wheel-27cm.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/hamster-running-disc.html",
+    "result": "200|https://www.kanapet.com/product/hamster-running-disc.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/hamster-ball-180.html",
+    "result": "200|https://www.kanapet.com/product/hamster-ball-180.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/hamster-ball-270.html",
+    "result": "200|https://www.kanapet.com/product/hamster-ball-270.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/hamster-bathroom-18cm.html",
+    "result": "200|https://www.kanapet.com/product/hamster-bathroom-18cm.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/hamster-external-bathroom.html",
+    "result": "200|https://www.kanapet.com/product/hamster-external-bathroom.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/hamster-shelf-43.html",
+    "result": "200|https://www.kanapet.com/product/hamster-shelf-43.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/hamster-shelf-62.html",
+    "result": "200|https://www.kanapet.com/product/hamster-shelf-62.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/hamster-shelf-75.html",
+    "result": "200|https://www.kanapet.com/product/hamster-shelf-75.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/hamster-universal-wheel.html",
+    "result": "200|https://www.kanapet.com/product/hamster-universal-wheel.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/hamster-transparent-food-cup.html",
+    "result": "200|https://www.kanapet.com/product/hamster-transparent-food-cup.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/hamster-heat-lamp.html",
+    "result": "200|https://www.kanapet.com/product/hamster-heat-lamp.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/rabbit-650-cage.html",
+    "result": "200|https://www.kanapet.com/product/rabbit-650-cage.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/cat-litter-box-75.html",
+    "result": "200|https://www.kanapet.com/product/cat-litter-box-75.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/cat-feeder-automatic.html",
+    "result": "200|https://www.kanapet.com/product/cat-feeder-automatic.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/product/turtle-tank.html",
+    "result": "200|https://www.kanapet.com/product/turtle-tank.html|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/insights/",
+    "result": "200|https://www.kanapet.com/insights/|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/insights/kanapet-cips-2026-guangzhou/",
+    "result": "200|https://www.kanapet.com/insights/kanapet-cips-2026-guangzhou/|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/insights/custom-pet-product-development-process/",
+    "result": "200|https://www.kanapet.com/insights/custom-pet-product-development-process/|0",
+    "error": ""
+  },
+  {
+    "url": "http://kanapet.com/",
+    "result": "200|https://www.kanapet.com/|1",
+    "error": ""
+  },
+  {
+    "url": "https://kanapet.com/",
+    "result": "200|https://www.kanapet.com/|1",
+    "error": ""
+  },
+  {
+    "url": "http://www.kanapet.com/",
+    "result": "200|https://www.kanapet.com/|1",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/robots.txt",
+    "result": "200|https://www.kanapet.com/robots.txt|0",
+    "error": ""
+  },
+  {
+    "url": "https://www.kanapet.com/d41942d191a245303c4bc8ed4994d3e8.txt",
+    "result": "200|https://www.kanapet.com/d41942d191a245303c4bc8ed4994d3e8.txt|0",
+    "error": ""
+  }
+]
