@@ -2342,7 +2342,7 @@
     "colors": [
       "White"
     ],
-    "image": "images/products/rabbit-650-cage.jpg",
+    "image": "images/products/gallery/rabbit-650-cage-scene-v4.jpg",
     "net_weight": "7.065",
     "gross_weight": "9.08",
     "cbm": "",
@@ -2354,7 +2354,40 @@
     "accessories": "",
     "notes": "Each product is individually packed in one carton. MOQ: 100 pcs per model. Orders must be placed in full-carton quantities.",
     "gallery": [
-      "images/products/gallery/rabbit-650-cage-scene-v4.jpg"
+      "images/products/rabbit-650-cage.jpg"
+    ],
+    "moq_unit": "pc",
+    "materials": [
+      "PET",
+      "ABS",
+      "Iron Wire",
+      "Stainless Steel"
+    ]
+  },
+  {
+    "id": "guinea-pig-650-cage",
+    "slug": "guinea-pig-650-cage",
+    "name": "650 Guinea Pig Cage",
+    "category": "other-small-pets",
+    "series": "guinea-pig-cage",
+    "size": "65*46*62",
+    "moq": 100,
+    "colors": [
+      "White"
+    ],
+    "image": "images/products/guinea-pig-650-cage-scene.jpg",
+    "net_weight": "7.065",
+    "gross_weight": "9.08",
+    "cbm": "",
+    "material": "PET+ABS+Iron Wire+Stainless Steel",
+    "type": "",
+    "meas": "",
+    "pcs_per_ctn": "1",
+    "color": "",
+    "accessories": "",
+    "notes": "Each product is individually packed in one carton. MOQ: 100 pcs per model. Orders must be placed in full-carton quantities.",
+    "gallery": [
+      "images/products/rabbit-650-cage.jpg"
     ],
     "moq_unit": "pc",
     "materials": [

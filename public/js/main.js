@@ -233,7 +233,7 @@ const CATALOG_GROUPS = [
       { id: 'exercise', label: 'Exercise & Play', matches: p => p.category === 'hamster-accessories' && HAMSTER_EXERCISE_PATTERN.test(p.name) },
     ],
   },
-  { id: 'rabbits-guinea-pigs', label: 'Rabbit & Small Pet Supplies', matches: p => p.id === 'rabbit-650-cage' },
+  { id: 'rabbits-guinea-pigs', label: 'Rabbit & Small Pet Supplies', matches: p => ['rabbit-650-cage', 'guinea-pig-650-cage'].includes(p.id) },
   { id: 'cat', label: 'Cat Care Products', matches: p => p.id === 'cat-litter-box-75' || p.id === 'cat-feeder-automatic' },
   { id: 'reptile', label: 'Reptile Habitats', matches: p => p.id === 'turtle-tank' },
 ];

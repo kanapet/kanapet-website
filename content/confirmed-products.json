@@ -331,6 +331,64 @@
     },
     "bird-470-wire": {
       "image": "images/products/bird-470-cage-main-v3.jpg"
+    },
+    "rabbit-650-cage": {
+      "name": "650 Rabbit Cage",
+      "size": "65*46*62",
+      "moq": 100,
+      "colors": [
+        "White"
+      ],
+      "image": "images/products/gallery/rabbit-650-cage-scene-v4.jpg",
+      "net_weight": "7.065",
+      "gross_weight": "9.08",
+      "cbm": "",
+      "material": "PET+ABS+Iron Wire+Stainless Steel",
+      "type": "",
+      "meas": "",
+      "pcs_per_ctn": "1",
+      "color": "",
+      "accessories": "",
+      "notes": "Each product is individually packed in one carton. MOQ: 100 pcs per model. Orders must be placed in full-carton quantities.",
+      "gallery": [
+        "images/products/rabbit-650-cage.jpg"
+      ],
+      "moq_unit": "pc",
+      "materials": [
+        "PET",
+        "ABS",
+        "Iron Wire",
+        "Stainless Steel"
+      ]
+    },
+    "guinea-pig-650-cage": {
+      "name": "650 Guinea Pig Cage",
+      "size": "65*46*62",
+      "moq": 100,
+      "colors": [
+        "White"
+      ],
+      "image": "images/products/guinea-pig-650-cage-scene.jpg",
+      "net_weight": "7.065",
+      "gross_weight": "9.08",
+      "cbm": "",
+      "material": "PET+ABS+Iron Wire+Stainless Steel",
+      "type": "",
+      "meas": "",
+      "pcs_per_ctn": "1",
+      "color": "",
+      "accessories": "",
+      "notes": "Each product is individually packed in one carton. MOQ: 100 pcs per model. Orders must be placed in full-carton quantities.",
+      "gallery": [
+        "images/products/rabbit-650-cage.jpg"
+      ],
+      "moq_unit": "pc",
+      "materials": [
+        "PET",
+        "ABS",
+        "Iron Wire",
+        "Stainless Steel"
+      ]
     }
   },
   "images": {
@@ -371,6 +429,9 @@
     "images/products/bird-400-wire.jpg": "f1251e6648f06009360cb9ff7bf817e08cb82264790b30630b0a39be5737fbfa",
     "images/products/bird-400-wire.webp": "9f24d5e9588952a12648f198e2a1673ae481971b4bba255689f7da6130ab2e7c",
     "images/products/bird-470-cage-main-v3.jpg": "308e50a2ba0d6a2e9da8efa4883b9c17e2508488d8ed3de90bbdac179e2fe845",
-    "images/products/bird-470-cage-main-v3.webp": "44c5ce8ca4b4ec561127ae6587e04c69a95f28ea969cd3e4a5d3e77957be1569"
+    "images/products/bird-470-cage-main-v3.webp": "44c5ce8ca4b4ec561127ae6587e04c69a95f28ea969cd3e4a5d3e77957be1569",
+    "images/products/guinea-pig-650-cage-scene.jpg": "3671ed4c366332664b05a7dbc6c907d48921d28ee0565a17f7a639cac75f0f5f",
+    "images/products/gallery/rabbit-650-cage-scene-v4.jpg": "23916956f099108fa48398c6ab5caf926bd5be41a358342c75ec21b13ec62551",
+    "images/products/rabbit-650-cage.jpg": "55ac9049478fa1879378ecee3dd48a295377be095d72feedbdbc32ce06120730"
   }
 }
