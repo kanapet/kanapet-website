@@ -1136,7 +1136,7 @@
     "images/products_overview_v3.jpg": "006efcb153090a22fd7899ffb5435e5c0ecf2d5ecb31d1ae0540f06fa9189af1",
     "images/products_overview_v3.webp": "ee7e1b545c142f57eb13cfaee9100eb8f99d6b2015df07a0e7d95b0990d75c7f",
     "images/wechat-lena-qr.jpg": "d1529aab263c748634e80a0d1d1feda0e0d342140ea2d9cd372d275731ccfe57",
-    "index.html": "76b81fb97262f9d3cc61be6098f25d291734c629aafa673aeec185430c34cafb",
+    "index.html": "2b430016f584bc21bdd37cfd70449ff44783d455ff753265eb765dbff0f49417",
     "insights/custom-pet-product-development-process/index.html": "278acca3930e5f2f4d1b92ad2a9086f634429066a5191a9d31f278cdd5a861be",
     "insights/index.html": "f10c32241828fa643915ae090f2b750f9db7df894c84933489662209308006cf",
     "insights/kanapet-cips-2026-guangzhou/index.html": "b6bc7d0d84b66c6a593730c291dbf413541e300f85ef2cc5a5069dec3f2f9fd8",
@@ -1220,11 +1220,12 @@
     "product/hamster-wheel-27cm.html": "1025bc68372767f15f2174be89f2672a6aaea4e84e7a30ce711cdab0b8f15a55",
     "product/rabbit-650-cage.html": "abf0eec1d1b6ae6cbff360f6cdcb6945122b4272430fba62eb4de282a57842c6",
     "product/turtle-tank.html": "db89434e2d2c488ba6289c516539fde8f81cc2fc34bb943891de3f6ab52cabcb",
-    "products.html": "e698fb55e46e2fdf53f4e1baf343f0fd3dd8a7ceb8137b13bc0fab2413685cc4",
+    "products.html": "cda75547394960441ba0805b194156cc22fbecc9bdcac33502ac3eeefc91390f",
     "rabbit-guinea-pig-cages.html": "8df6a49d207cacf85fb3082fba6a7d17560991e974e0274655ee718225e59671",
     "robots.txt": "1eed0c0094b1f273e42d4dcfd95bc076cefe42efe3df799e29e16b46c85afa99",
-    "sitemap.xml": "cec5da82a742f7189a5076b902a9cc69b6edbf230ae6645d26beab234598a15d",
+    "sitemap.xml": "d078133d13dde4dfd7bf221fc5d0bf9689ae9a9f3f8797175f9dbb8eba847bc9",
+    "turtle-tanks.html": "9701b8567b3727b682e53fdd57ce623366850ce3e3a317853d028ff346661c53",
     "videos/kanapet-factory-tour.mp4": "a571c81046574ab7a542955ff78e6e5250a1ed7b012e107c10919fdecf67a8a7"
   },
-  "id": "08337a87f35f5f87"
+  "id": "da4da9e0f61aece6"
 }
