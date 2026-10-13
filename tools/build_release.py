@@ -30,6 +30,7 @@ def build():
     run('sync_product_output.py')
     run('build_category_pages.py')
     run('build_supply_pages.py')
+    run('build_small_pet_pages.py')
     if (ROOT / 'tools/build_insights.py').is_file():
         run('build_insights.py')
     run('normalize_accessibility.py')

@@ -1,9 +1,10 @@
 {
   "files": {
-    "bird-cages.html": "f9afa6bdf19b24c9952ba1a6644e17978473cd31574a98434ffa746e609fa609",
-    "bird-supplies.html": "862ce8c5a9cf524447c328875499191b57274ae5e67fd2c8bb43794725615a2d",
+    "bird-cages.html": "f702465fbef5e2c2c0c281120efacd7dd4d1d6a17cf58d466f1855edcb97117f",
+    "bird-supplies.html": "8cbf4c8e214a02f082885f5a0867be65bd60b637b16febaaf59714c9a0dab986",
+    "cat-products.html": "4ee81bf8cf5c9d3109344069504adc79793139a21cdc2ed299541b5ee12a3e22",
     "contact.html": "563c255768eee241b5e3a2eb2286f804d1b8405d823e525c6cbf2ba2ca1b220c",
-    "css/categories.css": "90b9e6037453a33cab40331d7fe7c6e6c9c8623679705cd850feff72fae8c325",
+    "css/categories.css": "3b0d7eadc907f94422e9f94b13fb9b85cd06438d4379b4077de2745f66991410",
     "css/factory.css": "2323798c3a8a5a1463373b5199ee2ed495b56480e52ac1f3cebd0fdc28ce3106",
     "css/insights.css": "e48bada9d9583d6a2148f3425710c43305e506d10d6cdb82c37de311650fc3ab",
     "css/style.css": "ce097a4403b4c4169007504dc2e12056108bdc79280bca6a4f19a77cd3fa8b6e",
@@ -18,8 +19,8 @@
     "favicon-32.png": "e90f30f7f55db05a289600b6af0fd102928b0557b8f246f65abdb1b4e79bbb8c",
     "favicon.ico": "53e8ec9b549bea3a1e1f94002ce7471098af0c814bf6f16835ee3e966068cf44",
     "favicon.svg": "1fe014fa8a652e40c819ecc3b5381045654295a41ee1dcf1ac97832c84ada8fe",
-    "hamster-cages.html": "fec1ee4389f6cfb038a5b42ea2ea67e8a54833c077e4b9a1cd7a7a515d0decac",
-    "hamster-supplies.html": "92991e426cd0190b0a92e7f3cf24b60c7cffb2df9fb6ea21cfcc1eb89c68f316",
+    "hamster-cages.html": "dc6a630aa046f960934932adeed4afd54e91c49874a8fe9c40d62af4e6403f3d",
+    "hamster-supplies.html": "075d67485b9b0e48da31577815866c43ff1041876def9093d0a1dae27e7586ed",
     "images/categories/bird-accessories.jpg": "da57d667859e25522048fe3f26f5a16c466222c7204aceb6e39de4f10ea464c4",
     "images/categories/bird-accessories.webp": "b4f1366ffa3b02b67b8dd9414061654fcfeb4faf040d963e857d2fc4d10645ce",
     "images/categories/bird-cages.jpg": "859234112c34742adbf16ed7c9459797fa1bf20467fae0a1f1aaf7a048537aea",
@@ -1135,7 +1136,7 @@
     "images/products_overview_v3.jpg": "006efcb153090a22fd7899ffb5435e5c0ecf2d5ecb31d1ae0540f06fa9189af1",
     "images/products_overview_v3.webp": "ee7e1b545c142f57eb13cfaee9100eb8f99d6b2015df07a0e7d95b0990d75c7f",
     "images/wechat-lena-qr.jpg": "d1529aab263c748634e80a0d1d1feda0e0d342140ea2d9cd372d275731ccfe57",
-    "index.html": "dbe683413eb160595cb484aa45dd21531dbe794f16e4d092b8763e17fcba25c5",
+    "index.html": "76b81fb97262f9d3cc61be6098f25d291734c629aafa673aeec185430c34cafb",
     "insights/custom-pet-product-development-process/index.html": "278acca3930e5f2f4d1b92ad2a9086f634429066a5191a9d31f278cdd5a861be",
     "insights/index.html": "f10c32241828fa643915ae090f2b750f9db7df894c84933489662209308006cf",
     "insights/kanapet-cips-2026-guangzhou/index.html": "b6bc7d0d84b66c6a593730c291dbf413541e300f85ef2cc5a5069dec3f2f9fd8",
@@ -1219,10 +1220,11 @@
     "product/hamster-wheel-27cm.html": "1025bc68372767f15f2174be89f2672a6aaea4e84e7a30ce711cdab0b8f15a55",
     "product/rabbit-650-cage.html": "abf0eec1d1b6ae6cbff360f6cdcb6945122b4272430fba62eb4de282a57842c6",
     "product/turtle-tank.html": "db89434e2d2c488ba6289c516539fde8f81cc2fc34bb943891de3f6ab52cabcb",
-    "products.html": "f687a42edf15486d53c2313f989a6dcaf0545b921b475dfbf1a897f7ab369bce",
+    "products.html": "e698fb55e46e2fdf53f4e1baf343f0fd3dd8a7ceb8137b13bc0fab2413685cc4",
+    "rabbit-guinea-pig-cages.html": "8df6a49d207cacf85fb3082fba6a7d17560991e974e0274655ee718225e59671",
     "robots.txt": "1eed0c0094b1f273e42d4dcfd95bc076cefe42efe3df799e29e16b46c85afa99",
-    "sitemap.xml": "1f0f4c4063828b453250b0d72e2487ecd2749b28fbe9e7ae57a2477f6abf356f",
+    "sitemap.xml": "cec5da82a742f7189a5076b902a9cc69b6edbf230ae6645d26beab234598a15d",
     "videos/kanapet-factory-tour.mp4": "a571c81046574ab7a542955ff78e6e5250a1ed7b012e107c10919fdecf67a8a7"
   },
-  "id": "e1a5348669b843ef"
+  "id": "08337a87f35f5f87"
 }

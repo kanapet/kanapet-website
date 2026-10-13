@@ -1,1 +1,3 @@
 .category-breadcrumb a{color:#fff;text-decoration:underline;text-underline-offset:3px}.category-breadcrumb a:hover{color:#fff}.section .products-grid{margin-top:24px}main .section h3{margin-top:24px;margin-bottom:8px}main .section h2:not(:first-child){margin-top:32px}main .section p{line-height:1.7}main .section .btn{margin-top:20px}
+
+.category-table{overflow-x:auto;margin:24px 0}.category-table table{width:100%;border-collapse:collapse;min-width:620px}.category-table th,.category-table td{padding:14px;text-align:left;border-bottom:1px solid #dce5eb}.category-table thead{background:#edf7fc}
