@@ -1407,3 +1407,6 @@ footer {
   .contact-form-panel { padding: 24px 18px; }
   .contact-grid { padding: 24px 0; gap: 32px; }
 }
+
+/* Match the rabbit scene subject scale to the square guinea-pig scene. */
+.product-img img[src*="rabbit-650-cage-scene-v4"] { transform: scale(1.35); transform-origin: center; }
