@@ -452,6 +452,8 @@ function renderProductDetail() {
     ];
   }
   
+  if (p.features && p.features.length) keyFeatures = p.features;
+
   const materials = p.material || 'Material specifications available on request.';
   
   let accessories = 'Contact us for complete accessory list';

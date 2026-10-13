@@ -2427,7 +2427,8 @@
   {
     "id": "cat-feeder-automatic",
     "slug": "cat-feeder-automatic",
-    "name": "Automatic Cat Feeder & Water Dispenser",
+    "name": "2-in-1 Gravity Cat Feeder & Water Dispenser",
+    "features": ["2-in-1 design combines a cat food feeder and water dispenser in one station", "Gravity-fed food and water replenishment for everyday feeding", "Separate food hopper and water reservoir keep feeding and drinking side by side", "Transparent containers make food and water levels easy to check", "Available in White, Blue, Pink and Gray, with OEM/ODM customization options"],
     "category": "other-small-pets",
     "series": "cat-feeder",
     "size": "37*45*32",
