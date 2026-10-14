@@ -391,6 +391,9 @@
         "Iron Wire",
         "Stainless Steel"
       ]
+    },
+    "bird-parrot-nest-large": {
+      "image": "images/products/parrot-nest-large-main.png"
     }
   },
   "images": {
@@ -440,6 +443,8 @@
     "images/products/color/bird-travel-42_pink.jpg": "d0eea0a8c43128c5892818e955ca6d0f333b971469783f12521b169cf5a53cc4",
     "images/products/color/bird-travel-42_pink.webp": "506ea52eb74e1daaa39de4266e8d165bb948976299af4e56033cecf409f25e7e",
     "images/products/color/bird-travel-42_blue.jpg": "8eba4a92b62f0fa35dc4f68ebf8283802956b5d12b67447412ecc1e5f40fbce2",
-    "images/products/color/bird-travel-42_blue.webp": "b5a74ddd81422cc88542f6792c5866edf40710ba62f065eec11c65b10215f4b6"
+    "images/products/color/bird-travel-42_blue.webp": "b5a74ddd81422cc88542f6792c5866edf40710ba62f065eec11c65b10215f4b6",
+    "images/products/parrot-nest-large-main.png": "9647818e26fa950c13b337daeff4a6bc9bb352cf25b12911732fe4808de6d67f",
+    "images/products/parrot-nest-large-main.webp": "cc64f1cbfda13793c54e7bdf1baa119e60132a310a2b3f5d71af42d62bd7c812"
   }
 }

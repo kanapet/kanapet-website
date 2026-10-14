@@ -1226,7 +1226,7 @@ window.KANAPET_PRODUCTS = [
     "colors": [
       "Transparent"
     ],
-    "image": "images/products/bird-parrot-nest.jpg",
+    "image": "images/products/parrot-nest-large-main.png",
     "net_weight": "0.28",
     "gross_weight": "1.5",
     "cbm": "",
