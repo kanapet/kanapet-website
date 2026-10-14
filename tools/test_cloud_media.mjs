@@ -15,6 +15,7 @@ class Bucket{
  async head(key){return this.objects.get(key)||null;}
  async get(key,options={}){const obj=this.objects.get(key);if(!obj)return null;let bytes=obj.bytes;let range;if(options.range){const offset=options.range.offset??Math.max(0,obj.size-options.range.suffix);const length=options.range.length??obj.size-offset;bytes=bytes.subarray(offset,offset+length);range={offset,length:bytes.length};}return {...obj,body:new Response(bytes).body,range,json:async()=>JSON.parse(obj.bytes.toString())};}
  async delete(key){this.objects.delete(key);}
+ async list({prefix}){return {objects:[...this.objects.keys()].filter(key=>key.startsWith(prefix)).map(key=>({key})),truncated:false};}
 }
 const env={MEDIA_BUCKET:new Bucket(),MEDIA_ACCESS_ISSUER:'https://test-team.cloudflareaccess.com',MEDIA_ACCESS_AUD:'test-aud',MEDIA_ADMIN_EMAILS:'admin@example.invalid',ASSETS:{fetch:async()=>new Response('asset')}};
 const origin='https://www.kanapet.com';
@@ -47,5 +48,14 @@ try{
  r=await req(endpoint+'/publish',{method:'POST',headers:{'If-Match':'3'},data:{}});assert.equal(r.status,200);
  r=await req(item.src,{auth:false});assert.equal(r.status,401,'Published deletion must remove anonymous access');
  r=await req(endpoint,{method:'PUT',headers:{'If-Match':'4',Origin:'https://evil.invalid'},data:{items:baseline}});assert.equal(r.status,403);
- console.log('Cloud media checks passed: signed JWT, email allowlist, expiry/audience, CSRF, R2 archive, private drafts, atomic publish, ranges, deletion.');
+ const current=(await (await req(endpoint)).json()).draft;
+ r=await req(endpoint,{method:'PUT',headers:{'If-Match':String(current.revision)},data:{items:[...baseline,item],coverId:item.id}});assert.equal(r.status,200);
+ const chosen=(await r.json()).draft;
+ r=await req(endpoint+'/publish',{method:'POST',headers:{'If-Match':String(chosen.revision)},data:{}});assert.equal(r.status,200);
+ const published=(await r.json()).draft;
+ r=await req('/api/media/covers',{auth:false});assert.equal((await r.json()).covers['bird-650-pet-door'].src,item.src,'Cover must propagate independently of gallery order');
+ r=await req('/api/media/bird-650-pet-door',{auth:false});assert.equal((await r.json()).items[0].id,item.id);
+ r=await req(endpoint,{method:'PUT',headers:{'If-Match':String(published.revision)},data:{items:baseline}});assert.equal(r.status,400,'Deleting cover requires explicit replacement');
+ r=await req(endpoint,{method:'PUT',headers:{'If-Match':String(published.revision)},data:{items:baseline,coverId:baseline[0].id}});assert.equal(r.status,200);
+ console.log('Cloud media checks passed, including independent cover, sitewide feed and cover deletion protection.');
 }finally{globalThis.fetch=originalFetch;}

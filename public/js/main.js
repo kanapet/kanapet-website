@@ -115,6 +115,7 @@ async function loadData() {
   if (window.KANAPET_PRODUCTS && window.KANAPET_CATEGORIES) {
     products = window.KANAPET_PRODUCTS;
     categories = window.KANAPET_CATEGORIES;
+    await applyPublishedCovers();
     return;
   }
   try {
@@ -124,11 +125,18 @@ async function loadData() {
     ]);
     products = await pRes.json();
     categories = await cRes.json();
+    await applyPublishedCovers();
   } catch (e) {
     console.error('Data load failed:', e);
     products = [];
     categories = {};
   }
+}
+
+async function applyPublishedCovers() {
+  if(location.protocol==='file:')return;
+  const covers=window.KANAPET_MEDIA_COVERS ?? (await fetch('/api/media/covers',{cache:'no-store'}).then(r=>r.ok?r.json():{}).then(d=>d.covers||{}).catch(()=>({})));
+  products=products.map(p=>covers[p.slug]?.src?{...p,image:covers[p.slug].src,mediaCover:true}:p);
 }
 
 // Format size: cm primary + inch conversion
@@ -316,7 +324,7 @@ function renderFeatured(containerId, count = 8) {
   };
   el.innerHTML = enclosures
     .slice(0, count)
-    .map(product => productCard({ ...product, image: sceneImages[product.id] || product.image }, 1, true))
+    .map(product => productCard({ ...product, image: product.mediaCover ? product.image : sceneImages[product.id] || product.image }, 1, true))
     .join('');
 }
 

@@ -47,10 +47,29 @@ async function validate(env,slug,items){if(!Array.isArray(items)||items.length>8
  checked.push(clean);
  }return checked;}
 const references=(r,src)=>r?.items.some(i=>i.src===src||i.poster===src);
+export function coverOf(value) {
+ const state=value?.published || value?.draft;
+ if(!state)return null;
+ return state.items.find(i=>i.type==='image' && i.id===state.coverId) || state.items.find(i=>i.type==='image') || null;
+}
+export async function publishedCovers(env) {
+ if(!env.MEDIA_BUCKET?.list)return {};
+ const covers={};let cursor;
+ do {
+  const page=await env.MEDIA_BUCKET.list({prefix:'products/',limit:1000,...(cursor?{cursor}: {})});
+  await Promise.all(page.objects.map(async object=>{
+   const slug=object.key.slice(9,-5);if(!catalog.some(p=>p.slug===slug))return;
+   const value=await (await env.MEDIA_BUCKET.get(object.key))?.json();
+   if(value?.published){const image=coverOf({published:value.published});if(image)covers[slug]={src:image.src,version:value.published.at};}
+  }));cursor=page.truncated?page.cursor:null;
+ }while(cursor);
+ return covers;
+}
 export async function handleMedia(request,env){
  try{
  const url=new URL(request.url),path=url.pathname;
  if(!env.MEDIA_BUCKET)fail(503,'云端素材存储尚未启用');
+ if(path==='/api/media/covers'&&request.method==='GET')return response({covers:await publishedCovers(env)});
  const publicMatch=path.match(/^\/api\/media\/([a-z0-9-]+)$/);
  if(publicMatch&&request.method==='GET'){const r=await record(env,publicMatch[1]);return response({items:r.value.published?.items||baseline(publicMatch[1]).draft.items});}
  const asset=path.match(/^\/media-assets\/([a-f0-9-]{36})$/);
@@ -70,13 +89,13 @@ export async function handleMedia(request,env){
  const match=path.match(/^\/api\/admin\/products\/([a-z0-9-]+)(?:\/(upload|publish))?$/);
  if(match){const slug=match[1],action=match[2];
   if(!action&&request.method==='GET')return response((await record(env,slug)).value);
-  if(!action&&request.method==='PUT'){const data=await payload(request);const items=await validate(env,slug,data.items);const r=await record(env,slug);revision(request,r);return response(await store(env,slug,r,{...r.value,draft:{revision:r.value.draft.revision+1,items},updatedBy:actor.email}));}
+  if(!action&&request.method==='PUT'){const data=await payload(request);const items=await validate(env,slug,data.items);const r=await record(env,slug);revision(request,r);const coverId=data.coverId ?? coverOf({draft:r.value.draft})?.id;if(!items.some(i=>i.type==='image'&&i.id===coverId))fail(400,'删除首图前请先指定另一张图片为首图');return response(await store(env,slug,r,{...r.value,draft:{revision:r.value.draft.revision+1,items,coverId},updatedBy:actor.email}));}
   if(action==='upload'&&request.method==='POST'){
    product(slug);const bytes=await body(request,40*1024*1024);const kind=sniff(bytes);const dimensions=kind.type==='image'?inspectImage(bytes,kind.mime):{};const r=await record(env,slug);revision(request,r);if(r.value.draft.items.length>=80)fail(400,'最多80项素材');const id=crypto.randomUUID();const fileName=mediaFileName(slug,kind.type,r.value.draft.items.filter(i=>i.type===kind.type).length+1,id,kind.mime);const item={id,type:kind.type,src:'/media-assets/'+id,title:product(slug).name,fileName,...dimensions};
    await env.MEDIA_BUCKET.put('assets/'+id,bytes,{httpMetadata:{contentType:kind.mime},customMetadata:{slug,type:kind.type,uploadedBy:actor.email,fileName,...Object.fromEntries(Object.entries(dimensions).map(([k,v])=>[k,String(v)]))}});
-   try{return response(await store(env,slug,r,{...r.value,draft:{revision:r.value.draft.revision+1,items:[...r.value.draft.items,item]},updatedBy:actor.email}),201);}catch(error){await env.MEDIA_BUCKET.delete('assets/'+id);throw error;}
+   try{return response(await store(env,slug,r,{...r.value,draft:{...r.value.draft,revision:r.value.draft.revision+1,items:[...r.value.draft.items,item]},updatedBy:actor.email}),201);}catch(error){await env.MEDIA_BUCKET.delete('assets/'+id);throw error;}
   }
-  if(action==='publish'&&request.method==='POST'){const r=await record(env,slug);revision(request,r);const items=await validate(env,slug,r.value.draft.items);if(!items.some(i=>i.type==='image'))fail(400,'请至少保留一张产品图片');return response(await store(env,slug,r,{...r.value,published:{items,at:new Date().toISOString(),by:actor.email},draft:{...r.value.draft,revision:r.value.draft.revision+1}}));}
+  if(action==='publish'&&request.method==='POST'){const r=await record(env,slug);revision(request,r);const items=await validate(env,slug,r.value.draft.items);if(!items.some(i=>i.type==='image'))fail(400,'请至少保留一张产品图片');return response(await store(env,slug,r,{...r.value,published:{items:[...items.filter(i=>i.id===coverOf({draft:r.value.draft})?.id),...items.filter(i=>i.id!==coverOf({draft:r.value.draft})?.id)],coverId:coverOf({draft:r.value.draft})?.id,at:new Date().toISOString(),by:actor.email},draft:{...r.value.draft,revision:r.value.draft.revision+1}}));}
  }
  fail(404,'接口不存在');
  }catch(error){return response({error:error.status?error.message:'素材服务暂时不可用'},error.status||500);}

@@ -1,5 +1,6 @@
 import { handleMedia, authenticate } from './media.js';
 import { adminAssets } from './admin-assets.js';
+import { applySiteMedia } from './site-media.js';
 // Cloudflare Worker for kanapet-website.
 //
 // Three jobs:
@@ -366,6 +367,6 @@ export default {
     else if (/\.(?:html|json|js|css)$/.test(url.pathname) || url.pathname.endsWith('/')) {
       headers.set('Cache-Control', 'no-cache, must-revalidate');
     }
-    return new Response(response.body, {status: response.status, statusText: response.statusText, headers});
+    return applySiteMedia(new Response(response.body, {status: response.status, statusText: response.statusText, headers}), request, env);
   }
 };

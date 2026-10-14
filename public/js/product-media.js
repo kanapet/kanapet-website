@@ -32,7 +32,7 @@
   try {
     const preview = new URLSearchParams(location.search).get('media-preview') === 'draft';
     const res = await fetch(preview ? `/api/admin/products/${slug}` : `/api/media/${slug}`, {cache:'no-store'});
-    if (res.ok) { const data = await res.json(); items = preview ? data.draft.items : data.items; }
+    if (res.ok) { const data = await res.json(); items = preview ? data.draft.items : data.items; if(preview && data.draft.coverId) items=[...items.filter(i=>i.id===data.draft.coverId),...items.filter(i=>i.id!==data.draft.coverId)]; }
   } catch {}
   if (!Array.isArray(items) || !items.length) {
     items = [{type:'image',src:image.src,title:image.alt}];

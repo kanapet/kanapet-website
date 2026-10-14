@@ -19,10 +19,16 @@ def verify(base, retries):
             def fetch(path):
                 req = urllib.request.Request(base.rstrip('/') + '/' + path + '?release=' + expected['id'], headers={'User-Agent': 'Mozilla/5.0 (compatible; KanapetReleaseCheck/1.0)', 'Accept': '*/*', 'Cache-Control': 'no-cache'})
                 with urllib.request.urlopen(req, timeout=20) as response:
-                    return response.read()
+                    data = response.read()
+                    if path.endswith('.html') and response.headers.get('X-Kanapet-Static-Hash'):
+                        assert response.headers['X-Kanapet-Static-Hash'] == expected['files'][path], 'Deployed static source differs: ' + path
+                        return None
+                    return data
             assert json.loads(fetch('release.json'))['id'] == expected['id'], 'Release ID differs'
             for path in paths:
-                assert hashlib.sha256(fetch(path)).hexdigest() == expected['files'][path], 'Deployed file differs: ' + path
+                data = fetch(path)
+                if data is not None:
+                    assert hashlib.sha256(data).hexdigest() == expected['files'][path], 'Deployed file differs: ' + path
             print('Verified deployed release', expected['id'], 'and', len(paths), 'files')
             return
         except Exception as error:

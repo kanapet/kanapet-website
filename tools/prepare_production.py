@@ -20,5 +20,5 @@ for script, args in [
     ('audit_accessibility.py', []),
 ]:
     subprocess.run([sys.executable, 'tools/' + script, *args], cwd=ROOT, check=True)
-for script in ['test_product_render.mjs', 'test_worker.mjs', 'smoke_site.mjs']:
+for script in ['test_product_render.mjs', 'test_worker.mjs', 'test_cloud_media.mjs', 'smoke_site.mjs']:
     subprocess.run(['node', 'tools/' + script], cwd=ROOT, check=True)
