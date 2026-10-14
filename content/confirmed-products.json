@@ -71,9 +71,9 @@
       "material": "HIPS + ABS + plastic-sprayed iron wire / 304 stainless steel option",
       "notes": "Iron wire construction. Each product is individually packed in one carton. MOQ: 50 pcs per color.",
       "colors": [
-        "Green",
-        "Blue",
-        "Yellow"
+        "White",
+        "Pink",
+        "Blue"
       ],
       "image": "images/products/bird-travel-cage-42.jpg",
       "gallery": [
@@ -81,7 +81,12 @@
         "images/products/gallery/42-travel-scene-2.jpg",
         "images/products/gallery/42-travel-ss-1.jpg",
         "images/products/gallery/42-travel-ss-2.jpg"
-      ]
+      ],
+      "color_images": {
+        "White": "images/products/color/bird-travel-42_white.jpg",
+        "Pink": "images/products/color/bird-travel-42_pink.jpg",
+        "Blue": "images/products/color/bird-travel-42_blue.jpg"
+      }
     },
     "bird-bathroom-small": {
       "size": "13*12*13",
@@ -432,6 +437,12 @@
     "images/products/bird-470-cage-main-v3.webp": "44c5ce8ca4b4ec561127ae6587e04c69a95f28ea969cd3e4a5d3e77957be1569",
     "images/products/guinea-pig-650-cage-scene.jpg": "3671ed4c366332664b05a7dbc6c907d48921d28ee0565a17f7a639cac75f0f5f",
     "images/products/gallery/rabbit-650-cage-scene-v4.jpg": "23916956f099108fa48398c6ab5caf926bd5be41a358342c75ec21b13ec62551",
-    "images/products/rabbit-650-cage.jpg": "55ac9049478fa1879378ecee3dd48a295377be095d72feedbdbc32ce06120730"
+    "images/products/rabbit-650-cage.jpg": "55ac9049478fa1879378ecee3dd48a295377be095d72feedbdbc32ce06120730",
+    "images/products/color/bird-travel-42_white.jpg": "174cae4ad8cc5ba98fc368013bbb389cbd5ca25442c9c773632803b3cacadf4c",
+    "images/products/color/bird-travel-42_white.webp": "932f904e8be7775aad0a464ddb85504115e80bf24b6461d33e5db6b4b39fcd1f",
+    "images/products/color/bird-travel-42_pink.jpg": "d0eea0a8c43128c5892818e955ca6d0f333b971469783f12521b169cf5a53cc4",
+    "images/products/color/bird-travel-42_pink.webp": "506ea52eb74e1daaa39de4266e8d165bb948976299af4e56033cecf409f25e7e",
+    "images/products/color/bird-travel-42_blue.jpg": "8eba4a92b62f0fa35dc4f68ebf8283802956b5d12b67447412ecc1e5f40fbce2",
+    "images/products/color/bird-travel-42_blue.webp": "b5a74ddd81422cc88542f6792c5866edf40710ba62f065eec11c65b10215f4b6"
   }
 }

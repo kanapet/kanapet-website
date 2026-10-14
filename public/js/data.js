@@ -126,9 +126,9 @@ window.KANAPET_PRODUCTS = [
     "size": "42 × 28 × 37 cm (16.53 × 11.02 × 14.56 in)",
     "moq": "50 pcs per color",
     "colors": [
-      "Green",
-      "Blue",
-      "Yellow"
+      "White",
+      "Pink",
+      "Blue"
     ],
     "image": "images/products/bird-travel-cage-42.jpg",
     "net_weight": "1.94",
@@ -157,7 +157,12 @@ window.KANAPET_PRODUCTS = [
         "name": "Stainless Steel",
         "image": "images/products/gallery/42-travel-ss-1.jpg"
       }
-    ]
+    ],
+    "color_images": {
+      "White": "images/products/color/bird-travel-42_white.jpg",
+      "Pink": "images/products/color/bird-travel-42_pink.jpg",
+      "Blue": "images/products/color/bird-travel-42_blue.jpg"
+    }
   },
   {
     "id": "bird-feeder-cup-no1",

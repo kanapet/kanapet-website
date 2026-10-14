@@ -125,9 +125,9 @@
     "size": "42 × 28 × 37 cm (16.53 × 11.02 × 14.56 in)",
     "moq": "50 pcs per color",
     "colors": [
-      "Green",
-      "Blue",
-      "Yellow"
+      "White",
+      "Pink",
+      "Blue"
     ],
     "image": "images/products/bird-travel-cage-42.jpg",
     "net_weight": "1.94",
@@ -156,7 +156,12 @@
         "name": "Stainless Steel",
         "image": "images/products/gallery/42-travel-ss-1.jpg"
       }
-    ]
+    ],
+    "color_images": {
+      "White": "images/products/color/bird-travel-42_white.jpg",
+      "Pink": "images/products/color/bird-travel-42_pink.jpg",
+      "Blue": "images/products/color/bird-travel-42_blue.jpg"
+    }
   },
   {
     "id": "bird-feeder-cup-no1",
@@ -2428,7 +2433,13 @@
     "id": "cat-feeder-automatic",
     "slug": "cat-feeder-automatic",
     "name": "2-in-1 Gravity Cat Feeder & Water Dispenser",
-    "features": ["2-in-1 design combines a cat food feeder and water dispenser in one station", "Gravity-fed food and water replenishment for everyday feeding", "Separate food hopper and water reservoir keep feeding and drinking side by side", "Transparent containers make food and water levels easy to check", "Available in White, Blue, Pink and Gray, with OEM/ODM customization options"],
+    "features": [
+      "2-in-1 design combines a cat food feeder and water dispenser in one station",
+      "Gravity-fed food and water replenishment for everyday feeding",
+      "Separate food hopper and water reservoir keep feeding and drinking side by side",
+      "Transparent containers make food and water levels easy to check",
+      "Available in White, Blue, Pink and Gray, with OEM/ODM customization options"
+    ],
     "category": "other-small-pets",
     "series": "cat-feeder",
     "size": "37*45*32",
