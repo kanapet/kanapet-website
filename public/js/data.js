@@ -2126,10 +2126,7 @@ window.KANAPET_PRODUCTS = [
     "size": "16*13*11",
     "moq": 200,
     "colors": [
-      "Transparent",
-      "Blue",
-      "Green",
-      "Pink"
+      "Transparent"
     ],
     "image": "images/products/hamster-external-bathroom-v3.jpg",
     "net_weight": "0.118",
@@ -2141,7 +2138,7 @@ window.KANAPET_PRODUCTS = [
     "pcs_per_ctn": "100",
     "color": "",
     "accessories": "",
-    "notes": "Multiple colors available. Packed 100 pcs per master carton. MOQ: 200 pcs per model, equivalent to 2 full cartons. Each piece has an individual carton. The listed carton dimensions are for the individual carton; gross weight is for one master carton of 100 pieces.",
+    "notes": "Available in transparent only. Packed 100 pcs per master carton. MOQ: 200 pcs per model, equivalent to 2 full cartons. Each piece has an individual carton. The listed carton dimensions are for the individual carton; gross weight is for one master carton of 100 pieces.",
     "gallery": [],
     "accessory_type": "universal",
     "moq_unit": "pc"
