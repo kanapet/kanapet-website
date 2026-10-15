@@ -1426,7 +1426,7 @@ window.KANAPET_PRODUCTS = [
     "features": [
       "2-in-1 design: works as both feeder and water bottle",
       "Universal hook fits both horizontal and vertical wire cages",
-      "200ml capacity for seeds, water, or treats",
+      "220ml capacity for seeds, water, or treats",
       "Transparent body lets you monitor food/water level",
       "Easy to install and clean"
     ],
@@ -2387,7 +2387,7 @@ window.KANAPET_PRODUCTS = [
     "accessories": "",
     "notes": "Each product is individually packed in one carton. MOQ: 100 pcs per model. Orders must be placed in full-carton quantities.",
     "gallery": [
-      "images/products/rabbit-650-cage.jpg"
+      "images/products/guinea-pig-650-cage.jpg"
     ],
     "moq_unit": "pc",
     "materials": [
