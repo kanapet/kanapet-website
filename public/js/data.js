@@ -666,7 +666,7 @@ window.KANAPET_PRODUCTS = [
     "colors": [
       "White"
     ],
-    "image": "images/products/bird-490-double-201.jpg",
+    "image": "images/products/bird-490-double-iron.jpg",
     "net_weight": "8.35",
     "gross_weight": "9.4",
     "cbm": "",
@@ -688,12 +688,12 @@ window.KANAPET_PRODUCTS = [
     "material_options": [
       {
         "name": "Iron Wire",
-        "image": "images/products/bird-490-double-201.jpg",
+        "image": "images/products/bird-490-double-iron.jpg",
         "size": "46*46*99"
       },
       {
         "name": "Stainless Steel",
-        "image": "images/products/bird-490-double-201.jpg",
+        "image": "images/products/bird-490-double-iron.jpg",
         "size": "46*46*99"
       }
     ]
@@ -709,7 +709,7 @@ window.KANAPET_PRODUCTS = [
     "colors": [
       "White"
     ],
-    "image": "images/products/bird-490-double-iron.jpg",
+    "image": "images/products/bird-490-double-201.jpg",
     "net_weight": "8.35",
     "gross_weight": "9.4",
     "cbm": "",
@@ -730,12 +730,12 @@ window.KANAPET_PRODUCTS = [
     "material_options": [
       {
         "name": "Iron Wire",
-        "image": "images/products/bird-490-double-iron.jpg",
+        "image": "images/products/bird-490-double-201.jpg",
         "size": "46*46*99"
       },
       {
         "name": "Stainless Steel",
-        "image": "images/products/bird-490-double-iron.jpg",
+        "image": "images/products/bird-490-double-201.jpg",
         "size": "46*46*99"
       }
     ]
@@ -2344,7 +2344,7 @@ window.KANAPET_PRODUCTS = [
     ],
     "image": "images/products/gallery/rabbit-650-cage-scene-v4.jpg",
     "net_weight": "7.065",
-    "gross_weight": "9.08",
+    "gross_weight": "10",
     "cbm": "",
     "material": "PET+ABS+Iron Wire+Stainless Steel",
     "type": "",
@@ -2362,7 +2362,8 @@ window.KANAPET_PRODUCTS = [
       "ABS",
       "Iron Wire",
       "Stainless Steel"
-    ]
+    ],
+    "carton_size": "70.5*51.5*22.5"
   },
   {
     "id": "guinea-pig-650-cage",
@@ -2377,7 +2378,7 @@ window.KANAPET_PRODUCTS = [
     ],
     "image": "images/products/guinea-pig-650-cage-scene.jpg",
     "net_weight": "7.065",
-    "gross_weight": "9.08",
+    "gross_weight": "10",
     "cbm": "",
     "material": "PET+ABS+Iron Wire+Stainless Steel",
     "type": "",
@@ -2395,7 +2396,8 @@ window.KANAPET_PRODUCTS = [
       "ABS",
       "Iron Wire",
       "Stainless Steel"
-    ]
+    ],
+    "carton_size": "70.5*51.5*22.5"
   },
   {
     "id": "cat-litter-box-75",

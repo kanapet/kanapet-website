@@ -340,7 +340,7 @@
       ],
       "image": "images/products/gallery/rabbit-650-cage-scene-v4.jpg",
       "net_weight": "7.065",
-      "gross_weight": "9.08",
+      "gross_weight": "10",
       "cbm": "",
       "material": "PET+ABS+Iron Wire+Stainless Steel",
       "type": "",
@@ -358,7 +358,8 @@
         "ABS",
         "Iron Wire",
         "Stainless Steel"
-      ]
+      ],
+      "carton_size": "70.5*51.5*22.5"
     },
     "guinea-pig-650-cage": {
       "name": "650 Guinea Pig Cage",
@@ -369,7 +370,7 @@
       ],
       "image": "images/products/guinea-pig-650-cage-scene.jpg",
       "net_weight": "7.065",
-      "gross_weight": "9.08",
+      "gross_weight": "10",
       "cbm": "",
       "material": "PET+ABS+Iron Wire+Stainless Steel",
       "type": "",
@@ -387,7 +388,8 @@
         "ABS",
         "Iron Wire",
         "Stainless Steel"
-      ]
+      ],
+      "carton_size": "70.5*51.5*22.5"
     },
     "bird-parrot-nest-large": {
       "image": "images/products/parrot-nest-large-main.png"
@@ -400,6 +402,36 @@
         "220ml capacity for seeds, water, or treats",
         "Transparent body lets you monitor food/water level",
         "Easy to install and clean"
+      ]
+    },
+    "bird-490-double-transparent-door": {
+      "image": "images/products/bird-490-double-iron.jpg",
+      "material_options": [
+        {
+          "name": "Iron Wire",
+          "image": "images/products/bird-490-double-iron.jpg",
+          "size": "46*46*99"
+        },
+        {
+          "name": "Stainless Steel",
+          "image": "images/products/bird-490-double-iron.jpg",
+          "size": "46*46*99"
+        }
+      ]
+    },
+    "bird-490-double-splash-proof": {
+      "image": "images/products/bird-490-double-201.jpg",
+      "material_options": [
+        {
+          "name": "Iron Wire",
+          "image": "images/products/bird-490-double-201.jpg",
+          "size": "46*46*99"
+        },
+        {
+          "name": "Stainless Steel",
+          "image": "images/products/bird-490-double-201.jpg",
+          "size": "46*46*99"
+        }
       ]
     }
   },
