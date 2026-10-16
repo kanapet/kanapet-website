@@ -228,9 +228,14 @@ const CATALOG_GROUPS = [
     subcategories: [
       { id: 'cages', label: 'Cages', matches: p => p.category === 'bird-cages' && !BIRD_STAND_IDS.has(p.id) },
       { id: 'stands', label: 'Cage Stands', matches: p => BIRD_STAND_IDS.has(p.id) },
-      { id: 'accessories', label: 'Accessories', matches: p => p.category === 'bird-accessories' },
+      { id: 'smart-products', label: 'Smart Bird Products', matches: p => p.category === 'smart-pet-products' },
+      { id: 'accessories', label: 'Accessories', matches: p => p.category === 'bird-accessories', subcategories: [
+        { id: 'feeding', label: 'Feeders & Water Bottles', matches: p => ['bird-feeder-cup-no1','bird-feeder-cup-no3-white','bird-feeder-cup-no3-transparent-hook','bird-feeder-cup-no4','bird-feeder-cup-no10','bird-feeding-cup-spring-door','bird-feeder-cup-anti-spill','bird-no-mess-parrot-feeder','bird-130ml-kettle','bird-200ml-kettle'].includes(p.id) },
+        { id: 'care', label: 'Bird Baths & Care', matches: p => ['bird-bathroom-small','bird-space-bathroom-regular','bird-space-bathroom-grate'].includes(p.id) },
+        { id: 'breeding', label: 'Nests & Breeding Boxes', matches: p => ['bird-parrot-nest','bird-parrot-nest-small','bird-parrot-nest-large','bird-breeding-box'].includes(p.id) },
+        { id: 'enrichment', label: 'Toys & Perches', matches: p => ['bird-windmill-toy','bird-perch-stick'].includes(p.id) },
+      ] },
       { id: 'travel', label: 'Travel Carriers', matches: p => p.category === 'bird-travel' },
-      { id: 'automatic-feeding', label: 'Automatic Feeders & Waterers', matches: p => p.category === 'smart-pet-products' },
     ],
   },
   {
@@ -250,7 +255,7 @@ const LEGACY_CATEGORY_TO_CATALOG = {
   'bird-cages': { group: 'bird' },
   'bird-accessories': { group: 'bird', subcategory: 'accessories' },
   'bird-travel': { group: 'bird', subcategory: 'travel' },
-  'smart-pet-products': { group: 'bird', subcategory: 'automatic-feeding' },
+  'smart-pet-products': { group: 'bird', subcategory: 'smart-products' },
   'hamster-cages': { group: 'hamster', subcategory: 'cages' },
   'hamster-accessories': { group: 'hamster' },
   'other-small-pets': { group: 'all' },
@@ -329,7 +334,7 @@ function renderFeatured(containerId, count = 8) {
 }
 
 // All products on products page (each product shown individually)
-function renderProducts(containerId, groupId = 'all', subcategoryId = null, filterColor = null, legacyCategory = null, sortBy = 'featured') {
+function renderProducts(containerId, groupId = 'all', subcategoryId = null, filterColor = null, legacyCategory = null, sortBy = 'featured', tertiaryId = null) {
   const el = document.getElementById(containerId);
   if (!el || !products.length) return;
   let list = products;
@@ -339,6 +344,8 @@ function renderProducts(containerId, groupId = 'all', subcategoryId = null, filt
   if (group.id !== 'all') list = list.filter(group.matches);
   const subcategory = group.subcategories?.find(item => item.id === subcategoryId);
   if (subcategory) list = list.filter(subcategory.matches);
+  const tertiary = subcategory?.subcategories?.find(item => item.id === tertiaryId);
+  if (tertiary) list = list.filter(tertiary.matches);
   if (legacyCategory) list = list.filter(p => p.category === legacyCategory);
   if (filterColor) {
     list = list.filter(p => p.colors && p.colors.some(c => c.toLowerCase() === filterColor.toLowerCase()));
@@ -774,6 +781,7 @@ function setupFilters() {
   const legacy = LEGACY_CATEGORY_TO_CATALOG[params.get('cat')];
   let activeGroup = params.get('group') || legacy?.group || 'all';
   let activeSubcategory = params.get('sub') || legacy?.subcategory || null;
+  let activeTertiary = params.get('type') || legacy?.tertiary || null;
   let activeColor = params.get('color') || null;
   let legacyCategory = LEGACY_PRESERVED_CATEGORIES.has(params.get('cat')) ? params.get('cat') : null;
   let sortBy = sortSelect?.value || 'featured';
@@ -784,6 +792,8 @@ function setupFilters() {
     if (group.id !== 'all') list = list.filter(group.matches);
     const subcategory = group.subcategories?.find(item => item.id === activeSubcategory);
     if (subcategory) list = list.filter(subcategory.matches);
+    const tertiary = subcategory?.subcategories?.find(item => item.id === activeTertiary);
+    if (tertiary) list = list.filter(tertiary.matches);
     if (legacyCategory) list = list.filter(p => p.category === legacyCategory);
     if (activeColor) list = list.filter(p => p.colors?.some(color => color.toLowerCase() === activeColor.toLowerCase()));
     return list;
@@ -794,6 +804,7 @@ function setupFilters() {
     if (legacyCategory) next.set('cat', legacyCategory);
     else if (activeGroup !== 'all') next.set('group', activeGroup);
     if (activeSubcategory) next.set('sub', activeSubcategory);
+    if (activeTertiary) next.set('type', activeTertiary);
     if (activeColor) next.set('color', activeColor);
     const query = next.toString();
     history.replaceState(null, '', query ? `products.html?${query}` : 'products.html');
@@ -806,6 +817,7 @@ function setupFilters() {
     primaryBar.querySelectorAll('[data-group]').forEach(button => button.addEventListener('click', () => {
       activeGroup = button.dataset.group;
       activeSubcategory = null;
+      activeTertiary = null;
       activeColor = null;
       legacyCategory = null;
       render();
@@ -820,10 +832,15 @@ function setupFilters() {
       const secondaryOptions = subcategories.length
         ? `<div class="catalog-sidebar-suboptions catalog-top-suboptions">${subcategories.map(sub => `<button type="button" class="catalog-sidebar-suboption ${sub.id === activeSubcategory ? 'active' : ''}" data-sidebar-subcategory="${sub.id}" data-sidebar-parent="${group.id}">${sub.label}</button>`).join('')}</div>`
         : '';
-      sidebarOptions.innerHTML = `<div class="catalog-primary-options">${primaryOptions}</div>${secondaryOptions}`;
+      const selectedSubcategory = subcategories.find(item => item.id === activeSubcategory);
+      const tertiaryOptions = selectedSubcategory?.subcategories?.length
+        ? `<div class="catalog-sidebar-suboptions catalog-top-suboptions catalog-tertiary-options">${selectedSubcategory.subcategories.map(sub => `<button type="button" class="catalog-sidebar-suboption ${sub.id === activeTertiary ? 'active' : ''}" data-sidebar-tertiary="${sub.id}">${sub.label}</button>`).join('')}</div>`
+        : '';
+      sidebarOptions.innerHTML = `<div class="catalog-primary-options">${primaryOptions}</div>${secondaryOptions}${tertiaryOptions}`;
       sidebarOptions.querySelectorAll('[data-sidebar-group]').forEach(button => button.addEventListener('click', () => {
         activeGroup = button.dataset.sidebarGroup;
         activeSubcategory = null;
+        activeTertiary = null;
         activeColor = null;
         legacyCategory = null;
         render();
@@ -831,6 +848,13 @@ function setupFilters() {
       sidebarOptions.querySelectorAll('[data-sidebar-subcategory]').forEach(button => button.addEventListener('click', () => {
         activeGroup = button.dataset.sidebarParent;
         activeSubcategory = button.dataset.sidebarSubcategory;
+        activeTertiary = null;
+        activeColor = null;
+        legacyCategory = null;
+        render();
+      }));
+      sidebarOptions.querySelectorAll('[data-sidebar-tertiary]').forEach(button => button.addEventListener('click', () => {
+        activeTertiary = activeTertiary === button.dataset.sidebarTertiary ? null : button.dataset.sidebarTertiary;
         activeColor = null;
         legacyCategory = null;
         render();
@@ -840,6 +864,7 @@ function setupFilters() {
     secondaryBar.innerHTML = subcategories.map(item => `<button type="button" class="filter-btn ${item.id === activeSubcategory ? 'active' : ''}" data-subcategory="${item.id}">${item.label}</button>`).join('');
     secondaryBar.querySelectorAll('[data-subcategory]').forEach(button => button.addEventListener('click', () => {
       activeSubcategory = activeSubcategory === button.dataset.subcategory ? null : button.dataset.subcategory;
+      activeTertiary = null;
       activeColor = null;
       legacyCategory = null;
       render();
@@ -848,6 +873,7 @@ function setupFilters() {
     secondarySelect.value = activeSubcategory || '';
     secondarySelect.onchange = () => {
       activeSubcategory = secondarySelect.value || null;
+      activeTertiary = null;
       activeColor = null;
       legacyCategory = null;
       render();
@@ -858,6 +884,8 @@ function setupFilters() {
     const group = catalogGroup(activeGroup);
     const subcategory = group.subcategories?.find(item => item.id === activeSubcategory);
     let candidates = products.filter(p => p.accessory_type !== 'dedicated' && (group.id === 'all' || group.matches(p)) && (!subcategory || subcategory.matches(p)));
+    const tertiary = subcategory?.subcategories?.find(item => item.id === activeTertiary);
+    if (tertiary) candidates = candidates.filter(tertiary.matches);
     if (legacyCategory) candidates = candidates.filter(p => p.category === legacyCategory);
     const colors = [...new Set(candidates.flatMap(p => p.colors || []))];
     colorBar.innerHTML = colors.map(color => {
@@ -877,8 +905,9 @@ function setupFilters() {
     const subcategory = group.subcategories?.find(item => item.id === activeSubcategory);
     renderControls();
     renderColors();
-    renderProducts('all-products', activeGroup, activeSubcategory, activeColor, legacyCategory, sortBy);
-    const displayTitle = subcategory?.label || (group.id !== 'all' ? group.label : 'All products');
+    renderProducts('all-products', activeGroup, activeSubcategory, activeColor, legacyCategory, sortBy, activeTertiary);
+    const tertiary = subcategory?.subcategories?.find(item => item.id === activeTertiary);
+    const displayTitle = tertiary?.label || subcategory?.label || (group.id !== 'all' ? group.label : 'All products');
     if (summary) summary.textContent = `${displayTitle} — ${list.length} product${list.length === 1 ? '' : 's'}`;
     if (catalogCount) catalogCount.textContent = `${list.length} product${list.length === 1 ? '' : 's'}`;
     if (catalogPageTitle) catalogPageTitle.innerHTML = `${displayTitle} <span>— <span id="catalog-count">${list.length} product${list.length === 1 ? '' : 's'}</span></span>`;
