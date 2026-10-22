@@ -166,3 +166,25 @@
 - 用户明确要求“上线”，批准当前P1页面、透明笼版本说明及聚合统计改动。
 - 发布前fetch确认HEAD与origin/main无分歧；完整生成、数据/产品/无障碍/Insights校验、Worker/追踪/渲染/媒体测试和92URL smoke全部通过；release 50b15faf13d9ae51。
 - 仅提交本次网站改动，保留已有未跟踪AGENTS.md，不提交仓库外产品来源记录。通过main推送触发Cloudflare Git Builds，等待线上版本核验。
+
+### 2026-10-22 发布受阻：Cloudflare构建失败
+
+- 命令行HTTPS推送无认证，改用已连接GitHub服务创建文件树；树SHA 31c7ee99411bf87b7b1058f249d26cf2ad8834fe与本地提交完全一致。
+- main已更新为a60fd4b45a9aa2154e02243f19246bd290f8bcd2，本地主分支已同步该相同文件树；AGENTS.md保持原样未提交。
+- GitHub校验中的生成、数据、产品、无障碍、Worker、追踪和smoke全部成功；线上一致性检查未通过，因为Cloudflare构建26156a24-a324-4a28-a238-28d47d53f245失败。
+- 线上仍为旧版本；未确认失败原因，不能认定是Analytics Engine绑定问题。查看Cloudflare构建日志需要用户登录，当前仅有未登录的内置浏览器会话。需登录后读取错误、修复并继续获准发布，再验证release 50b15faf13d9ae51和统计。
+
+### 2026-10-22 发布成功并完成线上核验
+
+- 登录Cloudflare读取构建错误10089：Analytics Engine尚未启用。完成kanapet_site_events数据集初始化（SITE_EVENTS绑定），通过Cloudflare Git Builds重试同一main提交；未绕过发布保护，未改动页面代码。成功构建228bf39f-7790-4c5c-b8b5-d0e28033a7cd。
+- 正式release 50b15faf13d9ae51；tools/verify_release.py核验75文件通过；两张品类页及43/62/75详情页另按静态源哈希核验，保留已有媒体覆盖层。
+- main提交a60fd4b45a9aa2154e02243f19246bd290f8bcd2；GitHub重新检查与Cloudflare构建均success，IndexNow通知步骤success（不等于已经收录）。
+- 正式页面已显示型号与开孔/无孔及管道扩展说明；390px手机视口两张品类页与62详情页无整页横向溢出，品类对比表在局部滚动区域显示；已加载的可见产品图正常，隐藏灯箱的空src占位不视为资源缺失。
+- 聚合事件接口返回204，后台kanapet_site_events显示4条记录，确认已入库；含发布核验浏览/测试page_view，不代表真实客户流量。未提交真实询盘，未发送WhatsApp或客户邮件。
+- 线上截图与发布状态在当前会话outputs。发布后的本段交接记录仅在本地更新，避免为纯记录触发新一轮部署。
+
+### 2026-10-22 目录首屏分类入口对比度修正
+
+- 用户指出正式目录横幅分类链接蓝字与背景混在一起。改为catalog-hero-links独立深蓝底白字链接，支持换行、下划线、悬停和键盘焦点；文字不再依赖横幅图的明暗。
+- 已查看桌面与390px手机截图：七个入口均显示为白字深底，整页无横向溢出；确认产品保护、89HTML无障碍及92URL smoke通过。release 496770c8befc5f25。
+- 作为本轮已授权上线内容的显示缺陷更正继续发布；不改产品事实、图片、URL或其他业务内容。
