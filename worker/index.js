@@ -1,3 +1,4 @@
+import { handleEvent, recordEvent } from './analytics.js';
 import { handleMedia, authenticate } from './media.js';
 import { adminAssets } from './admin-assets.js';
 import { applySiteMedia } from './site-media.js';
@@ -185,7 +186,12 @@ async function handleInquiry(request, env) {
     // Feishu v2 webhooks: { code: 0 } — legacy: { StatusCode: 0 }
     const accepted = upstream.ok &&
       (out.code === 0 || out.StatusCode === 0 || out.statusCode === 0);
-    if (accepted) return jsonResp({ ok: true, requestId }, 200, { 'X-Request-ID': requestId });
+    if (accepted) {
+      if (request.headers.get('DNT') !== '1' && request.headers.get('Sec-GPC') !== '1' && request.headers.get('X-Site-Privacy') !== 'off') {
+        recordEvent(env, 'inquiry_accepted', 'contact', request.headers.get('X-Site-Source'));
+      }
+      return jsonResp({ ok: true, requestId }, 200, { 'X-Request-ID': requestId });
+    }
     console.error('Feishu rejected inquiry', { requestId, status: upstream.status, code: out.code ?? out.StatusCode ?? out.statusCode ?? null });
     return jsonResp({ ok: false, error: 'Delivery failed', requestId }, 502, { 'X-Request-ID': requestId });
   } catch (err) {
@@ -333,6 +339,7 @@ export default {
       if (!asset) return jsonResp({ error: 'Not found' }, 404);
       return new Response(asset.body, { headers: { 'Content-Type': asset.type, 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff', 'Content-Security-Policy': "default-src 'self'; img-src 'self' blob:; media-src 'self' blob:; style-src 'self'; script-src 'self'; frame-ancestors 'none'" } });
     }
+    if (url.pathname === '/api/events') return handleEvent(request, env);
     if (url.pathname === '/api/inquiry') {
       return handleInquiry(request, env);
     }

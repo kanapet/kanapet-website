@@ -78,6 +78,17 @@ class ProductAuditTests(unittest.TestCase):
         self.assertEqual(Audit(self.root).run(), [])
         self.assertEqual(before, hashes())
 
+    def test_approved_seo_name_and_metric_size_keep_fact_checks(self):
+        (self.root / 'content').mkdir()
+        (self.root / 'content/seo-priority-products.json').write_text(json.dumps({'sample': 'Sample Procurement Cage'}))
+        short_desc = 'Sample Procurement Cage. 10 × 20 × 30 cm; MOQ from 100 pcs.'
+        self.mutate_page(self.desc, short_desc)
+        self.mutate_page('<title>Sample &amp; Cage</title>', '<title>Sample Procurement Cage</title>')
+        self.mutate_page('property="og:title" content="Sample &amp; Cage"', 'property="og:title" content="Sample Procurement Cage"')
+        self.assertEqual(Audit(self.root).run(), [])
+        self.mutate_page(short_desc, short_desc.replace('10 × 20 × 30', '99 × 20 × 30').replace('100 pcs', '1000 pcs'))
+        self.assertTrue({'SEO_SIZE', 'SEO_MOQ'} <= self.codes())
+
     def test_malformed_data_does_not_crash(self):
         for bad, code in [(None, 'DATA_ARRAY'), ({}, 'DATA_ARRAY'), ([], 'DATA_ARRAY'), ([1], 'DATA_OBJECT'), ([{}], 'DATA_REQUIRED')]:
             with self.subTest(bad=bad):

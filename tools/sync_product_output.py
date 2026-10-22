@@ -18,6 +18,7 @@ from urllib.parse import quote
 ROOT = Path(__file__).resolve().parents[1]
 PUBLIC = ROOT / "public"
 SITE = "https://www.kanapet.com"
+PRIORITY = json.loads((ROOT / "content/seo-priority-products.json").read_text())
 
 # Keep renamed products consistent across prerendered related-product cards and
 # consolidate any old URLs through the matching redirects in worker/index.js.
@@ -134,6 +135,10 @@ def rewrite_legacy_asset_references(source):
 
 
 def meta_description(product, category):
+    if product['slug'] in PRIORITY:
+        name = PRIORITY[product['slug']]
+        size = format_size(product.get('size')).split(' (')[0]
+        return f"Source the {name} wholesale from KANAPET. {size}; MOQ from {format_moq(product.get('moq'))}. Compare specifications and request a quote."
     parts = [
         f"Buy {product['name']} wholesale from Kanapet — leading {category.lower()} manufacturer since 1991."
     ]
@@ -181,6 +186,11 @@ def product_schema(product, category):
     }
     if product.get("material"):
         schema["material"] = product["material"]
+    if product.get('configuration_options'):
+        schema['additionalProperty'] = [
+            {'@type': 'PropertyValue', 'name': 'Available versions', 'value': '; '.join(product['configuration_options'])},
+            {'@type': 'PropertyValue', 'name': 'Tunnel expansion', 'value': product['expansion_note']},
+        ]
     return schema
 
 
@@ -252,12 +262,37 @@ def features_html(product):
     return "\n".join(f"        <li>{text(feature)}</li>" for feature in product.get("features", []))
 
 
+def transparent_cage_guide(products):
+    family = [p for p in products if p.get('series') == 'hamster-transparent-cage']
+    links = ', '.join('<a href="/product/' + text(p['slug']) + '.html">' + text(p['name']) + '</a>' for p in family)
+    content = '<p>Our transparent cage range includes three models: ' + links + '. Compare their product dimensions to choose your model.</p>'
+    for p in family:
+        if p.get('configuration_options'):
+            content += '<h3>' + text(p['name']) + ': two versions</h3><ul style="padding-left:20px;line-height:1.8;">' + ''.join('<li>' + text(option) + '</li>' for option in p['configuration_options']) + '</ul><p>' + text(p['expansion_note']) + '</p>'
+    return content
+
+
 def sync_page(source, product, categories):
     category = categories[product["category"]]["name"]
     slug = product["slug"]
     url = f"{SITE}/product/{slug}.html"
     description = meta_description(product, category)
     escaped_description = text(description)
+    if slug in PRIORITY:
+        title = PRIORITY[slug] + ' Wholesale | KANAPET'
+        source = replace_once(source, r'<title>.*?</title>', lambda m: '<title>' + text(title) + '</title>', slug + ' title')
+        source = replace_once(source, r'(<meta property="og:title" content=").*?("\s*/?>)', lambda m: m[1] + text(title) + m[2], slug + ' OG title')
+        kind = 'bird' if product['category'] == 'bird-cages' else 'hamster'
+        paragraph = ('Compare the door configuration and overall dimensions with other bird cage models. Confirm the required material option and any stand or accessory as separate line items in your quote.' if kind == 'bird' else 'Compare overall dimensions with other transparent and folding hamster cage models. Confirm the included configuration and accessory compatibility before choosing wheels, tunnels or an enclosure.')
+        section = '<section id="procurement-guide" style="margin:24px 0;"><h2 style="font-size:20px;">Wholesale ordering guide</h2><p>' + paragraph + '</p><p>Send this model name, order quantity, destination market and any color or packaging requirements. Confirm the final specification, carton arrangement and customization scope with our team.</p><p><a href="/' + kind + '-cages.html">Compare ' + kind + ' cage models</a> · <a href="/oem-odm.html">Explore OEM &amp; ODM services</a> · <a href="/contact.html?product=' + quote(product['name'], safe='') + '">Request a model quote</a></p></section>'
+        if product.get('series') == 'hamster-transparent-cage':
+            section = '<section id="procurement-guide" style="margin:24px 0;"><h2 style="font-size:20px;">43, 62 and 75: model and version guide</h2>' + transparent_cage_guide(categories['_products']) + '<p>When requesting a quote, specify the model and whether you need openings. Confirm tunnel connections and included accessories with our team.</p><p><a href="/hamster-cages.html">Compare hamster cage models</a> · <a href="/contact.html?product=' + quote(product['name'], safe='') + '">Request a model quote</a></p></section>'
+        source = re.sub(r'<section id="procurement-guide".*?</section>', '', source, flags=re.S)
+        source = re.sub(r'(<table class="spec-table">.*?</table>)', lambda m: m[0] + section, source, count=1, flags=re.S)
+        # Replace the generic feature list with facts already approved in the catalog.
+        facts = ['Product dimensions: ' + format_size(product.get('size')), 'Materials: ' + product.get('material', 'Confirm with our team'), 'MOQ: ' + format_moq(product.get('moq')), 'Confirm colors, packaging and accessory configuration when requesting a quote.']
+        if not product.get('features'):
+            source = re.sub(r'(<h3[^>]*>Key Features</h3>\s*<ul[^>]*>).*?(</ul>)', lambda m: m[1] + ''.join('<li>' + text(f) + '</li>' for f in facts) + m[2], source, count=1, flags=re.S)
 
     source = replace_once(
         source,

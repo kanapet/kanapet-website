@@ -305,8 +305,11 @@ class Audit:
         compare(sku_match.group(1).strip() if sku_match else '', p.get('sku') or p['id'].upper(), 'PAGE_SKU')
         title = one('title', 'SEO_TITLE').text()
         description = one('meta', 'SEO_DESCRIPTION', name='description').attrs.get('content', '')
+        alias_file = self.root / 'content/seo-priority-products.json'
+        aliases = json.loads(alias_file.read_text()) if alias_file.exists() else {}
+        seo_name = aliases.get(p['slug'], p['name'])
         for field, value in (('title', title), ('description', description)):
-            if p['name'] not in value:
+            if seo_name not in value:
                 self.issue('SEO_IDENTITY', path, f'{field} missing product name')
         compare(one('link', 'SEO_CANONICAL', rel='canonical').attrs.get('href', ''), url, 'SEO_CANONICAL')
         for key, expected in (('og:url', url), ('og:title', title), ('og:description', description), ('og:type', 'product')):
@@ -350,7 +353,8 @@ class Audit:
                 actual, line = specs.get(label, ('', None))
                 compare(actual, expected, 'PAGE_SPEC', line)
         size = size_text(p.get('size'))
-        if size and size not in description:
+        seo_size = size.split(' (')[0] if p['slug'] in aliases and size else size
+        if seo_size and seo_size not in description:
             self.issue('SEO_SIZE', path, 'meta description missing or mismatching known size')
         moq_value = p.get('moq')
         moq = '' if moq_value in (None, '') else str(moq_value).strip()

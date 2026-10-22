@@ -1461,7 +1461,17 @@ window.KANAPET_PRODUCTS = [
       "images/products/gallery/43-hamster-scene-2.jpg",
       "images/products/gallery/43-hamster-scene-3.jpg"
     ],
-    "moq_unit": "pc"
+    "moq_unit": "pc",
+    "configuration_options": [
+      "With side openings for tunnel connections",
+      "Without side openings"
+    ],
+    "expansion_note": "The version with openings connects to tunnels for exploration. Cages can also be connected vertically using tunnels to add connected exploration space.",
+    "features": [
+      "Available with or without side openings.",
+      "The version with openings supports tunnel connections.",
+      "Cages with openings can be connected vertically using tunnels."
+    ]
   },
   {
     "id": "hamster-62-cage",
@@ -1493,7 +1503,17 @@ window.KANAPET_PRODUCTS = [
       "images/products/gallery/62-hamster-scene-3.jpg",
       "images/products/gallery/62-hamster-scene-4.jpg"
     ],
-    "moq_unit": "pc"
+    "moq_unit": "pc",
+    "configuration_options": [
+      "With side openings for tunnel connections",
+      "Without side openings"
+    ],
+    "expansion_note": "The version with openings connects to tunnels for exploration. Cages can also be connected vertically using tunnels to add connected exploration space.",
+    "features": [
+      "Available with or without side openings.",
+      "The version with openings supports tunnel connections.",
+      "Cages with openings can be connected vertically using tunnels."
+    ]
   },
   {
     "id": "hamster-75-cage",

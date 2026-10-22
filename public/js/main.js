@@ -981,7 +981,7 @@ function setupContactForm() {
     try {
       const resp = await fetch('/api/inquiry', {
         method: 'POST',
-        headers: {'Content-Type': 'application/json'},
+        headers: {'Content-Type': 'application/json', 'X-Site-Source': siteSource(), 'X-Site-Privacy': sitePrivacy() ? 'on' : 'off'},
         body: JSON.stringify(data),
         signal: controller.signal
       });
@@ -1108,4 +1108,38 @@ function closeLightbox() {
 }
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeLightbox();
+});
+
+// Coarse source attribution within this tab; no visitor IDs or form contents.
+function sitePrivacy() {
+  return navigator.doNotTrack !== '1' && navigator.globalPrivacyControl !== true;
+}
+function siteSource() {
+  if (!sitePrivacy()) return 'direct';
+  let host = '';
+  try { host = new URL(document.referrer).hostname; } catch {}
+  const matches = domain => host === domain || host.endsWith('.' + domain);
+  if (host === window.location.hostname) {
+    try { return sessionStorage.getItem('kanapet-source') || 'internal'; } catch { return 'internal'; }
+  }
+  const source = !host ? 'direct' : /(^|\.)google\.[a-z.]+$/.test(host) ? 'google' : matches('bing.com') ? 'bing' : matches('chatgpt.com') || matches('chat.openai.com') ? 'chatgpt' : matches('perplexity.ai') ? 'perplexity' : matches('facebook.com') ? 'facebook' : 'other_external';
+  try { sessionStorage.setItem('kanapet-source', source); } catch {}
+  return source;
+}
+function trackSiteEvent(event) {
+  if (!sitePrivacy()) return;
+  const path = window.location.pathname;
+  const group = path === '/' || path === '/index.html' ? 'home' : path === '/bird-cages.html' ? 'bird_cages' : path === '/hamster-cages.html' ? 'hamster_cages' : path.startsWith('/product/') || path === '/product.html' ? 'product' : path === '/contact.html' ? 'contact' : 'other';
+  try {
+    fetch('/api/events', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ event, group, source: siteSource() }), keepalive: true }).catch(() => {});
+  } catch { /* Navigation and contact links remain independent of analytics. */ }
+}
+document.addEventListener('DOMContentLoaded', () => {
+  trackSiteEvent('page_view');
+  document.addEventListener('click', e => {
+    const link = e.target.closest?.('a[href]');
+    if (!link) return;
+    if (link.protocol === 'mailto:') trackSiteEvent('email_click');
+    else if (link.hostname === 'wa.me' || link.hostname === 'api.whatsapp.com') trackSiteEvent('whatsapp_click');
+  });
 });
