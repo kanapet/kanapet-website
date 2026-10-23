@@ -981,10 +981,6 @@ footer {
 .catalog-hero-inner { position: relative; z-index: 1; padding-top: 64px; padding-bottom: 54px; }
 .catalog-hero h1 { font-size: clamp(40px, 5vw, 62px); line-height: 1; letter-spacing: -1.8px; margin-bottom: 17px; }
 .catalog-hero p { max-width: 565px; font-size: 18px; line-height: 1.55; color: rgba(255,255,255,.9); }
-.catalog-hero .catalog-hero-links { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
-.catalog-hero-links a { display: inline-block; max-width: 100%; padding: 6px 10px; border: 1px solid rgba(255,255,255,.4); border-radius: 5px; background: #00537f; color: #fff; font-size: 14px; font-weight: 600; line-height: 1.4; text-decoration: underline; text-underline-offset: 3px; }
-.catalog-hero-links a:hover { background: #003e61; color: #fff; }
-.catalog-hero-links a:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
 .catalog-category-section { padding: 14px 0; background: #f5faff; border-bottom: 1px solid #e2edf7; }
 .catalog-label { color: #587195; font-size: 12px; font-weight: 800; letter-spacing: 2.5px; margin: 0 0 13px 3px; }
 .catalog-category-panel { overflow: hidden; border: 1px solid #d8e7f3; border-radius: 13px; background: #fff; box-shadow: 0 7px 20px rgba(27,91,143,.06); }
