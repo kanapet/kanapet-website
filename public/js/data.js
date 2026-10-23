@@ -1466,11 +1466,12 @@ window.KANAPET_PRODUCTS = [
       "With side openings for tunnel connections",
       "Without side openings"
     ],
-    "expansion_note": "The version with openings connects to tunnels for exploration. Cages can also be connected vertically using tunnels to add connected exploration space.",
+    "expansion_note": "The versions with side openings support tunnel connections between the 43 and 62 models. Connect up to three cage levels vertically, or extend the layout horizontally with additional cages. Tunnels and connectors are ordered separately and can be supplied as an optional bundle; they are not included in the cage package.",
     "features": [
       "Available with or without side openings.",
-      "The version with openings supports tunnel connections.",
-      "Cages with openings can be connected vertically using tunnels."
+      "Opening versions of the 43 and 62 models can be connected using tunnels.",
+      "Vertical layouts support up to three cage levels; horizontal layouts can be extended with additional cages.",
+      "Tunnels and connectors are available separately or as an optional bundle, not included in the cage package."
     ]
   },
   {
@@ -1508,11 +1509,12 @@ window.KANAPET_PRODUCTS = [
       "With side openings for tunnel connections",
       "Without side openings"
     ],
-    "expansion_note": "The version with openings connects to tunnels for exploration. Cages can also be connected vertically using tunnels to add connected exploration space.",
+    "expansion_note": "The versions with side openings support tunnel connections between the 43 and 62 models. Connect up to three cage levels vertically, or extend the layout horizontally with additional cages. Tunnels and connectors are ordered separately and can be supplied as an optional bundle; they are not included in the cage package.",
     "features": [
       "Available with or without side openings.",
-      "The version with openings supports tunnel connections.",
-      "Cages with openings can be connected vertically using tunnels."
+      "Opening versions of the 43 and 62 models can be connected using tunnels.",
+      "Vertical layouts support up to three cage levels; horizontal layouts can be extended with additional cages.",
+      "Tunnels and connectors are available separately or as an optional bundle, not included in the cage package."
     ]
   },
   {
@@ -1543,7 +1545,15 @@ window.KANAPET_PRODUCTS = [
       "images/products/gallery/75-hamster-scene.jpg",
       "images/products/gallery/75-hamster-scene-2.jpg"
     ],
-    "moq_unit": "pc"
+    "moq_unit": "pc",
+    "configuration_options": [
+      "Without side openings only"
+    ],
+    "expansion_note": "The 75 model currently comes without side openings and does not offer direct tunnel connections.",
+    "features": [
+      "Currently available without side openings only.",
+      "Direct tunnel connections are not offered on the 75 model."
+    ]
   },
   {
     "id": "hamster-external-enclosure",
