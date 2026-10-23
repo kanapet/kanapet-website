@@ -21,6 +21,31 @@ JavaScript and confirmed images with those hashes. A deploy is complete only
 after this verification succeeds. HTML/data revalidate and script/style URLs
 include content hashes, so mobile browsers obtain changed assets.
 
-For local previews run `python tools/build_release.py` and serve `public/`.
+For local previews run `python tools/build_release.py`, then
+`python tools/preview_site.py --port 8767` (read-only published media overlay).
 For rollback, revert the problematic Git commit and push `main`; never deploy
 an old local directory. Retired directories under `outputs/` are not publishers.
+
+## One update per review
+
+Start each task from the latest verified production main. Fetch and compare before
+editing; stop on divergence. Keep unconfirmed requests in `docs/UPDATE-QUEUE.md`,
+not partly implemented in the active release. Record one task, its exact file scope,
+preview, user approval and release ID. Approval of a preview does not authorize a
+push or deployment. Do not bundle another task into the reviewed commit.
+
+Capture the live baseline before editing:
+`python tools/review_update.py capture --state /tmp/kanapet-TASK-baseline.json`.
+After fetching origin/main, run `check` with the same state and repeat
+`--allow PATH` for every reviewed changed file (including generated files).
+Unexpected files or changes to the live release/cloud covers block review. This
+is a required operator check, not an automatic Git/Cloudflare deployment lock.
+Run it again immediately before an authorized push. Preserve the reviewed diff;
+if anything changes, obtain a new review.
+
+Use `python tools/preview_site.py` for previews instead of a plain static server.
+It serves local pages and reads published cover metadata/media from production;
+it cannot publish media or submit inquiries. Network failure returns an error;
+check the cover endpoint before approving images. Run a production media baseline
+check after deployment too: cover records should match unless this task explicitly
+approved a media change. Compare both metadata and the visible first image.
