@@ -135,6 +135,9 @@ def rewrite_legacy_asset_references(source):
 
 
 def meta_description(product, category):
+    if product['slug'] == 'hamster-43-cage':
+        size = format_size(product.get('size')).split(' (')[0]
+        return f"43 Transparent Hamster Cage wholesale: {size}. PET enclosure, ABS parts; opening or non-opening version. MOQ from {format_moq(product.get('moq'))}. Request a quote."
     if product['slug'] in PRIORITY:
         name = PRIORITY[product['slug']]
         size = format_size(product.get('size')).split(' (')[0]
@@ -290,6 +293,30 @@ def sync_page(source, product, categories):
             section = '<section id="procurement-guide" style="margin:24px 0;"><h2 style="font-size:20px;">43, 62 and 75: model and version guide</h2>' + transparent_cage_guide(categories['_products']) + '<p>When requesting a quote, specify the model and whether you need openings. For opening versions of the 43 and 62 models, select tunnels and connectors separately or request a bundle. They are not included in the cage package.</p><p><a href="/hamster-cages.html">Compare hamster cage models</a> · <a href="/contact.html?product=' + quote(product['name'], safe='') + '">Request a model quote</a></p></section>'
         if slug == 'hamster-75-cage':
             section = '<section id="procurement-guide" style="margin:24px 0;"><h2 style="font-size:20px;">75 model: one version only</h2><p>The 75 Hamster Transparent Cage is available in one version only, without side openings. It does not support direct tunnel connections.</p><p>When requesting a quote, specify the 75 model, order quantity, destination market and packaging requirements.</p><p><a href="/hamster-cages.html">Compare hamster cage models</a> · <a href="/contact.html?product=' + quote(product['name'], safe='') + '">Request a model quote</a></p></section>'
+        if slug == 'hamster-43-cage':
+            options = ''.join('<li>' + text(option) + '</li>' for option in product['configuration_options'])
+            section = (
+                '<section id="procurement-guide" style="margin:24px 0;">'
+                '<h2 style="font-size:20px;">43 transparent hamster cage: wholesale ordering guide</h2>'
+                '<p>Model 43 measures ' + text(format_size(product.get('size'))) + '. The model number is not an exact width measurement. '
+                'The transparent enclosure is PET, with ABS components; it is not an acrylic enclosure.</p>'
+                '<h3>Choose the opening or non-opening version</h3><ul style="padding-left:20px;line-height:1.8;">' + options + '</ul>'
+                '<p>' + text(product['expansion_note']) + '</p>'
+                '<h3>MOQ and carton packing</h3><p>Catalog MOQ: ' + text(format_moq(product.get('moq'))) + '. '
+                'Each carton contains ' + text(product.get('pcs_per_ctn')) + ' cage; carton dimensions are ' + text(format_size(product.get('meas'))) + '. '
+                'Confirm the selected version, colors and packaging in your quote.</p>'
+                '<h3>Request a quote for model 43</h3><p>Include the opening or non-opening version, quantity, destination market and packaging requirements. '
+                'List tunnels and connectors separately, or request an optional accessory bundle.</p>'
+                '<p><a href="/contact.html?product=' + quote(product['name'], safe='') + '">Request a 43 cage quote</a> · '
+                '<a href="/hamster-cages.html">Compare wholesale hamster cage models</a> · '
+                '<a href="/hamster-supplies.html">Browse matching accessories</a> · '
+                '<a href="/oem-odm.html">Discuss OEM &amp; ODM requirements</a></p></section>'
+            )
+            source = re.sub(
+                r'(<h3[^>]*>Included Accessories</h3>\s*<p[^>]*>).*?(</p>)',
+                lambda m: m[1] + 'Confirm the included parts for your selected version in the quote. Tunnels and connectors are ordered separately or as an optional bundle.' + m[2],
+                source, count=1, flags=re.S,
+            )
         source = re.sub(r'<section id="procurement-guide".*?</section>', '', source, flags=re.S)
         source = re.sub(r'(<table class="spec-table">.*?</table>)', lambda m: m[0] + section, source, count=1, flags=re.S)
         # Replace the generic feature list with facts already approved in the catalog.
