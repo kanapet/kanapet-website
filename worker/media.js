@@ -1,3 +1,5 @@
+import {colorOptions,withColorMedia,checkedColors} from './color-media.js';
+import {uploadDeclaration,digestHex} from './media-policy.js';
 import {inspectImage,mediaFileName} from './image-policy.js';
 import catalog from '../public/data/products.json' with { type: 'json' };
 import videos from '../public/data/videos.json' with { type: 'json' };
@@ -25,17 +27,17 @@ export async function authenticate(request,env){
  }catch(error){if(error.status)throw error;fail(401,'登录已过期或校验失败');}
 }
 function product(slug){const p=catalog.find(p=>p.slug===slug);if(!p)fail(404,'产品型号不存在');return p;}
-function baseline(slug){const p=product(slug);const imgs=[p.image,...(p.gallery||[])].filter((s,i,a)=>s&&a.indexOf(s)===i);const items=imgs.map((src,i)=>({id:'existing-'+i,type:'image',src:'/'+src,title:p.name}));if(videos.products[slug]?.src)items.splice(1,0,{id:'existing-video',type:'video',...videos.products[slug]});return {draft:{revision:0,items},published:null};}
-async function record(env,slug){product(slug);const object=await env.MEDIA_BUCKET.get(`products/${slug}.json`);return {value:object?await object.json():baseline(slug),etag:object?.etag};}
+function baseline(slug){const p=product(slug);const imgs=[p.image,...(p.gallery||[])].filter((s,i,a)=>s&&a.indexOf(s)===i);const items=imgs.map((src,i)=>({id:'existing-'+i,type:'image',src:'/'+src,title:p.name}));if(videos.products[slug]?.src)items.splice(1,0,{id:'existing-video',type:'video',...videos.products[slug]});return {draft:withColorMedia({revision:0,items},p),published:null};}
+async function record(env,slug){product(slug);const object=await env.MEDIA_BUCKET.get(`products/${slug}.json`);const value=object?await object.json():baseline(slug);return {value:{...value,draft:withColorMedia(value.draft,product(slug)),published:withColorMedia(value.published,product(slug))},etag:object?.etag};}
 async function store(env,slug,record,next){const condition=record.etag?{etagMatches:record.etag}:{etagDoesNotMatch:'*'};const result=await env.MEDIA_BUCKET.put(`products/${slug}.json`,JSON.stringify(next),{onlyIf:condition,httpMetadata:{contentType:'application/json'}});if(!result)fail(409,'素材被其他操作更新，请重新加载');return next;}
 function revision(request,r){if(request.headers.get('If-Match')!==String(r.value.draft.revision))fail(409,'素材版本已更新，请重新加载后再保存');}
 async function body(request,limit){const reader=request.body?.getReader();if(!reader)return new Uint8Array();const chunks=[];let total=0;while(true){const {value,done}=await reader.read();if(done)break;total+=value.length;if(total>limit){await reader.cancel();fail(413,'文件超过大小限制');}chunks.push(value);}const bytes=new Uint8Array(total);let offset=0;for(const chunk of chunks){bytes.set(chunk,offset);offset+=chunk.length;}return bytes;}
 async function payload(request){try{return JSON.parse(new TextDecoder().decode(await body(request,256*1024)));}catch(error){if(error.status)throw error;fail(400,'请求格式错误');}}
 function sniff(b){const ascii=(start,end)=>String.fromCharCode(...b.slice(start,end));if(b.length<12)fail(415,'文件无效');if(b[0]===255&&b[1]===216&&b[2]===255)return {type:'image',mime:'image/jpeg'};if([137,80,78,71,13,10,26,10].every((n,i)=>b[i]===n))return {type:'image',mime:'image/png'};if(ascii(0,4)==='RIFF'&&ascii(8,12)==='WEBP')return {type:'image',mime:'image/webp'};if(ascii(4,8)==='ftyp'){const brand=ascii(8,12);if(['heic','heix','mif1','avif'].includes(brand))fail(415,'HEIC 图片请先转换为 JPG');return {type:'video',mime:brand==='qt  '?'video/quicktime':'video/mp4'};}if([26,69,223,163].every((n,i)=>b[i]===n))return {type:'video',mime:'video/webm'};fail(415,'不支持此文件格式');}
-async function validate(env,slug,items){if(!Array.isArray(items)||items.length>80)fail(400,'最多80项素材');const seen=new Set();const checked=[];for(const item of items){
+async function validate(env,slug,items,deletedAssets=[]){if(!Array.isArray(items)||items.length>80)fail(400,'最多80项素材');checkedColors(items,product(slug));const seen=new Set();const checked=[];for(const item of items){
  if(!item||typeof item.id!=='string'||seen.has(item.id)||!['image','video'].includes(item.type))fail(400,'素材数据无效');seen.add(item.id);
  async function source(src,type){if(typeof src!=='string'||src.length>2048)fail(400,'素材地址无效');
-  if(src.startsWith('/media-assets/')){const id=src.slice(14);if(!uuid.test(id))fail(400,'素材地址无效');const obj=await env.MEDIA_BUCKET.head('assets/'+id);if(!obj||obj.customMetadata?.slug!==slug||obj.customMetadata?.type!==type)fail(400,'素材未找到或不属于此型号');return;}
+  if(src.startsWith('/media-assets/')){const id=src.slice(14);if(!uuid.test(id)||deletedAssets.includes(id))fail(400,'素材已删除或地址无效');const obj=await env.MEDIA_BUCKET.head('assets/'+id);if(!obj||obj.customMetadata?.slug!==slug||obj.customMetadata?.type!==type)fail(400,'素材未找到或不属于此型号');return;}
   if(type==='image'&&src.startsWith('/images/')&&!src.includes('..')){const res=await env.ASSETS.fetch(new Request('https://www.kanapet.com'+src,{method:'HEAD'}));if(res.ok)return;}
   if(type==='video'){try{const u=new URL(src);if(u.protocol==='https:'&&!u.username&&!u.password&&['youtube.com','www.youtube.com','m.youtube.com','youtu.be','www.youtube-nocookie.com','facebook.com','www.facebook.com','m.facebook.com','vimeo.com','www.vimeo.com','player.vimeo.com'].includes(u.hostname))return;}catch{}}
   fail(400,'素材来源无效');
@@ -44,7 +46,7 @@ async function validate(env,slug,items){if(!Array.isArray(items)||items.length>8
  if(item.src.startsWith('/media-assets/')){const meta=(await env.MEDIA_BUCKET.head('assets/'+item.src.slice(14)))?.customMetadata;if(meta?.fileName)clean.fileName=meta.fileName;for(const k of ['width','height'])if(Number(meta?.[k])>0)clean[k]=Number(meta[k]);}
  if(item.poster){await source(item.poster,'image');clean.poster=item.poster;}
  if(item.aspectRatio){const n=String(item.aspectRatio).split('/').map(Number);if(n.length!==2||!n.every(v=>Number.isFinite(v)&&v>0&&v<100000))fail(400,'比例无效');clean.aspectRatio=n.join(' / ');}
- checked.push(clean);
+ if(item.colors)clean.colors=[...item.colors];checked.push(clean);
  }return checked;}
 const references=(r,src)=>r?.items.some(i=>i.src===src||i.poster===src);
 export function coverOf(value) {
@@ -71,7 +73,7 @@ export async function handleMedia(request,env){
  if(!env.MEDIA_BUCKET)fail(503,'云端素材存储尚未启用');
  if(path==='/api/media/covers'&&request.method==='GET')return response({covers:await publishedCovers(env)});
  const publicMatch=path.match(/^\/api\/media\/([a-z0-9-]+)$/);
- if(publicMatch&&request.method==='GET'){const r=await record(env,publicMatch[1]);return response({items:r.value.published?.items||baseline(publicMatch[1]).draft.items});}
+ if(publicMatch&&request.method==='GET'){const r=await record(env,publicMatch[1]);return response({colors:colorOptions(product(publicMatch[1])),items:r.value.published?.items||baseline(publicMatch[1]).draft.items});}
  const asset=path.match(/^\/media-assets\/([a-f0-9-]{36})$/);
  if(asset){if(!['GET','HEAD'].includes(request.method))fail(405,'Method not allowed');const meta=await env.MEDIA_BUCKET.head('assets/'+asset[1]);if(!meta)fail(404,'素材不存在');const slug=meta.customMetadata?.slug;if(!slug)fail(404,'素材不存在');const r=await record(env,slug);
   if(!references(r.value.published,'/media-assets/'+asset[1])){await authenticate(request,env);if(!references(r.value.draft,'/media-assets/'+asset[1]))fail(404,'素材不存在');}
@@ -86,16 +88,39 @@ export async function handleMedia(request,env){
  if(path==='/api/admin/session'&&request.method==='GET')return response({authenticated:true,setup:false,cloud:true,email:actor.email,csrf:actor.csrf});
  if(path==='/api/admin/logout'&&request.method==='POST')return response({ok:true,logout:'/cdn-cgi/access/logout'});
  if(path==='/api/admin/products'&&request.method==='GET')return response({products:catalog.map(p=>({slug:p.slug,name:p.name,category:p.category,image:'/'+p.image}))});
- const match=path.match(/^\/api\/admin\/products\/([a-z0-9-]+)(?:\/(upload|publish))?$/);
+ const match=path.match(/^\/api\/admin\/products\/([a-z0-9-]+)(?:\/(upload|publish|cleanup))?$/);
  if(match){const slug=match[1],action=match[2];
-  if(!action&&request.method==='GET')return response((await record(env,slug)).value);
-  if(!action&&request.method==='PUT'){const data=await payload(request);const items=await validate(env,slug,data.items);const r=await record(env,slug);revision(request,r);const coverId=data.coverId ?? coverOf({draft:r.value.draft})?.id;if(!items.some(i=>i.type==='image'&&i.id===coverId))fail(400,'删除首图前请先指定另一张图片为首图');return response(await store(env,slug,r,{...r.value,draft:{revision:r.value.draft.revision+1,items,coverId},updatedBy:actor.email}));}
+  if(!action&&request.method==='GET'){
+   const value=(await record(env,slug)).value;const declarations={};
+   const ids=[...new Set([...(value.draft?.items||[]),...(value.published?.items||[])].flatMap(i=>[i.src,i.poster]).filter(src=>src?.startsWith('/media-assets/')).map(src=>src.slice(14)))];
+   await Promise.all(ids.map(async id=>{const meta=await env.MEDIA_BUCKET.head('assets/'+id);if(meta?.customMetadata?.slug===slug&&meta.customMetadata.declaration){try{declarations[id]=JSON.parse(decodeURIComponent(meta.customMetadata.declaration));}catch{}}}));
+   return response({...value,declarations,colors:colorOptions(product(slug))});
+  }
+  if(!action&&request.method==='PUT'){const data=await payload(request);const r=await record(env,slug);revision(request,r);const items=await validate(env,slug,data.items,r.value.deletedAssets);const coverId=data.coverId ?? coverOf({draft:r.value.draft})?.id;if(!items.some(i=>i.type==='image'&&i.id===coverId))fail(400,'删除首图前请先指定另一张图片为首图');return response(await store(env,slug,r,{...r.value,draft:{revision:r.value.draft.revision+1,items,coverId,colorMediaVersion:1},updatedBy:actor.email}));}
   if(action==='upload'&&request.method==='POST'){
-   product(slug);const bytes=await body(request,40*1024*1024);const kind=sniff(bytes);const dimensions=kind.type==='image'?inspectImage(bytes,kind.mime):{};const r=await record(env,slug);revision(request,r);if(r.value.draft.items.length>=80)fail(400,'最多80项素材');const id=crypto.randomUUID();const fileName=mediaFileName(slug,kind.type,r.value.draft.items.filter(i=>i.type===kind.type).length+1,id,kind.mime);const item={id,type:kind.type,src:'/media-assets/'+id,title:product(slug).name,fileName,...dimensions};
-   await env.MEDIA_BUCKET.put('assets/'+id,bytes,{httpMetadata:{contentType:kind.mime},customMetadata:{slug,type:kind.type,uploadedBy:actor.email,fileName,...Object.fromEntries(Object.entries(dimensions).map(([k,v])=>[k,String(v)]))}});
+   product(slug);const bytes=await body(request,40*1024*1024);const kind=sniff(bytes);const dimensions=kind.type==='image'?inspectImage(bytes,kind.mime):{};const declaration=uploadDeclaration(request.headers.get('X-Media-Declaration'),actor.email);declaration.processedSha256=await digestHex(bytes);const r=await record(env,slug);revision(request,r);if(r.value.draft.items.length>=80)fail(400,'最多80项素材');const activeMetas=await Promise.all(r.value.draft.items.filter(i=>i.src.startsWith('/media-assets/')).map(i=>env.MEDIA_BUCKET.head('assets/'+i.src.slice(14))));if(activeMetas.some(m=>{try{return JSON.parse(decodeURIComponent(m?.customMetadata?.declaration||'{}')).processedSha256===declaration.processedSha256;}catch{return false;}}))fail(409,'相同文件已在当前草稿中，请使用已有素材');const id=crypto.randomUUID();const fileName=mediaFileName(slug,kind.type,r.value.draft.items.filter(i=>i.type===kind.type).length+1,id,kind.mime);const item={id,type:kind.type,src:'/media-assets/'+id,title:product(slug).name,fileName,...dimensions};
+   await env.MEDIA_BUCKET.put('assets/'+id,bytes,{httpMetadata:{contentType:kind.mime},customMetadata:{slug,type:kind.type,declaration:encodeURIComponent(JSON.stringify(declaration)),uploadedBy:actor.email,fileName,...Object.fromEntries(Object.entries(dimensions).map(([k,v])=>[k,String(v)]))}});
    try{return response(await store(env,slug,r,{...r.value,draft:{...r.value.draft,revision:r.value.draft.revision+1,items:[...r.value.draft.items,item]},updatedBy:actor.email}),201);}catch(error){await env.MEDIA_BUCKET.delete('assets/'+id);throw error;}
   }
-  if(action==='publish'&&request.method==='POST'){const r=await record(env,slug);revision(request,r);const items=await validate(env,slug,r.value.draft.items);if(!items.some(i=>i.type==='image'))fail(400,'请至少保留一张产品图片');return response(await store(env,slug,r,{...r.value,published:{items:[...items.filter(i=>i.id===coverOf({draft:r.value.draft})?.id),...items.filter(i=>i.id!==coverOf({draft:r.value.draft})?.id)],coverId:coverOf({draft:r.value.draft})?.id,at:new Date().toISOString(),by:actor.email},draft:{...r.value.draft,revision:r.value.draft.revision+1}}));}
+  if(action==='cleanup'&&request.method==='GET'){
+   const r=await record(env,slug);const assets=[];let cursor;
+   do{const page=await env.MEDIA_BUCKET.list({prefix:'assets/',limit:1000,include:['customMetadata'],...(cursor?{cursor}:{})});
+    for(const object of page.objects){const id=object.key.slice(7),meta=object,src='/media-assets/'+id;
+     if(meta?.customMetadata?.slug===slug&&!references(r.value.draft,src)&&!references(r.value.published,src))assets.push({id,fileName:meta.customMetadata.fileName||id,size:meta.size});
+    }cursor=page.truncated?page.cursor:null;
+   }while(cursor);return response({revision:r.value.draft.revision,assets});
+  }
+  if(action==='cleanup'&&request.method==='DELETE'){
+   const data=await payload(request);if(data.confirmation!=='永久删除'||!uuid.test(data.id||''))fail(400,'请明确确认永久删除');
+   const r=await record(env,slug);revision(request,r);const src='/media-assets/'+data.id;
+   if(references(r.value.draft,src)||references(r.value.published,src))fail(409,'素材仍被草稿、发布版本或视频封面引用');
+   const meta=await env.MEDIA_BUCKET.head('assets/'+data.id);if(!meta||meta.customMetadata?.slug!==slug)fail(404,'未找到此产品的上传素材');
+   // Commit a tombstone before deleting bytes: concurrent saves cannot resurrect this ID.
+   const next=await store(env,slug,r,{...r.value,deletedAssets:[...new Set([...(r.value.deletedAssets||[]),data.id])],draft:{...r.value.draft,revision:r.value.draft.revision+1},deletionAudit:[...(r.value.deletionAudit||[]),{id:data.id,fileName:meta.customMetadata.fileName,at:new Date().toISOString(),by:actor.email}].slice(-500)});
+   try{await env.MEDIA_BUCKET.delete('assets/'+data.id);}catch{ return response({error:'文件删除未完成，请刷新清单后重试',revision:next.draft.revision},503); }
+   return response({ok:true,revision:next.draft.revision});
+  }
+  if(action==='publish'&&request.method==='POST'){const r=await record(env,slug);revision(request,r);const items=await validate(env,slug,r.value.draft.items,r.value.deletedAssets);if(!items.some(i=>i.type==='image'))fail(400,'请至少保留一张产品图片');return response(await store(env,slug,r,{...r.value,published:{colorMediaVersion:1,items:[...items.filter(i=>i.id===coverOf({draft:r.value.draft})?.id),...items.filter(i=>i.id!==coverOf({draft:r.value.draft})?.id)],coverId:coverOf({draft:r.value.draft})?.id,at:new Date().toISOString(),by:actor.email},draft:{...r.value.draft,revision:r.value.draft.revision+1}}));}
  }
  fail(404,'接口不存在');
  }catch(error){return response({error:error.status?error.message:'素材服务暂时不可用'},error.status||500);}

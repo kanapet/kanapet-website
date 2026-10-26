@@ -28,11 +28,11 @@
     }
     return null;
   }
-  let items = [];
+  let items = [],colorNames=[];
   try {
     const preview = new URLSearchParams(location.search).get('media-preview') === 'draft';
     const res = await fetch(preview ? `/api/admin/products/${slug}` : `/api/media/${slug}`, {cache:'no-store'});
-    if (res.ok) { const data = await res.json(); items = preview ? data.draft.items : data.items; if(preview && data.draft.coverId) items=[...items.filter(i=>i.id===data.draft.coverId),...items.filter(i=>i.id!==data.draft.coverId)]; }
+    if (res.ok) { const data = await res.json();colorNames=data.colors||[]; items = preview ? data.draft.items : data.items; if(preview && data.draft.coverId) items=[...items.filter(i=>i.id===data.draft.coverId),...items.filter(i=>i.id!==data.draft.coverId)]; }
   } catch {}
   if (!Array.isArray(items) || !items.length) {
     items = [{type:'image',src:image.src,title:image.alt}];
@@ -104,8 +104,18 @@
     button.addEventListener('keydown',event=>{if(!['ArrowLeft','ArrowRight'].includes(event.key))return;event.preventDefault();const next=(active+(event.key==='ArrowRight'?1:-1)+items.length)%items.length;select(next);thumbs.children[next].focus();});
     thumbs.appendChild(button);
   });
+  const colorItems=new Map();items.forEach((item,index)=>{if(item.type==='image')for(const name of item.colors||[])colorItems.set(name,index);});
+  if(colorItems.size){
+    const colors=document.createElement('div');colors.className='media-color-options';colors.setAttribute('aria-label','Color photos');
+    const label=document.createElement('p');label.textContent='Color photos';colors.appendChild(label);
+    for(const [name,index] of colorItems){const button=document.createElement('button');button.type='button';button.textContent=name;button.addEventListener('click',()=>select(index));colors.appendChild(button);}
+    thumbs.after(colors);
+  }
   detail.addEventListener('click',event=>{
-    if(event.target.closest('.color-swatch,.color-btn,.material-btn')) {stop();stage.hidden=true;image.style.display='';fallback.hidden=true;thumbs.querySelectorAll('button').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-pressed','false');});}
-  },true);
+    const option=event.target.closest('.color-swatch,.color-btn,.material-btn');if(!option)return;
+    const name=option.dataset.color||option.textContent.trim();
+    if(colorItems.has(name))select(colorItems.get(name));else if(colorNames.includes(name))select(0);
+    else {stop();stage.hidden=true;image.style.display='';fallback.hidden=true;thumbs.querySelectorAll('button').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-pressed','false');});}
+  });
   select(0);
 })();

@@ -3,14 +3,16 @@ import {spawn} from 'node:child_process';
 import {mkdtempSync,readFileSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {randomBytes} from 'node:crypto';
+import {tmpdir} from 'node:os';
 const root=resolve(new URL('../',import.meta.url).pathname.replace(/^\/([A-Za-z]:)/,'$1'));
-const store=mkdtempSync(resolve(root,'outputs/media-test-'));
+const store=mkdtempSync(resolve(tmpdir(),'kanapet-media-test-'));
 const port=18766;const origin=`http://127.0.0.1:${port}`;
 const child=spawn(process.execPath,[resolve(root,'tools/media_server.mjs')],{env:{...process.env,KANAPET_MEDIA_PORT:String(port),KANAPET_MEDIA_STORE:store},stdio:['ignore','pipe','pipe']});
 let cookie='',csrf='';
 const password=randomBytes(24).toString('hex');
+const declaration=encodeURIComponent(JSON.stringify({originalName:'test.png',originalSha256:'a'.repeat(64),profile:'detail'}));
 async function request(path,{method='GET',data,raw,headers={},auth=true}={}){
- const res=await fetch(origin+path,{method,headers:{Origin:origin,...(auth&&cookie?{Cookie:cookie}:{}),...(method!=='GET'&&auth?{'X-CSRF-Token':csrf}:{}),...(data?{'Content-Type':'application/json'}:{}),...headers},body:data?JSON.stringify(data):raw});
+ const res=await fetch(origin+path,{method,headers:{Origin:origin,...(auth&&cookie?{Cookie:cookie}:{}),...(method!=='GET'&&auth?{'X-CSRF-Token':csrf}:{}),...(data?{'Content-Type':'application/json'}:{}),...(path.includes('/upload')?{'X-Media-Declaration':declaration}:{}),...headers},body:data?JSON.stringify(data):raw});
  return res;
 }
 try{
@@ -20,7 +22,7 @@ try{
  res=await request('/api/admin/setup',{method:'POST',data:{email:'other@example.invalid',password}});assert.equal(res.status,403);
  res=await request('/api/admin/login',{method:'POST',data:{email:'test@example.invalid',password:'invalid'}});assert.equal(res.status,401);
  res=await request('/api/admin/login',{method:'POST',data:{email:'test@example.invalid',password}});assert.equal(res.status,200);cookie=res.headers.get('set-cookie').split(';')[0];csrf=(await res.json()).csrf;
- res=await request('/api/admin/products');assert.equal((await res.json()).products.length,70);
+ res=await request('/api/admin/products');assert.equal((await res.json()).products.length,JSON.parse(readFileSync(resolve(root,'public/data/products.json'),'utf8')).length);
  const endpoint='/api/admin/products/bird-650-pet-door';
  res=await request(endpoint);let record=await res.json();const baseline=record.draft.items;
  assert.ok(baseline.some(i=>i.type==='video'));
@@ -45,7 +47,46 @@ try{
  res=await request(endpoint+'/publish',{method:'POST',headers:{'If-Match':'2'},data:{}});assert.equal(res.status,200);
  res=await request(item.src,{auth:false});assert.equal(res.status,404,'Removed media must be unavailable after publishing');
  res=await request(endpoint,{method:'PUT',headers:{'If-Match':'2',Origin:'http://evil.invalid'},data:{items:baseline}});assert.equal(res.status,403);
+ let current=await (await request(endpoint)).json();
+ assert.equal(current.declarations[item.id].sourceType,undefined);
+ assert.match(current.declarations[item.id].processedSha256,/^[a-f0-9]{64}$/);
+ res=await request(endpoint+'/cleanup');assert.ok((await res.json()).assets.some(a=>a.id===item.id));
+ res=await request(endpoint+'/cleanup',{method:'DELETE',headers:{'If-Match':'0'},data:{id:item.id,confirmation:'永久删除'}});assert.equal(res.status,409);
+ res=await request(endpoint+'/cleanup',{method:'DELETE',headers:{'If-Match':String(current.draft.revision)},data:{id:item.id,confirmation:'删除'}});assert.equal(res.status,400);
+ res=await request(endpoint+'/cleanup',{method:'DELETE',headers:{'If-Match':String(current.draft.revision)},data:{id:item.id,confirmation:'永久删除'}});assert.equal(res.status,200);
+ const saved=JSON.parse(readFileSync(resolve(store,'state.json'),'utf8'));assert.equal(saved.assets[item.id],undefined);
+ const {existsSync}=await import('node:fs');assert.equal(existsSync(resolve(store,'assets',item.fileName)),false);
+ res=await request(item.src);assert.equal(res.status,404);
+ current=await (await request(endpoint)).json();
+ res=await request(endpoint+'/upload',{method:'POST',headers:{'If-Match':String(current.draft.revision),'X-Media-Declaration':''},raw:png});assert.equal(res.status,201,'Upload requires no source declarations');current=await res.json();
+ res=await request(endpoint+'/cleanup',{method:'DELETE',headers:{'If-Match':String(current.draft.revision)},data:{id:current.draft.items.at(-1).id,confirmation:'永久删除'}});assert.equal(res.status,409,'Draft references protect file');
+ res=await request(endpoint+'/upload',{method:'POST',headers:{'If-Match':String(current.draft.revision)},raw:png});assert.equal(res.status,409,'Duplicate upload rejected');
+ const nextItem=current.draft.items.at(-1);
+ res=await request(endpoint,{method:'PUT',headers:{'If-Match':String(current.draft.revision)},data:{items:current.draft.items,coverId:nextItem.id}});assert.equal(res.status,200);current=await res.json();
+ res=await request(endpoint+'/publish',{method:'POST',headers:{'If-Match':String(current.draft.revision)},data:{}});assert.equal(res.status,200);
+ res=await request('/api/media/bird-650-pet-door',{auth:false});assert.equal((await res.json()).items[0].id,nextItem.id,'Selected cover is first in published local feed');
+ const posterVideo={...baseline.find(i=>i.type==='video'),id:'poster-reference',poster:nextItem.src};
+ res=await request(endpoint,{method:'PUT',headers:{'If-Match':String(current.draft.revision)},data:{items:[...baseline,posterVideo],coverId:baseline[0].id}});assert.equal(res.status,200);current=await res.json();
+ res=await request(endpoint+'/publish',{method:'POST',headers:{'If-Match':String(current.draft.revision)},data:{}});assert.equal(res.status,200);
+ res=await request(endpoint+'/cleanup',{method:'DELETE',headers:{'If-Match':String(current.draft.revision)},data:{id:nextItem.id,confirmation:'永久删除'}});assert.equal(res.status,409,'Video-poster-only reference protects file');
+ const colorEndpoint='/api/admin/products/bird-travel-42';
+ res=await request(colorEndpoint);let colorRecord=await res.json();
+ assert.ok(colorRecord.colors.includes('Pink'));
+ assert.ok(colorRecord.draft.items.some(i=>i.colors?.includes('Pink')&&i.src.endsWith('bird-travel-42_pink.jpg')),'Existing catalog color photos are visible');
+ const colorItems=colorRecord.draft.items.map(i=>({...i,colors:(i.colors||[]).filter(c=>c!=='Pink')}));
+ colorItems[0].colors.push('Pink');
+ res=await request(colorEndpoint,{method:'PUT',headers:{'If-Match':String(colorRecord.draft.revision)},data:{items:colorItems}});assert.equal(res.status,200);colorRecord=await res.json();
+ res=await request(colorEndpoint+'/publish',{method:'POST',headers:{'If-Match':String(colorRecord.draft.revision)},data:{}});assert.equal(res.status,200);
+ res=await request('/api/media/bird-travel-42',{auth:false});const colorFeed=await res.json();assert.equal(colorFeed.items.find(i=>i.colors?.includes('Pink')).src,colorItems[0].src,'Published color replacement reaches storefront');
+ res=await request(colorEndpoint);colorRecord=await res.json();const invalidColors=colorRecord.draft.items.map(i=>({...i}));invalidColors[0].colors=['Invented Color'];
+ res=await request(colorEndpoint,{method:'PUT',headers:{'If-Match':String(colorRecord.draft.revision)},data:{items:invalidColors}});assert.equal(res.status,400,'Cannot invent catalog colors');
+ const duplicateColors=colorRecord.draft.items.map(i=>({...i}));duplicateColors[0].colors=['Pink'];duplicateColors[1].colors=['Pink'];
+ res=await request(colorEndpoint,{method:'PUT',headers:{'If-Match':String(colorRecord.draft.revision)},data:{items:duplicateColors}});assert.equal(res.status,400,'One color cannot have conflicting image bindings');
+ const clearColors=colorRecord.draft.items.map(i=>({...i,colors:(i.colors||[]).filter(c=>c!=='Pink')}));
+ res=await request(colorEndpoint,{method:'PUT',headers:{'If-Match':String(colorRecord.draft.revision)},data:{items:clearColors}});assert.equal(res.status,200);
+ res=await request(colorEndpoint);assert.ok(!(await res.json()).draft.items.some(i=>i.colors?.includes('Pink')),'Cleared binding is not resurrected during reload');
  res=await request('/api/admin/logout',{method:'POST',data:{}});assert.equal(res.status,200);
  res=await request('/api/admin/products');assert.equal(res.status,401);
- console.log('Media backend checks passed: login, CSRF, product archive, upload, private drafts, publish, ranges, deletion, revisions.');
+
+ console.log('Local media checks passed: login, CSRF, technical metadata, duplicate rejection, private drafts, publish, permanent byte deletion and reference/revision guards.');
 }finally{child.kill();}
