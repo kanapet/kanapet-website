@@ -3,16 +3,17 @@ window.KANAPET_PRODUCTS = [
   {
     "id": "bird-travel-23",
     "slug": "bird-travel-23",
-    "name": "23 External Travel Cage",
+    "name": "23 Travel Bird Cage",
     "category": "bird-travel",
     "series": "bird-travel-cage",
     "size": "23*16.5*16.5",
-    "moq": 100,
+    "moq": "100 pcs per model per color",
     "colors": [
-      "Green"
+      "Green",
+      "White"
     ],
-    "image": "images/products/bird-travel-cage-23.jpg",
-    "net_weight": "7.6 (20 pcs)",
+    "image": "images/products/excel-bird-travel-23-iron-green-b0ca0cea.jpg",
+    "net_weight": "0.38",
     "gross_weight": "8.6 (20 pcs)",
     "cbm": "0.09",
     "material": "Iron Wire / 304 Stainless Steel (optional)",
@@ -20,9 +21,13 @@ window.KANAPET_PRODUCTS = [
     "meas": "49*36*51.5",
     "pcs_per_ctn": "20",
     "color": "",
-    "accessories": "",
-    "notes": "Iron wire construction. MOQ: 100 pcs per color. Sold by full carton only. Net and gross weights are totals for 20 pieces per carton.",
+    "accessories": "Bottom grille + 1 perch",
+    "notes": "MOQ: 100 pcs per model per color, combining wire and 304 stainless steel versions. 20 pcs per carton; each material must be ordered in multiples of 20. Do not mix materials within a carton. Net weight is per unit; gross weight is per carton of 20 pcs.",
     "gallery": [
+      "images/products/excel-bird-travel-23-iron-green-b0ca0cea.jpg",
+      "images/products/excel-bird-travel-23-iron-white-28478cb1.jpg",
+      "images/products/excel-bird-travel-23-ss-green-8330c33d.jpg",
+      "images/products/excel-bird-travel-23-ss-white-2b02c79b.jpg",
       "images/products/gallery/23-travel-ss-1.jpg",
       "images/products/gallery/23-travel-ss-2.jpg",
       "images/products/gallery/23-travel-ss-3.jpg"
@@ -31,37 +36,82 @@ window.KANAPET_PRODUCTS = [
     "material_options": [
       {
         "name": "Iron Wire",
-        "image": "images/products/bird-travel-cage-23.jpg"
+        "image": "images/products/excel-bird-travel-23-iron-green-b0ca0cea.jpg"
       },
       {
-        "name": "Stainless Steel",
-        "image": "images/products/gallery/23-travel-ss-1.jpg"
+        "name": "304 Stainless Steel",
+        "image": "images/products/excel-bird-travel-23-ss-green-8330c33d.jpg"
       }
-    ]
+    ],
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-6",
+        "image": "images/products/excel-bird-travel-23-iron-green-b0ca0cea.jpg",
+        "title": "23 Travel Bird Cage — Iron Wire / Green",
+        "source_row": 6,
+        "color": "Green",
+        "material": "Iron Wire"
+      },
+      {
+        "id": "excel-row-7",
+        "image": "images/products/excel-bird-travel-23-iron-white-28478cb1.jpg",
+        "title": "23 Travel Bird Cage — Iron Wire / White",
+        "source_row": 7,
+        "color": "White",
+        "material": "Iron Wire"
+      },
+      {
+        "id": "excel-row-8",
+        "image": "images/products/excel-bird-travel-23-ss-green-8330c33d.jpg",
+        "title": "23 Travel Bird Cage — 304 Stainless Steel / Green",
+        "source_row": 8,
+        "color": "Green",
+        "material": "304 Stainless Steel"
+      },
+      {
+        "id": "excel-row-9",
+        "image": "images/products/excel-bird-travel-23-ss-white-2b02c79b.jpg",
+        "title": "23 Travel Bird Cage — 304 Stainless Steel / White",
+        "source_row": 9,
+        "color": "White",
+        "material": "304 Stainless Steel"
+      }
+    ],
+    "default_image_variant": "excel-row-6",
+    "color_images": {
+      "Green": "images/products/excel-bird-travel-23-iron-green-b0ca0cea.jpg",
+      "White": "images/products/excel-bird-travel-23-iron-white-28478cb1.jpg"
+    }
   },
   {
     "id": "bird-travel-26",
     "slug": "bird-travel-26",
-    "name": "26 External Travel Cage",
+    "name": "26 Travel Bird Cage",
     "category": "bird-travel",
     "series": "bird-travel-cage",
     "size": "26*20*17",
-    "moq": 100,
+    "moq": "100 pcs per model per color",
     "colors": [
-      "Green"
+      "Green",
+      "White"
     ],
-    "image": "images/products/bird-travel-cage-26.jpg",
-    "net_weight": "9 (20 pcs)",
+    "image": "images/products/excel-bird-travel-26-iron-green-9311f915.jpg",
+    "net_weight": "0.45",
     "gross_weight": "10.5 (20 pcs)",
-    "cbm": "0.14",
+    "cbm": "0.1367",
     "material": "Iron Wire / 304 Stainless Steel (optional)",
     "type": "",
-    "meas": "70*55*36.5",
+    "meas": "70*55*35.5",
     "pcs_per_ctn": "20",
     "color": "",
-    "accessories": "",
-    "notes": "Iron wire construction. MOQ: 100 pcs per color. Sold by full carton only. Net and gross weights are totals for 20 pieces per carton.",
+    "accessories": "Bottom grille + 1 perch",
+    "notes": "MOQ: 100 pcs per model per color, combining wire and 304 stainless steel versions. 20 pcs per carton; each material must be ordered in multiples of 20. Do not mix materials within a carton. Net weight is per unit; gross weight is per carton of 20 pcs.",
     "gallery": [
+      "images/products/excel-bird-travel-26-iron-green-9311f915.jpg",
+      "images/products/excel-bird-travel-26-iron-white-0ce6bb54.jpg",
+      "images/products/excel-bird-travel-26-ss-green-5d5c2a32.jpg",
+      "images/products/excel-bird-travel-26-ss-white-37caf96c.jpg",
       "images/products/gallery/26-travel-ss-1.jpg",
       "images/products/gallery/26-travel-ss-2.jpg",
       "images/products/gallery/26-travel-ss-3.jpg"
@@ -70,27 +120,68 @@ window.KANAPET_PRODUCTS = [
     "material_options": [
       {
         "name": "Iron Wire",
-        "image": "images/products/bird-travel-cage-26.jpg"
+        "image": "images/products/excel-bird-travel-26-iron-green-9311f915.jpg"
       },
       {
-        "name": "Stainless Steel",
-        "image": "images/products/gallery/26-travel-ss-1.jpg"
+        "name": "304 Stainless Steel",
+        "image": "images/products/excel-bird-travel-26-ss-green-5d5c2a32.jpg"
       }
-    ]
+    ],
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-10",
+        "image": "images/products/excel-bird-travel-26-iron-green-9311f915.jpg",
+        "title": "26 Travel Bird Cage — Iron Wire / Green",
+        "source_row": 10,
+        "color": "Green",
+        "material": "Iron Wire"
+      },
+      {
+        "id": "excel-row-11",
+        "image": "images/products/excel-bird-travel-26-iron-white-0ce6bb54.jpg",
+        "title": "26 Travel Bird Cage — Iron Wire / White",
+        "source_row": 11,
+        "color": "White",
+        "material": "Iron Wire"
+      },
+      {
+        "id": "excel-row-12",
+        "image": "images/products/excel-bird-travel-26-ss-green-5d5c2a32.jpg",
+        "title": "26 Travel Bird Cage — 304 Stainless Steel / Green",
+        "source_row": 12,
+        "color": "Green",
+        "material": "304 Stainless Steel"
+      },
+      {
+        "id": "excel-row-13",
+        "image": "images/products/excel-bird-travel-26-ss-white-37caf96c.jpg",
+        "title": "26 Travel Bird Cage — 304 Stainless Steel / White",
+        "source_row": 13,
+        "color": "White",
+        "material": "304 Stainless Steel"
+      }
+    ],
+    "default_image_variant": "excel-row-10",
+    "color_images": {
+      "Green": "images/products/excel-bird-travel-26-iron-green-9311f915.jpg",
+      "White": "images/products/excel-bird-travel-26-iron-white-0ce6bb54.jpg"
+    }
   },
   {
     "id": "bird-travel-30",
     "slug": "bird-travel-30",
-    "name": "30 External Travel Cage",
+    "name": "30 Travel Bird Cage",
     "category": "bird-travel",
     "series": "bird-travel-cage",
     "size": "30*20*23",
-    "moq": 100,
+    "moq": "100 pcs per model per color",
     "colors": [
-      "Green"
+      "Green",
+      "White"
     ],
-    "image": "images/products/bird-travel-cage-30.jpg",
-    "net_weight": "14.1 (20 pcs)",
+    "image": "images/products/excel-bird-travel-30-iron-green-c944fb10.jpg",
+    "net_weight": "0.705",
     "gross_weight": "14.6 (20 pcs)",
     "cbm": "0.20",
     "material": "Iron Wire / 304 Stainless Steel (optional)",
@@ -98,9 +189,13 @@ window.KANAPET_PRODUCTS = [
     "meas": "73*62*44",
     "pcs_per_ctn": "20",
     "color": "",
-    "accessories": "",
-    "notes": "Iron wire construction. MOQ: 100 pcs per color. Sold by full carton only.",
+    "accessories": "Bottom grille + 1 perch",
+    "notes": "MOQ: 100 pcs per model per color, combining wire and 304 stainless steel versions. 20 pcs per carton; each material must be ordered in multiples of 20. Do not mix materials within a carton. Net weight is per unit; gross weight is per carton of 20 pcs.",
     "gallery": [
+      "images/products/excel-bird-travel-30-iron-green-c944fb10.jpg",
+      "images/products/excel-bird-travel-26-iron-white-0ce6bb54.jpg",
+      "images/products/excel-bird-travel-30-ss-green-195aa0af.jpg",
+      "images/products/excel-bird-travel-26-ss-white-37caf96c.jpg",
       "images/products/gallery/30-travel-scene-1.jpg",
       "images/products/gallery/30-travel-scene-2.jpg",
       "images/products/gallery/30-travel-scene-3.jpg"
@@ -109,13 +204,53 @@ window.KANAPET_PRODUCTS = [
     "material_options": [
       {
         "name": "Iron Wire",
-        "image": "images/products/bird-travel-cage-30.jpg"
+        "image": "images/products/excel-bird-travel-30-iron-green-c944fb10.jpg"
       },
       {
-        "name": "Stainless Steel",
-        "image": "images/products/gallery/30-travel-ss-1.jpg"
+        "name": "304 Stainless Steel",
+        "image": "images/products/excel-bird-travel-30-ss-green-195aa0af.jpg"
       }
-    ]
+    ],
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-14",
+        "image": "images/products/excel-bird-travel-30-iron-green-c944fb10.jpg",
+        "title": "30 Travel Bird Cage — Iron Wire / Green",
+        "source_row": 14,
+        "color": "Green",
+        "material": "Iron Wire"
+      },
+      {
+        "id": "excel-row-15",
+        "image": "images/products/excel-bird-travel-26-iron-white-0ce6bb54.jpg",
+        "title": "30 Travel Bird Cage — Iron Wire / White",
+        "source_row": 15,
+        "color": "White",
+        "material": "Iron Wire"
+      },
+      {
+        "id": "excel-row-16",
+        "image": "images/products/excel-bird-travel-30-ss-green-195aa0af.jpg",
+        "title": "30 Travel Bird Cage — 304 Stainless Steel / Green",
+        "source_row": 16,
+        "color": "Green",
+        "material": "304 Stainless Steel"
+      },
+      {
+        "id": "excel-row-17",
+        "image": "images/products/excel-bird-travel-26-ss-white-37caf96c.jpg",
+        "title": "30 Travel Bird Cage — 304 Stainless Steel / White",
+        "source_row": 17,
+        "color": "White",
+        "material": "304 Stainless Steel"
+      }
+    ],
+    "default_image_variant": "excel-row-14",
+    "color_images": {
+      "Green": "images/products/excel-bird-travel-30-iron-green-c944fb10.jpg",
+      "White": "images/products/excel-bird-travel-26-iron-white-0ce6bb54.jpg"
+    }
   },
   {
     "id": "bird-travel-42",
@@ -130,11 +265,11 @@ window.KANAPET_PRODUCTS = [
       "Pink",
       "Blue"
     ],
-    "image": "images/products/bird-travel-cage-42.jpg",
-    "net_weight": "1.94",
-    "gross_weight": "2.3",
+    "image": "images/products/excel-bird-travel-42-iron-white-0392d9d1.jpg",
+    "net_weight": "1.98",
+    "gross_weight": "2.4",
     "cbm": "0.0213",
-    "material": "HIPS + ABS + plastic-sprayed iron wire / 304 stainless steel option",
+    "material": "HIPS + ABS + powder-coated wire / powder-coated 304 stainless steel option",
     "type": "",
     "meas": "43 × 31 × 16 cm (16.92 × 12.2 × 6.29 in)",
     "pcs_per_ctn": "1",
@@ -142,6 +277,10 @@ window.KANAPET_PRODUCTS = [
     "accessories": "",
     "notes": "Iron wire construction. Each product is individually packed in one carton. MOQ: 50 pcs per color.",
     "gallery": [
+      "images/products/excel-bird-travel-42-iron-white-0392d9d1.jpg",
+      "images/products/excel-bird-travel-42-iron-pink-291653c8.jpg",
+      "images/products/excel-bird-travel-42-iron-blue-0df93b39.jpg",
+      "images/products/excel-bird-travel-42-ss-blue-2d94b939.jpg",
       "images/products/gallery/42-travel-scene-1.jpg",
       "images/products/gallery/42-travel-scene-2.jpg",
       "images/products/gallery/42-travel-ss-1.jpg",
@@ -151,30 +290,84 @@ window.KANAPET_PRODUCTS = [
     "material_options": [
       {
         "name": "Iron Wire",
-        "image": "images/products/bird-travel-cage-42.jpg"
+        "image": "images/products/excel-bird-travel-42-iron-white-0392d9d1.jpg"
       },
       {
-        "name": "Stainless Steel",
-        "image": "images/products/gallery/42-travel-ss-1.jpg"
+        "name": "304 Stainless Steel",
+        "image": "images/products/excel-bird-travel-42-iron-white-0392d9d1.jpg"
       }
     ],
     "color_images": {
-      "White": "images/products/color/bird-travel-42_white.jpg",
-      "Pink": "images/products/color/bird-travel-42_pink.jpg",
-      "Blue": "images/products/color/bird-travel-42_blue.jpg"
-    }
+      "White": "images/products/excel-bird-travel-42-iron-white-0392d9d1.jpg",
+      "Pink": "images/products/excel-bird-travel-42-iron-pink-291653c8.jpg",
+      "Blue": "images/products/excel-bird-travel-42-iron-blue-0df93b39.jpg"
+    },
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-19",
+        "image": "images/products/excel-bird-travel-42-iron-white-0392d9d1.jpg",
+        "title": "42 External Travel Cage — Iron Wire / White",
+        "source_row": 19,
+        "color": "White",
+        "material": "Iron Wire"
+      },
+      {
+        "id": "excel-row-20",
+        "image": "images/products/excel-bird-travel-42-iron-pink-291653c8.jpg",
+        "title": "42 External Travel Cage — Iron Wire / Pink",
+        "source_row": 20,
+        "color": "Pink",
+        "material": "Iron Wire"
+      },
+      {
+        "id": "excel-row-21",
+        "image": "images/products/excel-bird-travel-42-iron-blue-0df93b39.jpg",
+        "title": "42 External Travel Cage — Iron Wire / Blue",
+        "source_row": 21,
+        "color": "Blue",
+        "material": "Iron Wire"
+      },
+      {
+        "id": "excel-row-22",
+        "image": "images/products/excel-bird-travel-42-iron-white-0392d9d1.jpg",
+        "title": "42 External Travel Cage — 304 Stainless Steel / White",
+        "source_row": 22,
+        "color": "White",
+        "material": "304 Stainless Steel"
+      },
+      {
+        "id": "excel-row-23",
+        "image": "images/products/excel-bird-travel-42-iron-pink-291653c8.jpg",
+        "title": "42 External Travel Cage — 304 Stainless Steel / Pink",
+        "source_row": 23,
+        "color": "Pink",
+        "material": "304 Stainless Steel"
+      },
+      {
+        "id": "excel-row-24",
+        "image": "images/products/excel-bird-travel-42-ss-blue-2d94b939.jpg",
+        "title": "42 External Travel Cage — 304 Stainless Steel / Blue",
+        "source_row": 24,
+        "color": "Blue",
+        "material": "304 Stainless Steel"
+      }
+    ],
+    "default_image_variant": "excel-row-19"
   },
   {
     "id": "bird-feeder-cup-no1",
     "name": "Bird Feeding Cup No.1",
     "size": "6*6*3.4",
-    "image": "images/products/feeder-cup-no1.jpg",
+    "image": "images/products/excel-bird-cup-no1-standard-b9a96d4e.jpg",
     "category": "bird-accessories",
     "moq": 300,
     "colors": [
       "White"
     ],
     "gallery": [
+      "images/products/excel-bird-cup-no1-standard-b9a96d4e.jpg",
+      "images/products/excel-bird-cup-no1-knob-f4496af8.jpg",
       "images/products/gallery/no-mess-feeder-transparent.jpg"
     ],
     "description": "",
@@ -182,60 +375,88 @@ window.KANAPET_PRODUCTS = [
     "carton_size": "56.5*37*35",
     "net_weight": "0.011",
     "gross_weight": "11",
-    "material": "ABS+PET",
+    "material": "PS + PP",
     "cup_size": "5*5*3.5",
     "notes": "300 pcs per carton. Sold by full carton only.",
-    "color_options": [
-      {
-        "name": "Transparent Cup",
-        "image": "images/products/feeder-cup-no1.jpg"
-      },
-      {
-        "name": "White Collar Cup",
-        "image": "images/products/feeder-cup-no1-white-collar.jpg"
-      }
-    ],
     "slug": "bird-feeder-cup-no1",
     "moq_unit": "pc",
-    "pcs_per_ctn": "300"
+    "pcs_per_ctn": "300",
+    "configuration_options": [
+      "New mounting clip",
+      "Knob mount"
+    ],
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-25",
+        "image": "images/products/excel-bird-cup-no1-standard-b9a96d4e.jpg",
+        "title": "Bird Feeding Cup No.1 — White / New mounting clip",
+        "source_row": 25,
+        "color": "White",
+        "configuration": "New mounting clip"
+      },
+      {
+        "id": "excel-row-26",
+        "image": "images/products/excel-bird-cup-no1-knob-f4496af8.jpg",
+        "title": "Bird Feeding Cup No.1 — White / Knob mount",
+        "source_row": 26,
+        "color": "White",
+        "configuration": "Knob mount"
+      }
+    ],
+    "default_image_variant": "excel-row-25",
+    "color_images": {
+      "White": "images/products/excel-bird-cup-no1-standard-b9a96d4e.jpg"
+    }
   },
   {
     "id": "bird-feeder-cup-no3-white",
     "name": "Bird Feeding Cup No.3 (White & Transparent)",
     "size": "11*10*9",
-    "image": "images/products/feeder-cup-no3-white.jpg",
+    "image": "images/products/excel-bird-cup-no3-w-3e9ae594.jpg",
     "category": "bird-accessories",
     "moq": 175,
     "colors": [
       "White",
       "Transparent"
     ],
-    "gallery": [],
+    "gallery": [
+      "images/products/excel-bird-cup-no3-w-3e9ae594.jpg",
+      "images/products/excel-bird-cup-no3-c-cd77f623.jpg"
+    ],
     "description": "",
     "features": [],
-    "material": "ABS",
+    "material": "White: PP; Clear: ABS",
     "carton_size": "69*47*30",
     "net_weight": "0.051",
     "gross_weight": "11",
     "cup_size": "7.7*6.5*4.5",
     "notes": "175 pcs per carton. Sold by full carton only.",
-    "color_options": [
-      {
-        "name": "White",
-        "image": "images/products/feeder-cup-no3-white.jpg"
-      },
-      {
-        "name": "Transparent",
-        "image": "images/products/feeder-cup-no3-transparent.jpg"
-      }
-    ],
     "slug": "bird-feeder-cup-no3-white",
     "color_images": {
-      "White": "images/products/feeder-cup-no3-white.jpg",
-      "Transparent": "images/products/feeder-cup-no3-transparent.jpg"
+      "White": "images/products/excel-bird-cup-no3-w-3e9ae594.jpg",
+      "Transparent": "images/products/excel-bird-cup-no3-c-cd77f623.jpg"
     },
     "moq_unit": "pc",
-    "pcs_per_ctn": "175"
+    "pcs_per_ctn": "175",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-27",
+        "image": "images/products/excel-bird-cup-no3-w-3e9ae594.jpg",
+        "title": "Bird Feeding Cup No.3 (White & Transparent) — White",
+        "source_row": 27,
+        "color": "White"
+      },
+      {
+        "id": "excel-row-28",
+        "image": "images/products/excel-bird-cup-no3-c-cd77f623.jpg",
+        "title": "Bird Feeding Cup No.3 (White & Transparent) — Transparent",
+        "source_row": 28,
+        "color": "Transparent"
+      }
+    ],
+    "default_image_variant": "excel-row-27"
   },
   {
     "id": "bird-feeder-cup-no3-transparent-hook",
@@ -245,70 +466,91 @@ window.KANAPET_PRODUCTS = [
     "carton_size": "69*45*30",
     "net_weight": "0.06",
     "gross_weight": "12",
-    "material": "PET",
-    "image": "images/products/feeder-cup-no3-transparent.jpg",
+    "material": "PS",
+    "image": "images/products/excel-bird-feeder-cup-no3-transparent-hook-9eedc652.jpg",
     "category": "bird-accessories",
     "moq": 175,
     "colors": [
       "Transparent"
     ],
-    "color_options": [
-      {
-        "name": "Transparent",
-        "image": "images/products/feeder-cup-no3-transparent.jpg"
-      }
+    "gallery": [
+      "images/products/excel-bird-feeder-cup-no3-transparent-hook-9eedc652.jpg"
     ],
-    "gallery": [],
     "notes": "175 pcs per carton. Sold by full carton only.",
     "description": "",
     "features": [],
     "slug": "bird-feeder-cup-no3-transparent-hook",
     "moq_unit": "pc",
-    "pcs_per_ctn": "175"
+    "pcs_per_ctn": "175",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-29",
+        "image": "images/products/excel-bird-feeder-cup-no3-transparent-hook-9eedc652.jpg",
+        "title": "Bird Feeding Cup with Universal Hook — Transparent",
+        "source_row": 29,
+        "color": "Transparent"
+      }
+    ],
+    "default_image_variant": "excel-row-29",
+    "color_images": {
+      "Transparent": "images/products/excel-bird-feeder-cup-no3-transparent-hook-9eedc652.jpg"
+    }
   },
   {
     "id": "bird-feeder-cup-no4",
     "name": "Bird Feeding Cup No.4 (White & Transparent)",
     "size": "8*10.5*5",
-    "image": "images/products/feeder-cup-no4-white-main.jpg",
+    "image": "images/products/excel-bird-cup-no4-w-d1e5b6ed.jpg",
     "category": "bird-accessories",
     "moq": 245,
     "colors": [
       "White",
       "Transparent"
     ],
-    "gallery": [],
+    "gallery": [
+      "images/products/excel-bird-cup-no4-w-d1e5b6ed.jpg",
+      "images/products/excel-bird-cup-no4-c-f4c1bea2.jpg"
+    ],
     "description": "",
     "features": [],
     "carton_size": "69*47*30",
     "net_weight": "0.038",
     "gross_weight": "12",
-    "material": "PET",
+    "material": "White: PP; Clear: PS",
     "cup_size": "10.5*7.5*5",
     "notes": "245 pcs per carton. Sold by full carton only.",
-    "color_options": [
-      {
-        "name": "White",
-        "image": "images/products/feeder-cup-no4-white-main.jpg"
-      },
-      {
-        "name": "Transparent",
-        "image": "images/products/feeder-cup-no4-transparent-main.jpg"
-      }
-    ],
     "slug": "bird-feeder-cup-no4",
     "color_images": {
-      "White": "images/products/feeder-cup-no4-white-main.jpg",
-      "Transparent": "images/products/feeder-cup-no4-transparent-main.jpg"
+      "White": "images/products/excel-bird-cup-no4-w-d1e5b6ed.jpg",
+      "Transparent": "images/products/excel-bird-cup-no4-c-f4c1bea2.jpg"
     },
     "moq_unit": "pc",
-    "pcs_per_ctn": "245"
+    "pcs_per_ctn": "245",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-30",
+        "image": "images/products/excel-bird-cup-no4-w-d1e5b6ed.jpg",
+        "title": "Bird Feeding Cup No.4 (White & Transparent) — White",
+        "source_row": 30,
+        "color": "White"
+      },
+      {
+        "id": "excel-row-31",
+        "image": "images/products/excel-bird-cup-no4-c-f4c1bea2.jpg",
+        "title": "Bird Feeding Cup No.4 (White & Transparent) — Transparent",
+        "source_row": 31,
+        "color": "Transparent"
+      }
+    ],
+    "default_image_variant": "excel-row-30"
   },
   {
     "id": "bird-feeder-cup-no10",
     "name": "Bird Feeding Cup No.10 (White & Transparent)",
     "size": "9*10.5*5.5",
-    "image": "images/products/feeder-cup-no10-white-main.png",
+    "image": "images/products/excel-bird-cup-no4-w-d1e5b6ed.jpg",
     "category": "bird-accessories",
     "moq": 156,
     "colors": [
@@ -316,33 +558,43 @@ window.KANAPET_PRODUCTS = [
       "Transparent"
     ],
     "gallery": [
+      "images/products/excel-bird-cup-no4-w-d1e5b6ed.jpg",
+      "images/products/excel-bird-cup-no4-c-f4c1bea2.jpg",
       "images/products/gallery/feeder-cup-no10-dimension.png"
     ],
     "description": "",
     "features": [],
-    "material": "PET",
+    "material": "White: PP; Clear: PS",
     "carton_size": "69*47*30",
-    "net_weight": "0.038",
-    "gross_weight": "12",
+    "net_weight": "White: 0.05; Clear: 0.038",
+    "gross_weight": "White: 10.8; Clear: 12",
     "cup_size": "11.5*8.5*5.5",
     "notes": "156 pcs per carton. Sold by full carton only.",
-    "color_options": [
-      {
-        "name": "White",
-        "image": "images/products/feeder-cup-no10-white-main.png"
-      },
-      {
-        "name": "Transparent",
-        "image": "images/products/feeder-cup-no10-transparent-main.png"
-      }
-    ],
     "slug": "bird-feeder-cup-no10",
     "color_images": {
-      "White": "images/products/feeder-cup-no10-white-main.png",
-      "Transparent": "images/products/feeder-cup-no10-transparent-main.png"
+      "White": "images/products/excel-bird-cup-no4-w-d1e5b6ed.jpg",
+      "Transparent": "images/products/excel-bird-cup-no4-c-f4c1bea2.jpg"
     },
     "moq_unit": "pc",
-    "pcs_per_ctn": "156"
+    "pcs_per_ctn": "156",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-32",
+        "image": "images/products/excel-bird-cup-no4-w-d1e5b6ed.jpg",
+        "title": "Bird Feeding Cup No.10 (White & Transparent) — White",
+        "source_row": 32,
+        "color": "White"
+      },
+      {
+        "id": "excel-row-33",
+        "image": "images/products/excel-bird-cup-no4-c-f4c1bea2.jpg",
+        "title": "Bird Feeding Cup No.10 (White & Transparent) — Transparent",
+        "source_row": 33,
+        "color": "Transparent"
+      }
+    ],
+    "default_image_variant": "excel-row-32"
   },
   {
     "id": "bird-feeding-cup-spring-door",
@@ -351,55 +603,75 @@ window.KANAPET_PRODUCTS = [
     "carton_size": "69*45*30",
     "net_weight": "0.0275",
     "gross_weight": "9.5",
-    "material": "PET",
-    "image": "images/products/feeder-cup-spring-door.jpg",
+    "material": "PS",
+    "image": "images/products/excel-bird-feeding-cup-spring-door-bb0ab18e.jpg",
     "category": "bird-accessories",
     "moq": 256,
     "colors": [
       "Transparent"
     ],
-    "color_options": [
-      {
-        "name": "Transparent",
-        "image": "images/products/feeder-cup-spring-door.jpg"
-      }
+    "gallery": [
+      "images/products/excel-bird-feeding-cup-spring-door-bb0ab18e.jpg"
     ],
-    "gallery": [],
     "notes": "256 pcs per carton. Sold by full carton only.",
     "description": "",
     "features": [],
     "slug": "bird-feeding-cup-spring-door",
     "moq_unit": "pc",
-    "pcs_per_ctn": "256"
+    "pcs_per_ctn": "256",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-34",
+        "image": "images/products/excel-bird-feeding-cup-spring-door-bb0ab18e.jpg",
+        "title": "Bird Feeding Cup for Spring Door Cage — Transparent",
+        "source_row": 34,
+        "color": "Transparent"
+      }
+    ],
+    "default_image_variant": "excel-row-34",
+    "color_images": {
+      "Transparent": "images/products/excel-bird-feeding-cup-spring-door-bb0ab18e.jpg"
+    }
   },
   {
     "id": "bird-feeder-cup-anti-spill",
     "name": "Bird Feeding Cup No.5",
     "size": "9.2*12.7*9.9",
-    "image": "images/products/feeder-cup-no5.jpg",
+    "image": "images/products/excel-bird-feeder-cup-anti-spill-2334578b.jpg",
     "category": "bird-accessories",
     "moq": 120,
     "colors": [
       "Transparent"
     ],
-    "gallery": [],
+    "gallery": [
+      "images/products/excel-bird-feeder-cup-anti-spill-2334578b.jpg"
+    ],
     "description": "",
     "features": [],
     "carton_size": "69*47*30",
     "net_weight": "0.069",
     "gross_weight": "10.5",
-    "material": "PET",
+    "material": "ABS",
     "cup_size": "9.2*12.7*9.9",
     "notes": "120 pcs per carton. Sold by full carton only.",
-    "color_options": [
-      {
-        "name": "Transparent",
-        "image": "images/products/feeder-cup-no5.jpg"
-      }
-    ],
     "slug": "bird-feeder-cup-anti-spill",
     "moq_unit": "pc",
-    "pcs_per_ctn": "120"
+    "pcs_per_ctn": "120",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-35",
+        "image": "images/products/excel-bird-feeder-cup-anti-spill-2334578b.jpg",
+        "title": "Bird Feeding Cup No.5 — Transparent",
+        "source_row": 35,
+        "color": "Transparent"
+      }
+    ],
+    "default_image_variant": "excel-row-35",
+    "color_images": {
+      "Transparent": "images/products/excel-bird-feeder-cup-anti-spill-2334578b.jpg"
+    }
   },
   {
     "id": "bird-smart-feeder",
@@ -410,9 +682,9 @@ window.KANAPET_PRODUCTS = [
     "size": "",
     "moq": 200,
     "colors": [
-      "White"
+      "White + Clear"
     ],
-    "image": "images/products/bird-smart-feeder.jpg",
+    "image": "images/products/excel-bird-smart-feeder-9f459742.jpg",
     "net_weight": "",
     "gross_weight": "",
     "cbm": "",
@@ -423,9 +695,25 @@ window.KANAPET_PRODUCTS = [
     "color": "",
     "accessories": "",
     "notes": "Each product is individually packed. Shipping carton: 20 pcs. MOQ: 200 pcs per model, equivalent to 10 shipping cartons.",
-    "gallery": [],
+    "gallery": [
+      "images/products/excel-bird-smart-feeder-9f459742.jpg"
+    ],
     "accessory_type": "universal",
-    "moq_unit": "pc"
+    "moq_unit": "pc",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-36",
+        "image": "images/products/excel-bird-smart-feeder-9f459742.jpg",
+        "title": "Smart Feeder — White + Clear",
+        "source_row": 36,
+        "color": "White + Clear"
+      }
+    ],
+    "default_image_variant": "excel-row-36",
+    "color_images": {
+      "White + Clear": "images/products/excel-bird-smart-feeder-9f459742.jpg"
+    }
   },
   {
     "id": "bird-smart-water-dispenser",
@@ -436,9 +724,9 @@ window.KANAPET_PRODUCTS = [
     "size": "",
     "moq": 200,
     "colors": [
-      "White"
+      "White + Clear"
     ],
-    "image": "images/products/bird-smart-water-dispenser.jpg",
+    "image": "images/products/excel-bird-smart-water-dispenser-f9b53376.jpg",
     "net_weight": "",
     "gross_weight": "",
     "cbm": "",
@@ -449,9 +737,25 @@ window.KANAPET_PRODUCTS = [
     "color": "",
     "accessories": "",
     "notes": "Each product is individually packed. Shipping carton: 20 pcs. MOQ: 200 pcs per model, equivalent to 10 shipping cartons.",
-    "gallery": [],
+    "gallery": [
+      "images/products/excel-bird-smart-water-dispenser-f9b53376.jpg"
+    ],
     "accessory_type": "universal",
-    "moq_unit": "pc"
+    "moq_unit": "pc",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-37",
+        "image": "images/products/excel-bird-smart-water-dispenser-f9b53376.jpg",
+        "title": "Smart Water Dispenser — White + Clear",
+        "source_row": 37,
+        "color": "White + Clear"
+      }
+    ],
+    "default_image_variant": "excel-row-37",
+    "color_images": {
+      "White + Clear": "images/products/excel-bird-smart-water-dispenser-f9b53376.jpg"
+    }
   },
   {
     "id": "bird-650-pet-door",
@@ -464,23 +768,57 @@ window.KANAPET_PRODUCTS = [
     "colors": [
       "White"
     ],
-    "image": "images/products/bird-650-pet-door.jpg",
-    "net_weight": "7.92",
-    "gross_weight": "10",
+    "image": "images/products/excel-bird-650-pet-iron-a7444f69.jpg",
+    "net_weight": "7.68",
+    "gross_weight": "Wire: 9.85; 304 stainless steel: 9.73",
     "cbm": "",
-    "material": "ABS+PET+304 Stainless Steel+Iron Wire",
+    "material": "ABS + PET + Aluminum Alloy + Wire / 304 Stainless Steel",
     "type": "",
     "meas": "70.5*51.5*22.5",
     "pcs_per_ctn": "1",
     "color": "",
-    "accessories": "Food cups*2, Water bottle*2, Wooden perches*2",
+    "accessories": "2 clear feed cups + 2 perches + 1 top perch",
     "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
     "gallery": [
+      "images/products/excel-bird-650-pet-iron-a7444f69.jpg",
       "images/products/gallery/650-pet-scene-1.jpg",
       "images/products/gallery/650-pet-scene-2.jpg",
       "images/products/gallery/650-pet-scene-4.jpg"
     ],
-    "moq_unit": "pc"
+    "moq_unit": "pc",
+    "material_options": [
+      {
+        "name": "Iron Wire",
+        "image": "images/products/excel-bird-650-pet-iron-a7444f69.jpg"
+      },
+      {
+        "name": "304 Stainless Steel",
+        "image": "images/products/excel-bird-650-pet-iron-a7444f69.jpg"
+      }
+    ],
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-38",
+        "image": "images/products/excel-bird-650-pet-iron-a7444f69.jpg",
+        "title": "650 Transparent PET Door Birdcage — Iron Wire / White",
+        "source_row": 38,
+        "color": "White",
+        "material": "Iron Wire"
+      },
+      {
+        "id": "excel-row-39",
+        "image": "images/products/excel-bird-650-pet-iron-a7444f69.jpg",
+        "title": "650 Transparent PET Door Birdcage — 304 Stainless Steel / White",
+        "source_row": 39,
+        "color": "White",
+        "material": "304 Stainless Steel"
+      }
+    ],
+    "default_image_variant": "excel-row-38",
+    "color_images": {
+      "White": "images/products/excel-bird-650-pet-iron-a7444f69.jpg"
+    }
   },
   {
     "id": "bird-650-glass-door",
@@ -493,19 +831,54 @@ window.KANAPET_PRODUCTS = [
     "colors": [
       "White"
     ],
-    "image": "images/products/bird-650-glass-door.jpg",
-    "net_weight": "8.92",
-    "gross_weight": "11",
+    "image": "images/products/excel-bird-650-glass-iron-9d68cfb6.jpg",
+    "net_weight": "10.15",
+    "gross_weight": "11.36",
     "cbm": "",
-    "material": "ABS+PET+304 Stainless Steel+Iron Wire",
+    "material": "ABS + PET + Glass + Zinc Alloy + Aluminum Alloy + Wire / 304 Stainless Steel",
     "type": "",
     "meas": "70.5*51.5*22.5",
     "pcs_per_ctn": "1",
     "color": "",
-    "accessories": "Food cups*2, Water bottle*2, Wooden perches*2",
+    "accessories": "2 clear feed cups + 2 perches + 1 top perch",
     "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
-    "gallery": [],
-    "moq_unit": "pc"
+    "gallery": [
+      "images/products/excel-bird-650-glass-iron-9d68cfb6.jpg"
+    ],
+    "moq_unit": "pc",
+    "material_options": [
+      {
+        "name": "Iron Wire",
+        "image": "images/products/excel-bird-650-glass-iron-9d68cfb6.jpg"
+      },
+      {
+        "name": "304 Stainless Steel",
+        "image": "images/products/excel-bird-650-glass-iron-9d68cfb6.jpg"
+      }
+    ],
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-40",
+        "image": "images/products/excel-bird-650-glass-iron-9d68cfb6.jpg",
+        "title": "650 Transparent Glass Door Birdcage — Iron Wire / White",
+        "source_row": 40,
+        "color": "White",
+        "material": "Iron Wire"
+      },
+      {
+        "id": "excel-row-41",
+        "image": "images/products/excel-bird-650-glass-iron-9d68cfb6.jpg",
+        "title": "650 Transparent Glass Door Birdcage — 304 Stainless Steel / White",
+        "source_row": 41,
+        "color": "White",
+        "material": "304 Stainless Steel"
+      }
+    ],
+    "default_image_variant": "excel-row-40",
+    "color_images": {
+      "White": "images/products/excel-bird-650-glass-iron-9d68cfb6.jpg"
+    }
   },
   {
     "id": "bird-490-iron-wire-single",
@@ -513,26 +886,42 @@ window.KANAPET_PRODUCTS = [
     "name": "490 Four Sided Iron Wire Single Layer Bird Cage",
     "category": "bird-cages",
     "series": "bird-490-cage",
-    "size": "46*46*58",
+    "size": "46 × 46 × 58",
     "moq": 100,
     "colors": [
       "White"
     ],
-    "image": "images/products/490-iron-wire-single.jpg",
-    "net_weight": "5.38",
-    "gross_weight": "6.23",
+    "image": "images/products/excel-bird-4901-all-wire-iron-af9299a4.jpg",
+    "net_weight": "4.78",
+    "gross_weight": "5.63",
     "cbm": "",
-    "material": "ABS+PVC+Plastic+Iron Wire",
+    "material": "ABS+PVC+Wire",
     "type": "",
-    "meas": "47*47*17.5",
+    "meas": "47 × 47 × 17.5",
     "pcs_per_ctn": "1",
     "color": "",
-    "accessories": "Food cups*2, Water bottle*2, Wooden perches*2",
+    "accessories": "2 feed cups + 3 perches",
     "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
     "moq_unit": "pc",
     "gallery": [
+      "images/products/excel-bird-4901-all-wire-iron-af9299a4.jpg",
       "images/products/gallery/490-wheel-detail.jpg"
-    ]
+    ],
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-42",
+        "image": "images/products/excel-bird-4901-all-wire-iron-af9299a4.jpg",
+        "title": "490 Four Sided Iron Wire Single Layer Bird Cage — Iron Wire / White",
+        "source_row": 42,
+        "color": "White",
+        "material": "Iron Wire"
+      }
+    ],
+    "default_image_variant": "excel-row-42",
+    "color_images": {
+      "White": "images/products/excel-bird-4901-all-wire-iron-af9299a4.jpg"
+    }
   },
   {
     "id": "bird-490-iron-wire-upgraded",
@@ -540,38 +929,60 @@ window.KANAPET_PRODUCTS = [
     "name": "490 Four Sided Upgraded Single Layer Bird Cage",
     "category": "bird-cages",
     "series": "bird-490-cage",
-    "size": "46*46*58",
+    "size": "46 × 46 × 58",
     "moq": 100,
     "colors": [
       "White"
     ],
-    "image": "images/products/bird-490-iron-wire-upgraded-main.png",
-    "net_weight": "5.49",
-    "gross_weight": "6.55",
+    "image": "images/products/excel-bird-4901-allwire-up-iron-9e50b94c.jpg",
+    "net_weight": "Wire: 5.16; 304 stainless steel: 5.16",
+    "gross_weight": "Wire: 6.055; 304 stainless steel: 6.05",
     "cbm": "",
-    "material": "ABS+PVC+Plastic+Iron Wire/Stainless Steel",
+    "material": "ABS + PVC + Wire / 304 Stainless Steel",
     "type": "",
-    "meas": "47*47*18.5",
+    "meas": "47 × 47 × 18.5",
     "pcs_per_ctn": "1",
     "color": "",
-    "accessories": "Food cups*2, Water bottle*2, Wooden perches*2",
+    "accessories": "2 feed cups + 3 perches",
     "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
     "moq_unit": "pc",
     "gallery": [
+      "images/products/excel-bird-4901-allwire-up-iron-9e50b94c.jpg",
       "images/products/gallery/490-wheel-detail.jpg"
     ],
     "material_options": [
       {
         "name": "Iron Wire",
-        "image": "images/products/490-iron-wire-upgraded.jpg",
-        "size": "46*46*58"
+        "image": "images/products/excel-bird-4901-allwire-up-iron-9e50b94c.jpg"
       },
       {
-        "name": "Stainless Steel",
-        "image": "images/products/490-iron-wire-upgraded.jpg",
-        "size": "46*46*58"
+        "name": "304 Stainless Steel",
+        "image": "images/products/excel-bird-4901-allwire-up-iron-9e50b94c.jpg"
       }
-    ]
+    ],
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-43",
+        "image": "images/products/excel-bird-4901-allwire-up-iron-9e50b94c.jpg",
+        "title": "490 Four Sided Upgraded Single Layer Bird Cage — Iron Wire / White",
+        "source_row": 43,
+        "color": "White",
+        "material": "Iron Wire"
+      },
+      {
+        "id": "excel-row-44",
+        "image": "images/products/excel-bird-4901-allwire-up-iron-9e50b94c.jpg",
+        "title": "490 Four Sided Upgraded Single Layer Bird Cage — 304 Stainless Steel / White",
+        "source_row": 44,
+        "color": "White",
+        "material": "304 Stainless Steel"
+      }
+    ],
+    "default_image_variant": "excel-row-43",
+    "color_images": {
+      "White": "images/products/excel-bird-4901-allwire-up-iron-9e50b94c.jpg"
+    }
   },
   {
     "id": "bird-490-transparent-door-single",
@@ -579,38 +990,60 @@ window.KANAPET_PRODUCTS = [
     "name": "490 Transparent Door Single Layer Bird Cage",
     "category": "bird-cages",
     "series": "bird-490-cage",
-    "size": "46*46*58",
+    "size": "46 × 46 × 58",
     "moq": 100,
     "colors": [
       "White"
     ],
-    "image": "images/products/490-transparent-door-single.jpg",
-    "net_weight": "5.49",
-    "gross_weight": "6.55",
+    "image": "images/products/excel-bird-4901-cleardoor-iron-1fbd8518.jpg",
+    "net_weight": "Wire: 5.36; 304 stainless steel: 5.24",
+    "gross_weight": "Wire: 6.89; 304 stainless steel: 7",
     "cbm": "",
-    "material": "ABS+PVC+Plastic+Stainless Steel",
+    "material": "ABS + PET + PVC + Wire / 304 Stainless Steel",
     "type": "",
-    "meas": "51*51*22.5",
+    "meas": "51 × 51 × 22.5",
     "pcs_per_ctn": "1",
     "color": "",
-    "accessories": "Food cups*2, Water bottle*2, Wooden perches*2",
+    "accessories": "2 feed cups + 3 perches",
     "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
     "moq_unit": "pc",
     "gallery": [
+      "images/products/excel-bird-4901-cleardoor-iron-1fbd8518.jpg",
       "images/products/gallery/490-wheel-detail.jpg"
     ],
     "material_options": [
       {
         "name": "Iron Wire",
-        "image": "images/products/490-transparent-door-single.jpg",
-        "size": "46*46*58"
+        "image": "images/products/excel-bird-4901-cleardoor-iron-1fbd8518.jpg"
       },
       {
-        "name": "Stainless Steel",
-        "image": "images/products/490-transparent-door-single.jpg",
-        "size": "46*46*58"
+        "name": "304 Stainless Steel",
+        "image": "images/products/excel-bird-4901-cleardoor-iron-1fbd8518.jpg"
       }
-    ]
+    ],
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-45",
+        "image": "images/products/excel-bird-4901-cleardoor-iron-1fbd8518.jpg",
+        "title": "490 Transparent Door Single Layer Bird Cage — Iron Wire / White",
+        "source_row": 45,
+        "color": "White",
+        "material": "Iron Wire"
+      },
+      {
+        "id": "excel-row-46",
+        "image": "images/products/excel-bird-4901-cleardoor-iron-1fbd8518.jpg",
+        "title": "490 Transparent Door Single Layer Bird Cage — 304 Stainless Steel / White",
+        "source_row": 46,
+        "color": "White",
+        "material": "304 Stainless Steel"
+      }
+    ],
+    "default_image_variant": "excel-row-45",
+    "color_images": {
+      "White": "images/products/excel-bird-4901-cleardoor-iron-1fbd8518.jpg"
+    }
   },
   {
     "id": "bird-490-transparent-door-splash",
@@ -618,24 +1051,25 @@ window.KANAPET_PRODUCTS = [
     "name": "490 Transparent Door Splash Proof Single Layer Bird Cage",
     "category": "bird-cages",
     "series": "bird-490-cage",
-    "size": "46*46*57.5",
+    "size": "46 × 46 × 57.5",
     "moq": 100,
     "colors": [
       "White"
     ],
-    "image": "images/products/490-transparent-door-splash.jpg",
-    "net_weight": "5.49",
-    "gross_weight": "6.55",
+    "image": "images/products/excel-bird-4901-splash-iron-1aed9256.jpg",
+    "net_weight": "Wire: 5.45; 304 stainless steel: 5.45",
+    "gross_weight": "Wire: 7; 304 stainless steel: 7",
     "cbm": "",
-    "material": "ABS+PVC+Plastic+Stainless Steel",
+    "material": "ABS + PET + PVC + Wire / 304 Stainless Steel",
     "type": "",
-    "meas": "51*51*22.5",
+    "meas": "51 × 51 × 22.5",
     "pcs_per_ctn": "1",
     "color": "",
-    "accessories": "Food cups*2, Water bottle*2, Wooden perches*2",
+    "accessories": "2 feed cups + 3 perches",
     "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
     "moq_unit": "pc",
     "gallery": [
+      "images/products/excel-bird-4901-splash-iron-1aed9256.jpg",
       "images/products/gallery/490-splash-scene-1.jpg",
       "images/products/gallery/490-splash-scene-2.jpg",
       "images/products/gallery/490-splash-scene-3.jpg",
@@ -645,15 +1079,36 @@ window.KANAPET_PRODUCTS = [
     "material_options": [
       {
         "name": "Iron Wire",
-        "image": "images/products/490-transparent-door-splash.jpg",
-        "size": "46*46*57.5"
+        "image": "images/products/excel-bird-4901-splash-iron-1aed9256.jpg"
       },
       {
-        "name": "Stainless Steel",
-        "image": "images/products/490-transparent-door-splash.jpg",
-        "size": "46*46*57.5"
+        "name": "304 Stainless Steel",
+        "image": "images/products/excel-bird-4901-splash-iron-1aed9256.jpg"
       }
-    ]
+    ],
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-47",
+        "image": "images/products/excel-bird-4901-splash-iron-1aed9256.jpg",
+        "title": "490 Transparent Door Splash Proof Single Layer Bird Cage — Iron Wire / White",
+        "source_row": 47,
+        "color": "White",
+        "material": "Iron Wire"
+      },
+      {
+        "id": "excel-row-48",
+        "image": "images/products/excel-bird-4901-splash-iron-1aed9256.jpg",
+        "title": "490 Transparent Door Splash Proof Single Layer Bird Cage — 304 Stainless Steel / White",
+        "source_row": 48,
+        "color": "White",
+        "material": "304 Stainless Steel"
+      }
+    ],
+    "default_image_variant": "excel-row-47",
+    "color_images": {
+      "White": "images/products/excel-bird-4901-splash-iron-1aed9256.jpg"
+    }
   },
   {
     "id": "bird-490-double-transparent-door",
@@ -661,23 +1116,24 @@ window.KANAPET_PRODUCTS = [
     "name": "490 Transparent Door Double Layer Bird Cage",
     "category": "bird-cages",
     "series": "bird-490-double-cage",
-    "size": "46*46*99",
+    "size": "46 × 46 × 99",
     "moq": 100,
     "colors": [
       "White"
     ],
-    "image": "images/products/bird-490-double-iron.jpg",
-    "net_weight": "8.35",
-    "gross_weight": "9.4",
+    "image": "images/products/excel-bird-4902-connect-iron-cba117c9.jpg",
+    "net_weight": "Wire: 8.27; 304 stainless steel: 8.08",
+    "gross_weight": "Wire: 10; 304 stainless steel: 10",
     "cbm": "",
-    "material": "ABS+PVC+Plastic+Iron Wire/Stainless Steel",
+    "material": "ABS + PET + PVC + Wire / 304 Stainless Steel",
     "type": "",
-    "meas": "51*51*27",
+    "meas": "51 × 51 × 27",
     "pcs_per_ctn": "1",
     "color": "",
-    "accessories": "Food cups*2, Water bottle*2, Wooden perches*2",
+    "accessories": "2 feed cups + 3 perches",
     "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
     "gallery": [
+      "images/products/excel-bird-4902-connect-iron-cba117c9.jpg",
       "images/products/gallery/490-double-scene-1.jpg",
       "images/products/gallery/490-double-scene-2.jpg",
       "images/products/gallery/490-double-scene-4.jpg",
@@ -688,15 +1144,36 @@ window.KANAPET_PRODUCTS = [
     "material_options": [
       {
         "name": "Iron Wire",
-        "image": "images/products/bird-490-double-iron.jpg",
-        "size": "46*46*99"
+        "image": "images/products/excel-bird-4902-connect-iron-cba117c9.jpg"
       },
       {
-        "name": "Stainless Steel",
-        "image": "images/products/bird-490-double-iron.jpg",
-        "size": "46*46*99"
+        "name": "304 Stainless Steel",
+        "image": "images/products/excel-bird-4902-connect-iron-cba117c9.jpg"
       }
-    ]
+    ],
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-49",
+        "image": "images/products/excel-bird-4902-connect-iron-cba117c9.jpg",
+        "title": "490 Transparent Door Double Layer Bird Cage — Iron Wire / White",
+        "source_row": 49,
+        "color": "White",
+        "material": "Iron Wire"
+      },
+      {
+        "id": "excel-row-50",
+        "image": "images/products/excel-bird-4902-connect-iron-cba117c9.jpg",
+        "title": "490 Transparent Door Double Layer Bird Cage — 304 Stainless Steel / White",
+        "source_row": 50,
+        "color": "White",
+        "material": "304 Stainless Steel"
+      }
+    ],
+    "default_image_variant": "excel-row-49",
+    "color_images": {
+      "White": "images/products/excel-bird-4902-connect-iron-cba117c9.jpg"
+    }
   },
   {
     "id": "bird-490-double-splash-proof",
@@ -704,23 +1181,24 @@ window.KANAPET_PRODUCTS = [
     "name": "490 Transparent Door Splash Proof Double Layer Bird Cage",
     "category": "bird-cages",
     "series": "bird-490-double-cage",
-    "size": "46*46*99",
+    "size": "46 × 46 × 99",
     "moq": 100,
     "colors": [
       "White"
     ],
-    "image": "images/products/bird-490-double-201.jpg",
-    "net_weight": "8.35",
-    "gross_weight": "9.4",
+    "image": "images/products/excel-bird-4902-drawer-splash-iron-49c8f324.jpg",
+    "net_weight": "Wire: 8.08; 304 stainless steel: 8.79",
+    "gross_weight": "Wire: 11.83; 304 stainless steel: 11.83",
     "cbm": "",
-    "material": "ABS+PVC+Plastic+Stainless Steel",
+    "material": "ABS + PET + PVC + Wire / 304 Stainless Steel",
     "type": "",
-    "meas": "51*51*27",
+    "meas": "51 × 51 × 27",
     "pcs_per_ctn": "1",
     "color": "",
-    "accessories": "Food cups*2, Water bottle*2, Wooden perches*2",
+    "accessories": "2 feed cups + 3 perches",
     "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
     "gallery": [
+      "images/products/excel-bird-4902-drawer-splash-iron-49c8f324.jpg",
       "images/products/gallery/490-double-splash-scene-1.jpg",
       "images/products/gallery/490-double-splash-detail-1.jpg",
       "images/products/gallery/490-double-splash-scene-3.jpg",
@@ -730,15 +1208,36 @@ window.KANAPET_PRODUCTS = [
     "material_options": [
       {
         "name": "Iron Wire",
-        "image": "images/products/bird-490-double-201.jpg",
-        "size": "46*46*99"
+        "image": "images/products/excel-bird-4902-drawer-splash-iron-49c8f324.jpg"
       },
       {
-        "name": "Stainless Steel",
-        "image": "images/products/bird-490-double-201.jpg",
-        "size": "46*46*99"
+        "name": "304 Stainless Steel",
+        "image": "images/products/excel-bird-4902-drawer-splash-iron-49c8f324.jpg"
       }
-    ]
+    ],
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-51",
+        "image": "images/products/excel-bird-4902-drawer-splash-iron-49c8f324.jpg",
+        "title": "490 Transparent Door Splash Proof Double Layer Bird Cage — Iron Wire / White",
+        "source_row": 51,
+        "color": "White",
+        "material": "Iron Wire"
+      },
+      {
+        "id": "excel-row-52",
+        "image": "images/products/excel-bird-4902-drawer-splash-iron-49c8f324.jpg",
+        "title": "490 Transparent Door Splash Proof Double Layer Bird Cage — 304 Stainless Steel / White",
+        "source_row": 52,
+        "color": "White",
+        "material": "304 Stainless Steel"
+      }
+    ],
+    "default_image_variant": "excel-row-51",
+    "color_images": {
+      "White": "images/products/excel-bird-4902-drawer-splash-iron-49c8f324.jpg"
+    }
   },
   {
     "id": "bird-490-triple-splash-proof",
@@ -747,23 +1246,24 @@ window.KANAPET_PRODUCTS = [
     "category": "bird-cages",
     "series": "bird-490-cage",
     "size": "46*46*145",
-    "moq": 100,
+    "moq": "100 sets",
     "colors": [
       "White"
     ],
-    "image": "images/products/490-triple-splash.jpg",
-    "net_weight": "",
-    "gross_weight": "",
+    "image": "images/products/excel-bird-4903-drawer-splash-iron-3aa0da34.jpg",
+    "net_weight": "12.55 per set (carton 1: 8.35; carton 2: 4.2)",
+    "gross_weight": "14.6 per set (carton 1: 9.4; carton 2: 5.2)",
     "cbm": "",
-    "material": "ABS+PVC+Plastic+Stainless Steel",
+    "material": "ABS + PET + PVC + Wire / 304 Stainless Steel",
     "type": "",
-    "meas": "",
-    "pcs_per_ctn": "1",
+    "meas": "Carton 1: 51 × 51 × 27 cm; Carton 2: 48 × 48 × 14 cm",
+    "pcs_per_ctn": "1 set / 2 cartons",
     "color": "",
-    "accessories": "Food cups*2, Water bottle*2, Wooden perches*2",
-    "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
-    "moq_unit": "pc",
+    "accessories": "2 feed cups + 3 perches",
+    "notes": "Each set is packed in 2 cartons: the two-tier cage and the third-tier extension. 2 feed cups and 3 perches included.",
+    "moq_unit": "sets",
     "gallery": [
+      "images/products/excel-bird-4903-drawer-splash-iron-3aa0da34.jpg",
       "images/products/gallery/490-triple-splash-scene-1.jpg",
       "images/products/gallery/490-triple-splash-scene-2.jpg",
       "images/products/gallery/490-triple-splash-scene-3.jpg",
@@ -774,15 +1274,36 @@ window.KANAPET_PRODUCTS = [
     "material_options": [
       {
         "name": "Iron Wire",
-        "image": "images/products/490-triple-splash.jpg",
-        "size": "46*46*145"
+        "image": "images/products/excel-bird-4903-drawer-splash-iron-3aa0da34.jpg"
       },
       {
-        "name": "Stainless Steel",
-        "image": "images/products/490-triple-splash.jpg",
-        "size": "46*46*145"
+        "name": "304 Stainless Steel",
+        "image": "images/products/excel-bird-4903-drawer-splash-iron-3aa0da34.jpg"
       }
-    ]
+    ],
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-57",
+        "image": "images/products/excel-bird-4903-drawer-splash-iron-3aa0da34.jpg",
+        "title": "490 Transparent Door Splash Proof Three Layer Bird Cage — Iron Wire / White",
+        "source_row": 57,
+        "color": "White",
+        "material": "Iron Wire"
+      },
+      {
+        "id": "excel-row-59",
+        "image": "images/products/excel-bird-4903-drawer-splash-iron-3aa0da34.jpg",
+        "title": "490 Transparent Door Splash Proof Three Layer Bird Cage — 304 Stainless Steel / White",
+        "source_row": 59,
+        "color": "White",
+        "material": "304 Stainless Steel"
+      }
+    ],
+    "default_image_variant": "excel-row-57",
+    "color_images": {
+      "White": "images/products/excel-bird-4903-drawer-splash-iron-3aa0da34.jpg"
+    }
   },
   {
     "id": "bird-490-triple-standard",
@@ -791,23 +1312,24 @@ window.KANAPET_PRODUCTS = [
     "category": "bird-cages",
     "series": "bird-490-cage",
     "size": "46*46*142",
-    "moq": 100,
+    "moq": "100 sets",
     "colors": [
       "White"
     ],
-    "image": "images/products/490-triple-standard.jpg",
-    "net_weight": "",
-    "gross_weight": "",
+    "image": "images/products/excel-bird-4903-connect-iron-d66f75ea.jpg",
+    "net_weight": "12.55 per set (carton 1: 8.35; carton 2: 4.2)",
+    "gross_weight": "14.6 per set (carton 1: 9.4; carton 2: 5.2)",
     "cbm": "",
-    "material": "ABS+PVC+Plastic+Iron Wire/Stainless Steel",
+    "material": "ABS + PET + PVC + Wire / 304 Stainless Steel",
     "type": "",
-    "meas": "",
-    "pcs_per_ctn": "1",
+    "meas": "Carton 1: 51 × 51 × 27 cm; Carton 2: 48 × 48 × 10 cm",
+    "pcs_per_ctn": "1 set / 2 cartons",
     "color": "",
-    "accessories": "Food cups*2, Water bottle*2, Wooden perches*2",
-    "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
-    "moq_unit": "pc",
+    "accessories": "2 feed cups + 3 perches",
+    "notes": "Each set is packed in 2 cartons: the two-tier cage and the third-tier extension. 2 feed cups and 3 perches included.",
+    "moq_unit": "sets",
     "gallery": [
+      "images/products/excel-bird-4903-connect-iron-d66f75ea.jpg",
       "images/products/gallery/490-triple-standard-scene-1.jpg",
       "images/products/gallery/490-triple-standard-scene-2.jpg",
       "images/products/gallery/490-triple-standard-scene-3.jpg",
@@ -817,15 +1339,36 @@ window.KANAPET_PRODUCTS = [
     "material_options": [
       {
         "name": "Iron Wire",
-        "image": "images/products/490-triple-standard.jpg",
-        "size": "46*46*142"
+        "image": "images/products/excel-bird-4903-connect-iron-d66f75ea.jpg"
       },
       {
-        "name": "Stainless Steel",
-        "image": "images/products/490-triple-standard.jpg",
-        "size": "46*46*142"
+        "name": "304 Stainless Steel",
+        "image": "images/products/excel-bird-4903-connect-iron-d66f75ea.jpg"
       }
-    ]
+    ],
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-53",
+        "image": "images/products/excel-bird-4903-connect-iron-d66f75ea.jpg",
+        "title": "490 Transparent Door Three Layer Bird Cage — Iron Wire / White",
+        "source_row": 53,
+        "color": "White",
+        "material": "Iron Wire"
+      },
+      {
+        "id": "excel-row-55",
+        "image": "images/products/excel-bird-4903-connect-iron-d66f75ea.jpg",
+        "title": "490 Transparent Door Three Layer Bird Cage — 304 Stainless Steel / White",
+        "source_row": 55,
+        "color": "White",
+        "material": "304 Stainless Steel"
+      }
+    ],
+    "default_image_variant": "excel-row-53",
+    "color_images": {
+      "White": "images/products/excel-bird-4903-connect-iron-d66f75ea.jpg"
+    }
   },
   {
     "id": "bird-470-wire",
@@ -833,40 +1376,43 @@ window.KANAPET_PRODUCTS = [
     "name": "470 Bird Cage",
     "category": "bird-cages",
     "series": "bird-470-cage",
-    "size": "45*45*54",
-    "moq": 100,
+    "size": "45 × 45 × 54",
+    "moq": "Wire Blue / Black: 100 sets per color; Wire Pure White: 500 sets per color; Stainless Steel (all colors): 500 sets per color",
     "colors": [
-      "White"
+      "Blue",
+      "Black",
+      "Pure White"
     ],
-    "image": "images/products/bird-470-cage-main-v3.jpg",
-    "net_weight": "4.75",
-    "gross_weight": "5.75",
+    "image": "images/products/excel-bird-470-iron-blue-308e50a2.jpg",
+    "net_weight": "Wire: 5.03",
+    "gross_weight": "Wire: 5.73",
     "cbm": "",
-    "material": "Low carbon steel + spray coating / Stainless Steel",
+    "material": "Wire + ABS + PVC / Stainless Steel option",
     "type": "",
-    "meas": "52*52*19",
+    "meas": "52 × 52 × 19",
     "pcs_per_ctn": "1",
     "color": "",
-    "accessories": "Food cups*2, Water bottle*1, Wooden perches*2",
-    "notes": "MOQ may vary based on destination region and total order quantity. Contact us for details.",
+    "accessories": "2 Feed Cups + 2 Long Perches + 1 Short Perch",
+    "notes": "Each cage is individually packed. stainless steel option: Blue, Black and Pure White; MOQ 500 sets per color; ordering lead time 1–2 months.",
     "gallery": [
+      "images/products/excel-bird-470-iron-blue-308e50a2.jpg",
+      "images/products/excel-bird-470-iron-black-5f43c46b.jpg",
       "images/products/gallery/470-scene-1.jpg",
       "images/products/gallery/470-scene-2.jpg",
       "images/products/gallery/470-scene-3.jpg",
       "images/products/gallery/470-scene-4.jpg",
       "images/products/gallery/470-scene-5.jpg"
     ],
-    "moq_unit": "pc",
+    "moq_unit": "sets",
     "material_options": [
       {
         "name": "Iron Wire",
-        "image": "images/products/bird-470-main-v2.jpg",
-        "size": "45*45*54"
+        "image": "images/products/excel-bird-470-iron-blue-308e50a2.jpg"
       },
       {
         "name": "Stainless Steel",
-        "image": "images/products/bird-470-main-v2.jpg",
-        "size": "45*45*54"
+        "image": "images/products/product-photo-pending.svg",
+        "photo_pending": true
       }
     ],
     "related_products": [
@@ -874,7 +1420,31 @@ window.KANAPET_PRODUCTS = [
       "bird-perch-stick",
       "bird-parrot-nest",
       "bird-windmill-toy"
-    ]
+    ],
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-61",
+        "image": "images/products/excel-bird-470-iron-blue-308e50a2.jpg",
+        "title": "470 Bird Cage — Iron Wire / Blue",
+        "source_row": 61,
+        "color": "Blue",
+        "material": "Iron Wire"
+      },
+      {
+        "id": "excel-row-62",
+        "image": "images/products/excel-bird-470-iron-black-5f43c46b.jpg",
+        "title": "470 Bird Cage — Iron Wire / Black",
+        "source_row": 62,
+        "color": "Black",
+        "material": "Iron Wire"
+      }
+    ],
+    "default_image_variant": "excel-row-61",
+    "color_images": {
+      "Blue": "images/products/excel-bird-470-iron-blue-308e50a2.jpg",
+      "Black": "images/products/excel-bird-470-iron-black-5f43c46b.jpg"
+    }
   },
   {
     "id": "bird-400-wire",
@@ -882,38 +1452,55 @@ window.KANAPET_PRODUCTS = [
     "name": "400 Bird Cage (Wire)",
     "category": "bird-cages",
     "series": "bird-400-cage",
-    "size": "38*34*51",
-    "moq": 100,
+    "size": "38 × 34 × 51",
+    "moq": "Blue / Black: 100 sets per color; Pure White: 500 sets per color",
     "colors": [
-      "White",
-      "Black"
+      "Blue",
+      "Black",
+      "Pure White"
     ],
-    "image": "images/products/bird-400-wire.jpg",
+    "image": "images/products/excel-bird-400-iron-blue-f1251e66.jpg",
     "net_weight": "3.3",
     "gross_weight": "3.95",
     "cbm": "",
-    "material": "Iron Wire + ABS+PVC Plastic + Solid Wood Perch",
+    "material": "Wire + ABS+PVC",
     "type": "",
-    "meas": "39.5*35*17",
+    "meas": "39.5 × 35 × 17",
     "pcs_per_ctn": "1",
     "color": "",
-    "accessories": "Food cup*1, Water bottle*1, Wooden perch*1",
-    "notes": "MOQ may vary based on destination region and total order quantity. Contact us for details.",
+    "accessories": "2 Feed Cups + 2 Long Perches",
+    "notes": "Each cage is individually packed.",
     "gallery": [
+      "images/products/excel-bird-400-iron-blue-f1251e66.jpg",
+      "images/products/excel-bird-400-iron-black-c722b057.jpg",
       "images/products/gallery/400-scene-1.jpg",
       "images/products/gallery/400-scene-2.jpg"
     ],
-    "moq_unit": "pc",
-    "color_options": [
+    "moq_unit": "sets",
+    "image_source": "excel",
+    "image_variants": [
       {
-        "name": "White",
-        "image": "images/products/bird-400-wire-v2.jpg"
+        "id": "excel-row-63",
+        "image": "images/products/excel-bird-400-iron-blue-f1251e66.jpg",
+        "title": "400 Bird Cage (Wire) — Iron Wire / Blue",
+        "source_row": 63,
+        "color": "Blue",
+        "material": "Iron Wire"
       },
       {
-        "name": "Black",
-        "image": "images/products/bird-400-wire-v2.jpg"
+        "id": "excel-row-64",
+        "image": "images/products/excel-bird-400-iron-black-c722b057.jpg",
+        "title": "400 Bird Cage (Wire) — Iron Wire / Black",
+        "source_row": 64,
+        "color": "Black",
+        "material": "Iron Wire"
       }
-    ]
+    ],
+    "default_image_variant": "excel-row-63",
+    "color_images": {
+      "Blue": "images/products/excel-bird-400-iron-blue-f1251e66.jpg",
+      "Black": "images/products/excel-bird-400-iron-black-c722b057.jpg"
+    }
   },
   {
     "id": "bird-400-frame",
@@ -921,28 +1508,43 @@ window.KANAPET_PRODUCTS = [
     "name": "400 Rolling Bird Cage Stand",
     "category": "bird-cages",
     "series": "bird-stand",
-    "size": "35.5*35*68.38",
+    "size": "35.5 × 35 × 68.38",
     "moq": 100,
     "colors": [
       "White"
     ],
-    "image": "images/products/bird-400-rolling-stand-main.png",
+    "image": "images/products/excel-bird-400-frame-558712a0.jpg",
     "net_weight": "1.85",
     "gross_weight": "2.36",
     "cbm": "0.17",
-    "material": "Iron Wire",
+    "material": "Wire",
     "type": "",
-    "meas": "43*60*65",
+    "meas": "43 × 60 × 65",
     "pcs_per_ctn": "1",
     "color": "",
-    "accessories": "",
+    "accessories": "Complete Stand with Casters",
     "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
     "gallery": [
+      "images/products/excel-bird-400-frame-558712a0.jpg",
       "images/products/gallery/400-stand-scene-1.jpg",
       "images/products/gallery/400-stand-scene-2.jpg",
       "images/products/gallery/400-stand-scene-3.jpg"
     ],
-    "moq_unit": "pc"
+    "moq_unit": "pc",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-65",
+        "image": "images/products/excel-bird-400-frame-558712a0.jpg",
+        "title": "400 Rolling Bird Cage Stand — White",
+        "source_row": 65,
+        "color": "White"
+      }
+    ],
+    "default_image_variant": "excel-row-65",
+    "color_images": {
+      "White": "images/products/excel-bird-400-frame-558712a0.jpg"
+    }
   },
   {
     "id": "bird-470-frame",
@@ -950,27 +1552,42 @@ window.KANAPET_PRODUCTS = [
     "name": "470 Rolling Bird Cage Stand",
     "category": "bird-cages",
     "series": "bird-stand",
-    "size": "46*46*71.2",
+    "size": "46 × 46 × 71.2",
     "moq": 100,
     "colors": [
       "White"
     ],
-    "image": "images/products/bird-470-stand-main.jpg",
-    "net_weight": "2.54",
-    "gross_weight": "3.18",
+    "image": "images/products/excel-bird-470-frame-22525efe.jpg",
+    "net_weight": "2.38",
+    "gross_weight": "3.02",
     "cbm": "0.29",
-    "material": "Iron Wire",
+    "material": "Wire",
     "type": "",
-    "meas": "48*90*68",
+    "meas": "48 × 90 × 68",
     "pcs_per_ctn": "1",
     "color": "",
-    "accessories": "",
+    "accessories": "Complete Stand with Casters",
     "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
     "gallery": [
+      "images/products/excel-bird-470-frame-22525efe.jpg",
       "images/products/gallery/470-stand-scene-1.jpg",
       "images/products/gallery/470-stand-scene-2.jpg"
     ],
-    "moq_unit": "pc"
+    "moq_unit": "pc",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-66",
+        "image": "images/products/excel-bird-470-frame-22525efe.jpg",
+        "title": "470 Rolling Bird Cage Stand — White",
+        "source_row": 66,
+        "color": "White"
+      }
+    ],
+    "default_image_variant": "excel-row-66",
+    "color_images": {
+      "White": "images/products/excel-bird-470-frame-22525efe.jpg"
+    }
   },
   {
     "id": "bird-490-climbing-rack",
@@ -978,23 +1595,24 @@ window.KANAPET_PRODUCTS = [
     "name": "490 Rolling Bird Cage Climbing Stand",
     "category": "bird-cages",
     "series": "bird-stand",
-    "size": "50*53*166",
+    "size": "50 × 53 × 166",
     "moq": 100,
     "colors": [
       "White"
     ],
-    "image": "images/products/bird-490-climbing-rack.jpg",
-    "net_weight": "5.84",
-    "gross_weight": "6.64",
+    "image": "images/products/excel-bird-490-climbing-rack-5dfa3612.jpg",
+    "net_weight": "5.81",
+    "gross_weight": "6.54",
     "cbm": "0.04",
-    "material": "Iron Wire",
+    "material": "Wire",
     "type": "",
-    "meas": "69*54*12",
+    "meas": "69 × 54 × 12",
     "pcs_per_ctn": "1",
     "color": "",
-    "accessories": "",
+    "accessories": "Complete Stand with Casters",
     "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
     "gallery": [
+      "images/products/excel-bird-490-climbing-rack-5dfa3612.jpg",
       "images/products/gallery/490-climbing-scene-1.jpg",
       "images/products/gallery/490-climbing-scene-2.jpg",
       "images/products/gallery/490-climbing-lineart.jpg",
@@ -1002,7 +1620,21 @@ window.KANAPET_PRODUCTS = [
       "images/products/gallery/490-rack-scene-2.jpg",
       "images/products/gallery/490-rack-scene-3.jpg"
     ],
-    "moq_unit": "pc"
+    "moq_unit": "pc",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-67",
+        "image": "images/products/excel-bird-490-climbing-rack-5dfa3612.jpg",
+        "title": "490 Rolling Bird Cage Climbing Stand — White",
+        "source_row": 67,
+        "color": "White"
+      }
+    ],
+    "default_image_variant": "excel-row-67",
+    "color_images": {
+      "White": "images/products/excel-bird-490-climbing-rack-5dfa3612.jpg"
+    }
   },
   {
     "id": "bird-bathroom-small",
@@ -1019,11 +1651,11 @@ window.KANAPET_PRODUCTS = [
       "Yellow",
       "Pink"
     ],
-    "image": "images/products/bird-bath-47-main.jpg",
+    "image": "images/products/excel-bird-bathroom-small-white-669704d5.jpg",
     "net_weight": "0.122",
     "gross_weight": "29 (180 sets, 2 cartons total)",
     "cbm": "",
-    "material": "ABS+PET",
+    "material": "PP + PET",
     "type": "",
     "meas": "69*47*30",
     "pcs_per_ctn": "",
@@ -1031,6 +1663,11 @@ window.KANAPET_PRODUCTS = [
     "accessories": "",
     "notes": "MOQ: 180 pcs per color. One complete batch contains 180 sets packed in 2 cartons: Carton A contains 180 top lids and Carton B contains 180 bottom bases. Combined gross weight for both cartons is 29 kg. Complete batches only.",
     "gallery": [
+      "images/products/excel-bird-bathroom-small-white-669704d5.jpg",
+      "images/products/excel-bird-bathroom-small-green-3135218f.jpg",
+      "images/products/excel-bird-bathroom-small-blue-aeca5dbe.jpg",
+      "images/products/excel-bird-bathroom-small-yellow-12dab57b.jpg",
+      "images/products/excel-bird-bathroom-small-pink-6efcebe3.jpg",
       "images/products/gallery/bird-bath-47-scene-1.jpg",
       "images/products/gallery/bird-bath-47-scene-2.jpg",
       "images/products/gallery/bird-bath-47-scene-3.jpg",
@@ -1039,30 +1676,51 @@ window.KANAPET_PRODUCTS = [
     "accessory_type": "universal",
     "moq_unit": "pc",
     "color_images": {
-      "White": "images/products/bird-bathroom-small.jpg",
-      "Pink": "images/products/color/bird-bathroom-small_pink.jpg",
-      "Yellow": "images/products/color/bird-bathroom-small_yellow.jpg",
-      "Green": "images/products/color/bird-bathroom-small_green.jpg",
-      "Blue": "images/products/color/bird-bathroom-small_blue.jpg"
+      "White": "images/products/excel-bird-bathroom-small-white-669704d5.jpg",
+      "Green": "images/products/excel-bird-bathroom-small-green-3135218f.jpg",
+      "Blue": "images/products/excel-bird-bathroom-small-blue-aeca5dbe.jpg",
+      "Yellow": "images/products/excel-bird-bathroom-small-yellow-12dab57b.jpg",
+      "Pink": "images/products/excel-bird-bathroom-small-pink-6efcebe3.jpg"
     },
-    "color_options": [
+    "image_source": "excel",
+    "image_variants": [
       {
-        "name": "Green",
-        "image": "images/products/bird-bath-47-green.jpg"
+        "id": "excel-row-68",
+        "image": "images/products/excel-bird-bathroom-small-white-669704d5.jpg",
+        "title": "4.7\" Hanging Bird Bath — White",
+        "source_row": 68,
+        "color": "White"
       },
       {
-        "name": "Blue",
-        "image": "images/products/bird-bath-47-blue.jpg"
+        "id": "excel-row-69",
+        "image": "images/products/excel-bird-bathroom-small-green-3135218f.jpg",
+        "title": "4.7\" Hanging Bird Bath — Green",
+        "source_row": 69,
+        "color": "Green"
       },
       {
-        "name": "Yellow",
-        "image": "images/products/bird-bath-47-yellow.jpg"
+        "id": "excel-row-70",
+        "image": "images/products/excel-bird-bathroom-small-blue-aeca5dbe.jpg",
+        "title": "4.7\" Hanging Bird Bath — Blue",
+        "source_row": 70,
+        "color": "Blue"
       },
       {
-        "name": "Pink",
-        "image": "images/products/bird-bath-47-pink.jpg"
+        "id": "excel-row-71",
+        "image": "images/products/excel-bird-bathroom-small-yellow-12dab57b.jpg",
+        "title": "4.7\" Hanging Bird Bath — Yellow",
+        "source_row": 71,
+        "color": "Yellow"
+      },
+      {
+        "id": "excel-row-72",
+        "image": "images/products/excel-bird-bathroom-small-pink-6efcebe3.jpg",
+        "title": "4.7\" Hanging Bird Bath — Pink",
+        "source_row": 72,
+        "color": "Pink"
       }
-    ]
+    ],
+    "default_image_variant": "excel-row-68"
   },
   {
     "id": "bird-space-bathroom-regular",
@@ -1073,32 +1731,48 @@ window.KANAPET_PRODUCTS = [
     "size": "18*18*18",
     "moq": 100,
     "colors": [
-      "White"
+      "White",
+      "Transparent"
     ],
-    "image": "images/products/bird-bathroom-space.jpg",
+    "image": "images/products/excel-bird-bath-drawer-white-e019667c.jpg",
     "net_weight": "0.39",
     "gross_weight": "0.55",
     "cbm": "",
-    "material": "ABS+PET",
+    "material": "White: ABS; Clear: PS",
     "type": "",
     "meas": "22*18.5*20.5",
     "pcs_per_ctn": "1",
     "color": "",
     "accessories": "",
     "notes": "Each product is individually packaged in a carton.",
-    "gallery": [],
+    "gallery": [
+      "images/products/excel-bird-bath-drawer-white-e019667c.jpg",
+      "images/products/excel-bird-bath-drawer-clear-e5d503b9.jpg"
+    ],
     "accessory_type": "universal",
     "moq_unit": "pc",
-    "material_options": [
+    "image_source": "excel",
+    "image_variants": [
       {
-        "name": "With Drawer",
-        "image": "images/products/bird-bathroom-space.jpg"
+        "id": "excel-row-73",
+        "image": "images/products/excel-bird-bath-drawer-white-e019667c.jpg",
+        "title": "7.7\" Hanging Bird Bath with Drawer — White",
+        "source_row": 73,
+        "color": "White"
       },
       {
-        "name": "With Grate",
-        "image": "images/products/bird-bathroom-space-grate.jpg"
+        "id": "excel-row-74",
+        "image": "images/products/excel-bird-bath-drawer-clear-e5d503b9.jpg",
+        "title": "7.7\" Hanging Bird Bath with Drawer — Transparent",
+        "source_row": 74,
+        "color": "Transparent"
       }
-    ]
+    ],
+    "default_image_variant": "excel-row-73",
+    "color_images": {
+      "White": "images/products/excel-bird-bath-drawer-white-e019667c.jpg",
+      "Transparent": "images/products/excel-bird-bath-drawer-clear-e5d503b9.jpg"
+    }
   },
   {
     "id": "bird-space-bathroom-grate",
@@ -1142,11 +1816,11 @@ window.KANAPET_PRODUCTS = [
       "White",
       "Transparent"
     ],
-    "image": "images/products/bird-no-mess-parrot-feeder.jpg",
+    "image": "images/products/excel-bird-feeder-drawer-white-0080b141.jpg",
     "net_weight": "0.28",
     "gross_weight": "0.55",
     "cbm": "",
-    "material": "PET",
+    "material": "White: ABS; Clear: PS",
     "type": "",
     "meas": "18.5*16*16.5",
     "pcs_per_ctn": "1",
@@ -1154,6 +1828,8 @@ window.KANAPET_PRODUCTS = [
     "accessories": "",
     "notes": "Each product is individually packaged in a carton.",
     "gallery": [
+      "images/products/excel-bird-feeder-drawer-white-0080b141.jpg",
+      "images/products/excel-bird-feeder-drawer-clear-ff4d1faa.jpg",
       "images/products/gallery/no-mess-feeder-scene-1.jpg",
       "images/products/gallery/no-mess-feeder-scene-2.jpg",
       "images/products/gallery/no-mess-feeder-scene-3.jpg",
@@ -1162,16 +1838,28 @@ window.KANAPET_PRODUCTS = [
     ],
     "accessory_type": "universal",
     "moq_unit": "pc",
-    "color_options": [
+    "image_source": "excel",
+    "image_variants": [
       {
-        "name": "White",
-        "image": "images/products/bird-no-mess-parrot-feeder.jpg"
+        "id": "excel-row-75",
+        "image": "images/products/excel-bird-feeder-drawer-white-0080b141.jpg",
+        "title": "7.7\" No-mess Hanging Parrot Feeder — White",
+        "source_row": 75,
+        "color": "White"
       },
       {
-        "name": "Transparent",
-        "image": "images/products/bird-no-mess-parrot-feeder.jpg"
+        "id": "excel-row-76",
+        "image": "images/products/excel-bird-feeder-drawer-clear-ff4d1faa.jpg",
+        "title": "7.7\" No-mess Hanging Parrot Feeder — Transparent",
+        "source_row": 76,
+        "color": "Transparent"
       }
-    ]
+    ],
+    "default_image_variant": "excel-row-75",
+    "color_images": {
+      "White": "images/products/excel-bird-feeder-drawer-white-0080b141.jpg",
+      "Transparent": "images/products/excel-bird-feeder-drawer-clear-ff4d1faa.jpg"
+    }
   },
   {
     "id": "bird-parrot-nest-small",
@@ -1188,11 +1876,11 @@ window.KANAPET_PRODUCTS = [
     "colors": [
       "Transparent"
     ],
-    "image": "images/products/parrot-nest-small-main.png",
+    "image": "images/products/excel-bird-parrot-nest-small-c8c637f5.jpg",
     "net_weight": "0.142",
     "gross_weight": "8.5",
     "cbm": "",
-    "material": "PET",
+    "material": "Clear ABS",
     "type": "",
     "meas": "69*47*30",
     "pcs_per_ctn": "48",
@@ -1200,6 +1888,7 @@ window.KANAPET_PRODUCTS = [
     "accessories": "",
     "notes": "Custom packaging is available. Packed 48 pcs per master carton. MOQ: 96 pcs per model, equivalent to 2 full cartons.",
     "gallery": [
+      "images/products/excel-bird-parrot-nest-small-c8c637f5.jpg",
       "images/products/parrot-nest-small-main.png"
     ],
     "accessory_type": "universal",
@@ -1209,7 +1898,21 @@ window.KANAPET_PRODUCTS = [
       "d": 47,
       "h": 30
     },
-    "sku": "PARROT-NEST-S"
+    "sku": "PARROT-NEST-S",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-77",
+        "image": "images/products/excel-bird-parrot-nest-small-c8c637f5.jpg",
+        "title": "Small Transparent Parrot Nest — Transparent",
+        "source_row": 77,
+        "color": "Transparent"
+      }
+    ],
+    "default_image_variant": "excel-row-77",
+    "color_images": {
+      "Transparent": "images/products/excel-bird-parrot-nest-small-c8c637f5.jpg"
+    }
   },
   {
     "id": "bird-parrot-nest-large",
@@ -1224,9 +1927,12 @@ window.KANAPET_PRODUCTS = [
     },
     "moq": 200,
     "colors": [
-      "Transparent"
+      "Transparent",
+      "White",
+      "Yellow Base",
+      "Green Base"
     ],
-    "image": "images/products/parrot-nest-large-main.png",
+    "image": "images/products/excel-bird-nest-large-c-9647818e.jpg",
     "net_weight": "0.28",
     "gross_weight": "1.5",
     "cbm": "",
@@ -1237,7 +1943,12 @@ window.KANAPET_PRODUCTS = [
     "color": "",
     "accessories": "",
     "notes": "Individual package size: 18.5×16×16.5 cm. Master carton size: 69×47×30 cm. Packing quantity per master carton is to be confirmed. Custom packaging is available. MOQ: 200 pcs per model. Full-carton ordering is not required.",
-    "gallery": [],
+    "gallery": [
+      "images/products/excel-bird-nest-large-c-9647818e.jpg",
+      "images/products/excel-bird-nest-large-white-2640f083.jpg",
+      "images/products/excel-bird-nest-large-yellow-0d232886.jpg",
+      "images/products/excel-bird-nest-large-green-eb5451bf.jpg"
+    ],
     "accessory_type": "universal",
     "moq_unit": "pc",
     "carton_size": {
@@ -1246,7 +1957,45 @@ window.KANAPET_PRODUCTS = [
       "h": 30
     },
     "sku": "PARROT-NEST-L",
-    "description": "Transparent parrot nest that can be hung or mounted anywhere in the bird cage. Made of durable PET material, easy to clean and provides a safe, comfortable resting space for small birds."
+    "description": "Transparent parrot nest that can be hung or mounted anywhere in the bird cage. Made of durable PET material, easy to clean and provides a safe, comfortable resting space for small birds.",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-78",
+        "image": "images/products/excel-bird-nest-large-c-9647818e.jpg",
+        "title": "Large Transparent Parrot Nest — Transparent",
+        "source_row": 78,
+        "color": "Transparent"
+      },
+      {
+        "id": "excel-row-79",
+        "image": "images/products/excel-bird-nest-large-white-2640f083.jpg",
+        "title": "Large Transparent Parrot Nest — White",
+        "source_row": 79,
+        "color": "White"
+      },
+      {
+        "id": "excel-row-80",
+        "image": "images/products/excel-bird-nest-large-yellow-0d232886.jpg",
+        "title": "Large Transparent Parrot Nest — Yellow Base",
+        "source_row": 80,
+        "color": "Yellow Base"
+      },
+      {
+        "id": "excel-row-81",
+        "image": "images/products/excel-bird-nest-large-green-eb5451bf.jpg",
+        "title": "Large Transparent Parrot Nest — Green Base",
+        "source_row": 81,
+        "color": "Green Base"
+      }
+    ],
+    "default_image_variant": "excel-row-78",
+    "color_images": {
+      "Transparent": "images/products/excel-bird-nest-large-c-9647818e.jpg",
+      "White": "images/products/excel-bird-nest-large-white-2640f083.jpg",
+      "Yellow Base": "images/products/excel-bird-nest-large-yellow-0d232886.jpg",
+      "Green Base": "images/products/excel-bird-nest-large-green-eb5451bf.jpg"
+    }
   },
   {
     "id": "bird-windmill-toy",
@@ -1259,11 +2008,11 @@ window.KANAPET_PRODUCTS = [
     "colors": [
       "Multi-color"
     ],
-    "image": "images/products/bird-windmill-toy.jpg",
+    "image": "images/products/excel-bird-windmill-toy-13b2e9eb.jpg",
     "net_weight": "0.092",
     "gross_weight": "19.8",
     "cbm": "",
-    "material": "ABS",
+    "material": "PP",
     "type": "",
     "meas": "69*47*30",
     "pcs_per_ctn": "216",
@@ -1271,6 +2020,7 @@ window.KANAPET_PRODUCTS = [
     "accessories": "",
     "notes": "216 sets per carton. No individual packaging. Custom packaging available upon request. Gross weight 19.8kg per carton.",
     "gallery": [
+      "images/products/excel-bird-windmill-toy-13b2e9eb.jpg",
       "images/products/gallery/windmill-toy-scene-1.jpg",
       "images/products/gallery/windmill-toy-scene-2.jpg",
       "images/products/gallery/windmill-toy-scene-3.jpg",
@@ -1279,7 +2029,18 @@ window.KANAPET_PRODUCTS = [
       "images/products/gallery/windmill-toy-scene-6.jpg"
     ],
     "accessory_type": "universal",
-    "moq_unit": "pc"
+    "moq_unit": "pc",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-82",
+        "image": "images/products/excel-bird-windmill-toy-13b2e9eb.jpg",
+        "title": "Bird Spinning Windmill Toy",
+        "source_row": 82
+      }
+    ],
+    "default_image_variant": "excel-row-82",
+    "color_images": {}
   },
   {
     "id": "bird-perch-stick",
@@ -1295,45 +2056,64 @@ window.KANAPET_PRODUCTS = [
       "Yellow",
       "Pink"
     ],
-    "image": "images/products/bird-perch-stick.jpg",
+    "image": "images/products/excel-bird-perch-stick-blue-dce7c1b5.jpg",
     "net_weight": "0.03",
     "gross_weight": "6.5",
     "cbm": "",
-    "material": "ABS",
+    "material": "PP",
     "type": "",
     "meas": "69*47*30",
     "pcs_per_ctn": "200",
     "color": "",
     "accessories": "",
     "notes": "200 pcs per carton. No individual packaging. Gross weight 6.5kg per carton.",
-    "gallery": [],
+    "gallery": [
+      "images/products/excel-bird-perch-stick-blue-dce7c1b5.jpg",
+      "images/products/excel-bird-perch-stick-green-21fcc224.jpg",
+      "images/products/excel-bird-perch-stick-yellow-ea6ebc90.jpg",
+      "images/products/excel-bird-perch-stick-pink-f074ca72.jpg"
+    ],
     "accessory_type": "universal",
     "moq_unit": "pc",
     "color_images": {
-      "Blue": "images/products/bird-perch-stick.jpg",
-      "Green": "images/products/bird-perch-stick.jpg",
-      "Yellow": "images/products/bird-perch-stick.jpg",
-      "Pink": "images/products/bird-perch-stick.jpg"
+      "Blue": "images/products/excel-bird-perch-stick-blue-dce7c1b5.jpg",
+      "Green": "images/products/excel-bird-perch-stick-green-21fcc224.jpg",
+      "Yellow": "images/products/excel-bird-perch-stick-yellow-ea6ebc90.jpg",
+      "Pink": "images/products/excel-bird-perch-stick-pink-f074ca72.jpg"
     },
-    "color_options": [
+    "carton_size": "69*47*30",
+    "image_source": "excel",
+    "image_variants": [
       {
-        "name": "Blue",
-        "image": "images/products/bird-perch-stick.jpg"
+        "id": "excel-row-83",
+        "image": "images/products/excel-bird-perch-stick-blue-dce7c1b5.jpg",
+        "title": "Bird Perch Stick-Plastic — Blue",
+        "source_row": 83,
+        "color": "Blue"
       },
       {
-        "name": "Green",
-        "image": "images/products/bird-perch-stick.jpg"
+        "id": "excel-row-84",
+        "image": "images/products/excel-bird-perch-stick-green-21fcc224.jpg",
+        "title": "Bird Perch Stick-Plastic — Green",
+        "source_row": 84,
+        "color": "Green"
       },
       {
-        "name": "Yellow",
-        "image": "images/products/bird-perch-stick.jpg"
+        "id": "excel-row-85",
+        "image": "images/products/excel-bird-perch-stick-yellow-ea6ebc90.jpg",
+        "title": "Bird Perch Stick-Plastic — Yellow",
+        "source_row": 85,
+        "color": "Yellow"
       },
       {
-        "name": "Pink",
-        "image": "images/products/bird-perch-stick.jpg"
+        "id": "excel-row-86",
+        "image": "images/products/excel-bird-perch-stick-pink-f074ca72.jpg",
+        "title": "Bird Perch Stick-Plastic — Pink",
+        "source_row": 86,
+        "color": "Pink"
       }
     ],
-    "carton_size": "69*47*30"
+    "default_image_variant": "excel-row-83"
   },
   {
     "id": "bird-breeding-box",
@@ -1344,11 +2124,12 @@ window.KANAPET_PRODUCTS = [
     "size": "24.5*13*13",
     "moq": 90,
     "colors": [
-      "Transparent"
+      "Transparent",
+      "White"
     ],
-    "image": "images/products/bird-transparent-breeding-box.jpg",
+    "image": "images/products/excel-bird-breeding-box-c-a3c83605.jpg",
     "net_weight": "0.499",
-    "gross_weight": "0.6",
+    "gross_weight": "15 per master carton (30 pcs)",
     "cbm": "",
     "material": "ABS+PET",
     "type": "",
@@ -1357,10 +2138,35 @@ window.KANAPET_PRODUCTS = [
     "color": "",
     "accessories": "",
     "notes": "Individual inner box size: 26×14.5×15.5 cm. Packed 30 pcs per master carton. Master carton size: 78.5×53.5×52.5 cm. MOQ: 90 pcs per model, equivalent to 3 full cartons.",
-    "gallery": [],
+    "gallery": [
+      "images/products/excel-bird-breeding-box-c-a3c83605.jpg",
+      "images/products/excel-bird-breeding-box-w-99208743.jpg"
+    ],
     "accessory_type": "universal",
     "moq_unit": "pc",
-    "carton_size": "78.5*53.5*52.5"
+    "carton_size": "78.5*53.5*52.5",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-87",
+        "image": "images/products/excel-bird-breeding-box-c-a3c83605.jpg",
+        "title": "Transparent Breeding Box — Transparent",
+        "source_row": 87,
+        "color": "Transparent"
+      },
+      {
+        "id": "excel-row-88",
+        "image": "images/products/excel-bird-breeding-box-w-99208743.jpg",
+        "title": "Transparent Breeding Box — White",
+        "source_row": 88,
+        "color": "White"
+      }
+    ],
+    "default_image_variant": "excel-row-87",
+    "color_images": {
+      "Transparent": "images/products/excel-bird-breeding-box-c-a3c83605.jpg",
+      "White": "images/products/excel-bird-breeding-box-w-99208743.jpg"
+    }
   },
   {
     "id": "bird-130ml-kettle",
@@ -1373,18 +2179,21 @@ window.KANAPET_PRODUCTS = [
     "colors": [
       "White"
     ],
-    "image": "images/products/bird-130ml-kettle.jpg",
+    "image": "images/products/excel-bird-130ml-side-3ef39b6c.jpg",
     "net_weight": "0.036",
     "gross_weight": "12",
     "cbm": "",
-    "material": "ABS+PET",
+    "material": "PS + PP",
     "type": "",
     "meas": "69*47*30",
     "pcs_per_ctn": "312",
     "color": "",
     "accessories": "",
     "notes": "312 pcs per carton. Sold by full carton only.",
-    "gallery": [],
+    "gallery": [
+      "images/products/excel-bird-130ml-side-3ef39b6c.jpg",
+      "images/products/excel-bird-130ml-knob-beb8c9a1.jpg"
+    ],
     "accessory_type": "universal",
     "moq_unit": "pc",
     "description": "Dual-purpose bird feeder and water bottle. Can be hung on both horizontal and vertical wire cages. Perfect for seeds, water, and other bird treats.",
@@ -1395,7 +2204,34 @@ window.KANAPET_PRODUCTS = [
       "Transparent body lets you monitor food/water level",
       "Easy to install and clean"
     ],
-    "carton_size": "69*47*30"
+    "carton_size": "69*47*30",
+    "configuration_options": [
+      "Angled mount",
+      "Knob mount"
+    ],
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-89",
+        "image": "images/products/excel-bird-130ml-side-3ef39b6c.jpg",
+        "title": "130ml 2-in-1 Bird Feeder & Water Bottle — White / Angled mount",
+        "source_row": 89,
+        "color": "White",
+        "configuration": "Angled mount"
+      },
+      {
+        "id": "excel-row-90",
+        "image": "images/products/excel-bird-130ml-knob-beb8c9a1.jpg",
+        "title": "130ml 2-in-1 Bird Feeder & Water Bottle — White / Knob mount",
+        "source_row": 90,
+        "color": "White",
+        "configuration": "Knob mount"
+      }
+    ],
+    "default_image_variant": "excel-row-89",
+    "color_images": {
+      "White": "images/products/excel-bird-130ml-side-3ef39b6c.jpg"
+    }
   },
   {
     "id": "bird-200ml-kettle",
@@ -1408,18 +2244,21 @@ window.KANAPET_PRODUCTS = [
     "colors": [
       "White"
     ],
-    "image": "images/products/bird-200ml-kettle.jpg",
+    "image": "images/products/excel-bird-220ml-side-283f9afe.jpg",
     "net_weight": "0.046",
     "gross_weight": "12",
     "cbm": "",
-    "material": "ABS+PET",
+    "material": "PS + PP",
     "type": "",
     "meas": "69*47*30",
     "pcs_per_ctn": "234",
     "color": "",
     "accessories": "",
     "notes": "234 pcs per carton. Sold by full carton only.",
-    "gallery": [],
+    "gallery": [
+      "images/products/excel-bird-220ml-side-283f9afe.jpg",
+      "images/products/excel-bird-220ml-knob-df9a2c9e.jpg"
+    ],
     "accessory_type": "universal",
     "moq_unit": "pc",
     "description": "Dual-purpose bird feeder and water bottle. Can be hung on both horizontal and vertical wire cages. Perfect for seeds, water, and other bird treats.",
@@ -1430,7 +2269,34 @@ window.KANAPET_PRODUCTS = [
       "Transparent body lets you monitor food/water level",
       "Easy to install and clean"
     ],
-    "carton_size": "69*47*30"
+    "carton_size": "69*47*30",
+    "configuration_options": [
+      "Angled mount",
+      "Knob mount"
+    ],
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-91",
+        "image": "images/products/excel-bird-220ml-side-283f9afe.jpg",
+        "title": "220ml 2-in-1 Bird Feeder & Water Bottle — White / Angled mount",
+        "source_row": 91,
+        "color": "White",
+        "configuration": "Angled mount"
+      },
+      {
+        "id": "excel-row-92",
+        "image": "images/products/excel-bird-220ml-knob-df9a2c9e.jpg",
+        "title": "220ml 2-in-1 Bird Feeder & Water Bottle — White / Knob mount",
+        "source_row": 92,
+        "color": "White",
+        "configuration": "Knob mount"
+      }
+    ],
+    "default_image_variant": "excel-row-91",
+    "color_images": {
+      "White": "images/products/excel-bird-220ml-side-283f9afe.jpg"
+    }
   },
   {
     "id": "hamster-43-cage",
@@ -1441,20 +2307,22 @@ window.KANAPET_PRODUCTS = [
     "size": "43.5*35.4*30",
     "moq": 100,
     "colors": [
-      "White"
+      "Transparent"
     ],
-    "image": "images/products/hamster-43-cage-main.jpg",
+    "image": "images/products/excel-hamster-43-holed-ebdf9521.jpg",
     "net_weight": "2.13",
     "gross_weight": "2.86",
     "cbm": "",
-    "material": "ABS + PET",
+    "material": "PET",
     "type": "",
     "meas": "47*37.5*21.5",
     "pcs_per_ctn": "1",
     "color": "",
-    "accessories": "",
-    "notes": "Each unit is individually packed in a carton. Custom packaging and printing available for OEM/ODM orders.",
+    "accessories": "Cage + 4 feet",
+    "notes": "Each unit is individually packed in a carton. Custom packaging and printing available for OEM/ODM orders. Cage and 4 feet included; other accessories sold separately.",
     "gallery": [
+      "images/products/excel-hamster-43-holed-ebdf9521.jpg",
+      "images/products/excel-hamster-43-nohole-4491d392.jpg",
       "images/products/hamster-43-cage-white.jpg",
       "images/products/hamster-43-cage-main.jpg",
       "images/products/gallery/43-hamster-scene.jpg",
@@ -1472,7 +2340,30 @@ window.KANAPET_PRODUCTS = [
       "Opening versions of the 43 and 62 models can be connected using tunnels.",
       "Vertical layouts support up to three cage levels; horizontal layouts can be extended with additional cages.",
       "Tunnels and connectors are available separately or as an optional bundle, not included in the cage package."
-    ]
+    ],
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-95",
+        "image": "images/products/excel-hamster-43-holed-ebdf9521.jpg",
+        "title": "43 Hamster Transparent Cage — Transparent / With side openings for tunnel connections",
+        "source_row": 95,
+        "color": "Transparent",
+        "configuration": "With side openings for tunnel connections"
+      },
+      {
+        "id": "excel-row-96",
+        "image": "images/products/excel-hamster-43-nohole-4491d392.jpg",
+        "title": "43 Hamster Transparent Cage — setup example",
+        "source_row": 96,
+        "color": "Transparent",
+        "gallery_only": true
+      }
+    ],
+    "default_image_variant": "excel-row-95",
+    "color_images": {
+      "Transparent": "images/products/excel-hamster-43-holed-ebdf9521.jpg"
+    }
   },
   {
     "id": "hamster-62-cage",
@@ -1483,20 +2374,22 @@ window.KANAPET_PRODUCTS = [
     "size": "62*46*33.5",
     "moq": 100,
     "colors": [
-      "White"
+      "Transparent"
     ],
-    "image": "images/products/hamster-62-cage-main.jpg",
+    "image": "images/products/excel-hamster-62-holed-2b3795f2.jpg",
     "net_weight": "4",
     "gross_weight": "5",
     "cbm": "",
-    "material": "ABS + PET",
+    "material": "PET",
     "type": "",
     "meas": "65*49*22",
     "pcs_per_ctn": "1",
     "color": "",
-    "accessories": "",
-    "notes": "Each unit is individually packed in a carton. Custom packaging and printing available for OEM/ODM orders.",
+    "accessories": "Cage + 4 feet",
+    "notes": "Each unit is individually packed in a carton. Custom packaging and printing available for OEM/ODM orders. Cage and 4 feet included; other accessories sold separately.",
     "gallery": [
+      "images/products/excel-hamster-62-holed-2b3795f2.jpg",
+      "images/products/excel-hamster-62-nohole-a67d27d4.jpg",
       "images/products/hamster-62-cage-white.jpg",
       "images/products/hamster-62-cage-main.jpg",
       "images/products/gallery/62-hamster-scene.jpg",
@@ -1515,7 +2408,30 @@ window.KANAPET_PRODUCTS = [
       "Opening versions of the 43 and 62 models can be connected using tunnels.",
       "Vertical layouts support up to three cage levels; horizontal layouts can be extended with additional cages.",
       "Tunnels and connectors are available separately or as an optional bundle, not included in the cage package."
-    ]
+    ],
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-97",
+        "image": "images/products/excel-hamster-62-holed-2b3795f2.jpg",
+        "title": "62 Hamster Transparent Cage — Transparent / With side openings for tunnel connections",
+        "source_row": 97,
+        "color": "Transparent",
+        "configuration": "With side openings for tunnel connections"
+      },
+      {
+        "id": "excel-row-98",
+        "image": "images/products/excel-hamster-62-nohole-a67d27d4.jpg",
+        "title": "62 Hamster Transparent Cage — setup example",
+        "source_row": 98,
+        "color": "Transparent",
+        "gallery_only": true
+      }
+    ],
+    "default_image_variant": "excel-row-97",
+    "color_images": {
+      "Transparent": "images/products/excel-hamster-62-holed-2b3795f2.jpg"
+    }
   },
   {
     "id": "hamster-75-cage",
@@ -1526,20 +2442,21 @@ window.KANAPET_PRODUCTS = [
     "size": "75*47*43",
     "moq": 100,
     "colors": [
-      "White"
+      "Transparent"
     ],
-    "image": "images/products/hamster-75-cage-main.jpg",
+    "image": "images/products/excel-hamster-75-cage-0d793547.jpg",
     "net_weight": "5.8",
     "gross_weight": "7.7",
     "cbm": "",
-    "material": "ABS + PET",
+    "material": "PET",
     "type": "",
     "meas": "82*51*30",
     "pcs_per_ctn": "1",
     "color": "",
-    "accessories": "",
-    "notes": "Each unit is individually packed in a carton. Custom packaging and printing available for OEM/ODM orders.",
+    "accessories": "Cage + 4 feet",
+    "notes": "Each unit is individually packed in a carton. Custom packaging and printing available for OEM/ODM orders. Cage and 4 feet included; other accessories sold separately.",
     "gallery": [
+      "images/products/excel-hamster-75-cage-0d793547.jpg",
       "images/products/hamster-75-cage-white.jpg",
       "images/products/hamster-75-cage-main.jpg",
       "images/products/gallery/75-hamster-scene.jpg",
@@ -1553,7 +2470,21 @@ window.KANAPET_PRODUCTS = [
     "features": [
       "Currently available without side openings only.",
       "Direct tunnel connections are not offered on the 75 model."
-    ]
+    ],
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-99",
+        "image": "images/products/excel-hamster-75-cage-0d793547.jpg",
+        "title": "75 Hamster Transparent Cage — Transparent",
+        "source_row": 99,
+        "color": "Transparent"
+      }
+    ],
+    "default_image_variant": "excel-row-99",
+    "color_images": {
+      "Transparent": "images/products/excel-hamster-75-cage-0d793547.jpg"
+    }
   },
   {
     "id": "hamster-external-enclosure",
@@ -1564,24 +2495,39 @@ window.KANAPET_PRODUCTS = [
     "size": "",
     "moq": 100,
     "colors": [
-      "Green"
+      "Transparent"
     ],
-    "image": "images/products/gallery/external-hamster-scene.jpg",
-    "net_weight": "",
-    "gross_weight": "",
+    "image": "images/products/excel-hamster-external-enclosure-8fe81d70.jpg",
+    "net_weight": "4.38",
+    "gross_weight": "5.2",
     "cbm": "",
     "material": "ABS+PET",
     "type": "",
-    "meas": "",
+    "meas": "55×40×22",
     "pcs_per_ctn": "1",
     "color": "",
-    "accessories": "",
+    "accessories": "Base Tray + Wire Mesh + Exercise Wheel + Ladder + Hideout + Tubes",
     "notes": "Each unit is individually packed in a carton. Custom packaging and printing available for OEM/ODM orders.",
     "gallery": [
+      "images/products/excel-hamster-external-enclosure-8fe81d70.jpg",
       "images/products/gallery/external-hamster-scene.jpg",
       "images/products/hamster-external-enclosure.jpg"
     ],
-    "moq_unit": "pc"
+    "moq_unit": "pc",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-102",
+        "image": "images/products/excel-hamster-external-enclosure-8fe81d70.jpg",
+        "title": "External Hamster Enclosure — Transparent",
+        "source_row": 102,
+        "color": "Transparent"
+      }
+    ],
+    "default_image_variant": "excel-row-102",
+    "color_images": {
+      "Transparent": "images/products/excel-hamster-external-enclosure-8fe81d70.jpg"
+    }
   },
   {
     "id": "hamster-70-folding-low",
@@ -1589,35 +2535,46 @@ window.KANAPET_PRODUCTS = [
     "name": "70 Folding Cage Standard Model",
     "category": "hamster-cages",
     "series": "hamster-70-folding",
-    "size": {
-      "w": 70,
-      "d": 43,
-      "h": 34
-    },
-    "moq": 100,
+    "size": "70 × 43 × 34",
+    "moq": "100 sets",
     "colors": [
       "White"
     ],
-    "image": "images/products/gallery/70-folding-low-scene.jpg",
-    "net_weight": "",
-    "gross_weight": "5",
+    "image": "images/products/excel-hamster-70-low-standard-2ce60e3c.jpg",
+    "net_weight": "4.42",
+    "gross_weight": "5.57",
     "cbm": "",
-    "material": "PET + ABS",
+    "material": "PET + ABS+Powder-Coated Wire",
     "type": "",
-    "meas": "75*49*12",
+    "meas": "75 × 49 × 12",
     "pcs_per_ctn": "1",
     "color": "",
-    "accessories": "",
-    "notes": "Each product is individually packed in one carton. MOQ: 100 pcs per model.",
+    "accessories": "5 feet",
+    "notes": "Complete cage set with 5 feet included. A set of 4 casters is optional and purchased separately. Individually packed in a carton. MOQ: 100 sets per model. Standard mesh top; translucent back panel.",
     "gallery": [
+      "images/products/excel-hamster-70-low-standard-2ce60e3c.jpg",
       "images/products/gallery/70-folding-low-scene.jpg",
       "images/products/hamster-70-folding-low.jpg"
     ],
-    "moq_unit": "pc",
+    "moq_unit": "sets",
     "carton_size": {
       "w": 75,
       "d": 49,
       "h": 12
+    },
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-103",
+        "image": "images/products/excel-hamster-70-low-standard-2ce60e3c.jpg",
+        "title": "70 Folding Cage Standard Model — White",
+        "source_row": 103,
+        "color": "White"
+      }
+    ],
+    "default_image_variant": "excel-row-103",
+    "color_images": {
+      "White": "images/products/excel-hamster-70-low-standard-2ce60e3c.jpg"
     }
   },
   {
@@ -1626,35 +2583,46 @@ window.KANAPET_PRODUCTS = [
     "name": "70 Foldable Cage Extended Height Version",
     "category": "hamster-cages",
     "series": "hamster-70-folding",
-    "size": {
-      "w": 70,
-      "d": 43,
-      "h": 39.5
-    },
-    "moq": 100,
+    "size": "70 × 43 × 39.5",
+    "moq": "100 sets",
     "colors": [
       "White"
     ],
-    "image": "images/products/gallery/70-folding-high-scene.jpg",
-    "net_weight": "",
-    "gross_weight": "6.17",
+    "image": "images/products/excel-hamster-70-high-standard-8380076c.jpg",
+    "net_weight": "4.99",
+    "gross_weight": "6",
     "cbm": "",
-    "material": "PET + ABS",
+    "material": "PET + ABS+Powder-Coated Wire",
     "type": "",
-    "meas": "75*49*12",
+    "meas": "75 × 49 × 12",
     "pcs_per_ctn": "1",
     "color": "",
-    "accessories": "",
-    "notes": "Each product is individually packed in one carton. MOQ: 100 pcs per model.",
+    "accessories": "5 feet",
+    "notes": "Complete cage set with 5 feet included. A set of 4 casters is optional and purchased separately. Individually packed in a carton. MOQ: 100 sets per model. Standard mesh top; clear back panel.",
     "gallery": [
+      "images/products/excel-hamster-70-high-standard-8380076c.jpg",
       "images/products/gallery/70-folding-high-scene.jpg",
       "images/products/hamster-70-folding-high.jpg"
     ],
-    "moq_unit": "pc",
+    "moq_unit": "sets",
     "carton_size": {
       "w": 75,
       "d": 49,
       "h": 12
+    },
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-104",
+        "image": "images/products/excel-hamster-70-high-standard-8380076c.jpg",
+        "title": "70 Foldable Cage Extended Height Version — White",
+        "source_row": 104,
+        "color": "White"
+      }
+    ],
+    "default_image_variant": "excel-row-104",
+    "color_images": {
+      "White": "images/products/excel-hamster-70-high-standard-8380076c.jpg"
     }
   },
   {
@@ -1668,20 +2636,36 @@ window.KANAPET_PRODUCTS = [
     "colors": [
       "Transparent"
     ],
-    "image": "images/products/hamster-tube-anti-chew-ring.jpg",
-    "net_weight": "",
+    "image": "images/products/excel-hamster-tube-anti-chew-ring-b4a197b5.jpg",
+    "net_weight": "0.011",
     "gross_weight": "",
     "cbm": "",
-    "material": "PET",
+    "material": "PC",
     "type": "",
     "meas": "69*47*30",
     "pcs_per_ctn": "1400",
     "color": "",
     "accessories": "",
     "notes": "Packed 1,400 pcs per master carton. Full-carton ordering is not required. Order quantity is determined by the compatible hamster tube order.",
-    "gallery": [],
+    "gallery": [
+      "images/products/excel-hamster-tube-anti-chew-ring-b4a197b5.jpg"
+    ],
     "accessory_type": "universal",
-    "moq_unit": "pc"
+    "moq_unit": "pc",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-107",
+        "image": "images/products/excel-hamster-tube-anti-chew-ring-b4a197b5.jpg",
+        "title": "Hamster Tube Anti-Chew Ring — Transparent",
+        "source_row": 107,
+        "color": "Transparent"
+      }
+    ],
+    "default_image_variant": "excel-row-107",
+    "color_images": {
+      "Transparent": "images/products/excel-hamster-tube-anti-chew-ring-b4a197b5.jpg"
+    }
   },
   {
     "id": "hamster-pipe-short",
@@ -1697,26 +2681,63 @@ window.KANAPET_PRODUCTS = [
       "Green",
       "Pink"
     ],
-    "image": "images/products/hamster-pipe-short-transparent.png",
+    "image": "images/products/excel-hamster-pipe-short-clear-3011a24d.jpg",
     "net_weight": "0.032",
     "gross_weight": "30",
     "cbm": "",
-    "material": "PET",
+    "material": "PS",
     "type": "",
     "meas": "69*47*30",
     "pcs_per_ctn": "440",
     "color": "",
     "accessories": "",
     "notes": "Default color is transparent. Custom colors are available for bulk orders. Packed 440 pcs per master carton. MOQ: 440 pcs per model. Sold by full carton only.",
-    "gallery": [],
+    "gallery": [
+      "images/products/excel-hamster-pipe-short-clear-3011a24d.jpg",
+      "images/products/excel-hamster-pipe-short-blue-9ec4b57e.jpg",
+      "images/products/excel-hamster-pipe-short-green-70d718ad.jpg",
+      "images/products/excel-hamster-pipe-short-pink-b739b250.jpg"
+    ],
     "accessory_type": "universal",
     "moq_unit": "pc",
     "color_images": {
-      "Transparent": "images/products/hamster-pipe-short-transparent.png",
-      "Pink": "images/products/color/hamster-pipe-short_pink.jpg",
-      "Blue": "images/products/color/hamster-pipe-short_blue.jpg",
-      "Green": "images/products/color/hamster-pipe-short_green.jpg"
-    }
+      "Transparent": "images/products/excel-hamster-pipe-short-clear-3011a24d.jpg",
+      "Blue": "images/products/excel-hamster-pipe-short-blue-9ec4b57e.jpg",
+      "Green": "images/products/excel-hamster-pipe-short-green-70d718ad.jpg",
+      "Pink": "images/products/excel-hamster-pipe-short-pink-b739b250.jpg"
+    },
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-108",
+        "image": "images/products/excel-hamster-pipe-short-clear-3011a24d.jpg",
+        "title": "Short Straight Pipe — Transparent",
+        "source_row": 108,
+        "color": "Transparent"
+      },
+      {
+        "id": "excel-row-109",
+        "image": "images/products/excel-hamster-pipe-short-blue-9ec4b57e.jpg",
+        "title": "Short Straight Pipe — Blue",
+        "source_row": 109,
+        "color": "Blue"
+      },
+      {
+        "id": "excel-row-110",
+        "image": "images/products/excel-hamster-pipe-short-green-70d718ad.jpg",
+        "title": "Short Straight Pipe — Green",
+        "source_row": 110,
+        "color": "Green"
+      },
+      {
+        "id": "excel-row-111",
+        "image": "images/products/excel-hamster-pipe-short-pink-b739b250.jpg",
+        "title": "Short Straight Pipe — Pink",
+        "source_row": 111,
+        "color": "Pink"
+      }
+    ],
+    "default_image_variant": "excel-row-108"
   },
   {
     "id": "hamster-pipe-long",
@@ -1732,26 +2753,63 @@ window.KANAPET_PRODUCTS = [
       "Green",
       "Pink"
     ],
-    "image": "images/products/hamster-pipe-long-transparent.jpg",
+    "image": "images/products/excel-hamster-pipe-long-clear-a3746a8b.jpg",
     "net_weight": "0.023",
     "gross_weight": "18",
     "cbm": "",
-    "material": "PET",
+    "material": "PS",
     "type": "",
     "meas": "69*47*30",
     "pcs_per_ctn": "341",
     "color": "",
     "accessories": "",
     "notes": "Default color is transparent. Custom colors are available for bulk orders. Packed 341 pcs per master carton. MOQ: 341 pcs per model. Sold by full carton only.",
-    "gallery": [],
+    "gallery": [
+      "images/products/excel-hamster-pipe-long-clear-a3746a8b.jpg",
+      "images/products/excel-hamster-pipe-long-blue-7706f971.jpg",
+      "images/products/excel-hamster-pipe-long-green-556c5b45.jpg",
+      "images/products/excel-hamster-pipe-long-pink-f4d2c078.jpg"
+    ],
     "accessory_type": "universal",
     "moq_unit": "pc",
     "color_images": {
-      "Transparent": "images/products/hamster-pipe-long-transparent.jpg",
-      "Pink": "images/products/color/hamster-pipe-long_pink.jpg",
-      "Blue": "images/products/color/hamster-pipe-long_blue.jpg",
-      "Green": "images/products/color/hamster-pipe-long_green.jpg"
-    }
+      "Transparent": "images/products/excel-hamster-pipe-long-clear-a3746a8b.jpg",
+      "Blue": "images/products/excel-hamster-pipe-long-blue-7706f971.jpg",
+      "Green": "images/products/excel-hamster-pipe-long-green-556c5b45.jpg",
+      "Pink": "images/products/excel-hamster-pipe-long-pink-f4d2c078.jpg"
+    },
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-112",
+        "image": "images/products/excel-hamster-pipe-long-clear-a3746a8b.jpg",
+        "title": "Long Straight Pipe — Transparent",
+        "source_row": 112,
+        "color": "Transparent"
+      },
+      {
+        "id": "excel-row-113",
+        "image": "images/products/excel-hamster-pipe-long-blue-7706f971.jpg",
+        "title": "Long Straight Pipe — Blue",
+        "source_row": 113,
+        "color": "Blue"
+      },
+      {
+        "id": "excel-row-114",
+        "image": "images/products/excel-hamster-pipe-long-green-556c5b45.jpg",
+        "title": "Long Straight Pipe — Green",
+        "source_row": 114,
+        "color": "Green"
+      },
+      {
+        "id": "excel-row-115",
+        "image": "images/products/excel-hamster-pipe-long-pink-f4d2c078.jpg",
+        "title": "Long Straight Pipe — Pink",
+        "source_row": 115,
+        "color": "Pink"
+      }
+    ],
+    "default_image_variant": "excel-row-112"
   },
   {
     "id": "hamster-pipe-bent",
@@ -1767,26 +2825,63 @@ window.KANAPET_PRODUCTS = [
       "Green",
       "Pink"
     ],
-    "image": "images/products/hamster-pipe-bent-transparent.png",
+    "image": "images/products/excel-hamster-pipe-bent-clear-a9403507.jpg",
     "net_weight": "0.026",
     "gross_weight": "30",
     "cbm": "",
-    "material": "PET",
+    "material": "PS",
     "type": "",
     "meas": "69*47*30",
     "pcs_per_ctn": "540",
     "color": "",
     "accessories": "",
     "notes": "Default color is transparent. Custom colors are available for bulk orders. Packed 540 pcs per master carton. MOQ: 540 pcs per model. Sold by full carton only.",
-    "gallery": [],
+    "gallery": [
+      "images/products/excel-hamster-pipe-bent-clear-a9403507.jpg",
+      "images/products/excel-hamster-pipe-bent-blue-8b4e3d47.jpg",
+      "images/products/excel-hamster-pipe-bent-green-3e842ab1.jpg",
+      "images/products/excel-hamster-pipe-bent-pink-337fc1f0.jpg"
+    ],
     "accessory_type": "universal",
     "moq_unit": "pc",
     "color_images": {
-      "Transparent": "images/products/hamster-pipe-bent-transparent.png",
-      "Pink": "images/products/color/hamster-pipe-bent_pink.jpg",
-      "Blue": "images/products/color/hamster-pipe-bent_blue.jpg",
-      "Green": "images/products/color/hamster-pipe-bent_green.jpg"
-    }
+      "Transparent": "images/products/excel-hamster-pipe-bent-clear-a9403507.jpg",
+      "Blue": "images/products/excel-hamster-pipe-bent-blue-8b4e3d47.jpg",
+      "Green": "images/products/excel-hamster-pipe-bent-green-3e842ab1.jpg",
+      "Pink": "images/products/excel-hamster-pipe-bent-pink-337fc1f0.jpg"
+    },
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-116",
+        "image": "images/products/excel-hamster-pipe-bent-clear-a9403507.jpg",
+        "title": "Bent Pipe — Transparent",
+        "source_row": 116,
+        "color": "Transparent"
+      },
+      {
+        "id": "excel-row-117",
+        "image": "images/products/excel-hamster-pipe-bent-blue-8b4e3d47.jpg",
+        "title": "Bent Pipe — Blue",
+        "source_row": 117,
+        "color": "Blue"
+      },
+      {
+        "id": "excel-row-118",
+        "image": "images/products/excel-hamster-pipe-bent-green-3e842ab1.jpg",
+        "title": "Bent Pipe — Green",
+        "source_row": 118,
+        "color": "Green"
+      },
+      {
+        "id": "excel-row-119",
+        "image": "images/products/excel-hamster-pipe-bent-pink-337fc1f0.jpg",
+        "title": "Bent Pipe — Pink",
+        "source_row": 119,
+        "color": "Pink"
+      }
+    ],
+    "default_image_variant": "excel-row-116"
   },
   {
     "id": "hamster-pipe-3way",
@@ -1802,26 +2897,63 @@ window.KANAPET_PRODUCTS = [
       "Green",
       "Pink"
     ],
-    "image": "images/products/hamster-pipe-3way-transparent.png",
+    "image": "images/products/excel-hamster-pipe-3way-clear-6e82d080.jpg",
     "net_weight": "0.038",
     "gross_weight": "28",
     "cbm": "",
-    "material": "PET",
+    "material": "PS",
     "type": "",
     "meas": "69*47*30",
     "pcs_per_ctn": "293",
     "color": "",
     "accessories": "",
     "notes": "Default color is transparent. Custom colors are available for bulk orders. Packed 293 pcs per master carton. MOQ: 293 pcs per model. Sold by full carton only.",
-    "gallery": [],
+    "gallery": [
+      "images/products/excel-hamster-pipe-3way-clear-6e82d080.jpg",
+      "images/products/excel-hamster-pipe-3way-blue-03cf7061.jpg",
+      "images/products/excel-hamster-pipe-3way-green-5f5566f0.jpg",
+      "images/products/excel-hamster-pipe-3way-pink-c63f5052.jpg"
+    ],
     "accessory_type": "universal",
     "moq_unit": "pc",
     "color_images": {
-      "Transparent": "images/products/hamster-pipe-3way-transparent.png",
-      "Pink": "images/products/color/hamster-pipe-3way_pink.jpg",
-      "Blue": "images/products/color/hamster-pipe-3way_blue.jpg",
-      "Green": "images/products/color/hamster-pipe-3way_green.jpg"
-    }
+      "Transparent": "images/products/excel-hamster-pipe-3way-clear-6e82d080.jpg",
+      "Blue": "images/products/excel-hamster-pipe-3way-blue-03cf7061.jpg",
+      "Green": "images/products/excel-hamster-pipe-3way-green-5f5566f0.jpg",
+      "Pink": "images/products/excel-hamster-pipe-3way-pink-c63f5052.jpg"
+    },
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-120",
+        "image": "images/products/excel-hamster-pipe-3way-clear-6e82d080.jpg",
+        "title": "Three-Way Pipe — Transparent",
+        "source_row": 120,
+        "color": "Transparent"
+      },
+      {
+        "id": "excel-row-121",
+        "image": "images/products/excel-hamster-pipe-3way-blue-03cf7061.jpg",
+        "title": "Three-Way Pipe — Blue",
+        "source_row": 121,
+        "color": "Blue"
+      },
+      {
+        "id": "excel-row-122",
+        "image": "images/products/excel-hamster-pipe-3way-green-5f5566f0.jpg",
+        "title": "Three-Way Pipe — Green",
+        "source_row": 122,
+        "color": "Green"
+      },
+      {
+        "id": "excel-row-123",
+        "image": "images/products/excel-hamster-pipe-3way-pink-c63f5052.jpg",
+        "title": "Three-Way Pipe — Pink",
+        "source_row": 123,
+        "color": "Pink"
+      }
+    ],
+    "default_image_variant": "excel-row-120"
   },
   {
     "id": "hamster-pipe-joint",
@@ -1834,11 +2966,11 @@ window.KANAPET_PRODUCTS = [
     "colors": [
       "White"
     ],
-    "image": "images/products/hamster-pipe-joint.jpg",
+    "image": "images/products/excel-hamster-pipe-joint-e050632a.jpg",
     "net_weight": "0.005",
     "gross_weight": "10",
     "cbm": "",
-    "material": "PET",
+    "material": "PE",
     "type": "",
     "meas": "69*47*30",
     "pcs_per_ctn": "1400",
@@ -1846,10 +2978,25 @@ window.KANAPET_PRODUCTS = [
     "accessories": "",
     "notes": "Packed 1,400 pcs per master carton. Full-carton ordering is not required. Order quantity is determined by the compatible hamster tube order.",
     "gallery": [
+      "images/products/excel-hamster-pipe-joint-e050632a.jpg",
       "images/products/gallery/hamster-pipe-joint-scene.jpg"
     ],
     "accessory_type": "universal",
-    "moq_unit": "pc"
+    "moq_unit": "pc",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-124",
+        "image": "images/products/excel-hamster-pipe-joint-e050632a.jpg",
+        "title": "Hamster Tube Connector — White",
+        "source_row": 124,
+        "color": "White"
+      }
+    ],
+    "default_image_variant": "excel-row-124",
+    "color_images": {
+      "White": "images/products/excel-hamster-pipe-joint-e050632a.jpg"
+    }
   },
   {
     "id": "hamster-wheel-17cm",
@@ -1865,22 +3012,25 @@ window.KANAPET_PRODUCTS = [
       "Pink",
       "Purple"
     ],
-    "image": "images/products/color/hamster-wheel-17cm_white-main.jpg",
-    "net_weight": "0.138",
-    "gross_weight": "7.3",
+    "image": "images/products/excel-hamster-wheel-17cm-white-580aa1d4.jpg",
+    "net_weight": "0.16",
+    "gross_weight": "7.6",
     "cbm": "",
-    "material": "ABS + Phenol-modified + Bearing Steel",
+    "material": "ABS + Bearing Steel",
     "type": "",
     "meas": "69*45*30",
     "pcs_per_ctn": "35",
     "color": "",
-    "accessories": "",
+    "accessories": "Running wheel + cage mounting attachment",
     "notes": "Default color is white. Custom colors available for bulk orders. Packed 35 sets per master carton without individual packaging. Gross weight is for one full master carton. MOQ: 3 cartons per color, equivalent to 105 sets per color. Sold by full carton only.",
     "features": [
-      "Optional universal hanging bracket mounts the wheel to Kanapet hamster cages.",
-      "The hanging bracket is ordered separately and is not included with the running wheel."
+      "Cage mounting attachment included."
     ],
     "gallery": [
+      "images/products/excel-hamster-wheel-17cm-white-580aa1d4.jpg",
+      "images/products/excel-hamster-wheel-17cm-blue-a2b87fd6.jpg",
+      "images/products/excel-hamster-wheel-17cm-pink-bb70c137.jpg",
+      "images/products/excel-hamster-wheel-17cm-purple-dfa6aaca.jpg",
       "images/products/color/hamster-wheel-17cm_blue-main.jpg",
       "images/products/color/hamster-wheel-17cm_pink-main.jpg",
       "images/products/color/hamster-wheel-17cm_purple-main.jpg",
@@ -1894,11 +3044,43 @@ window.KANAPET_PRODUCTS = [
     "accessory_type": "universal",
     "moq_unit": "sets",
     "color_images": {
-      "White": "images/products/color/hamster-wheel-17cm_white-main.jpg",
-      "Blue": "images/products/color/hamster-wheel-17cm_blue-main.jpg",
-      "Pink": "images/products/color/hamster-wheel-17cm_pink-main.jpg",
-      "Purple": "images/products/color/hamster-wheel-17cm_purple-main.jpg"
-    }
+      "White": "images/products/excel-hamster-wheel-17cm-white-580aa1d4.jpg",
+      "Blue": "images/products/excel-hamster-wheel-17cm-blue-a2b87fd6.jpg",
+      "Pink": "images/products/excel-hamster-wheel-17cm-pink-bb70c137.jpg",
+      "Purple": "images/products/excel-hamster-wheel-17cm-purple-dfa6aaca.jpg"
+    },
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-127",
+        "image": "images/products/excel-hamster-wheel-17cm-white-580aa1d4.jpg",
+        "title": "17 cm Hamster Running Wheel — White",
+        "source_row": 127,
+        "color": "White"
+      },
+      {
+        "id": "excel-row-128",
+        "image": "images/products/excel-hamster-wheel-17cm-blue-a2b87fd6.jpg",
+        "title": "17 cm Hamster Running Wheel — Blue",
+        "source_row": 128,
+        "color": "Blue"
+      },
+      {
+        "id": "excel-row-129",
+        "image": "images/products/excel-hamster-wheel-17cm-pink-bb70c137.jpg",
+        "title": "17 cm Hamster Running Wheel — Pink",
+        "source_row": 129,
+        "color": "Pink"
+      },
+      {
+        "id": "excel-row-130",
+        "image": "images/products/excel-hamster-wheel-17cm-purple-dfa6aaca.jpg",
+        "title": "17 cm Hamster Running Wheel — Purple",
+        "source_row": 130,
+        "color": "Purple"
+      }
+    ],
+    "default_image_variant": "excel-row-127"
   },
   {
     "id": "hamster-wheel-21cm",
@@ -1914,22 +3096,25 @@ window.KANAPET_PRODUCTS = [
       "Pink",
       "Purple"
     ],
-    "image": "images/products/color/hamster-wheel-21cm_white-main.jpg",
+    "image": "images/products/excel-hamster-wheel-17cm-white-580aa1d4.jpg",
     "net_weight": "0.233",
     "gross_weight": "6.3",
     "cbm": "",
-    "material": "ABS + Phenol-modified + Bearing Steel",
+    "material": "ABS + Bearing Steel",
     "type": "",
     "meas": "69*45*30",
     "pcs_per_ctn": "18",
     "color": "",
-    "accessories": "",
+    "accessories": "Running wheel + cage mounting attachment",
     "notes": "Default color is white. Custom colors are available for bulk orders. Packed 18 sets per master carton without individual packaging. Gross weight is for one full master carton. MOQ: 3 cartons per color, equivalent to 54 sets per color. Sold by full carton only.",
     "features": [
-      "Optional universal hanging bracket mounts the wheel to Kanapet hamster cages.",
-      "The hanging bracket is ordered separately and is not included with the running wheel."
+      "Cage mounting attachment included."
     ],
     "gallery": [
+      "images/products/excel-hamster-wheel-17cm-white-580aa1d4.jpg",
+      "images/products/excel-hamster-wheel-17cm-blue-a2b87fd6.jpg",
+      "images/products/excel-hamster-wheel-17cm-pink-bb70c137.jpg",
+      "images/products/excel-hamster-wheel-17cm-purple-dfa6aaca.jpg",
       "images/products/color/hamster-wheel-21cm_blue-main.jpg",
       "images/products/color/hamster-wheel-21cm_pink-main.jpg",
       "images/products/color/hamster-wheel-21cm_purple-main.jpg",
@@ -1943,11 +3128,43 @@ window.KANAPET_PRODUCTS = [
     "accessory_type": "universal",
     "moq_unit": "sets",
     "color_images": {
-      "White": "images/products/color/hamster-wheel-21cm_white-main.jpg",
-      "Blue": "images/products/color/hamster-wheel-21cm_blue-main.jpg",
-      "Pink": "images/products/color/hamster-wheel-21cm_pink-main.jpg",
-      "Purple": "images/products/color/hamster-wheel-21cm_purple-main.jpg"
-    }
+      "White": "images/products/excel-hamster-wheel-17cm-white-580aa1d4.jpg",
+      "Blue": "images/products/excel-hamster-wheel-17cm-blue-a2b87fd6.jpg",
+      "Pink": "images/products/excel-hamster-wheel-17cm-pink-bb70c137.jpg",
+      "Purple": "images/products/excel-hamster-wheel-17cm-purple-dfa6aaca.jpg"
+    },
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-131",
+        "image": "images/products/excel-hamster-wheel-17cm-white-580aa1d4.jpg",
+        "title": "21 cm Hamster Running Wheel — White",
+        "source_row": 131,
+        "color": "White"
+      },
+      {
+        "id": "excel-row-132",
+        "image": "images/products/excel-hamster-wheel-17cm-blue-a2b87fd6.jpg",
+        "title": "21 cm Hamster Running Wheel — Blue",
+        "source_row": 132,
+        "color": "Blue"
+      },
+      {
+        "id": "excel-row-133",
+        "image": "images/products/excel-hamster-wheel-17cm-pink-bb70c137.jpg",
+        "title": "21 cm Hamster Running Wheel — Pink",
+        "source_row": 133,
+        "color": "Pink"
+      },
+      {
+        "id": "excel-row-134",
+        "image": "images/products/excel-hamster-wheel-17cm-purple-dfa6aaca.jpg",
+        "title": "21 cm Hamster Running Wheel — Purple",
+        "source_row": 134,
+        "color": "Purple"
+      }
+    ],
+    "default_image_variant": "excel-row-131"
   },
   {
     "id": "hamster-wheel-24cm",
@@ -1960,7 +3177,7 @@ window.KANAPET_PRODUCTS = [
     "colors": [
       "Transparent"
     ],
-    "image": "images/products/hamster-wheel-24cm-v3.jpg",
+    "image": "images/products/excel-hamster-wheel-24cm-85bfa3e3.jpg",
     "net_weight": "0.9",
     "gross_weight": "1.25",
     "cbm": "",
@@ -1971,9 +3188,25 @@ window.KANAPET_PRODUCTS = [
     "color": "",
     "accessories": "",
     "notes": "Multiple colors available. Sold by full carton only.",
-    "gallery": [],
+    "gallery": [
+      "images/products/excel-hamster-wheel-24cm-85bfa3e3.jpg"
+    ],
     "accessory_type": "universal",
-    "moq_unit": "pc"
+    "moq_unit": "pc",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-135",
+        "image": "images/products/excel-hamster-wheel-24cm-85bfa3e3.jpg",
+        "title": "9.4\" Running Wheel with Transparent Base — Transparent",
+        "source_row": 135,
+        "color": "Transparent"
+      }
+    ],
+    "default_image_variant": "excel-row-135",
+    "color_images": {
+      "Transparent": "images/products/excel-hamster-wheel-24cm-85bfa3e3.jpg"
+    }
   },
   {
     "id": "hamster-wheel-27cm",
@@ -1986,7 +3219,7 @@ window.KANAPET_PRODUCTS = [
     "colors": [
       "Transparent"
     ],
-    "image": "images/products/hamster-wheel-27cm-v3.jpg",
+    "image": "images/products/excel-hamster-wheel-27cm-9ac6eb0b.jpg",
     "net_weight": "0.95",
     "gross_weight": "1.5",
     "cbm": "",
@@ -1998,13 +3231,28 @@ window.KANAPET_PRODUCTS = [
     "accessories": "",
     "notes": "Multiple colors available. Sold by full carton only.",
     "gallery": [
+      "images/products/excel-hamster-wheel-27cm-9ac6eb0b.jpg",
       "images/products/gallery/hamster-wheel-27cm-detail-01.jpg",
       "images/products/gallery/hamster-wheel-27cm-detail-02.jpg",
       "images/products/gallery/hamster-wheel-27cm-detail-03.jpg",
       "images/products/gallery/hamster-wheel-27cm-detail-04.jpg"
     ],
     "accessory_type": "universal",
-    "moq_unit": "pc"
+    "moq_unit": "pc",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-136",
+        "image": "images/products/excel-hamster-wheel-27cm-9ac6eb0b.jpg",
+        "title": "10.6\" Running Wheel with Transparent Base — Transparent",
+        "source_row": 136,
+        "color": "Transparent"
+      }
+    ],
+    "default_image_variant": "excel-row-136",
+    "color_images": {
+      "Transparent": "images/products/excel-hamster-wheel-27cm-9ac6eb0b.jpg"
+    }
   },
   {
     "id": "hamster-running-disc",
@@ -2023,18 +3271,25 @@ window.KANAPET_PRODUCTS = [
       "Dark Blue",
       "Black"
     ],
-    "image": "images/products/hamster-running-disc-v4.jpg",
-    "net_weight": "10 (100 pcs)",
+    "image": "images/products/excel-hamster-running-disc-white-03200ce7.jpg",
+    "net_weight": "0.1 per unit",
     "gross_weight": "12",
     "cbm": "",
-    "material": "PC + ABS + Bearing Steel",
+    "material": "ABS + Bearing Steel",
     "type": "",
     "meas": "69*45*30",
     "pcs_per_ctn": "100",
     "color": "",
     "accessories": "",
-    "notes": "Sold by full carton only, 100pcs per color. No individual carton packaging. Net and gross weights are for one full carton of 100 pieces. Custom packaging available upon request.",
+    "notes": "Net weight: 0.1 kg per unit. 100 pcs per carton; carton net weight 10 kg, gross weight 12 kg. Full cartons only, 100 pcs per color. No individual cartons. Custom packaging available on request.",
     "gallery": [
+      "images/products/excel-hamster-running-disc-white-03200ce7.jpg",
+      "images/products/excel-hamster-running-disc-pink-2a293362.jpg",
+      "images/products/excel-hamster-running-disc-purple-65abc75a.jpg",
+      "images/products/excel-hamster-running-disc-light-green-18c824f0.jpg",
+      "images/products/excel-hamster-running-disc-lightblue-99fb89c9.jpg",
+      "images/products/excel-hamster-running-disc-deepblue-4628d243.jpg",
+      "images/products/excel-hamster-running-disc-black-733659c9.jpg",
       "images/products/gallery/hamster-running-disc-pink-hamster.jpg",
       "images/products/gallery/hamster-running-disc-mint-components.jpg",
       "images/products/gallery/hamster-running-disc-mint-back.jpg",
@@ -2043,13 +3298,13 @@ window.KANAPET_PRODUCTS = [
     "accessory_type": "universal",
     "moq_unit": "pc",
     "color_images": {
-      "White": "images/products/color/hamster-running-disc_white.jpg",
-      "Pink": "images/products/color/hamster-running-disc_pink-v2.jpg",
-      "Purple": "images/products/color/hamster-running-disc_purple-v2.jpg",
-      "Light Blue": "images/products/color/hamster-running-disc_light-blue-v2.jpg",
-      "Dark Blue": "images/products/color/hamster-running-disc_dark-blue-v2.jpg",
-      "Black": "images/products/color/hamster-running-disc_black-v2.jpg",
-      "Light Green": "images/products/color/hamster-running-disc_light-green-v2.jpg"
+      "White": "images/products/excel-hamster-running-disc-white-03200ce7.jpg",
+      "Pink": "images/products/excel-hamster-running-disc-pink-2a293362.jpg",
+      "Purple": "images/products/excel-hamster-running-disc-purple-65abc75a.jpg",
+      "Light Green": "images/products/excel-hamster-running-disc-light-green-18c824f0.jpg",
+      "Light Blue": "images/products/excel-hamster-running-disc-lightblue-99fb89c9.jpg",
+      "Dark Blue": "images/products/excel-hamster-running-disc-deepblue-4628d243.jpg",
+      "Black": "images/products/excel-hamster-running-disc-black-733659c9.jpg"
     },
     "color_swatches": {
       "White": "#ffffff",
@@ -2059,7 +3314,60 @@ window.KANAPET_PRODUCTS = [
       "Light Blue": "#70cbdc",
       "Dark Blue": "#2676bc",
       "Black": "#202020"
-    }
+    },
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-137",
+        "image": "images/products/excel-hamster-running-disc-white-03200ce7.jpg",
+        "title": "Silent Hamster Exercise Disc — White",
+        "source_row": 137,
+        "color": "White"
+      },
+      {
+        "id": "excel-row-138",
+        "image": "images/products/excel-hamster-running-disc-pink-2a293362.jpg",
+        "title": "Silent Hamster Exercise Disc — Pink",
+        "source_row": 138,
+        "color": "Pink"
+      },
+      {
+        "id": "excel-row-139",
+        "image": "images/products/excel-hamster-running-disc-purple-65abc75a.jpg",
+        "title": "Silent Hamster Exercise Disc — Purple",
+        "source_row": 139,
+        "color": "Purple"
+      },
+      {
+        "id": "excel-row-140",
+        "image": "images/products/excel-hamster-running-disc-light-green-18c824f0.jpg",
+        "title": "Silent Hamster Exercise Disc — Light Green",
+        "source_row": 140,
+        "color": "Light Green"
+      },
+      {
+        "id": "excel-row-141",
+        "image": "images/products/excel-hamster-running-disc-lightblue-99fb89c9.jpg",
+        "title": "Silent Hamster Exercise Disc — Light Blue",
+        "source_row": 141,
+        "color": "Light Blue"
+      },
+      {
+        "id": "excel-row-142",
+        "image": "images/products/excel-hamster-running-disc-deepblue-4628d243.jpg",
+        "title": "Silent Hamster Exercise Disc — Dark Blue",
+        "source_row": 142,
+        "color": "Dark Blue"
+      },
+      {
+        "id": "excel-row-143",
+        "image": "images/products/excel-hamster-running-disc-black-733659c9.jpg",
+        "title": "Silent Hamster Exercise Disc — Black",
+        "source_row": 143,
+        "color": "Black"
+      }
+    ],
+    "default_image_variant": "excel-row-137"
   },
   {
     "id": "hamster-ball-180",
@@ -2072,11 +3380,11 @@ window.KANAPET_PRODUCTS = [
     "colors": [
       "Transparent"
     ],
-    "image": "images/products/hamster-ball-180-v4.jpg",
+    "image": "images/products/excel-hamster-ball-180-b3697ff2.jpg",
     "net_weight": "0.222",
     "gross_weight": "15",
     "cbm": "",
-    "material": "PET",
+    "material": "ABS",
     "type": "",
     "meas": "69*47*30",
     "pcs_per_ctn": "32",
@@ -2084,10 +3392,25 @@ window.KANAPET_PRODUCTS = [
     "accessories": "Screw accessory pack",
     "notes": "Comes with screw accessory pack. Packed 32 pcs per master carton. MOQ: 320 pcs per model, equivalent to 10 full cartons.",
     "gallery": [
+      "images/products/excel-hamster-ball-180-b3697ff2.jpg",
       "images/products/hamster-ball-180-v3.jpg"
     ],
     "accessory_type": "universal",
-    "moq_unit": "pc"
+    "moq_unit": "pc",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-144",
+        "image": "images/products/excel-hamster-ball-180-b3697ff2.jpg",
+        "title": "180 Running Ball — Transparent",
+        "source_row": 144,
+        "color": "Transparent"
+      }
+    ],
+    "default_image_variant": "excel-row-144",
+    "color_images": {
+      "Transparent": "images/products/excel-hamster-ball-180-b3697ff2.jpg"
+    }
   },
   {
     "id": "hamster-ball-270",
@@ -2100,7 +3423,7 @@ window.KANAPET_PRODUCTS = [
     "colors": [
       "Transparent"
     ],
-    "image": "images/products/hamster-ball-270-v4.jpg",
+    "image": "images/products/excel-hamster-ball-270-4a9b5baf.jpg",
     "net_weight": "0.698",
     "gross_weight": "1.2",
     "cbm": "",
@@ -2112,11 +3435,26 @@ window.KANAPET_PRODUCTS = [
     "accessories": "Screw accessory pack",
     "notes": "Comes with screw accessory pack. Sold by full carton only.",
     "gallery": [
+      "images/products/excel-hamster-ball-270-4a9b5baf.jpg",
       "images/products/gallery/hamster-ball-270-hamster.jpg",
       "images/products/gallery/hamster-ball-270-components.jpg"
     ],
     "accessory_type": "universal",
-    "moq_unit": "pc"
+    "moq_unit": "pc",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-145",
+        "image": "images/products/excel-hamster-ball-270-4a9b5baf.jpg",
+        "title": "270 Running Ball — Transparent",
+        "source_row": 145,
+        "color": "Transparent"
+      }
+    ],
+    "default_image_variant": "excel-row-145",
+    "color_images": {
+      "Transparent": "images/products/excel-hamster-ball-270-4a9b5baf.jpg"
+    }
   },
   {
     "id": "hamster-bathroom-18cm",
@@ -2129,20 +3467,36 @@ window.KANAPET_PRODUCTS = [
     "colors": [
       "Transparent"
     ],
-    "image": "images/products/hamster-bathroom-18cm-v3.jpg",
-    "net_weight": "8 (50 pcs)",
+    "image": "images/products/excel-hamster-bathroom-18cm-773df804.jpg",
+    "net_weight": "0.16 per unit",
     "gross_weight": "9.5",
     "cbm": "",
-    "material": "PET",
+    "material": "PS",
     "type": "",
     "meas": "30*23*23",
     "pcs_per_ctn": "50",
     "color": "",
     "accessories": "",
-    "notes": "Available in transparent only. Packed 50 pcs per master carton. MOQ: 250 pcs per model, equivalent to 5 full cartons. No individual packaging. Net and gross weights are for one full carton of 50 pieces.",
-    "gallery": [],
+    "notes": "Net weight: 0.16 kg per unit. 50 pcs per carton; carton net weight 8 kg, gross weight 9.5 kg. Clear only. MOQ: 250 pcs per model (5 full cartons). No individual packaging.",
+    "gallery": [
+      "images/products/excel-hamster-bathroom-18cm-773df804.jpg"
+    ],
     "accessory_type": "universal",
-    "moq_unit": "pc"
+    "moq_unit": "pc",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-146",
+        "image": "images/products/excel-hamster-bathroom-18cm-773df804.jpg",
+        "title": "7\" Transparent Bathroom — Transparent",
+        "source_row": 146,
+        "color": "Transparent"
+      }
+    ],
+    "default_image_variant": "excel-row-146",
+    "color_images": {
+      "Transparent": "images/products/excel-hamster-bathroom-18cm-773df804.jpg"
+    }
   },
   {
     "id": "hamster-external-bathroom",
@@ -2155,20 +3509,36 @@ window.KANAPET_PRODUCTS = [
     "colors": [
       "Transparent"
     ],
-    "image": "images/products/hamster-external-bathroom-v3.jpg",
+    "image": "images/products/excel-hamster-external-bathroom-4f260152.jpg",
     "net_weight": "0.118",
     "gross_weight": "13",
     "cbm": "",
-    "material": "PET",
+    "material": "PS",
     "type": "",
     "meas": "15.5*13*8",
     "pcs_per_ctn": "100",
     "color": "",
     "accessories": "",
     "notes": "Available in transparent only. Packed 100 pcs per master carton. MOQ: 200 pcs per model, equivalent to 2 full cartons. Each piece has an individual carton. The listed carton dimensions are for the individual carton; gross weight is for one master carton of 100 pieces.",
-    "gallery": [],
+    "gallery": [
+      "images/products/excel-hamster-external-bathroom-4f260152.jpg"
+    ],
     "accessory_type": "universal",
-    "moq_unit": "pc"
+    "moq_unit": "pc",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-147",
+        "image": "images/products/excel-hamster-external-bathroom-4f260152.jpg",
+        "title": "External Bathroom — Transparent",
+        "source_row": 147,
+        "color": "Transparent"
+      }
+    ],
+    "default_image_variant": "excel-row-147",
+    "color_images": {
+      "Transparent": "images/products/excel-hamster-external-bathroom-4f260152.jpg"
+    }
   },
   {
     "id": "hamster-shelf-43",
@@ -2181,11 +3551,11 @@ window.KANAPET_PRODUCTS = [
     "colors": [
       "Blue"
     ],
-    "image": "images/products/hamster-shelf-43-v3.jpg",
+    "image": "images/products/excel-hamster-shelf-43-aa9d8928.jpg",
     "net_weight": "0.042",
     "gross_weight": "23",
     "cbm": "",
-    "material": "ABS + PET",
+    "material": "PET + PP",
     "type": "",
     "meas": "69*47*30",
     "pcs_per_ctn": "",
@@ -2193,6 +3563,7 @@ window.KANAPET_PRODUCTS = [
     "accessories": "",
     "notes": "MOQ: 100 pcs per model. Full-carton ordering is not required.",
     "gallery": [
+      "images/products/excel-hamster-shelf-43-aa9d8928.jpg",
       "images/products/hamster-shelf-43-v3.jpg"
     ],
     "accessory_type": "universal",
@@ -2201,9 +3572,19 @@ window.KANAPET_PRODUCTS = [
     ],
     "moq_unit": "pc",
     "color_images": {
-      "White": "images/products/hamster-shelf-43-v3.jpg",
-      "Blue": "images/products/color/hamster-shelf-43_blue.jpg"
-    }
+      "Blue": "images/products/excel-hamster-shelf-43-aa9d8928.jpg"
+    },
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-148",
+        "image": "images/products/excel-hamster-shelf-43-aa9d8928.jpg",
+        "title": "Shelf & Ladder Set for 43 Hamster Cage — Blue",
+        "source_row": 148,
+        "color": "Blue"
+      }
+    ],
+    "default_image_variant": "excel-row-148"
   },
   {
     "id": "hamster-shelf-62",
@@ -2224,7 +3605,7 @@ window.KANAPET_PRODUCTS = [
     "net_weight": "0.26",
     "gross_weight": "",
     "cbm": "",
-    "material": "ABS + PET",
+    "material": "PET + PP",
     "type": "",
     "meas": "69*47*30",
     "pcs_per_ctn": "",
@@ -2263,7 +3644,7 @@ window.KANAPET_PRODUCTS = [
     "net_weight": "",
     "gross_weight": "",
     "cbm": "",
-    "material": "ABS + PET",
+    "material": "PET + PP",
     "type": "",
     "meas": "69*47*30",
     "pcs_per_ctn": "",
@@ -2290,24 +3671,46 @@ window.KANAPET_PRODUCTS = [
     "category": "hamster-accessories",
     "series": "hamster-wheel-accessory",
     "size": "5.5*3.7*6.7",
-    "moq": 200,
+    "moq": "No fixed MOQ; selected with cage order",
     "colors": [
       "White"
     ],
-    "image": "images/products/hamster-universal-wheel-v3.jpg",
-    "net_weight": "0.042",
-    "gross_weight": "",
+    "image": "images/products/excel-hamster-universal-wheel-42a66dc0.jpg",
+    "net_weight": "0.19 per set of 4",
+    "gross_weight": "0.23 per set of 4",
     "cbm": "",
     "material": "ABS",
     "type": "",
-    "meas": "69*47*30",
     "pcs_per_ctn": "",
     "color": "",
     "accessories": "2 with brakes, 2 without brakes",
-    "notes": "This hamster-cage accessory contains 2 wheels with brakes and 2 wheels without brakes per set. MOQ: 200 pcs per model. Full-carton ordering is not required.",
-    "gallery": [],
+    "notes": "Set of 4: 2 locking and 2 non-locking casters. Net weight 0.19 kg and gross weight 0.23 kg per set. No fixed MOQ. Carton dimensions depend on the cage selection and actual order.",
+    "gallery": [
+      "images/products/excel-hamster-universal-wheel-42a66dc0.jpg"
+    ],
     "accessory_type": "universal",
-    "moq_unit": "pc"
+    "moq_unit": "pc",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-101",
+        "image": "images/products/excel-hamster-universal-wheel-42a66dc0.jpg",
+        "title": "Universal Wheel (4pcs) — White",
+        "source_row": 101,
+        "color": "White"
+      },
+      {
+        "id": "excel-row-151",
+        "image": "images/products/excel-hamster-universal-wheel-42a66dc0.jpg",
+        "title": "Universal Wheel (4pcs) — White",
+        "source_row": 151,
+        "color": "White"
+      }
+    ],
+    "default_image_variant": "excel-row-101",
+    "color_images": {
+      "White": "images/products/excel-hamster-universal-wheel-42a66dc0.jpg"
+    }
   },
   {
     "id": "hamster-transparent-food-cup",
@@ -2320,20 +3723,36 @@ window.KANAPET_PRODUCTS = [
     "colors": [
       "Transparent"
     ],
-    "image": "images/products/hamster-transparent-food-cup-v3.jpg",
+    "image": "images/products/excel-hamster-transparent-food-cup-50976f25.jpg",
     "net_weight": "0.045",
     "gross_weight": "16",
     "cbm": "",
-    "material": "PET",
+    "material": "PS",
     "type": "",
     "meas": "69*47*30",
     "pcs_per_ctn": "273",
     "color": "",
     "accessories": "",
     "notes": "Packed 273 pcs per master carton. MOQ: 819 pcs per model, equivalent to 3 full cartons.",
-    "gallery": [],
+    "gallery": [
+      "images/products/excel-hamster-transparent-food-cup-50976f25.jpg"
+    ],
     "accessory_type": "universal",
-    "moq_unit": "pc"
+    "moq_unit": "pc",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-152",
+        "image": "images/products/excel-hamster-transparent-food-cup-50976f25.jpg",
+        "title": "Transparent Circular Food Cup — Transparent",
+        "source_row": 152,
+        "color": "Transparent"
+      }
+    ],
+    "default_image_variant": "excel-row-152",
+    "color_images": {
+      "Transparent": "images/products/excel-hamster-transparent-food-cup-50976f25.jpg"
+    }
   },
   {
     "id": "hamster-heat-lamp",
@@ -2346,20 +3765,36 @@ window.KANAPET_PRODUCTS = [
     "colors": [
       "White"
     ],
-    "image": "images/products/hamster-heat-lamp-v3.jpg",
-    "net_weight": "",
-    "gross_weight": "",
+    "image": "images/products/excel-hamster-heat-lamp-c60fc44e.jpg",
+    "net_weight": "0.26",
+    "gross_weight": "0.33",
     "cbm": "",
-    "material": "PET",
+    "material": "Ceramic + ABS + Metal",
     "type": "",
     "meas": "",
     "pcs_per_ctn": "",
     "color": "",
-    "accessories": "",
+    "accessories": "Heating element included",
     "notes": "MOQ: 50 pcs per model. Full-carton ordering is not required.",
-    "gallery": [],
+    "gallery": [
+      "images/products/excel-hamster-heat-lamp-c60fc44e.jpg"
+    ],
     "accessory_type": "universal",
-    "moq_unit": "pc"
+    "moq_unit": "pc",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-153",
+        "image": "images/products/excel-hamster-heat-lamp-c60fc44e.jpg",
+        "title": "Hamster Heat Lamp — White",
+        "source_row": 153,
+        "color": "White"
+      }
+    ],
+    "default_image_variant": "excel-row-153",
+    "color_images": {
+      "White": "images/products/excel-hamster-heat-lamp-c60fc44e.jpg"
+    }
   },
   {
     "id": "rabbit-650-cage",
@@ -2372,7 +3807,7 @@ window.KANAPET_PRODUCTS = [
     "colors": [
       "White"
     ],
-    "image": "images/products/gallery/rabbit-650-cage-scene-v4.jpg",
+    "image": "images/products/excel-rabbit-650-cage-ae244e5d.jpg",
     "net_weight": "7.065",
     "gross_weight": "9.08",
     "cbm": "",
@@ -2384,6 +3819,7 @@ window.KANAPET_PRODUCTS = [
     "accessories": "",
     "notes": "Each product is individually packed in one carton. MOQ: 100 pcs per model. Orders must be placed in full-carton quantities.",
     "gallery": [
+      "images/products/excel-rabbit-650-cage-ae244e5d.jpg",
       "images/products/rabbit-650-cage.jpg"
     ],
     "moq_unit": "pc",
@@ -2393,7 +3829,21 @@ window.KANAPET_PRODUCTS = [
       "Iron Wire",
       "Stainless Steel"
     ],
-    "carton_size": "70.5*51.5*22.5"
+    "carton_size": "70.5*51.5*22.5",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-157",
+        "image": "images/products/excel-rabbit-650-cage-ae244e5d.jpg",
+        "title": "650 Rabbit Cage — White",
+        "source_row": 157,
+        "color": "White"
+      }
+    ],
+    "default_image_variant": "excel-row-157",
+    "color_images": {
+      "White": "images/products/excel-rabbit-650-cage-ae244e5d.jpg"
+    }
   },
   {
     "id": "guinea-pig-650-cage",
@@ -2406,7 +3856,7 @@ window.KANAPET_PRODUCTS = [
     "colors": [
       "White"
     ],
-    "image": "images/products/guinea-pig-650-cage-scene.jpg",
+    "image": "images/products/excel-guinea-pig-650-cage-3671ed4c.jpg",
     "net_weight": "7.065",
     "gross_weight": "9.08",
     "cbm": "",
@@ -2418,6 +3868,7 @@ window.KANAPET_PRODUCTS = [
     "accessories": "",
     "notes": "Each product is individually packed in one carton. MOQ: 100 pcs per model. Orders must be placed in full-carton quantities.",
     "gallery": [
+      "images/products/excel-guinea-pig-650-cage-3671ed4c.jpg",
       "images/products/guinea-pig-650-cage.jpg"
     ],
     "moq_unit": "pc",
@@ -2427,7 +3878,21 @@ window.KANAPET_PRODUCTS = [
       "Iron Wire",
       "Stainless Steel"
     ],
-    "carton_size": "70.5*51.5*22.5"
+    "carton_size": "70.5*51.5*22.5",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-158",
+        "image": "images/products/excel-guinea-pig-650-cage-3671ed4c.jpg",
+        "title": "650 Guinea Pig Cage — White",
+        "source_row": 158,
+        "color": "White"
+      }
+    ],
+    "default_image_variant": "excel-row-158",
+    "color_images": {
+      "White": "images/products/excel-guinea-pig-650-cage-3671ed4c.jpg"
+    }
   },
   {
     "id": "cat-litter-box-75",
@@ -2440,7 +3905,7 @@ window.KANAPET_PRODUCTS = [
     "colors": [
       "White"
     ],
-    "image": "images/products/small-pet-cat-litter-box.jpg",
+    "image": "images/products/cat-litter-box-75-cat-white-v1.jpg",
     "net_weight": "3.777",
     "gross_weight": "6.5",
     "cbm": "",
@@ -2452,9 +3917,26 @@ window.KANAPET_PRODUCTS = [
     "accessories": "",
     "notes": "Each product is individually packed in a carton. Custom packaging is available.",
     "gallery": [
+      "images/products/cat-litter-box-75-cat-white-v1.jpg",
+      "images/products/excel-cat-litter-box-75-44376b9a.jpg",
       "images/products/gallery/cat-litter-box-75-scene-v3.jpg"
     ],
-    "moq_unit": "pc"
+    "moq_unit": "pc",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-161",
+        "image": "images/products/cat-litter-box-75-cat-white-v1.jpg",
+        "title": "29.1\" Cat Litter Box — White",
+        "source_row": 161,
+        "color": "White",
+        "source_note": "User-approved override 2026-11-03: white-background edit of existing gallery/cat-litter-box-75-scene-v3.jpg; not an Excel photo."
+      }
+    ],
+    "default_image_variant": "excel-row-161",
+    "color_images": {
+      "White": "images/products/cat-litter-box-75-cat-white-v1.jpg"
+    }
   },
   {
     "id": "cat-feeder-automatic",
@@ -2477,43 +3959,62 @@ window.KANAPET_PRODUCTS = [
       "Pink",
       "Gray"
     ],
-    "image": "images/products/cat-feeder-automatic.jpg",
+    "image": "images/products/excel-pet-feeder-2in1-white-35c34638.jpg",
     "net_weight": "0.872",
     "gross_weight": "2",
     "cbm": "",
     "material": "PP+ABS+PET",
     "type": "",
-    "meas": "",
+    "meas": "38*23*33",
     "pcs_per_ctn": "1",
     "color": "",
     "accessories": "",
     "notes": "MOQ is 50 pieces per color. Each product is individually packed in a carton. Custom packaging is available.",
-    "gallery": [],
+    "gallery": [
+      "images/products/excel-pet-feeder-2in1-white-35c34638.jpg",
+      "images/products/excel-pet-feeder-2in1-blue-2015fb92.jpg",
+      "images/products/excel-pet-feeder-2in1-pink-cf40ac2d.jpg",
+      "images/products/excel-pet-feeder-2in1-gray-2f045337.jpg"
+    ],
     "moq_unit": "pc",
     "color_images": {
-      "White": "images/products/cat-feeder-automatic-white.jpg",
-      "Blue": "images/products/cat-feeder-automatic-blue.jpg",
-      "Pink": "images/products/cat-feeder-automatic-pink.jpg",
-      "Gray": "images/products/cat-feeder-automatic-gray.jpg"
+      "White": "images/products/excel-pet-feeder-2in1-white-35c34638.jpg",
+      "Blue": "images/products/excel-pet-feeder-2in1-blue-2015fb92.jpg",
+      "Pink": "images/products/excel-pet-feeder-2in1-pink-cf40ac2d.jpg",
+      "Gray": "images/products/excel-pet-feeder-2in1-gray-2f045337.jpg"
     },
-    "color_options": [
+    "image_source": "excel",
+    "image_variants": [
       {
-        "name": "White",
-        "image": "images/products/cat-feeder-automatic-white.jpg"
+        "id": "excel-row-162",
+        "image": "images/products/excel-pet-feeder-2in1-white-35c34638.jpg",
+        "title": "2-in-1 Gravity Cat Feeder & Water Dispenser — White",
+        "source_row": 162,
+        "color": "White"
       },
       {
-        "name": "Blue",
-        "image": "images/products/cat-feeder-automatic-blue.jpg"
+        "id": "excel-row-163",
+        "image": "images/products/excel-pet-feeder-2in1-blue-2015fb92.jpg",
+        "title": "2-in-1 Gravity Cat Feeder & Water Dispenser — Blue",
+        "source_row": 163,
+        "color": "Blue"
       },
       {
-        "name": "Pink",
-        "image": "images/products/cat-feeder-automatic-pink.jpg"
+        "id": "excel-row-164",
+        "image": "images/products/excel-pet-feeder-2in1-pink-cf40ac2d.jpg",
+        "title": "2-in-1 Gravity Cat Feeder & Water Dispenser — Pink",
+        "source_row": 164,
+        "color": "Pink"
       },
       {
-        "name": "Gray",
-        "image": "images/products/cat-feeder-automatic-gray.jpg"
+        "id": "excel-row-165",
+        "image": "images/products/excel-pet-feeder-2in1-gray-2f045337.jpg",
+        "title": "2-in-1 Gravity Cat Feeder & Water Dispenser — Gray",
+        "source_row": 165,
+        "color": "Gray"
       }
-    ]
+    ],
+    "default_image_variant": "excel-row-162"
   },
   {
     "id": "turtle-tank",
@@ -2526,7 +4027,7 @@ window.KANAPET_PRODUCTS = [
     "colors": [
       "Transparent"
     ],
-    "image": "images/products/turtle-tank-v4.jpg",
+    "image": "images/products/excel-turtle-tank-24e73dd9.jpg",
     "net_weight": "",
     "gross_weight": "",
     "cbm": "",
@@ -2538,9 +4039,284 @@ window.KANAPET_PRODUCTS = [
     "accessories": "",
     "notes": "MOQ: 500 pcs per model. Orders must be placed in full-carton quantities; units per carton are not yet confirmed.",
     "gallery": [
+      "images/products/excel-turtle-tank-24e73dd9.jpg",
       "images/products/gallery/turtle-tank-scene-v2.jpg"
     ],
-    "moq_unit": "pc"
+    "moq_unit": "pc",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-168",
+        "image": "images/products/excel-turtle-tank-24e73dd9.jpg",
+        "title": "Turtle Tank — Transparent",
+        "source_row": 168,
+        "color": "Transparent"
+      }
+    ],
+    "default_image_variant": "excel-row-168",
+    "color_images": {
+      "Transparent": "images/products/excel-turtle-tank-24e73dd9.jpg"
+    }
+  },
+  {
+    "id": "travel-feeding-set",
+    "slug": "travel-feeding-set",
+    "name": "Travel Bird Feeding Set",
+    "category": "bird-accessories",
+    "image": "images/products/excel-travel-feeding-set-1a424b76.jpg",
+    "gallery": [
+      "images/products/excel-travel-feeding-set-1a424b76.jpg"
+    ],
+    "moq_unit": "sets",
+    "material": "PET PS PP",
+    "colors": [
+      "Transparent"
+    ],
+    "moq": "20 sets",
+    "accessories": "1 small feed cup + 1 × 60 ml water bottle",
+    "notes": "Small feed cup and 60 ml water bottle supplied as one set. MOQ: 20 sets.",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-18",
+        "image": "images/products/excel-travel-feeding-set-1a424b76.jpg",
+        "title": "Travel Bird Feeding Set — Transparent",
+        "source_row": 18,
+        "color": "Transparent"
+      }
+    ],
+    "default_image_variant": "excel-row-18",
+    "color_images": {
+      "Transparent": "images/products/excel-travel-feeding-set-1a424b76.jpg"
+    }
+  },
+  {
+    "id": "bird-seed-huller",
+    "slug": "bird-seed-huller",
+    "name": "Bird Seed Husk Separator",
+    "category": "bird-accessories",
+    "image": "images/products/excel-bird-seed-huller-39631e1b.jpg",
+    "gallery": [
+      "images/products/excel-bird-seed-huller-39631e1b.jpg"
+    ],
+    "moq_unit": "sets",
+    "material": "ABS+PET",
+    "colors": [
+      "Orange + White"
+    ],
+    "moq": "Contact us",
+    "notes": "ABS + PET; Orange and White combination.",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-93",
+        "image": "images/products/excel-bird-seed-huller-39631e1b.jpg",
+        "title": "Bird Seed Husk Separator — Orange + White",
+        "source_row": 93,
+        "color": "Orange + White"
+      }
+    ],
+    "default_image_variant": "excel-row-93",
+    "color_images": {
+      "Orange + White": "images/products/excel-bird-seed-huller-39631e1b.jpg"
+    }
+  },
+  {
+    "id": "hamster-wheel-adapter",
+    "slug": "hamster-wheel-adapter",
+    "name": "Hamster Cage Caster Adapter Set",
+    "category": "hamster-accessories",
+    "image": "images/products/product-photo-pending.svg",
+    "gallery": [],
+    "moq_unit": "sets",
+    "size": "12×12×6",
+    "net_weight": "0.19 per set of 4",
+    "gross_weight": "0.23 per set of 4",
+    "material": "ABS",
+    "colors": [
+      "White"
+    ],
+    "accessories": "4 adapters",
+    "moq": "Selected with cage order",
+    "compatible_with": [
+      "hamster-62-cage",
+      "hamster-75-cage"
+    ],
+    "notes": "Set of 4 ABS adapters. Fits 62 and 75 hamster cages; selected with the cage order. Weights are per set."
+  },
+  {
+    "id": "hamster-70-bottom-mesh",
+    "slug": "hamster-70-bottom-mesh",
+    "name": "Bottom Grille for 70 Folding Cage",
+    "category": "hamster-accessories",
+    "image": "images/products/product-photo-pending.svg",
+    "gallery": [],
+    "moq_unit": "sets",
+    "material": "Powder-Coated Wire",
+    "colors": [
+      "White"
+    ],
+    "moq": "Selected with cage order",
+    "compatible_with": [
+      "hamster-70-folding-low",
+      "hamster-70-folding-high"
+    ],
+    "notes": "Separate bottom grille for the 70 folding cage; selected with the cage order."
+  },
+  {
+    "id": "hamster-wheel-13cm",
+    "slug": "hamster-wheel-13cm",
+    "name": "13 cm Hamster Exercise Wheel",
+    "category": "hamster-accessories",
+    "image": "images/products/excel-hamster-wheel-13cm-bc8f576d.jpg",
+    "gallery": [
+      "images/products/excel-hamster-wheel-13cm-bc8f576d.jpg"
+    ],
+    "moq_unit": "sets",
+    "material": "PP",
+    "colors": [
+      "Custom colors"
+    ],
+    "moq": "500 sets",
+    "accessories": "Plastic running wheel + plastic axle",
+    "notes": "Colors can be customized.",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-125",
+        "image": "images/products/excel-hamster-wheel-13cm-bc8f576d.jpg",
+        "title": "13 cm Hamster Exercise Wheel",
+        "source_row": 125
+      }
+    ],
+    "default_image_variant": "excel-row-125",
+    "color_images": {}
+  },
+  {
+    "id": "hamster-multifunction-wall-mount",
+    "slug": "hamster-multifunction-wall-mount",
+    "name": "Multipurpose Cage Mounting Bracket",
+    "category": "hamster-accessories",
+    "image": "images/products/excel-hamster-multifunction-wall-mount-ba274411.jpg",
+    "gallery": [
+      "images/products/excel-hamster-multifunction-wall-mount-ba274411.jpg"
+    ],
+    "moq_unit": "pc",
+    "colors": [
+      "White"
+    ],
+    "moq": "200 pcs",
+    "notes": "White is the main color. Pink, Blue, Purple and other colors: enquire about stock. Compatible with 43, 62 and 75 cages; for running wheels or water bottles.",
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-126",
+        "image": "images/products/excel-hamster-multifunction-wall-mount-ba274411.jpg",
+        "title": "Multipurpose Cage Mounting Bracket",
+        "source_row": 126
+      }
+    ],
+    "default_image_variant": "excel-row-126",
+    "color_images": {}
+  },
+  {
+    "id": "hamster-pipe-set-43",
+    "slug": "hamster-pipe-set-43",
+    "name": "Wraparound Tube Set for 43 Hamster Cage",
+    "category": "hamster-accessories",
+    "image": "images/products/excel-hamster-pipe-set-43-46a6a0d3.jpg",
+    "gallery": [
+      "images/products/excel-hamster-pipe-set-43-46a6a0d3.jpg"
+    ],
+    "moq_unit": "sets",
+    "meas": "29*17*19",
+    "net_weight": "0.47",
+    "gross_weight": "0.62",
+    "moq": "50 sets",
+    "notes": "Tube set running once around the 43 cage. Display shows a suggested setup; cage and other display accessories are not included. MOQ: 50 sets.",
+    "compatible_with": [
+      "hamster-43-cage"
+    ],
+    "colors": [],
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-154",
+        "image": "images/products/excel-hamster-pipe-set-43-46a6a0d3.jpg",
+        "title": "Wraparound Tube Set for 43 Hamster Cage",
+        "source_row": 154
+      }
+    ],
+    "default_image_variant": "excel-row-154",
+    "color_images": {}
+  },
+  {
+    "id": "hamster-pipe-set-62",
+    "slug": "hamster-pipe-set-62",
+    "name": "Wraparound Tube Set for 62 Hamster Cage",
+    "category": "hamster-accessories",
+    "image": "images/products/excel-hamster-pipe-set-62-bdacc349.jpg",
+    "gallery": [
+      "images/products/excel-hamster-pipe-set-62-bdacc349.jpg"
+    ],
+    "moq_unit": "sets",
+    "meas": "35*19*23",
+    "net_weight": "0.55",
+    "gross_weight": "0.76",
+    "moq": "50 sets",
+    "notes": "Tube set running once around the 62 cage. Display shows a suggested setup; cage and other display accessories are not included. MOQ: 50 sets.",
+    "compatible_with": [
+      "hamster-62-cage"
+    ],
+    "colors": [],
+    "image_source": "excel",
+    "image_variants": [
+      {
+        "id": "excel-row-155",
+        "image": "images/products/excel-hamster-pipe-set-62-bdacc349.jpg",
+        "title": "Wraparound Tube Set for 62 Hamster Cage",
+        "source_row": 155
+      }
+    ],
+    "default_image_variant": "excel-row-155",
+    "color_images": {}
+  },
+  {
+    "id": "hay-rack",
+    "slug": "hay-rack",
+    "name": "Hay Rack",
+    "category": "other-small-pets",
+    "image": "images/products/product-photo-pending.svg",
+    "gallery": [],
+    "moq_unit": "pc",
+    "colors": [
+      "Custom colors"
+    ],
+    "moq": "500 pcs",
+    "notes": "Colors can be customized.",
+    "display_category": "Rabbit & Guinea Pig Accessories"
+  },
+  {
+    "id": "hamster-70-reptile-fine-mesh",
+    "slug": "hamster-70-reptile-fine-mesh",
+    "name": "70 Folding Reptile Cage Set with Fine Mesh",
+    "category": "other-small-pets",
+    "image": "images/products/product-photo-pending.svg",
+    "gallery": [],
+    "moq_unit": "sets",
+    "material": "PET + ABS + Powder-Coated Wire",
+    "size": "70*43*34",
+    "meas": "75*49*12",
+    "gross_weight": "5.57",
+    "pcs_per_ctn": "1",
+    "net_weight": "4.42",
+    "colors": [
+      "White"
+    ],
+    "accessories": "Standard-height cage + fine mesh + 5 feet",
+    "moq": "100 sets",
+    "notes": "Complete cage set with 5 feet included. A set of 4 casters is optional and purchased separately. Individually packed in a carton. MOQ: 100 sets per model. Includes fine mesh; designed for reptiles, using the standard-height 70 folding cage.",
+    "display_category": "Reptile Habitats"
   }
 ];
 window.KANAPET_CATEGORIES = {

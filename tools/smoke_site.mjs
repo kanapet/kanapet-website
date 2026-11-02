@@ -57,7 +57,7 @@ function canonicalFrom(html) {
 
 async function run(baseUrl) {
   const products = JSON.parse(await readFile(resolve(ROOT, 'data/products.json'), 'utf8'));
-  assert.equal(products.length, 71, 'expected 71 products');
+  assert.ok(products.length >= 71, 'catalog must retain the existing products');
   assert.equal(new Set(products.map(product => product.slug )).size, products.length, 'product slugs must be unique');
 
   const sitemap = await readFile(resolve(ROOT, 'sitemap.xml'), 'utf8');

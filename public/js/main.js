@@ -61,8 +61,65 @@ function renderSwatches(colors, size = 'small', activeColor = null, productId = 
   return `<div class="color-swatches">${swatches}${label}</div>`;
 }
 
+
+// Resolve material and color together; never show another combination as a fallback.
+const productImageSelections = new Map();
+function resolveProductImageVariant(product, selection) {
+  return product.image_variants?.find(variant => !variant.gallery_only &&
+    ['material', 'color', 'configuration'].every(key => !selection[key] || variant[key] === selection[key])) || null;
+}
+function selectProductImageVariant(productId, change) {
+  const product = products.find(item => item.id === productId);
+  if (!product?.image_variants?.length) return;
+  const initial = product.image_variants.find(item => item.id === product.default_image_variant) || product.image_variants[0];
+  const current = productImageSelections.get(productId) || Object.fromEntries(
+    ['material', 'color', 'configuration'].filter(key => initial[key]).map(key => [key, initial[key]]));
+  const selection = {...current, ...change};
+  productImageSelections.set(productId, selection);
+  const variant = resolveProductImageVariant(product, selection);
+  const detail = document.getElementById('product-detail');
+  if (!detail) return;
+  detail.dataset.variantImage = variant?.image || '';
+  detail.dataset.variantSelected = 'true';
+  const mainImage = document.getElementById('product-main-image');
+  const message = document.getElementById('variant-photo-status');
+  const label = ['material', 'color', 'configuration'].map(key => selection[key]).filter(Boolean).join(' / ');
+  detail.dataset.variantLabel = label;
+  if (variant && mainImage) {
+    mainImage.style.display = '';
+    setMainImage(mainImage, absImg(variant.image), variant.title || product.name);
+  }
+  if (!variant && mainImage) mainImage.style.display = 'none';
+  if (message) message.textContent = variant ? label : `Photo for ${label || 'this option'} is not available yet. Please enquire.`;
+  detail.querySelectorAll('[data-variant-dimension]').forEach(button => {
+    const active = selection[button.dataset.variantDimension] === button.dataset.variantValue;
+    button.classList.toggle('active', active);
+    button.setAttribute('aria-pressed', String(active));
+  });
+  detail.dispatchEvent(new CustomEvent('kanapet:variant-image', {detail:{variant, selection, label}}));
+}
+
+function renderProductImageOptions(product) {
+  if (!product.image_variants?.length) return '';
+  const escape = value => String(value).replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;');
+  const initial = product.image_variants.find(v => v.id === product.default_image_variant) || product.image_variants[0];
+  const groups = [
+    ['material','Material',(product.material_options || []).map(v=>v.name)],
+    ['color','Color',product.colors || []],
+    ['configuration','Configuration',product.configuration_options || []]
+  ];
+  return '<div id="product-image-options">' + groups.filter(([, , values])=>values.length>1).map(([key,title,values])=>
+    `<div class="variant-option-group" role="group" aria-label="${title}"><h3>${title}</h3><div class="variant-options">${values.map(value=>{
+      const selected = initial[key]===value;
+      const onclick = escape(`selectProductImageVariant(${JSON.stringify(product.id)}, ${JSON.stringify({[key]:value})})`);
+      return `<button type="button" class="variant-option ${selected?'active':''}" data-variant-dimension="${key}" data-variant-value="${escape(value)}" aria-pressed="${selected}" onclick="${onclick}">${key==='color'?`<span class="variant-color-dot" style="background:${COLOR_MAP[value] || '#fff'}"></span>`:''}${escape(value)}</button>`;
+    }).join('')}</div></div>`).join('') + '<p id="variant-photo-status" role="status" aria-live="polite"></p></div>';
+}
+
 // Switch product image by color
 function switchProductColor(productId, colorName) {
+  const bound = products.find(p => p.id === productId);
+  if (bound?.image_variants?.length) { selectProductImageVariant(productId, {color: colorName}); return; }
   const product = products.find(p => p.id === productId);
   if (!product || !product.color_images) return;
   
@@ -87,6 +144,12 @@ function switchProductColor(productId, colorName) {
 
 // Switch product image by material/configuration
 function switchProductMaterial(productId, materialIndex) {
+  const bound = products.find(p => p.id === productId);
+  if (bound?.image_variants?.length) {
+    const name = bound.material_options?.[materialIndex]?.name;
+    if (name) selectProductImageVariant(productId, {material: name});
+    return;
+  }
   const product = products.find(p => p.id === productId);
   if (!product || !product.material_options) return;
   
@@ -136,7 +199,7 @@ async function loadData() {
 async function applyPublishedCovers() {
   if(location.protocol==='file:')return;
   const covers=window.KANAPET_MEDIA_COVERS ?? (await fetch('/api/media/covers',{cache:'no-store'}).then(r=>r.ok?r.json():{}).then(d=>d.covers||{}).catch(()=>({})));
-  products=products.map(p=>covers[p.slug]?.src?{...p,image:covers[p.slug].src,mediaCover:true}:p);
+  products=products.map(p=>p.image_source!=='excel'&&covers[p.slug]?.src?{...p,image:covers[p.slug].src,mediaCover:true}:p);
 }
 
 // Format size: cm primary + inch conversion
@@ -219,7 +282,7 @@ function formatMoq(moq) {
 // Display taxonomy for the catalog. Product data keeps its original category IDs
 // so existing product pages and legacy ?cat= links remain compatible.
 const BIRD_STAND_IDS = new Set(['bird-400-frame', 'bird-470-frame', 'bird-490-climbing-rack']);
-const HAMSTER_EXERCISE_PATTERN = /Running Wheel|Exercise Disc|Running Ball/;
+const HAMSTER_EXERCISE_PATTERN = /Running Wheel|Exercise Wheel|Exercise Disc|Running Ball/;
 const CATALOG_GROUPS = [
   { id: 'all', label: 'All Products', matches: () => true },
   {
@@ -230,7 +293,7 @@ const CATALOG_GROUPS = [
       { id: 'stands', label: 'Cage Stands', matches: p => BIRD_STAND_IDS.has(p.id) },
       { id: 'smart-products', label: 'Smart Bird Products', matches: p => p.category === 'smart-pet-products' },
       { id: 'accessories', label: 'Accessories', matches: p => p.category === 'bird-accessories', subcategories: [
-        { id: 'feeding', label: 'Feeders & Water Bottles', matches: p => ['bird-feeder-cup-no1','bird-feeder-cup-no3-white','bird-feeder-cup-no3-transparent-hook','bird-feeder-cup-no4','bird-feeder-cup-no10','bird-feeding-cup-spring-door','bird-feeder-cup-anti-spill','bird-no-mess-parrot-feeder','bird-130ml-kettle','bird-200ml-kettle'].includes(p.id) },
+        { id: 'feeding', label: 'Feeders & Water Bottles', matches: p => ['bird-feeder-cup-no1','bird-feeder-cup-no3-white','bird-feeder-cup-no3-transparent-hook','bird-feeder-cup-no4','bird-feeder-cup-no10','bird-feeding-cup-spring-door','bird-feeder-cup-anti-spill','bird-no-mess-parrot-feeder','bird-130ml-kettle','bird-200ml-kettle','travel-feeding-set','bird-seed-huller'].includes(p.id) },
         { id: 'care', label: 'Bird Baths & Care', matches: p => ['bird-bathroom-small','bird-space-bathroom-regular','bird-space-bathroom-grate'].includes(p.id) },
         { id: 'breeding', label: 'Nests & Breeding Boxes', matches: p => ['bird-parrot-nest','bird-parrot-nest-small','bird-parrot-nest-large','bird-breeding-box'].includes(p.id) },
         { id: 'enrichment', label: 'Toys & Perches', matches: p => ['bird-windmill-toy','bird-perch-stick'].includes(p.id) },
@@ -246,9 +309,9 @@ const CATALOG_GROUPS = [
       { id: 'exercise', label: 'Exercise & Play', matches: p => p.category === 'hamster-accessories' && HAMSTER_EXERCISE_PATTERN.test(p.name) },
     ],
   },
-  { id: 'rabbits-guinea-pigs', label: 'Rabbit & Small Pet Supplies', matches: p => ['rabbit-650-cage', 'guinea-pig-650-cage'].includes(p.id) },
+  { id: 'rabbits-guinea-pigs', label: 'Rabbit & Small Pet Supplies', matches: p => ['rabbit-650-cage', 'guinea-pig-650-cage', 'hay-rack'].includes(p.id) },
   { id: 'cat', label: 'Cat Care Products', matches: p => p.id === 'cat-litter-box-75' || p.id === 'cat-feeder-automatic' },
-  { id: 'reptile', label: 'Reptile Habitats', matches: p => p.id === 'turtle-tank' },
+  { id: 'reptile', label: 'Reptile Habitats', matches: p => ['turtle-tank', 'hamster-70-reptile-fine-mesh'].includes(p.id) },
 ];
 
 const LEGACY_CATEGORY_TO_CATALOG = {
@@ -471,8 +534,7 @@ function renderProductDetail() {
 
   const materials = p.material || 'Material specifications available on request.';
   
-  let accessories = 'Contact us for complete accessory list';
-  if (isCage) accessories = 'Feeding cups, perches/stands, water bottle (varies by model)';
+  const accessories = p.accessories || 'Contact us for the accessory configuration.';
   
   const descriptionHTML = `
     <div style="margin:20px 0;">
@@ -481,14 +543,14 @@ function renderProductDetail() {
         ${keyFeatures.map(f => `<li>${f}</li>`).join('')}
       </ul>
     </div>
-    <div style="margin:20px 0;">
+    ${p.material ? `<div style="margin:20px 0;">
       <h3 style="font-size:16px;margin-bottom:10px;color:var(--text);">Materials</h3>
       <p style="color:var(--text-light);font-size:14px;margin:0;">${materials}</p>
-    </div>
-    <div style="margin:20px 0;">
+    </div>` : ''}
+    ${p.accessories ? `<div style="margin:20px 0;">
       <h3 style="font-size:16px;margin-bottom:10px;color:var(--text);">Included Accessories</h3>
       <p style="color:var(--text-light);font-size:14px;margin:0;">${accessories}</p>
-    </div>
+    </div>` : ''}
     <div style="margin:20px 0;">
       <h3 style="font-size:16px;margin-bottom:10px;color:var(--text);">Customization</h3>
       <p style="color:var(--text-light);font-size:14px;margin:0;">We offer OEM/ODM services including custom colors, logo printing, custom packaging and private label. Minimum order quantities apply — contact us for details.</p>
@@ -508,7 +570,9 @@ function renderProductDetail() {
   if (p.cbm) specs.push(['CBM', p.cbm + ' m³']);
   if (p.pcs_per_ctn) specs.push(['PCS per Carton', p.pcs_per_ctn]);
   if (p.color) specs.push(['Color', p.color]);
+  if (p.colors?.length) specs.push(['Available Colors', p.colors.join('; ')]);
   if (p.accessories) specs.push(['Included Accessories', p.accessories]);
+  if (p.configuration_options?.length) specs.push(['Available Versions', p.configuration_options.join('; ')]);
   specs.push(['MOQ', formatMoq(p.moq) || 'Contact for order-specific MOQ']);
   if (p.notes) specs.push(['Notes', p.notes]);
 
@@ -575,12 +639,13 @@ function renderProductDetail() {
       <div style="font-size:13px;color:var(--primary);font-weight:600;margin-bottom:8px;">${catName}</div>
       <h1>${p.name}</h1>
       <div class="product-sku">SKU: ${p.sku || p.id.toUpperCase()} | OEM/ODM Available</div>
-      ${p.colors && p.colors.length > 1 ? `
+      ${renderProductImageOptions(p)}
+      ${!p.image_variants?.length && p.colors && p.colors.length > 1 ? `
       <div class="product-colors">
         <h3>Available Colors</h3>
         ${renderSwatches(p.colors, 'large', p.colors[0], p.id, p.color_swatches)}
       </div>` : ''}
-      ${p.material_options && p.material_options.length > 1 ? `
+      ${!p.image_variants?.length && p.material_options && p.material_options.length > 1 ? `
       <div class="product-colors">
         <h3>Material / Configuration</h3>
         <div class="material-options">

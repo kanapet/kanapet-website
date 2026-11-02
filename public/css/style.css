@@ -1415,3 +1415,15 @@ footer {
 
 /* Match the rabbit scene subject scale to the square guinea-pig scene. */
 .product-img img[src*="rabbit-650-cage-scene-v4"] { transform: scale(1.35); transform-origin: center; }
+
+/* Product photo choices share one material/color/configuration state. */
+.variant-option-group { margin: 18px 0; }
+.variant-option-group h3 { font-size: 14px; margin: 0 0 10px; }
+.variant-options { display: flex; flex-wrap: wrap; gap: 8px; }
+.variant-option { min-height: 44px; padding: 9px 13px; border: 1px solid #d1d5db; border-radius: 6px; background: white; color: var(--text); font: inherit; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; }
+.variant-option:hover { border-color: var(--primary); }
+.variant-option.active { border-color: var(--primary); background: var(--primary); color: white; }
+.variant-option:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+.variant-color-dot { display: inline-block; width: 16px; height: 16px; border-radius: 50%; border: 1px solid #9ca3af; flex: 0 0 auto; }
+#variant-photo-status { font-size: 14px; line-height: 1.5; margin: 10px 0; color: var(--text-light); }
+.variant-photo-unavailable { min-height: 240px; padding: 40px 24px; align-items: center; justify-content: center; text-align: center; background: #f5f6f7; color: #667085; }

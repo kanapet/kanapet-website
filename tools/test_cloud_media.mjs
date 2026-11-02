@@ -89,7 +89,7 @@ try{
  const colorEndpoint='/api/admin/products/bird-travel-42';
  r=await req(colorEndpoint);let colorRecord=await r.json();
  assert.ok(colorRecord.colors.includes('Pink'));
- assert.ok(colorRecord.draft.items.some(i=>i.colors?.includes('Pink')&&i.src.endsWith('bird-travel-42_pink.jpg')),'Existing catalog color photos are visible');
+ assert.ok(colorRecord.draft.items.some(i=>i.colors?.includes('Pink')&&i.src.endsWith(JSON.parse(readFileSync(new URL('../public/data/products.json',import.meta.url),'utf8')).find(p=>p.id==='bird-travel-42').color_images.Pink)),'Existing catalog color photos are visible');
  const colorItems=colorRecord.draft.items.map(i=>({...i,colors:(i.colors||[]).filter(c=>c!=='Pink')}));
  colorItems[0].colors.push('Pink');
  r=await req(colorEndpoint,{method:'PUT',headers:{'If-Match':String(colorRecord.draft.revision)},data:{items:colorItems}});assert.equal(r.status,200);colorRecord=await r.json();

@@ -137,7 +137,7 @@ def rewrite_legacy_asset_references(source):
 def meta_description(product, category):
     if product['slug'] == 'hamster-43-cage':
         size = format_size(product.get('size')).split(' (')[0]
-        return f"43 Transparent Hamster Cage wholesale: {size}. PET enclosure, ABS parts; opening or non-opening version. MOQ from {format_moq(product.get('moq'))}. Request a quote."
+        return f"43 Transparent Hamster Cage wholesale: {size}. PET enclosure; opening or non-opening version. MOQ from {format_moq(product.get('moq'))}. Request a quote."
     if product['slug'] in PRIORITY:
         name = PRIORITY[product['slug']]
         size = format_size(product.get('size')).split(' (')[0]
@@ -192,8 +192,9 @@ def product_schema(product, category):
     if product.get('configuration_options'):
         schema['additionalProperty'] = [
             {'@type': 'PropertyValue', 'name': 'Available versions', 'value': '; '.join(product['configuration_options'])},
-            {'@type': 'PropertyValue', 'name': 'Tunnel expansion', 'value': product['expansion_note']},
         ]
+    if product.get('expansion_note'):
+        schema.setdefault('additionalProperty', []).append({'@type': 'PropertyValue', 'name': 'Tunnel expansion', 'value': product['expansion_note']})
     return schema
 
 
@@ -234,7 +235,9 @@ def specs_html(product):
     add("CBM", product.get("cbm"), " m³")
     add("PCS per Carton", product.get("pcs_per_ctn"))
     add("Color", product.get("color"))
+    add("Available Colors", "; ".join(product.get("colors", [])))
     add("Included Accessories", product.get("accessories"))
+    add("Available Versions", "; ".join(product.get("configuration_options", [])))
     add("MOQ", format_moq(product.get("moq")) or "Contact for order-specific MOQ")
     add("Notes", product.get("notes"))
     return "\n".join(f"        <tr><th>{text(label)}</th><td>{text(value)}</td></tr>" for label, value in rows)
@@ -276,10 +279,51 @@ def transparent_cage_guide(products):
     return content
 
 
+
+def image_variant_controls(product):
+    variants = product.get('image_variants', [])
+    if not variants:
+        return ''
+    initial = next((v for v in variants if v['id'] == product.get('default_image_variant')), variants[0])
+    groups = [
+        ('material', 'Material', [item['name'] for item in product.get('material_options', [])]),
+        ('color', 'Color', product.get('colors', [])),
+        ('configuration', 'Configuration', product.get('configuration_options', [])),
+    ]
+    sections = []
+    for key, title, values in groups:
+        if len(values) < 2:
+            continue
+        buttons = []
+        for value in values:
+            active = value == initial.get(key)
+            payload = compact_json({key: value})
+            handler = 'selectProductImageVariant(' + compact_json(product['id']) + ', ' + payload + ')'
+            color = COLOR_MAP.get(value.lower()) if key == 'color' else None
+            dot = '<span class="variant-color-dot" style="background:' + text(color or '#fff') + '"></span>' if key == 'color' else ''
+            buttons.append('<button type="button" class="variant-option' + (' active' if active else '') + '" data-variant-dimension="' + key + '" data-variant-value="' + text(value) + '" aria-pressed="' + str(active).lower() + '" onclick="' + text(handler) + '">' + dot + text(value) + '</button>')
+        sections.append('<div class="variant-option-group" role="group" aria-label="' + title + '"><h3>' + title + '</h3><div class="variant-options">' + ''.join(buttons) + '</div></div>')
+    return '<div id="product-image-options">' + ''.join(sections) + '<p id="variant-photo-status" role="status" aria-live="polite"></p></div>'
+
 def sync_page(source, product, categories):
     category = categories[product["category"]]["name"]
     slug = product["slug"]
     url = f"{SITE}/product/{slug}.html"
+    source = re.sub(r'(<h1[^>]*>).*?(</h1>)', lambda m: m[1] + text(product['name']) + m[2], source, count=1, flags=re.DOTALL)
+    if text(product['name']) not in re.search(r'<title>(.*?)</title>', source).group(1):
+        source = re.sub(r'<title>.*?</title>', lambda m: '<title>' + text(product['name']) + ' Wholesale | KANAPET</title>', source, count=1)
+    if text(product['name']) not in re.search(r'<meta property="og:title" content="([^"]*)', source).group(1):
+        source = re.sub(r'(<meta property="og:title" content=").*?("\s*/?>)', lambda m: m[1] + text(product['name']) + ' Wholesale | KANAPET' + m[2], source, count=1)
+    source = re.sub(r'(/contact\.html\?product=)[^"&]*', lambda m: m[1] + quote(product['name'], safe=''), source)
+    source = re.sub(r'(https://wa\.me/8615625986407\?text=)[^"]*', lambda m: m[1] + quote('Hi Kanapet, I am interested in ' + product['name'], safe=''), source)
+    accessory_pattern = r'(<h3[^>]*>Included Accessories</h3>\s*<p[^>]*>).*?(</p>)'
+    if product.get('accessories'):
+        source = re.sub(accessory_pattern, lambda m: m[1] + text(product['accessories']) + m[2], source, flags=re.DOTALL)
+    else:
+        source = re.sub(r'<div style="margin:20px 0;">\s*<h3[^>]*>Included Accessories</h3>\s*<p[^>]*>.*?</p>\s*</div>', '', source, flags=re.DOTALL)
+    category_query = 'group=reptile' if product['id'] == 'hamster-70-reptile-fine-mesh' else 'group=rabbits-guinea-pigs' if product['id'] == 'hay-rack' else 'cat=' + text(product['category'])
+    source = re.sub(r'(<div[^>]*id="breadcrumb"[^>]*>).*?(</div>)', lambda m: m[1] + '<a href="/">Home</a> / <a href="/products.html">Products</a> / <a href="/products.html?' + category_query + '">' + text(product.get('display_category', category)) + '</a> / ' + text(product['name']) + m[2], source, count=1, flags=re.DOTALL)
+    source = re.sub(r'(<div class="product-detail-info">\s*<div[^>]*>).*?(</div>)', lambda m: m[1] + text(product.get('display_category', category)) + m[2], source, count=1, flags=re.DOTALL)
     description = meta_description(product, category)
     escaped_description = text(description)
     if slug in PRIORITY:
@@ -299,7 +343,7 @@ def sync_page(source, product, categories):
                 '<section id="procurement-guide" style="margin:24px 0;">'
                 '<h2 style="font-size:20px;">43 transparent hamster cage: wholesale ordering guide</h2>'
                 '<p>Model 43 measures ' + text(format_size(product.get('size'))) + '. The model number is not an exact width measurement. '
-                'The transparent enclosure is PET, with ABS components; it is not an acrylic enclosure.</p>'
+                'The transparent enclosure is PET. Four feet are included; other accessories are sold separately.</p>'
                 '<h3>Choose the opening or non-opening version</h3><ul style="padding-left:20px;line-height:1.8;">' + options + '</ul>'
                 '<p>' + text(product['expansion_note']) + '</p>'
                 '<h3>MOQ and carton packing</h3><p>Catalog MOQ: ' + text(format_moq(product.get('moq'))) + '. '
@@ -405,14 +449,22 @@ def sync_page(source, product, categories):
             attrs = ' onclick="switchProductColor(\'' + product['id'] + '\', \'' + color + '\')" role="button" tabindex="0" onkeydown="if(event.key===\'Enter\'||event.key===\' \'){event.preventDefault();this.click();}"'
             swatch_html = swatch_html.replace(marker, marker + attrs, 1)
         source = re.sub(r'<div class="color-swatches">.*?</div>', lambda m: swatch_html, source, count=1, flags=re.DOTALL)
+    for index, option in enumerate(product.get('material_options', [])):
+        pattern = r'(<button[^>]*onclick="switchProductMaterial\(\'' + re.escape(product['id']) + r'\', ' + str(index) + r'\)"[^>]*>).*?(</button>)'
+        source = re.sub(pattern, lambda m: m[1] + text(option['name']) + m[2], source)
+    if product.get('image_variants'):
+        source = re.sub(r'<div id="product-image-options">.*?</p></div>\n?', '', source, flags=re.DOTALL)
+        source = re.sub(r'<div class="product-colors">.*?</div>\s*</div>', '', source, flags=re.DOTALL)
+        source = replace_once(source, r'(<table class="spec-table">)', lambda m: image_variant_controls(product) + '\n' + m[1], slug + ' image selectors')
     material = product.get("material") or "Material specifications available on request."
-    source = replace_once(
-        source,
+    source = re.sub(
         r'(<h3[^>]*>Materials</h3>\s*<p[^>]*>).*?(</p>)',
         lambda match: match.group(1) + text(material) + match.group(2),
-        f"{slug} material",
-        re.DOTALL,
+        source,
+        count=1, flags=re.DOTALL,
     )
+    if not product.get("material"):
+        source = re.sub(r'<div style="margin:20px 0;">\s*<h3[^>]*>Materials</h3>\s*<p[^>]*>.*?</p>\s*</div>', "", source, flags=re.DOTALL)
     source = source.replace(
         "Made from food-grade, pet-safe materials",
         "Designed for routine installation, use and cleaning",
@@ -449,6 +501,19 @@ def sync_page(source, product, categories):
             lambda match: match.group(1) + variant_image + match.group(2),
             source,
         )
+    by_slug = {item['slug']: item for item in categories['_products']}
+    def refresh_related_card(match):
+        card = match.group()
+        linked = re.search(r"/product/([^'\"]+)\.html", card)
+        related = by_slug.get(linked[1]) if linked else None
+        if not related:
+            return card
+        card = re.sub(r'(<h3[^>]*>).*?(</h3>)', lambda m: m[1] + text(related['name']) + m[2], card, count=1)
+        card = re.sub(r'(<img[^>]*src=")[^"]*("[^>]*alt=")[^"]*(")', lambda m: m[1] + '/' + text(related['image']) + m[2] + text(related['name']) + m[3], card, count=1)
+        card = re.sub(r'(<p class="related-product-size">).*?(</p>)', lambda m: m[1] + text(format_size(related.get('size'))) + m[2], card, count=1)
+        return card
+    source = re.sub(r'<div class="related-product-card"[^>]*>.*?<div class="related-product-info">.*?</div>\s*</div>', refresh_related_card, source, flags=re.DOTALL)
+    source = "\n".join(line.rstrip() for line in source.split("\n"))
     return source
 
 
