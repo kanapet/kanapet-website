@@ -831,7 +831,7 @@ window.KANAPET_PRODUCTS = [
     "colors": [
       "White"
     ],
-    "image": "images/products/bird-650-glass-a01-front-closed-20261103.jpg",
+    "image": "images/products/bird-650-glass-white-open-top-hero-20261103.jpg",
     "net_weight": "10.15",
     "gross_weight": "11.36",
     "cbm": "",
@@ -843,6 +843,7 @@ window.KANAPET_PRODUCTS = [
     "accessories": "2 clear feed cups + 2 perches + 1 top perch",
     "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
     "gallery": [
+      "images/products/bird-650-glass-white-open-top-hero-20261103.jpg",
       "images/products/bird-650-glass-a01-front-closed-20261103.jpg",
       "images/products/bird-650-glass-a02-front-30-20261103.jpg",
       "images/products/bird-650-glass-a03-front-45-20261103.jpg",
@@ -859,32 +860,39 @@ window.KANAPET_PRODUCTS = [
     "material_options": [
       {
         "name": "Iron Wire",
-        "image": "images/products/bird-650-glass-a01-front-closed-20261103.jpg"
+        "image": "images/products/bird-650-glass-white-open-top-hero-20261103.jpg"
       },
       {
         "name": "304 Stainless Steel",
-        "image": "images/products/bird-650-glass-a01-front-closed-20261103.jpg"
+        "image": "images/products/bird-650-glass-white-open-top-hero-20261103.jpg"
       }
     ],
     "image_source": "excel",
     "image_variants": [
       {
         "id": "excel-row-40",
-        "image": "images/products/bird-650-glass-a01-front-closed-20261103.jpg",
+        "image": "images/products/bird-650-glass-white-open-top-hero-20261103.jpg",
         "title": "650 Transparent Glass Door Birdcage — Iron Wire / White",
         "source_row": 40,
         "color": "White",
         "material": "Iron Wire",
-        "source_note": "User-selected 650 single-layer glass-door render, 2026-11-03; replaces the former shared Excel photo."
+        "source_note": "User-selected white-background open-top image, 2026-11-03; replaces the former hero."
       },
       {
         "id": "excel-row-41",
-        "image": "images/products/bird-650-glass-a01-front-closed-20261103.jpg",
+        "image": "images/products/bird-650-glass-white-open-top-hero-20261103.jpg",
         "title": "650 Transparent Glass Door Birdcage — 304 Stainless Steel / White",
         "source_row": 41,
         "color": "White",
         "material": "304 Stainless Steel",
-        "source_note": "User-selected 650 single-layer glass-door render, 2026-11-03; replaces the former shared Excel photo."
+        "source_note": "User-selected white-background open-top image, 2026-11-03; replaces the former hero."
+      },
+      {
+        "id": "render-a01-front-closed",
+        "image": "images/products/bird-650-glass-a01-front-closed-20261103.jpg",
+        "title": "650 Transparent Glass Door Birdcage — Front view, glass doors closed",
+        "gallery_only": true,
+        "source_note": "Previous user-selected hero retained in gallery."
       },
       {
         "id": "render-a02-front-30",
@@ -959,7 +967,7 @@ window.KANAPET_PRODUCTS = [
     ],
     "default_image_variant": "excel-row-40",
     "color_images": {
-      "White": "images/products/bird-650-glass-a01-front-closed-20261103.jpg"
+      "White": "images/products/bird-650-glass-white-open-top-hero-20261103.jpg"
     }
   },
   {
