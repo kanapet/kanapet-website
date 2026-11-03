@@ -830,7 +830,7 @@
     "colors": [
       "White"
     ],
-    "image": "images/products/excel-bird-650-glass-iron-9d68cfb6.jpg",
+    "image": "images/products/bird-650-glass-a01-front-closed-20261103.jpg",
     "net_weight": "10.15",
     "gross_weight": "11.36",
     "cbm": "",
@@ -842,41 +842,123 @@
     "accessories": "2 clear feed cups + 2 perches + 1 top perch",
     "notes": "Each cage is individually packaged. Custom packaging available upon request. Contact us for details.",
     "gallery": [
-      "images/products/excel-bird-650-glass-iron-9d68cfb6.jpg"
+      "images/products/bird-650-glass-a01-front-closed-20261103.jpg",
+      "images/products/bird-650-glass-a02-front-30-20261103.jpg",
+      "images/products/bird-650-glass-a03-front-45-20261103.jpg",
+      "images/products/bird-650-glass-a04-front-60-20261103.jpg",
+      "images/products/bird-650-glass-a05-side-20261103.jpg",
+      "images/products/bird-650-glass-a06-rear-135-20261103.jpg",
+      "images/products/bird-650-glass-a07-rear-20261103.jpg",
+      "images/products/bird-650-glass-b04-tabletop-open-top-20261103.jpg",
+      "images/products/bird-650-glass-b05-open-top-wheels-20261103.jpg",
+      "images/products/bird-650-glass-c02-silver-lock-20261103.jpg",
+      "images/products/bird-650-glass-c03-upper-hinge-20261103.jpg"
     ],
     "moq_unit": "pc",
     "material_options": [
       {
         "name": "Iron Wire",
-        "image": "images/products/excel-bird-650-glass-iron-9d68cfb6.jpg"
+        "image": "images/products/bird-650-glass-a01-front-closed-20261103.jpg"
       },
       {
         "name": "304 Stainless Steel",
-        "image": "images/products/excel-bird-650-glass-iron-9d68cfb6.jpg"
+        "image": "images/products/bird-650-glass-a01-front-closed-20261103.jpg"
       }
     ],
     "image_source": "excel",
     "image_variants": [
       {
         "id": "excel-row-40",
-        "image": "images/products/excel-bird-650-glass-iron-9d68cfb6.jpg",
+        "image": "images/products/bird-650-glass-a01-front-closed-20261103.jpg",
         "title": "650 Transparent Glass Door Birdcage — Iron Wire / White",
         "source_row": 40,
         "color": "White",
-        "material": "Iron Wire"
+        "material": "Iron Wire",
+        "source_note": "User-selected 650 single-layer glass-door render, 2026-11-03; replaces the former shared Excel photo."
       },
       {
         "id": "excel-row-41",
-        "image": "images/products/excel-bird-650-glass-iron-9d68cfb6.jpg",
+        "image": "images/products/bird-650-glass-a01-front-closed-20261103.jpg",
         "title": "650 Transparent Glass Door Birdcage — 304 Stainless Steel / White",
         "source_row": 41,
         "color": "White",
-        "material": "304 Stainless Steel"
+        "material": "304 Stainless Steel",
+        "source_note": "User-selected 650 single-layer glass-door render, 2026-11-03; replaces the former shared Excel photo."
+      },
+      {
+        "id": "render-a02-front-30",
+        "image": "images/products/bird-650-glass-a02-front-30-20261103.jpg",
+        "title": "650 Transparent Glass Door Birdcage — 30-degree front view",
+        "gallery_only": true,
+        "source_note": "User-selected render, 2026-11-03."
+      },
+      {
+        "id": "render-a03-front-45",
+        "image": "images/products/bird-650-glass-a03-front-45-20261103.jpg",
+        "title": "650 Transparent Glass Door Birdcage — 45-degree view",
+        "gallery_only": true,
+        "source_note": "User-selected render, 2026-11-03."
+      },
+      {
+        "id": "render-a04-front-60",
+        "image": "images/products/bird-650-glass-a04-front-60-20261103.jpg",
+        "title": "650 Transparent Glass Door Birdcage — 60-degree view",
+        "gallery_only": true,
+        "source_note": "User-selected render, 2026-11-03."
+      },
+      {
+        "id": "render-a05-side",
+        "image": "images/products/bird-650-glass-a05-side-20261103.jpg",
+        "title": "650 Transparent Glass Door Birdcage — Side view",
+        "gallery_only": true,
+        "source_note": "User-selected render, 2026-11-03."
+      },
+      {
+        "id": "render-a06-rear-135",
+        "image": "images/products/bird-650-glass-a06-rear-135-20261103.jpg",
+        "title": "650 Transparent Glass Door Birdcage — Rear three-quarter view",
+        "gallery_only": true,
+        "source_note": "User-selected render, 2026-11-03."
+      },
+      {
+        "id": "render-a07-rear",
+        "image": "images/products/bird-650-glass-a07-rear-20261103.jpg",
+        "title": "650 Transparent Glass Door Birdcage — Rear view",
+        "gallery_only": true,
+        "source_note": "User-selected render, 2026-11-03."
+      },
+      {
+        "id": "render-b04-tabletop-open-top",
+        "image": "images/products/bird-650-glass-b04-tabletop-open-top-20261103.jpg",
+        "title": "650 Transparent Glass Door Birdcage — Open top with wooden perch, tabletop configuration without wheels",
+        "gallery_only": true,
+        "source_note": "User-selected render, 2026-11-03."
+      },
+      {
+        "id": "render-b05-open-top-wheels",
+        "image": "images/products/bird-650-glass-b05-open-top-wheels-20261103.jpg",
+        "title": "650 Transparent Glass Door Birdcage — Open top with wooden perch and wheels",
+        "gallery_only": true,
+        "source_note": "User-selected render, 2026-11-03."
+      },
+      {
+        "id": "render-c02-silver-lock",
+        "image": "images/products/bird-650-glass-c02-silver-lock-20261103.jpg",
+        "title": "650 Transparent Glass Door Birdcage — Silver-plated door lock detail",
+        "gallery_only": true,
+        "source_note": "User-selected render, 2026-11-03."
+      },
+      {
+        "id": "render-c03-upper-hinge",
+        "image": "images/products/bird-650-glass-c03-upper-hinge-20261103.jpg",
+        "title": "650 Transparent Glass Door Birdcage — Upper glass door hinge detail",
+        "gallery_only": true,
+        "source_note": "User-selected render, 2026-11-03."
       }
     ],
     "default_image_variant": "excel-row-40",
     "color_images": {
-      "White": "images/products/excel-bird-650-glass-iron-9d68cfb6.jpg"
+      "White": "images/products/bird-650-glass-a01-front-closed-20261103.jpg"
     }
   },
   {
