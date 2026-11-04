@@ -25,11 +25,14 @@ def inline(value):
     value = re.sub(r'\[([^\]]+)\]\((/[^\s)]*|https://[^\s)]+)\)', r'<a href="\2">\1</a>', value)
     return re.sub(r'\*\*([^*]+)\*\*', r'<strong>\1</strong>', value)
 
-def image(src, alt, lazy=True):
+def image(src, alt, lazy=True, dimensions=None):
     assert src.startswith('/images/') and (PUBLIC / src.lstrip('/')).is_file(), f'Missing image: {src}'
-    return f'<img src="{E(src)}" alt="{E(alt)}" width="1600" height="900" decoding="async" '+ ('loading="lazy"' if lazy else 'fetchpriority="high"') + '>'
+    width, height = dimensions or (1600, 900)
+    assert all(isinstance(n, int) and n > 0 for n in (width, height)), f'Invalid image dimensions: {src}'
+    return f'<img src="{E(src)}" alt="{E(alt)}" width="{width}" height="{height}" decoding="async" '+ ('loading="lazy"' if lazy else 'fetchpriority="high"') + '>'
 
-def markdown(body):
+def markdown(body, image_dimensions=None):
+    image_dimensions = image_dimensions or {}
     output, toc = [], []
     blocks = re.split(r'\n\s*\n', body.strip())
     for block in blocks:
@@ -43,7 +46,7 @@ def markdown(body):
             if level == 2: toc.append((anchor, title))
             output.append(f'<h{level} id="{anchor}">{inline(title)}</h{level}>')
         elif picture:
-            output.append('<figure>'+image(picture[2], picture[1])+(f'<figcaption>{E(picture[3])}</figcaption>' if picture[3] else '')+'</figure>')
+            output.append('<figure>'+image(picture[2], picture[1], dimensions=image_dimensions.get(picture[2]))+(f'<figcaption>{E(picture[3])}</figcaption>' if picture[3] else '')+'</figure>')
         elif all(re.match(r'(- |\d+\. )', line) for line in lines):
             tag = 'ul' if lines[0].startswith('- ') else 'ol'
             output.append(f'<{tag}>'+''.join('<li>'+inline(re.sub(r'^(- |\d+\. )', '', line))+'</li>' for line in lines)+f'</{tag}>')
@@ -58,7 +61,7 @@ def markdown(body):
 def url(article): return '/insights/'+article['slug']+'/'
 
 def card(a, featured=False):
-    return f'<article class="ins-card {"ins-featured" if featured else ""}" data-category="{E(a["category"])}"><a class="ins-card-image" href="{url(a)}">{image(a["coverImage"], a["coverAlt"], not featured)}</a><div class="ins-card-body"><p class="ins-category">{E(a["category"])}</p><h2><a href="{url(a)}">{E(a["title"])}</a></h2><p class="ins-description">{E(a["description"])}</p><time datetime="{a["datePublished"]}">{a["datePublished"]}</time><a class="ins-read" href="{url(a)}">Read Article <span aria-hidden="true">→</span><span class="sr-only">: {E(a["title"])}</span></a></div></article>'
+    return f'<article class="ins-card {"ins-featured" if featured else ""}" data-category="{E(a["category"])}"><a class="ins-card-image" href="{url(a)}">{image(a["coverImage"], a["coverAlt"], not featured, a.get("imageDimensions", {}).get(a["coverImage"]))}</a><div class="ins-card-body"><p class="ins-category">{E(a["category"])}</p><h2><a href="{url(a)}">{E(a["title"])}</a></h2><p class="ins-description">{E(a["description"])}</p><time datetime="{a["datePublished"]}">{a["datePublished"]}</time><a class="ins-read" href="{url(a)}">Read Article <span aria-hidden="true">→</span><span class="sr-only">: {E(a["title"])}</span></a></div></article>'
 
 def cta(listing=False):
     return '<section class="ins-cta"><h2>'+('Looking for an OEM / ODM partner?' if listing else 'Looking for a manufacturing partner?')+'</h2><p>Tell us about your product idea.</p><a class="btn btn-ghost" href="/contact.html">Contact KANAPET</a></section>'
@@ -88,7 +91,7 @@ def build():
         for key in ['datePublished','dateModified']:
             if a.get(key): dt.date.fromisoformat(a[key])
         assert a.get('dateModified',a['datePublished']) >= a['datePublished']
-        a['rendered'], a['toc'] = markdown(a['body'])
+        a['rendered'], a['toc'] = markdown(a['body'], a.get('imageDimensions'))
         articles.append(a)
     assert articles and len({a['slug'] for a in articles})==len(articles)
     articles.sort(key=lambda a:a['datePublished'], reverse=True)
@@ -115,7 +118,7 @@ def build():
         if a.get('dateModified') and a['dateModified']!=a['datePublished']: meta+=f' · Updated <time datetime="{a["dateModified"]}">{a["dateModified"]}</time>'
         meta+=f' · {reading} min read</p>'
         toc = '<details class="ins-toc" open><summary>Table of Contents</summary><ol>'+''.join(f'<li><a href="#{anchor}">{E(title)}</a></li>' for anchor,title in a['toc'])+'</ol></details>' if len(a['toc'])>=4 else ''
-        body = breadcrumb+f'<article class="ins-article"><p class="ins-category">{E(a["category"])}</p><h1>{E(a["title"])}</h1><p class="ins-summary">{E(a["summary"])}</p>'+meta+image(a['coverImage'],a['coverAlt'],False)+toc+'<div class="ins-prose">'+a['rendered']
+        body = breadcrumb+f'<article class="ins-article"><p class="ins-category">{E(a["category"])}</p><h1>{E(a["title"])}</h1><p class="ins-summary">{E(a["summary"])}</p>'+meta+image(a['coverImage'],a['coverAlt'],False,a.get('imageDimensions',{}).get(a['coverImage']))+toc+'<div class="ins-prose">'+a['rendered']
         if a.get('keyTakeaways'): body+='<section><h2>Key Takeaways</h2><ul>'+''.join('<li>'+E(t)+'</li>' for t in a['keyTakeaways'])+'</ul></section>'
         if a.get('faq'): body+='<section><h2>Frequently Asked Questions</h2>'+''.join('<h3>'+E(f['question'])+'</h3><p>'+E(f['answer'])+'</p>' for f in a['faq'])+'</section>'
         body+='</div></article>'
@@ -132,7 +135,7 @@ def build():
         body+=cta()
         schema = {'@type':'Article','headline':a['title'],'description':a['description'],'image':SITE+a['coverImage'],'datePublished':a['datePublished'],'dateModified':a.get('dateModified',a['datePublished']),'author':{'@type':'Organization','name':'KANAPET','@id':organization['@id']},'publisher':{'@id':organization['@id']},'mainEntityOfPage':{'@type':'WebPage','@id':SITE+url(a)}}
         bc={'@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':i+1,'name':n,'item':SITE+u} for i,(n,u) in enumerate(crumbs)]}
-        outputs[PUBLIC/'insights'/a['slug']/'index.html']=page(a['title'],a['description'],url(a),a['coverImage'],'<div class="container ins-detail">'+body+'</div>',[schema,bc])
+        outputs[PUBLIC/'insights'/a['slug']/'index.html']=page(a.get('seoTitle',a['title']),a['description'],url(a),a['coverImage'],'<div class="container ins-detail">'+body+'</div>',[schema,bc])
     sitemap=(PUBLIC/'sitemap.xml').read_text(encoding='utf-8')
     sitemap=re.sub(r'\s*<url>\s*<loc>https://www\.kanapet\.com/insights/.*?</url>', '', sitemap, flags=re.S)
     entries=[('/insights/',max(a.get('dateModified',a['datePublished']) for a in articles))]+[(url(a),a.get('dateModified',a['datePublished'])) for a in articles]

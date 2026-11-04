@@ -157,6 +157,10 @@
     "images/insights/custom-pet-product-injection-mold.webp": "f12f9da8f0e4c2f6b56440b4a3df60a6c790f86c385464ed1349d0413634d2ee",
     "images/insights/custom-pet-product-mold-machining.webp": "27299b1df3725a9116f706e662f4df20d8de85e1b2df44484ac0748e7c8136f9",
     "images/insights/custom-pet-product-quotation-checklist-v1.jpg": "caa92ce534374dc4e2c1e8bff4579ca8de4e4d8ca96cfb656583e55b425cb87b",
+    "images/insights/jupiter-joy-pet-fair-asia-2026-booth.jpg": "bc5c8e25bd3bfc9bea27a3e9d536fd77a4a03b11cf0178749eeefa7ba818d66f",
+    "images/insights/jupiter-joy-pet-fair-asia-2026-multi-level-cage.jpg": "0ab238089de5e562e003718b3e51277bb98c151e180c06aa8a9bbede0b50da9f",
+    "images/insights/jupiter-joy-pet-fair-asia-2026-portable-bird-cage.jpg": "cec760dc295cd5e0e50286475b1f2d6a8e466a9ca4bda63ca34d4f652beb5aa8",
+    "images/insights/jupiter-joy-pet-fair-asia-2026-transparent-enclosures.jpg": "90f62888ae61b760d07c9c2e2cd5a811e4ba5e7cc388a81993666acdae5b0f11",
     "images/oem/accessories.jpg": "09a946302561f4329664480245ce3284fb7f0deb0e9dcec62b372699d5afba9b",
     "images/oem/bird-cage-490.jpg": "d3146c9cd6c4bb5bd387beebeb03efc697bdf42ae0fb31efdf32011fa23b72bf",
     "images/oem/bird-cage-650.jpg": "b882df25c3e421dbdbbec64a7851a6798a22831d0ab020acff59333e04b10bae",
@@ -1000,9 +1004,10 @@
     "images/products_overview_v3.jpg": "006efcb153090a22fd7899ffb5435e5c0ecf2d5ecb31d1ae0540f06fa9189af1",
     "images/wechat-lena-qr.jpg": "d1529aab263c748634e80a0d1d1feda0e0d342140ea2d9cd372d275731ccfe57",
     "index.html": "2d33bbc7eecbf1c7bfe5bee6a01fc81cab169bf69e6cc17de92d1056eb2679da",
-    "insights/custom-pet-product-development-process/index.html": "bfe2e6766307d2f0469bf36f697b30d525c74eee2c3bd66089e163b1de3af62e",
+    "insights/custom-pet-product-development-process/index.html": "6ed6bc2158478d35e55cda3618ce290827fcf0e9d4ff6a5e28452f5a715f56ce",
     "insights/custom-pet-product-quotation-checklist/index.html": "d9ca0fff865fdb947a902c4be979de982597d3dc36e1ca2f711a924037628722",
-    "insights/index.html": "7bd00944cd2c488b7a9399b1990a26268843cac35114d99f3ec7e4aedcafa3e2",
+    "insights/index.html": "bcc6c669bdaac1aef017b100b79140eefaa4c8f275646f90726ac3a07d49878d",
+    "insights/jupiter-joy-pet-fair-asia-2026/index.html": "fb1db4fed2fc33ddcc4d2ae5dca818c72516f09e584abf872f95e81bc4c938d4",
     "insights/kanapet-cips-2026-guangzhou/index.html": "552600433fdbe8331142d93c6f8a14f21d4ba0b703bbdb47b1184e98d9bd1186",
     "js/data.js": "8888de4d11e9d9bbd3ef097fedc1b25a59e885be290b0620ca250fd432ec15af",
     "js/insights.js": "c74219315993fca410426432b82b0748e34148e9e899a6ed21b54075ca1cd379",
@@ -1097,9 +1102,9 @@
     "products.html": "6030b019f2d2b47cac3b57be0b2d29b682281ef5ad696261b69f3094896eee19",
     "rabbit-guinea-pig-cages.html": "a76a624f22f63a91b9d9b377fc5841c25fd89db1a0d8e717cbf848b2425a38d2",
     "robots.txt": "1eed0c0094b1f273e42d4dcfd95bc076cefe42efe3df799e29e16b46c85afa99",
-    "sitemap.xml": "078b771c15180c1a78c5c9ea00d2b87dff6ac05384c810bc32c0e653b20c7d04",
+    "sitemap.xml": "5b38465cd5f560c9c4941e6263ee87e51c893fee25b64489f0b06dfae20b15fa",
     "turtle-tanks.html": "6f87cd5506d7290a8021c1d9cf960e4bf0dea70398f57ad47ca55beb3f74d55e",
     "videos/kanapet-factory-tour.mp4": "a571c81046574ab7a542955ff78e6e5250a1ed7b012e107c10919fdecf67a8a7"
   },
-  "id": "903dc4d1dd36ccab"
+  "id": "64b93e45d92909b7"
 }
