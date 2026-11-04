@@ -14,6 +14,8 @@ with tempfile.TemporaryDirectory(dir=builder.ROOT, prefix='insights-test-') as d
         article=json.loads(metadata)
         article['slug']=f'example-article-{index}'
         article['title']=f'Example article {index}'
+        article['seoTitle']=f'Example SEO title {index}'
+        article['imageDimensions']={article['coverImage']: [1152, 1536]}
         article['featured']=index==0
         article['relatedArticles']=[f'example-article-{other}' for other in range(4) if other != index]
         article['category']='Manufacturing' if index else 'OEM / ODM'
@@ -26,6 +28,12 @@ with tempfile.TemporaryDirectory(dir=builder.ROOT, prefix='insights-test-') as d
     detail=output[builder.PUBLIC/'insights/example-article-0/index.html']
     assert 'Related Articles' in detail and detail.count('data-category=')==3
     assert 'example-article-1/' in output[builder.PUBLIC/'sitemap.xml']
+    assert '<title>Example SEO title 0 | KANAPET</title>' in detail
+    assert '<h1>Example article 0</h1>' in detail
+    assert '"headline": "Example article 0"' in detail
+    assert 'width="1152" height="1536"' in detail and 'width="1152" height="1536"' in listing
 assert '&lt;script&gt;' in builder.inline('<script>')
 assert 'href="javascript:' not in builder.inline('[bad](javascript:alert)')
+assert 'width="1600" height="900"' in builder.image(json.loads(metadata)['coverImage'], 'Default dimensions')
+assert 'width="1152" height="1536"' in builder.markdown('![Portrait](' + json.loads(metadata)['coverImage'] + ')', {json.loads(metadata)['coverImage']: [1152, 1536]})[0]
 print('Insights content growth tests passed: featured article, cards, related articles and sitemap')
