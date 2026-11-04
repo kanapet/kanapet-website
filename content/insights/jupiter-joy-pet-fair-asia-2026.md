@@ -6,7 +6,7 @@
   "description": "Explore Jupiter Joy's bird cages and small pet products showcased at Pet Fair Asia 2026 in Shanghai, and discover KANAPET's OEM and wholesale capabilities.",
   "summary": "Jupiter Joy, the domestic brand under the same manufacturing company as KANAPET, exhibited bird cages, transparent pet enclosures and accessories in Shanghai in August 2026. KANAPET serves international B2B customers through wholesale supply, OEM manufacturing and ODM product development.",
   "category": "Exhibition",
-  "datePublished": "2026-11-04",
+  "datePublished": "2026-11-05",
   "coverImage": "/images/insights/jupiter-joy-pet-fair-asia-2026-booth.jpg",
   "coverAlt": "Jupiter Joy exhibition booth with blue brand signage, visitors and pet products at Pet Fair Asia 2026 in Shanghai",
   "imageDimensions": {
