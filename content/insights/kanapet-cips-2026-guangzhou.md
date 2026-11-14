@@ -6,6 +6,7 @@
   "summary": "KANAPET will attend the 30th China International Pet Show (CIPS 2026) in Guangzhou from November 12 to 15, 2026. Find us in Hall 11.3 at Booth G053 in Area B of the China Import and Export Fair Complex. We welcome buyers and business partners to discuss bird and small pet products, wholesale sourcing and custom manufacturing requirements.",
   "category": "Exhibition",
   "datePublished": "2026-10-09",
+  "dateModified": "2026-11-14",
   "coverImage": "/images/products/gallery/490-double-scene-1.jpg",
   "coverAlt": "KANAPET white double bird cage with transparent doors and two yellow birds",
   "featured": false,
@@ -37,6 +38,8 @@ The 30th China International Pet Show (CIPS 2026) will take place on **November 
 | City | Guangzhou, China |
 | KANAPET hall | Hall 11.3 |
 | KANAPET booth | G053 |
+
+See [five photos from KANAPET’s booth at CIPS 2026](/insights/inside-kanapet-booth-cips-2026/), including the bird cages and hamster habitats on display.
 
 ## Where is the KANAPET booth?
 
