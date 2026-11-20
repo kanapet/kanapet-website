@@ -1020,7 +1020,7 @@
     "js/main.js": "44264dfa1ccc2aa5f9f9cf90bf4d410dbc4829cdea29d3029ab3243ea276e682",
     "js/product-media.js": "6214a3087747d34347a7e217c5d77c8e01c2d35a67d4351710779c6fc2d7be67",
     "js/videos.js": "c3741c0fbd1efdb3c1de79ed890ce0e43499a5e4ab50b27668e604d29d9c3f24",
-    "llms.txt": "7abfc0f89a185d8d6e53bd8f07267b43aa0385b5384bc561f63d96dcf5ffb580",
+    "llms.txt": "8ac114dbfaf7f76bf4a34479a7242cb69b01ce65cb7c9b9c841f017097889f32",
     "oem-odm.html": "81a2003635ac520a484d8d1b985af79ff5718e18e4469993126626a7b68e90c0",
     "privacy.html": "6fbb24b117f447dbddef6b6516d0c0fc3923d2000a36840441cbaf3f8b32138f",
     "product.html": "7d2e8c8c6a348980d648ce393b09236a9d8a4cc4196b1d5fc5ab1a64ca5fc60f",
@@ -1112,5 +1112,5 @@
     "turtle-tanks.html": "6f87cd5506d7290a8021c1d9cf960e4bf0dea70398f57ad47ca55beb3f74d55e",
     "videos/kanapet-factory-tour.mp4": "a571c81046574ab7a542955ff78e6e5250a1ed7b012e107c10919fdecf67a8a7"
   },
-  "id": "8a2162f4a64c1c2e"
+  "id": "735da15cc727c2e2"
 }

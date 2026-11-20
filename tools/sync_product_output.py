@@ -574,7 +574,7 @@ CATEGORY_INTROS = {
     "bird-accessories": "Bathrooms, nesting boxes, feeders, water bottles, perches and more.",
     "bird-travel": "Compact travel cages for birds — 23cm to 42cm, multi-color options.",
     "smart-pet-products": "Smart feeders and water dispensers for modern pet care.",
-    "hamster-cages": "Transparent acrylic hamster cages and folding cages — 43cm to 75cm.",
+    "hamster-cages": "Transparent PET hamster cages and folding cage models. Compare model-specific dimensions, materials and ordering details on the linked product pages.",
     "hamster-accessories": "Running wheels, tunnels, sand baths, platforms and feeding cups.",
     "other-small-pets": "Rabbit cages, cat litter boxes and feeders, turtle tanks and supplies for other small animals.",
 }
